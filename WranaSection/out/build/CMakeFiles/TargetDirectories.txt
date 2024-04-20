@@ -1,0 +1,8 @@
+E:/projects/Data_Structures/WranaSection/out/build/CMakeFiles/WranaSection.dir
+E:/projects/Data_Structures/WranaSection/out/build/CMakeFiles/edit_cache.dir
+E:/projects/Data_Structures/WranaSection/out/build/CMakeFiles/rebuild_cache.dir
+E:/projects/Data_Structures/WranaSection/out/build/CMakeFiles/list_install_components.dir
+E:/projects/Data_Structures/WranaSection/out/build/CMakeFiles/install.dir
+E:/projects/Data_Structures/WranaSection/out/build/CMakeFiles/install/local.dir
+E:/projects/Data_Structures/WranaSection/out/build/CMakeFiles/WranaSection_autogen_timestamp_deps.dir
+E:/projects/Data_Structures/WranaSection/out/build/CMakeFiles/WranaSection_autogen.dir
