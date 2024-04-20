@@ -1,0 +1,9 @@
+# ninja log v5
+15	748	7352783254871659	WranaSection_autogen/timestamp	bccf26bfe7c0eb12
+15	748	7352783254871659	WranaSection_autogen/mocs_compilation.cpp	bccf26bfe7c0eb12
+15	748	7352783254871659	E:/projects/Data_Structures/WranaSection/build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug/WranaSection_autogen/timestamp	bccf26bfe7c0eb12
+15	748	7352783254871659	E:/projects/Data_Structures/WranaSection/build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug/WranaSection_autogen/mocs_compilation.cpp	bccf26bfe7c0eb12
+754	5059	7352783298761058	CMakeFiles/WranaSection.dir/main.cpp.obj	c7e37b3547c9ae30
+749	5065	7352783298685814	CMakeFiles/WranaSection.dir/WranaSection_autogen/mocs_compilation.cpp.obj	c8e3549dcee37637
+763	5071	7352783298922582	CMakeFiles/WranaSection.dir/mainwindow.cpp.obj	84665fb988fe568d
+5072	5796	7352783305893801	WranaSection.exe	8cf8dcc7b3b5447e
