@@ -1,9 +1,0 @@
-# ninja log v5
-13	680	7352800230901709	WranaSection_autogen/timestamp	c46e0ef7b09ed09f
-13	680	7352800230901709	WranaSection_autogen/mocs_compilation.cpp	c46e0ef7b09ed09f
-13	680	7352800230901709	E:/projects/Data_Structures/WranaSection/out/build/WranaSection_autogen/timestamp	c46e0ef7b09ed09f
-13	680	7352800230901709	E:/projects/Data_Structures/WranaSection/out/build/WranaSection_autogen/mocs_compilation.cpp	c46e0ef7b09ed09f
-681	4140	7352800266343373	CMakeFiles/WranaSection.dir/WranaSection_autogen/mocs_compilation.cpp.obj	45226475b714cd8a
-687	4151	7352800266430019	CMakeFiles/WranaSection.dir/main.cpp.obj	406a4c0b193f28f0
-694	4162	7352800266499202	CMakeFiles/WranaSection.dir/mainwindow.cpp.obj	58195fc12ef861e1
-4162	4811	7352800272814327	WranaSection.exe	8493f7d64cea64ca
