@@ -31,8 +31,6 @@ class Location
     // Day, Hours and minutes
     map<string, pair<int, int>> date;
 
-    //Course course;
-
 public:
     Location(string, queue<string>, bool, string, int, bool, map<string, pair<int, int>>, string);
 
