@@ -13,13 +13,15 @@ SOURCES += \
     course.cpp \
     Admin.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    user.cpp
 
 HEADERS += \
     location.h \
     course.h \
     Admin.h \
-    mainwindow.h
+    mainwindow.h \
+    user.h
 
 FORMS += \
     mainwindow.ui
