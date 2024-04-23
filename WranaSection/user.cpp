@@ -1,9 +1,7 @@
-#include <bits/stdc++.h>
-using namespace std;
 #include "user.h"
 #include "course.h"
 #include "location.h"
-
+using namespace std;
 User::User(string& name, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender)
     :data{ name, id, academic_year, section, username, password, program, gender } {}
 

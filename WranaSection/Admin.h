@@ -1,10 +1,10 @@
 #ifndef ADMIN_H
 #define ADMIN_H
-#include<iostream>
-#include<vector>
 #include "course.h"
 #include "location.h"
+#include <string>
 using namespace std;
+
 class Admin
 {
 
@@ -36,7 +36,6 @@ public:
     void editLocation(Location location);
     void removeLocation(Location location);
 
-    void mangoElAb();
 
     // Destructor
     ~Admin();

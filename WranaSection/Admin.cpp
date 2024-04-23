@@ -59,10 +59,7 @@ void Admin::removeLocation(Location location)
     // Body
 }
 
-void Admin::mangoElAb()
-{
-    cout << "Mango world";
-}
+
 
 // Destructor
 Admin::~Admin()
