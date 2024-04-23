@@ -1,18 +1,18 @@
 #include "course.h"
 using namespace std;
 
-course::course(void)
+Course::Course(void)
 {
 
 }
 
-course::course(string name, string dep)
+Course::Course(string name, string dep)
 {
     courseName = name;
     department = dep;
 }
 
-course::course(string name, string dep, vector<string> drs, vector<string> TAs)
+Course::Course(string name, string dep, vector<string> drs, vector<string> TAs)
 {
     courseName = name;
     department = dep;
@@ -20,58 +20,58 @@ course::course(string name, string dep, vector<string> drs, vector<string> TAs)
     teachingAssistants = TAs;
 }
 
-course::~course(void)
+Course::~Course(void)
 {
     doctors.clear();
     teachingAssistants.clear();
 }
 
-void course::setCourseName(string name)
+void Course::setCourseName(string name)
 {
     courseName = name;
 }
 
-void course::setDepartment(string dep)
+void Course::setDepartment(string dep)
 {
     department = dep;
 }
 
-string course::getCourseName()
+string Course::getCourseName()
 {
     return courseName;
 }
 
-string course::getDepartment()
+string Course::getDepartment()
 {
     return department;
 }
 
-vector<string> course::getDoctors()
+vector<string> Course::getDoctors()
 {
     return doctors;
 }
 
-vector<string> course::getTAs()
+vector<string> Course::getTAs()
 {
     return teachingAssistants;
 }
 
-void course::addDoctor(string doctor)
+void Course::addDoctor(string doctor)
 {
     doctors.push_back(doctor);
 }
 
-void course::removeDoctor(string doctor)
+void Course::removeDoctor(string doctor)
 {
     doctors.erase(remove(doctors.begin(), doctors.end(), doctor), doctors.end());
 }
 
-void course::addTA(string teachingAssistant)
+void Course::addTA(string teachingAssistant)
 {
     teachingAssistants.push_back(teachingAssistant);
 }
 
-void course::removeTA(string teachingAssistant)
+void Course::removeTA(string teachingAssistant)
 {
     teachingAssistants.erase(remove(teachingAssistants.begin(), teachingAssistants.end(), teachingAssistant), teachingAssistants.end());
 }

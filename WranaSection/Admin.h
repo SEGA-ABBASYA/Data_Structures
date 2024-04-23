@@ -1,6 +1,7 @@
 #ifndef ADMIN_H
 #define ADMIN_H
-
+#include "course.h"
+#include "location.h"
 #include <bits/stdc++.h>
 using namespace std;
 class Admin

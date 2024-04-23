@@ -6,7 +6,7 @@
 #include <iostream>
 using namespace std;
 
-class course
+class Course
 {
     string courseName;
     string department;
@@ -14,10 +14,10 @@ class course
     vector<string> teachingAssistants;
 
 public:
-    course(void);
-    course(string name, string dep);
-    course(string name, string dep, vector<string> drs, vector<string> TAs);
-    ~course(void);
+    Course(void);
+    Course(string name, string dep);
+    Course(string name, string dep, vector<string> drs, vector<string> TAs);
+    ~Course(void);
 
     void setCourseName(string);
     void setDepartment(string);

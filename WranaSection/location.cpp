@@ -1,6 +1,6 @@
 #include "location.h"
 
-Location::Location(string name, queue<string> doctor, bool midterm, string type, int section, bool group, map<Schedule, course> date, string department)
+Location::Location(string name, queue<string> doctor, bool midterm, string type, int section, bool group, map<Schedule, Course> date, string department)
 {
     this->name = name;
     this->doctor = doctor;
@@ -48,7 +48,7 @@ void Location::setDepartment(string department)
     this->department = department;
 }
 
-void Location::setDate(map<Schedule, course> date)
+void Location::setDate(map<Schedule, Course> date)
 {
     this->date = date;
 }
@@ -75,7 +75,7 @@ int Location::getGroup()
     return group;
 }
 
-map<Schedule, course> Location::getDate()
+map<Schedule, Course> Location::getDate()
 {
     return date;
 }

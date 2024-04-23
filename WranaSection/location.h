@@ -36,16 +36,16 @@ class Location
 
 
     // Day, Hours and minutes
-    map<Schedule, course> date;
+    map<Schedule, Course> date;
 
 public:
-    Location(string, queue<string>, bool, string, int, bool, map<Schedule, course>, string);
+    Location(string, queue<string>, bool, string, int, bool, map<Schedule, Course>, string);
 
     void setName(string);
     void setDoctor(queue<string>);
     void setSection(int);
     void setGroup(bool);
-    void setDate(map<Schedule, course>);
+    void setDate(map<Schedule, Course>);
     void setMidterm(bool);
     void setType(string);
     void setDepartment(string);
@@ -55,7 +55,7 @@ public:
     queue<string> getDoctor();
     int getSection();
     int getGroup();
-    map<Schedule, course> getDate();
+    map<Schedule, Course> getDate();
     bool getMidterm();
     string getType();
     string getDepartment();
