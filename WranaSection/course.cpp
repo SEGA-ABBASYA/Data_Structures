@@ -2,6 +2,7 @@
 using namespace std;
 
 Course::Course(void)
+//Constructors
 {
 
 }
@@ -10,23 +11,32 @@ Course::Course(string name, string dep)
 {
     courseName = name;
     department = dep;
+    hasLab = true;
+    hasSection = true;
 }
 
 Course::Course(string name, string dep, vector<string> drs, vector<string> TAs)
+course::course(string name, string dep, bool lab, bool section, vector<string> drs, vector<string> TAs)
 {
     courseName = name;
     department = dep;
+    hasLab = lab;
+    hasSection = section;
     doctors = drs;
     teachingAssistants = TAs;
 }
 
 Course::~Course(void)
+// Destructor
+course::~course(void)
 {
     doctors.clear();
     teachingAssistants.clear();
 }
 
 void Course::setCourseName(string name)
+//Setters and Getters for CourseName & Department
+void course::setCourseName(string name)
 {
     courseName = name;
 }
@@ -47,6 +57,21 @@ string Course::getDepartment()
 }
 
 vector<string> Course::getDoctors()
+
+//Setters and Getters for hasLab & hasSection
+void course::setLab(bool lab)
+{
+    hasLab = lab;
+}
+void course::setSection(bool section)
+{
+    hasSection = section;
+}
+
+
+//Methods for Doctors & TAs
+vector<string> course::getDoctors()
+>>>>>>> origin/course
 {
     return doctors;
 }
