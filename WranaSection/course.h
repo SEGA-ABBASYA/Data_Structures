@@ -20,10 +20,9 @@ class Course
 public:
     Course(void);
     Course(string name, string dep);
-    Course(string name, string dep, vector<string> drs, vector<string> TAs);
+    Course(string name, string dep, bool lab, bool section, vector<string> drs, vector<string> TAs);
     ~Course(void);
-    course(string name, string dep, bool lab, bool section, vector<string> drs, vector<string> TAs);
-    ~course(void);
+
 
     void setCourseName(string);
     void setDepartment(string);

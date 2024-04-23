@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-#include "User.h"
+#include "user.h"
 #include "course.h"
-#include "Location.h"
+#include "location.h"
 
 User::User(string& name, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender)
     :data{ name, id, academic_year, section, username, password, program, gender } {}
@@ -73,7 +73,7 @@ char User::getGender() {
     return data.gender;
 }
 
-void User::register_courses(course& registered_course) {
+void User::register_courses(Course& registered_course) {
     registered_courses[registered_course.getCourseName()] = registered_course;
 }
 

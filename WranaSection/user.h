@@ -1,9 +1,10 @@
 #ifndef DSCODE_USER_H
 #define DSCODE_USER_H
 #include "course.h"
-#include "Location.h"
+#include "location.h"
 #include<iostream>
 #include<unordered_map>
+
 struct userData {
     string name;
     int id;
@@ -18,7 +19,7 @@ struct userData {
 class User {
 private:
     userData data;
-    unordered_map<string, course> registered_courses;
+    unordered_map<string, Course> registered_courses;
     unordered_map<string, Location> current_location;
 
 public:
@@ -61,7 +62,7 @@ public:
     char getGender();
 
     // Usable Functions for creation or anything
-    void register_courses(course& registered_course);
+    void register_courses(Course& registered_course);
     void print_courses_list();
     void unregister_course(string& courseName);
     bool is_registered_course(string& courseName);
