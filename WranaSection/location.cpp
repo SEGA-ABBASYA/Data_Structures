@@ -1,5 +1,9 @@
 #include "location.h"
 
+Location::Location()
+{
+
+}
 Location::Location(string name, queue<string> doctor, bool midterm, string type, int section, bool group, map<Schedule, Course> date, string department)
 {
     this->name = name;

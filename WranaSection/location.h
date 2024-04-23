@@ -39,6 +39,7 @@ class Location
     map<Schedule, Course> date;
 
 public:
+    Location();
     Location(string, queue<string>, bool, string, int, bool, map<Schedule, Course>, string);
 
     void setName(string);
