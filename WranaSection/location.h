@@ -1,10 +1,16 @@
 #ifndef LOCATION_H
 #define LOCATION_H
 #include <string>
+#include "course.h"
 #include <queue>
 #include <map>
 using namespace std;
 
+struct Schedule{
+    int hours;
+    int minutes;
+    string day;
+};
 class Location
 {
     //refers to location
@@ -28,17 +34,18 @@ class Location
     //Mainstream for years 1,2 and from years 3,4 (CS, IS, SC, CSYS)
     string department;
 
+
     // Day, Hours and minutes
-    map<string, pair<int, int>> date;
+    map<Schedule, course> date;
 
 public:
-    Location(string, queue<string>, bool, string, int, bool, map<string, pair<int, int>>, string);
+    Location(string, queue<string>, bool, string, int, bool, map<Schedule, course>, string);
 
     void setName(string);
     void setDoctor(queue<string>);
     void setSection(int);
     void setGroup(bool);
-    void setDate(map<string, pair<int, int>>);
+    void setDate(map<Schedule, course>);
     void setMidterm(bool);
     void setType(string);
     void setDepartment(string);
@@ -48,7 +55,7 @@ public:
     queue<string> getDoctor();
     int getSection();
     int getGroup();
-    map<string, pair<int, int>> getDate();
+    map<Schedule, course> getDate();
     bool getMidterm();
     string getType();
     string getDepartment();
