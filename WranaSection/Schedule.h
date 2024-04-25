@@ -1,17 +1,17 @@
-#ifndef LOCATION_H
-#define LOCATION_H
+#ifndef SCHEDULE_H
+#define SCHEDULE_H
 #include <string>
 #include "course.h"
 #include <queue>
 #include <map>
 using namespace std;
 
-struct Schedule{
-    int hours;
+struct Timetable{
+    int hour;
     int minutes;
     string day;
 };
-class Location
+class Schedule
 {
     //refers to location
     string name;
@@ -35,18 +35,18 @@ class Location
     string department;
 
 
-    // Day, Hours and minutes
-    map<Schedule, Course> date;
+    // Day, Hour and minutes
+    map<Timetable, Course> date;
 
 public:
-    Location();
-    Location(string, queue<string>, bool, string, int, bool, map<Schedule, Course>, string);
+    Schedule();
+    Schedule(string, queue<string>, bool, string, int, bool, map<Timetable, Course>, string);
 
     void setName(string);
     void setDoctor(queue<string>);
     void setSection(int);
     void setGroup(bool);
-    void setDate(map<Schedule, Course>);
+    void setDate(map<Timetable, Course>);
     void setMidterm(bool);
     void setType(string);
     void setDepartment(string);
@@ -56,13 +56,13 @@ public:
     queue<string> getDoctor();
     int getSection();
     int getGroup();
-    map<Schedule, Course> getDate();
+    map<Timetable, Course> getDate();
     bool getMidterm();
     string getType();
     string getDepartment();
 
-    ~Location();
+    ~Schedule();
 
 };
 
-#endif // LOCATION_H
+#endif // SCHEDULE_H

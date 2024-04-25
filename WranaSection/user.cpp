@@ -1,6 +1,6 @@
 #include "user.h"
 #include "course.h"
-#include "location.h"
+#include "Schedule.h"
 using namespace std;
 User::User(string& name, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender)
     :data{ name, id, academic_year, section, username, password, program, gender } {}
@@ -108,10 +108,10 @@ void User::print_courses_list() {
     }
 }
 
-void User::add_location(Location& location_to_set) {
-    current_location[location_to_set.getName()] = location_to_set;
+void User::add_location(Schedule& schedule_to_set) {
+    current_schedule[schedule_to_set.getName()] = schedule_to_set;
 }
 
-void User::remove_location(string location_name) {
-    current_location.erase(location_name);
+void User::remove_location(string schedule_name) {
+    current_schedule.erase(schedule_name);
 }
