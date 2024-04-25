@@ -17,7 +17,7 @@ void Database::write()
 
 void Database::WriteAdmin() {
 
-    ofstream Writer("Admin.txt");
+    ofstream Writer("admin.txt");
 
     if (Writer.is_open()) {
 
@@ -34,7 +34,7 @@ void Database::WriteAdmin() {
 
 void Database::ReadAdmin() {
 
-    ifstream Reader("Admin.txt");
+    ifstream Reader("admin.txt");
 
     if (Reader.is_open()) {
 
@@ -58,22 +58,23 @@ void Database::WriteCourses() {
 
     if (Writer.is_open()) {
         for (auto& course : courses) {
-            Writer << course.getCourseName() << "\n";
-            Writer << course.getDepartment() << "\n";
 
-              Writer << course.getLab_S()<< "\n";
-                Writer <<  course.getSection_S() << "\n";
+            Writer << course.second.getCourseName() << "\n";
+            Writer << course.second.getDepartment() << "\n";
+
+              Writer << course.second.getLab_S()<< "\n";
+                Writer <<  course.second.getSection_S() << "\n";
 
 
             // Write doctors
-            for (auto& doctor : course.getDoctors()) {
+            for (auto& doctor : course.second.getDoctors()) {
                 Writer << doctor <<'\n';
             }
 
             Writer << "---\n";
 
             // Write TAs
-            for (auto& ta : course.getTAs()) {
+            for (auto& ta : course.second.getTAs()) {
                 Writer << ta << '\n';
             }
 
@@ -121,7 +122,7 @@ void Database::ReadCourses() {
             else Lab=0;
 
             Course course(courseName, department,Lab,sec, doctors, teachingAssistants);
-            courses.push_back(course);
+            courses[courseName]=course;
         }
 
     } else {

@@ -1,6 +1,7 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 #include"Admin.h"
+#include<map>
 #include<fstream>
 class Database
 {
@@ -8,7 +9,8 @@ class Database
 public:
     Database();
     Admin admin;
-    vector<Course>courses;
+    map<string,Course>courses;
+
    void read();
    void write();
 
