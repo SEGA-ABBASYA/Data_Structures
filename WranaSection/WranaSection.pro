@@ -11,6 +11,8 @@ CONFIG += c++17
 SOURCES += \
     database.cpp \
     location.cpp \
+    Location.cpp \
+    Schedule.cpp \
     course.cpp \
     Admin.cpp \
     main.cpp \
@@ -20,6 +22,8 @@ SOURCES += \
 HEADERS += \
     database.h \
     location.h \
+    Location.h \
+    Schedule.h \
     course.h \
     Admin.h \
     mainwindow.h \
