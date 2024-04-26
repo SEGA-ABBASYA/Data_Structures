@@ -105,14 +105,14 @@ void Course::removeTA(string teachingAssistant)
 {
     teachingAssistants.erase(remove(teachingAssistants.begin(), teachingAssistants.end(), teachingAssistant), teachingAssistants.end());
 }
- string Course:: getLab_S()
+ string Course:: getLab_String()
 {
-     if(hasLab==1) return "yes";
-     else return "no";
+     return (hasLab==1)? "yes":"no";
+
  }
 
-string Course:: getSection_S()
+string Course:: getSection_String()
 {
-    if(hasSection==1) return "yes";
-    else return "no";
+    return  (hasSection==1) ? "yes":"no";
+
 }

@@ -6,6 +6,8 @@ Database::Database() {
 
 void Database::read()
 {
+
+
     ReadAdmin();
     ReadCourses();
 }
@@ -55,15 +57,15 @@ void Database::ReadAdmin() {
 void Database::WriteCourses() {
 
     ofstream Writer("Courses.txt");
-
+    Course c ("malak","1");  courses["malak"]=c;
     if (Writer.is_open()) {
         for (auto& course : courses) {
 
             Writer << course.second.getCourseName() << "\n";
             Writer << course.second.getDepartment() << "\n";
 
-              Writer << course.second.getLab_S()<< "\n";
-                Writer <<  course.second.getSection_S() << "\n";
+              Writer << course.second.getLab_String()<< "\n";
+              Writer <<  course.second.getSection_String() << "\n";
 
 
             // Write doctors
@@ -100,12 +102,12 @@ void Database::ReadCourses() {
             }
 
             string courseName = line;
-            string department, doctor, ta, section,lab; int sec,Lab;
+            string department, doctor, ta, section_string,lab_string; bool section,Lab;
             vector<string> doctors, teachingAssistants;
 
             getline(Reader, department);
-             getline(Reader, section);
-              getline(Reader, lab);
+             getline(Reader, section_string);
+              getline(Reader, lab_string);
 
             while (getline(Reader, doctor) && doctor != "---") {
                 doctors.push_back(doctor);
@@ -115,13 +117,13 @@ void Database::ReadCourses() {
                 teachingAssistants.push_back(ta);
             }
 
-            if(section=="yes") sec=1;
-            else sec=0;
+            if(section_string=="yes") section=1;
+            else section=0;
 
-            if(lab=="yes") Lab=1;
+            if(lab_string=="yes") Lab=1;
             else Lab=0;
 
-            Course course(courseName, department,Lab,sec, doctors, teachingAssistants);
+            Course course(courseName, department,Lab,section, doctors, teachingAssistants);
             courses[courseName]=course;
         }
 

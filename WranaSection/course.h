@@ -36,8 +36,8 @@ public:
    bool getLab();
    bool getSection();
 
-  string getLab_S();
-   string getSection_S();
+  string getLab_String();
+   string getSection_String();
 
 
     vector<string> getDoctors();
