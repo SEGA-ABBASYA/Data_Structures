@@ -83,7 +83,7 @@ void Database::WriteCourses() {
             Writer << "---\n";
         }
         Writer.close();
-        \
+        
     } else {
         cout << "Error opening Courses.txt for writing." << endl;
     }
