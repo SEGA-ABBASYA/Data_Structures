@@ -1,4 +1,3 @@
-#include <bits/stdc++.h>
 #include"Admin.h"
 using namespace std;
 
@@ -57,9 +56,18 @@ void Admin::removeLocation(Location location)
     // Body
 }
 
-void Admin::mangoElAb()
+// Schedule class related methods.
+void Admin::addSchedule(Schedule schedule)
 {
-    cout << "Mango world";
+    // Body
+}
+void Admin::editSchedule(Schedule schedule)
+{
+    // Body
+}
+void Admin::removeSchedule(Schedule schedule)
+{
+    // Body
 }
 
 // Destructor

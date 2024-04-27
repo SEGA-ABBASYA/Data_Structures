@@ -29,12 +29,15 @@ public:
     void addCourse(Course course);
     void deleteCourse(Course course);
 
-    // Loction class related methods.
+    // Location class related methods.
     void addLocation(Location location);
     void editLocation(Location location);
     void removeLocation(Location location);
 
-    void mangoElAb();
+    // Schedule class related methods.
+    void addSchedule(Schedule schedule);
+    void editSchedule(Schedule schedule);
+    void removeSchedule(Schedule schedule);
 
     // Destructor
     ~Admin();
