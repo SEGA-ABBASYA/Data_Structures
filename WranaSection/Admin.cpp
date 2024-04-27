@@ -1,7 +1,7 @@
-#include <iostream>
-#include <vector>
 #include"Admin.h"
-
+#include "course.h"
+#include "Location.h"
+#include "Schedule.h"
 using namespace std;
 
 // Constructor

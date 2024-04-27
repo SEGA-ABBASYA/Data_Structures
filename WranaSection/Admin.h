@@ -1,7 +1,8 @@
 #ifndef ADMIN_H
 #define ADMIN_H
 #include "course.h"
-#include "location.h"
+#include "Location.h"
+#include "Schedule.h"
 #include <string>
 using namespace std;
 
