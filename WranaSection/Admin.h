@@ -1,8 +1,11 @@
 #ifndef ADMIN_H
 #define ADMIN_H
-
-#include <bits/stdc++.h>
+#include "course.h"
+#include "location.h"
+#include <string>
 using namespace std;
+
+
 class Admin
 {
 
