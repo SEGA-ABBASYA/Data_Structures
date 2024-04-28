@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/assists">
+        <file>All_Materials/Background.png</file>
+    </qresource>
+</RCC>
