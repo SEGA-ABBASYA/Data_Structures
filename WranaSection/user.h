@@ -3,7 +3,8 @@
 #include "course.h"
 #include "location.h"
 #include<iostream>
-#include<unordered_map>
+#include <QMap>
+#include <unordered_map>
 
 struct userData {
     string name;
@@ -23,6 +24,13 @@ private:
     unordered_map<string, Location> current_location;
 
 public:
+<<<<<<< Updated upstream
+=======
+    //hashmaps
+    unordered_map<string, Course> registered_courses;
+    QMap<Timetable, Schedule> current_schedule;
+
+>>>>>>> Stashed changes
     // Constructor
     User(string& name, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender);
 
@@ -67,8 +75,13 @@ public:
     void unregister_course(string& courseName);
     bool is_registered_course(string& courseName);
     int get_course_count();
+<<<<<<< Updated upstream
     void add_location(Location& location_to_set);
     void remove_location(string location_name);
+=======
+    void add_Schedule(Schedule& schedule_to_set);
+    void remove_Schedule(Timetable schedule_date);
+>>>>>>> Stashed changes
 };
 
 

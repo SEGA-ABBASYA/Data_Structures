@@ -1,0 +1,17 @@
+Mathematics
+Math
+no
+yes
+Dr.Smith
+---
+TA John
+TA Emma
+---
+Physics
+Science
+no
+no
+Dr.Johnson
+---
+TA Alice
+---

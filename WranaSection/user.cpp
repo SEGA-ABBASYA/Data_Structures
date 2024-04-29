@@ -108,10 +108,19 @@ void User::print_courses_list() {
     }
 }
 
+<<<<<<< Updated upstream
 void User::add_location(Location& location_to_set) {
     current_location[location_to_set.getName()] = location_to_set;
 }
 
 void User::remove_location(string location_name) {
     current_location.erase(location_name);
+=======
+void User::add_Schedule(Schedule& schedule_to_set) {
+    current_schedule[schedule_to_set.getDate()] = schedule_to_set;
+}
+
+void User::remove_Schedule(Timetable schedule_date) {
+    current_schedule.remove(schedule_date);
+>>>>>>> Stashed changes
 }
