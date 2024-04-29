@@ -21,16 +21,12 @@ public:
     Database();
     Admin admin;
     map<string,Course>courses;
-<<<<<<< Updated upstream
 
 
-
-   void read();
-   void write();
-=======
     void read();
     void write();
->>>>>>> Stashed changes
+    void read();
+    void write();
 
 private:
     QFile usersFile, locationsFile, adminFile, CoursesFile, schedulesFile;

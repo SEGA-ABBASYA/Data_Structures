@@ -19,14 +19,13 @@ Database::Database() {
 
 void Database::read()
 {
-
-
     ReadAdmin();
     ReadCourses();
     readLocations();
     readSchedule();
     readUsers();
 }
+
 void Database::write()
 {
     WriteAdmin();
@@ -74,27 +73,16 @@ void Database::ReadAdmin() {
 }
 
 void Database::WriteCourses() {
-
-<<<<<<< Updated upstream
     ofstream Writer("Courses.txt");
     Course c ("malak","1");  courses["malak"]=c;
-=======
     ofstream Writer(CoursesFile.fileName().toStdString());
-
->>>>>>> Stashed changes
     if (Writer.is_open()) {
         for (auto& course : courses) {
 
             Writer << course.second.getCourseName() << "\n";
             Writer << course.second.getDepartment() << "\n";
-
-<<<<<<< Updated upstream
-          
             Writer <<  course.second.getSection_String() << "\n";
             Writer << course.second.getLab_String()<< "\n";
->>>>>>> Stashed changes
-
-
             // Write doctors
             for (auto& doctor : course.second.getDoctors()) {
                 Writer << doctor <<'\n';
@@ -133,13 +121,8 @@ void Database::ReadCourses() {
             vector<string> doctors, teachingAssistants;
 
             getline(Reader, department);
-<<<<<<< Updated upstream
-             getline(Reader, section_string);
-              getline(Reader, lab_string);
-=======
-         
->>>>>>> Stashed changes
-
+            getline(Reader, section_string);
+            getline(Reader, lab_string);
             while (getline(Reader, doctor) && doctor != "---") {
                 doctors.push_back(doctor);
             }
@@ -154,12 +137,8 @@ void Database::ReadCourses() {
             if(lab_string=="yes") Lab=1;
             else Lab=0;
 
-<<<<<<< Updated upstream
             Course course(courseName, department,Lab,section, doctors, teachingAssistants);
-=======
-           
             // qDebug() << courseName << ' ' << department << '\n';
->>>>>>> Stashed changes
             courses[courseName]=course;
         }
 
