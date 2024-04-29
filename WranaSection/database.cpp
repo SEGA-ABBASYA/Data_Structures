@@ -8,6 +8,12 @@
 #include <QStringList>
 #include <QMap>
 
+QMap<QString, Location> Database::locations;
+map<string,Course> Database::courses;
+QMap<string, QMap<Timetable, Schedule>> Database::schedules;
+vector<User> Database::users;
+Admin Database::admin;
+
 Database::Database() {
     QString projectPath = "E:/projects/Data_Structures/WranaSection";
     adminFile.setFileName( projectPath + "/Files/Admin.txt");

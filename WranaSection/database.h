@@ -9,19 +9,18 @@
 #include <QString>
 #include <QFile>
 #include <QMap>
-
+#include <vector>
 class Database
 {
 
 public:
-    QVector<User> users;
-    QMap<QString, Location> locations;
-    QMap<string, QMap<Timetable, Schedule>> schedules;
-    QString currentUserEmail;
-    Database();
-    Admin admin;
-    map<string,Course>courses;
+    static vector<User> users;
+    static QMap<QString, Location> locations;
+    static QMap<string, QMap<Timetable, Schedule>> schedules;
+    static Admin admin;
+    static map<string,Course> courses;
 
+    Database();
     void read();
     void write();
 
