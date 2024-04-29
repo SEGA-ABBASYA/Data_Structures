@@ -6,10 +6,28 @@
 #include <map>
 using namespace std;
 
-struct Timetable{
+struct Timetable {
     int hour;
     int minutes;
     string day;
+
+    // Define less than operator for Timetable
+    bool operator<(const Timetable& other) const {
+        // Compare days first
+        if (day < other.day)
+            return true;
+        if (day > other.day)
+            return false;
+
+        // If days are equal, compare hours
+        if (hour < other.hour)
+            return true;
+        if (hour > other.hour)
+            return false;
+
+        // If days and hours are equal, compare minutes
+        return minutes < other.minutes;
+    }
 };
 class Schedule
 {
@@ -36,32 +54,39 @@ class Schedule
 
 
     // Day, Hour and minutes
-    map<Timetable, Course> date;
+    Timetable date;
+    Course course;
 
 public:
     Schedule();
-    Schedule(string, queue<string>, bool, string, int, bool, map<Timetable, Course>, string);
+    Schedule(string, queue<string>, bool, string, int, bool,Timetable, Course, string);
 
     void setName(string);
     void setDoctor(queue<string>);
     void setSection(int);
     void setGroup(bool);
-    void setDate(map<Timetable, Course>);
+    void setDate(Timetable);
     void setMidterm(bool);
     void setType(string);
     void setDepartment(string);
+    void setCourse(Course newCourse);
 
+    Course getCourse();
 
-    string getName();
     queue<string> getDoctor();
     int getSection();
     int getGroup();
-    map<Timetable, Course> getDate();
+    Timetable getDate();
     bool getMidterm();
     string getType();
     string getDepartment();
+    string getName();
 
     ~Schedule();
+
+
+
+
 
 };
 

@@ -108,10 +108,10 @@ void User::print_courses_list() {
     }
 }
 
-void User::add_location(Schedule& schedule_to_set) {
-    current_schedule[schedule_to_set.getName()] = schedule_to_set;
+void User::add_Schedule(Schedule& schedule_to_set) {
+    current_schedule[schedule_to_set.getDate()] = schedule_to_set;
 }
 
-void User::remove_location(string schedule_name) {
-    current_schedule.erase(schedule_name);
+void User::remove_Schedule(Timetable schedule_timetable) {
+    current_schedule.remove(schedule_timetable);
 }

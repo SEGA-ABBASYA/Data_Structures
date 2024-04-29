@@ -1,10 +1,20 @@
 #include "Schedule.h"
 
+Timetable Schedule::getDate()
+{
+    return date;
+}
+
+string Schedule::getName()
+{
+    return name;
+}
+
 Schedule::Schedule()
 {
 
 }
-Schedule::Schedule(string name, queue<string> doctor, bool midterm, string type, int section, bool group, map<Timetable, Course> date, string department)
+Schedule::Schedule(string name, queue<string> doctor, bool midterm, string type, int section, bool group,Timetable date,Course course ,string department)
 {
     this->name = name;
     this->doctor = doctor;
@@ -14,6 +24,7 @@ Schedule::Schedule(string name, queue<string> doctor, bool midterm, string type,
     this->group = group;
     this->date = date;
     this->department = department;
+    this->course = course;
 }
 
 //Setters
@@ -52,17 +63,24 @@ void Schedule::setDepartment(string department)
     this->department = department;
 }
 
-void Schedule::setDate(map<Timetable, Course> date)
+void Schedule::setDate(Timetable date)
 {
     this->date = date;
 }
 
 
-//Getters
-string Schedule::getName()
+
+void Schedule::setCourse(Course newCourse)
 {
-    return name;
+    course = newCourse;
 }
+
+//Getters
+Course Schedule::getCourse()
+{
+    return course;
+}
+
 
 queue<string> Schedule::getDoctor()
 {
@@ -79,10 +97,7 @@ int Schedule::getGroup()
     return group;
 }
 
-map<Timetable, Course> Schedule::getDate()
-{
-    return date;
-}
+
 
 bool Schedule::getMidterm()
 {
