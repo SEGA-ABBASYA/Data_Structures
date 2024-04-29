@@ -89,11 +89,9 @@ void Database::WriteCourses() {
             Writer << course.second.getDepartment() << "\n";
 
 <<<<<<< Updated upstream
-              Writer << course.second.getLab_String()<< "\n";
-              Writer <<  course.second.getSection_String() << "\n";
-=======
-            Writer <<  course.second.getSection_S() << "\n";
-            Writer << course.second.getLab_S()<< "\n";
+          
+            Writer <<  course.second.getSection_String() << "\n";
+            Writer << course.second.getLab_String()<< "\n";
 >>>>>>> Stashed changes
 
 
@@ -139,8 +137,7 @@ void Database::ReadCourses() {
              getline(Reader, section_string);
               getline(Reader, lab_string);
 =======
-            getline(Reader, section);
-            getline(Reader, lab);
+         
 >>>>>>> Stashed changes
 
             while (getline(Reader, doctor) && doctor != "---") {
@@ -160,7 +157,7 @@ void Database::ReadCourses() {
 <<<<<<< Updated upstream
             Course course(courseName, department,Lab,section, doctors, teachingAssistants);
 =======
-            Course course(courseName, department,Lab,sec, doctors, teachingAssistants);
+           
             // qDebug() << courseName << ' ' << department << '\n';
 >>>>>>> Stashed changes
             courses[courseName]=course;
