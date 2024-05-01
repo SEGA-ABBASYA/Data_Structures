@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/assists">
-        <file>All_Materials/Background.png</file>
         <file>All_Materials/Calendar.png</file>
         <file>All_Materials/Location.png</file>
         <file>All_Materials/Online course.png</file>
@@ -12,6 +11,9 @@
         <file>All_Materials/Schedule.png</file>
         <file>All_Materials/Student.png</file>
         <file>All_Materials/backGround2.png</file>
-        <file>All_Materials/Frame_1295.png</file>
+        <file>All_Materials/Tasks.png</file>
+        <file>All_Materials/blur3.jpg</file>
+        <file>All_Materials/peakpx.jpg</file>
+        <file>All_Materials/frame4.png</file>
     </qresource>
 </RCC>

@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "Admin_View.h"
 #include"Database.h"
 #include <QApplication>
 void write()
@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     Database db;
 
     db.read();
-    MainWindow w;
+    AdminView w;
     w.show();
     QObject::connect(&a, &QCoreApplication::aboutToQuit, write);
     return a.exec();
