@@ -15,12 +15,11 @@ vector<User> Database::users;
 Admin Database::admin;
 
 Database::Database() {
-    QString projectPath = "E:/projects/Data_Structures/WranaSection";
-    adminFile.setFileName( projectPath + "/Files/Admin.txt");
-    CoursesFile.setFileName( projectPath + "/Files/Courses.txt");
-    usersFile.setFileName( projectPath + "/Files/Users.txt");
-    locationsFile.setFileName( projectPath + "/Files/Locations.txt");
-    schedulesFile.setFileName( projectPath + "/Files/Schedules.txt");
+    adminFile.setFileName("Files/Admin.txt");
+    CoursesFile.setFileName("Files/Courses.txt");
+    usersFile.setFileName("Files/Users.txt");
+    locationsFile.setFileName("Files/Locations.txt");
+    schedulesFile.setFileName("Files/Schedules.txt");
 }
 
 void Database::read()
