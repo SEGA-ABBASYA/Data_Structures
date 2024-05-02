@@ -5,7 +5,6 @@
 #include <queue>
 #include <map>
 using namespace std;
-
 struct Schedule{
     int hours;
     int minutes;
@@ -27,6 +26,9 @@ class Location
     string type;
 
     int section;
+
+    //The floor it is located in
+    int floor;
 
     //0 for G1 , 1 for G2
     bool group;
@@ -56,6 +58,7 @@ public:
     queue<string> getDoctor();
     int getSection();
     int getGroup();
+    int getfloor();
     map<Schedule, Course> getDate();
     bool getMidterm();
     string getType();

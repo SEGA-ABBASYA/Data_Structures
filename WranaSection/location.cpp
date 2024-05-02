@@ -4,8 +4,9 @@ Location::Location()
 {
 
 }
-Location::Location(string name, queue<string> doctor, bool midterm, string type, int section, bool group, map<Schedule, Course> date, string department)
+Location::Location(string name, queue<string> doctor, bool midterm, string type,int floor, int section, bool group, map<Schedule, Course> date, string department)
 {
+    this->floor = floor;
     this->name = name;
     this->doctor = doctor;
     this->midterm = midterm;
@@ -72,6 +73,11 @@ queue<string> Location::getDoctor()
 int Location::getSection()
 {
     return section;
+}
+
+int Location::getfloor()
+{
+    return floor;
 }
 
 int Location::getGroup()
