@@ -1,9 +1,12 @@
 #ifndef DSCODE_USER_H
 #define DSCODE_USER_H
+
+#include "Schedule.h"
 #include "course.h"
 #include "location.h"
-#include<iostream>
-#include<unordered_map>
+#include <iostream>
+#include <unordered_map>
+#include <QMap>
 
 struct userData {
     string name;
@@ -19,10 +22,13 @@ struct userData {
 class User {
 private:
     userData data;
-    unordered_map<string, Course> registered_courses;
-    unordered_map<string, Location> current_location;
+
 
 public:
+    //hashmaps
+    unordered_map<string, Course> registered_courses;
+    QMap<Timetable, Schedule> current_schedule;
+
     // Constructor
     User(string& name, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender);
 
@@ -67,8 +73,8 @@ public:
     void unregister_course(string& courseName);
     bool is_registered_course(string& courseName);
     int get_course_count();
-    void add_location(Location& location_to_set);
-    void remove_location(string location_name);
+    void add_Schedule(Schedule& schedule_to_set);
+    void remove_Schedule(Timetable);
 };
 
 

@@ -33,6 +33,13 @@ public:
     void setLab(bool lab);
     void setSection(bool section);
 
+   bool getLab();
+   bool getSection();
+
+  string getLab_S();
+   string getSection_S();
+
+
     vector<string> getDoctors();
     vector<string> getTAs();
 

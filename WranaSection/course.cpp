@@ -66,6 +66,14 @@ void Course::setSection(bool section)
     hasSection = section;
 }
 
+bool Course::getSection()
+{
+    return hasSection;
+}
+bool Course::getLab()
+{
+    return hasLab;
+}
 
 //Methods for Doctors & TAs
 vector<string> Course::getDoctors()
@@ -96,4 +104,15 @@ void Course::addTA(string teachingAssistant)
 void Course::removeTA(string teachingAssistant)
 {
     teachingAssistants.erase(remove(teachingAssistants.begin(), teachingAssistants.end(), teachingAssistant), teachingAssistants.end());
+}
+ string Course:: getLab_S()
+{
+     if(hasLab==1) return "yes";
+     else return "no";
+ }
+
+string Course:: getSection_S()
+{
+    if(hasSection==1) return "yes";
+    else return "no";
 }
