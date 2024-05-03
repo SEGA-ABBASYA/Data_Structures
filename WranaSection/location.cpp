@@ -1,111 +1,50 @@
-#include "location.h"
+#include "Location.h"
 
-Location::Location()
-{
+Location::Location() {}
 
-}
-Location::Location(string name, queue<string> doctor, bool midterm, string type,int floor, int section, bool group, map<Schedule, Course> date, string department)
-{
+Location::Location(int floor, bool hall, string name, pair<int, int> node){
     this->floor = floor;
+    this->hall = hall;
     this->name = name;
-    this->doctor = doctor;
-    this->midterm = midterm;
-    this->type = type;
-    this->section = section;
-    this->group = group;
-    this->date = date;
-    this->department = department;
+    this->node = node;
 }
 
 //Setters
-void Location::setName(string name)
-{
+
+void Location::setFloor(int floor){
+    this->floor = floor;
+}
+
+void Location::setHall(bool hall){
+    this->hall = hall;
+}
+
+void Location::setName(string name){
     this->name = name;
 }
 
-void Location::setDoctor(queue<string> doctor)
-{
-    this->doctor = doctor;
+void Location::setNode(pair<int, int> node){
+    this->node = node;
 }
-
-void Location::setSection(int section)
-{
-    this->section = section;
-}
-
-void Location::setGroup(bool group)
-{
-    this->group = group;
-}
-
-void Location::setMidterm(bool midterm)
-{
-    this->midterm = midterm;
-}
-
-void Location::setType(string type)
-{
-    this->type = type;
-}
-
-void Location::setDepartment(string department)
-{
-    this->department = department;
-}
-
-void Location::setDate(map<Schedule, Course> date)
-{
-    this->date = date;
-}
-
 
 //Getters
-string Location::getName()
-{
-    return name;
-}
 
-queue<string> Location::getDoctor()
-{
-    return doctor;
-}
-
-int Location::getSection()
-{
-    return section;
-}
-
-int Location::getfloor()
-{
+int Location::getFloor(){
     return floor;
 }
 
-int Location::getGroup()
-{
-    return group;
+bool Location::getHall(){
+    return hall;
 }
 
-map<Schedule, Course> Location::getDate()
-{
-    return date;
+string Location::getName(){
+    return name;
 }
 
-bool Location::getMidterm()
-{
-    return midterm;
-}
-
-string Location::getType()
-{
-    return type;
-}
-
-string Location::getDepartment()
-{
-    return department;
+pair<int, int> Location::getNode(){
+    return node;
 }
 
 
-Location::~Location()
-{
-}
+
+Location::~Location(){}

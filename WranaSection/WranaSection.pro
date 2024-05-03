@@ -11,26 +11,33 @@ CONFIG += c++17
 SOURCES += \
     Graph.cpp \
     Maingraph.cpp \
-    location.cpp \
+    Admin_View.cpp \
+    Location.cpp \
+    Schedule.cpp \
     course.cpp \
     Admin.cpp \
     main.cpp \
-    mainwindow.cpp \
+    database.cpp \
     user.cpp
 
 HEADERS += \
     Graph.h \
     Maingraph.h \
-    location.h \
+    Admin_View.h \
+    Location.h \
+    Schedule.h \
     course.h \
     Admin.h \
-    mainwindow.h \
+    database.h \
     user.h
 
 FORMS += \
-    mainwindow.ui
+    Admin_View.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Materials.qrc
