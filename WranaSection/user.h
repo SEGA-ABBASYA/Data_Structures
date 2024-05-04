@@ -12,6 +12,7 @@
 using namespace std;
 struct userData {
     string name;
+    string email;
     int id;
     int academic_year; // 1 2 3 4
     int section;
@@ -34,9 +35,12 @@ public:
 
     // Constructor
     User(string name, int id, int academic_year, int section, string username, string password, string program, char gender);
+    User(string& name, string& email, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender);
 
     // Setters
     void setName(string& name);
+
+    void setEmail(string& email);
 
     void setId(int id);
 
@@ -55,6 +59,8 @@ public:
 
     // Getters
     string getName();
+
+    string getEmail();
 
     int getId();
 

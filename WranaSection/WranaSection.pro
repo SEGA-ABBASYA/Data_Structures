@@ -20,6 +20,11 @@ SOURCES += \
     Admin_View.cpp \
     user.cpp \
     Location.cpp
+    mainwindow.cpp \
+    user.cpp \
+    newuser.cpp \
+    login.cpp
+
 HEADERS += \
     Graph.h \
     Maingraph.h \
@@ -32,10 +37,21 @@ HEADERS += \
     user.h
 FORMS += \
     Admin_View.ui
+    mainwindow.h \
+    user.h \
+    newuser.h \
+    login.h
+
+FORMS += \
+    mainwindow.ui \
+    newuser.ui \
+    login.ui
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    Login-Register.qrc \
     Materials.qrc

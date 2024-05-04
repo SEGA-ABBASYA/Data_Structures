@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/Pages">
+        <file>All_Materials/Login_pg.jpg</file>
+        <file>All_Materials/Register_pg.jpg</file>
+    </qresource>
+    <qresource prefix="/Icons">
+        <file>All_Materials/Icons/Female Icon.png</file>
+        <file>All_Materials/Icons/Male Icon.png</file>
+    </qresource>
+</RCC>

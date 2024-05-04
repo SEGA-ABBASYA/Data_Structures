@@ -1,2 +1,1 @@
-John Doe,101,2023,1,john_doe,password,Computer Science,M,Mathematics,Physics,0,Hall A,9,0,Monday,0
-Alice Smith,102,2023,2,alice_smith,password,Physics,F,Mathematics,Physics,0,Hall B,10,0,Tuesday,0
+Mohamed Hussein,mohamedh2910@gmail.com,2022170581,2,15,mhmd7syn,123456789,General,M,0,0
