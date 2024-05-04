@@ -129,7 +129,7 @@ void AdminView::on_pushButton_3_clicked()
    ui->tableWidget->item(row-1,2)->setText("null");
    ui->tableWidget->item(row-1,3)->setText("null");
    ui->tableWidget->item(row-1,4)->setText("null");
-
+   ui->tableWidget->item(row-1,5)->setText("null");
 }
 
 
