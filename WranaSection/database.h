@@ -14,7 +14,7 @@ class Database
 {
 
 public:
-    static vector<User> users;
+    static QMap<string, User> users;
     static QMap<QString, Location> locations;
     static QMap<string, QMap<Timetable, Schedule>> schedules;
     static Admin admin;

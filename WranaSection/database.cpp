@@ -11,7 +11,7 @@
 QMap<QString, Location> Database::locations;
 map<string,Course> Database::courses;
 QMap<string, QMap<Timetable, Schedule>> Database::schedules;
-vector<User> Database::users;
+QMap<string, User> Database::users;
 Admin Database::admin;
 
 Database::Database() {
@@ -159,6 +159,7 @@ void Database::readUsers()
             QStringList userData = line.split(',');
             int i = 0;
             string name = userData[i].toStdString();
+            string email = userData[++i].toStdString();
             int id = userData[++i].toInt();
             int academic_year = userData[++i].toInt();
             int section = userData[++i].toInt();
@@ -166,7 +167,7 @@ void Database::readUsers()
             string password  = userData[++i].toStdString();
             string program = userData[++i].toStdString();
             char gender = userData[++i].toStdString()[0];
-            User newUser(name, id, academic_year, section, user_name, password, program, gender);
+            User newUser(name, email, id, academic_year, section, user_name, password, program, gender);
             qDebug() << newUser.getName() << ' ' << newUser.getPassword() << '\n';
             ////////////add courses
             while(userData[++i] != "0"){
@@ -180,8 +181,8 @@ void Database::readUsers()
                 qDebug() << sch_name << ' ' << date.day << '\n';
                 newUser.add_Schedule(schedules[sch_name][date]);
             }
-
-            users.push_back(newUser);
+            /////insert into map
+            users.insert(user_name, newUser);
         }
         usersFile.close();
         qDebug() << "userFile read successfully.";
@@ -223,6 +224,7 @@ void Database::writeUsers()
             content.clear();
 
             content.append(user.getName() + split);
+            content.append(user.getEmail() + split);
             content.append(QString::number(user.getId()) + split);
             content.append(QString::number(user.getAcademicYear()) + split);
             content.append(QString::number(user.getSection()) + split);

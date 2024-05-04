@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include"Database.h"
+#include "newuser.h"
 #include <QApplication>
 void write()
 {
@@ -12,7 +13,7 @@ int main(int argc, char *argv[])
     Database db;
 
     db.read();
-    MainWindow w;
+    NewUser w;
     w.show();
     QObject::connect(&a, &QCoreApplication::aboutToQuit, write);
     return a.exec();

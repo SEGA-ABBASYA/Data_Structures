@@ -2,12 +2,16 @@
 #include "course.h"
 #include "Schedule.h"
 using namespace std;
-User::User(string& name, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender)
-    :data{ name, id, academic_year, section, username, password, program, gender } {}
+User::User(string& name, string& email, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender)
+    :data{ name, email, id, academic_year, section, username, password, program, gender } {}
 
 // Setters
 void User::setName(string& name) {
     data.name = name;
+}
+
+void User::setEmail(string& email) {
+    data.email = email;
 }
 
 void User::setId(int id) {
@@ -41,6 +45,10 @@ void User::setGender(char gender) {
 // Getters
 string User::getName() {
     return data.name;
+}
+
+string User::getEmail() {
+    return data.email;
 }
 
 int User::getId() {
