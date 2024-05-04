@@ -1,6 +1,6 @@
-#include "Admin_View.h"
 #include "Maingraph.h"
-#include"Database.h"
+#include "Database.h"
+#include "User_View.h"
 #include <QApplication>
 using namespace std;
 void write()
@@ -11,9 +11,8 @@ void write()
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    AdminView w;
     Database db;
-
+    UserView w;
     db.read();
     w.show();
     vector<string>c;

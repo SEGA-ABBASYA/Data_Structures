@@ -11,15 +11,15 @@ CONFIG += c++17
 SOURCES += \
     Graph.cpp \
     Maingraph.cpp \
-    Admin_View.cpp \
     Location.cpp \
     Schedule.cpp \
     course.cpp \
     Admin.cpp \
     main.cpp \
     database.cpp \
-    user.cpp
-
+    user.cpp \
+    Location.cpp\
+    User_View.cpp
 HEADERS += \
     Graph.h \
     Maingraph.h \
@@ -29,10 +29,11 @@ HEADERS += \
     course.h \
     Admin.h \
     database.h \
-    user.h
-
+    user.h \
+    Location.cpp\
+    User_View.h
 FORMS += \
-    Admin_View.ui
+  User_View.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
