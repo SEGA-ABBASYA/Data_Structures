@@ -46,6 +46,9 @@ class Schedule
 
     int section;
 
+    //The floor it is located in
+    int floor;
+
     //0 for G1 , 1 for G2
     bool group;
 
@@ -76,6 +79,7 @@ public:
     queue<string> getDoctor();
     int getSection();
     int getGroup();
+    int getfloor();
     Timetable getDate();
     bool getMidterm();
     string getType();
