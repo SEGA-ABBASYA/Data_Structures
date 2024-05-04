@@ -116,3 +116,37 @@ string Course:: getSection_S()
     if(hasSection==1) return "yes";
     else return "no";
 }
+void Course::setSection_S(string section)
+{
+    hasSection=( section=="yes")?1:0;
+}
+
+void Course::setLab_S(string lab)
+{
+    hasLab=( lab=="yes")?1:0;
+}
+string Course::getDoctors_S()
+{
+    string AllDoctors={}; int size=doctors.size();
+    for(int i=0;i<size-1;i++)
+    {
+         AllDoctors+=doctors[i]+",";
+    }
+
+    if(size>0) AllDoctors+= doctors[size-1];
+
+    return AllDoctors;
+}
+string Course::getTAs_S()
+{
+    string AllteachingAssistants={}; int size=teachingAssistants.size();
+
+    for(int i=0;i<size-1;i++)
+    {
+        AllteachingAssistants+=teachingAssistants[i]+",";
+    }
+
+    if(size>0) AllteachingAssistants+= teachingAssistants[size-1];
+
+    return AllteachingAssistants;
+}
