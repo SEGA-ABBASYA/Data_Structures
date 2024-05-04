@@ -7,7 +7,9 @@
 #include <iostream>
 #include <unordered_map>
 #include <QMap>
+#include <map>
 
+using namespace std;
 struct userData {
     string name;
     int id;
@@ -19,18 +21,19 @@ struct userData {
     char gender; // M or F
 };
 
+
 class User {
 private:
     userData data;
-
 
 public:
     //hashmaps
     unordered_map<string, Course> registered_courses;
     QMap<Timetable, Schedule> current_schedule;
+    map<string,User*> friends;
 
     // Constructor
-    User(string& name, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender);
+    User(string name, int id, int academic_year, int section, string username, string password, string program, char gender);
 
     // Setters
     void setName(string& name);
@@ -68,14 +71,28 @@ public:
     char getGender();
 
     // Usable Functions for creation or anything
-    void register_courses(Course& registered_course);
+
+    // course functions
+    void register_courses(Course registered_course);
     void print_courses_list();
-    void unregister_course(string& courseName);
-    bool is_registered_course(string& courseName);
+    void unregister_course(string courseName);
+    bool is_registered_course(string courseName);
     int get_course_count();
-    void add_Schedule(Schedule& schedule_to_set);
+
+    // schedule functions
+    void add_Schedule(Schedule schedule_to_set);
     void remove_Schedule(Timetable);
+
+    // friends functions
+    void add_friend(User* friendUser);
+    void remove_friend(string friendUsername);
+    bool has_friend(string friendUsername);
+    int get_friendsCount();
+    vector<User*> get_allFriends();
+    void clear_friends();
+    void printMap();
+
 };
 
 
-#endif //DSCODE_USER_H
+#endif

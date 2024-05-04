@@ -1,5 +1,5 @@
-#ifndef ADMIN_VIEW_H
-#define ADMIN_VIEW_H
+#ifndef USER_VIEW_H
+#define USER_VIEW_H
 
 #include <QMainWindow>
 
@@ -9,17 +9,13 @@ class MainWindow;
 }
 QT_END_NAMESPACE
 
-class AdminView : public QMainWindow
+class UserView : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    AdminView(QWidget *parent = nullptr);
-    ~AdminView();
-
-
-
-
+    UserView(QWidget *parent = nullptr);
+    ~UserView();
 
 
 private slots:
@@ -37,7 +33,11 @@ private slots:
 
     void on_Test_2_toggled();
 
+    void on_FrienddsButton_toggled(bool checked);
+
+    void on_NotificationButton_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
 };
-#endif // ADMIN_VIEW_H
+#endif // USER_VIEW_H

@@ -67,10 +67,13 @@
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>660</y>
+       <y>717</y>
        <width>81</width>
        <height>49</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
@@ -93,10 +96,13 @@
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>310</y>
+       <y>278</y>
        <width>89</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
@@ -125,10 +131,13 @@
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>390</y>
+       <y>348</y>
        <width>89</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
@@ -154,10 +163,13 @@
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>460</y>
+       <y>422</y>
        <width>89</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
@@ -183,10 +195,13 @@
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>540</y>
+       <y>499</y>
        <width>89</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
@@ -235,11 +250,75 @@
       </size>
      </property>
     </widget>
+    <widget class="QPushButton" name="friends">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>577</y>
+       <width>83</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Materials.qrc">
+       <normaloff>:/assists/All_Materials/Friends.png</normaloff>:/assists/All_Materials/Friends.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>50</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="notification">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>649</y>
+       <width>83</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Materials.qrc">
+       <normaloff>:/assists/All_Materials/notification.png</normaloff>:/assists/All_Materials/notification.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>50</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>150</x>
       <y>-20</y>
       <width>1141</width>
       <height>741</height>
@@ -249,9 +328,9 @@
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>-20</y>
-        <width>1051</width>
+        <x>90</x>
+        <y>-25</y>
+        <width>1021</width>
         <height>751</height>
        </rect>
       </property>
@@ -262,19 +341,23 @@
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="text">
       <property name="geometry">
        <rect>
-        <x>530</x>
-        <y>260</y>
-        <width>141</width>
-        <height>91</height>
+        <x>510</x>
+        <y>200</y>
+        <width>361</width>
+        <height>281</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <pointsize>28</pointsize>
+        <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Course</string>
@@ -285,9 +368,9 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>-20</y>
-        <width>1041</width>
+        <x>90</x>
+        <y>-25</y>
+        <width>1021</width>
         <height>751</height>
        </rect>
       </property>
@@ -298,7 +381,7 @@
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="label_7">
+     <widget class="QLabel" name="text_3">
       <property name="geometry">
        <rect>
         <x>470</x>
@@ -312,6 +395,9 @@
         <pointsize>48</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
       <property name="text">
        <string>Graph</string>
       </property>
@@ -321,9 +407,9 @@
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>-20</y>
-        <width>1061</width>
+        <x>90</x>
+        <y>-25</y>
+        <width>1021</width>
         <height>751</height>
        </rect>
       </property>
@@ -339,17 +425,26 @@
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="label_9">
+     <widget class="QLabel" name="text_6">
       <property name="geometry">
        <rect>
-        <x>510</x>
-        <y>310</y>
+        <x>420</x>
+        <y>260</y>
         <width>361</width>
         <height>231</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
       <property name="text">
-       <string>Schedule</string>
+       <string>Students</string>
       </property>
      </widget>
     </widget>
@@ -357,9 +452,9 @@
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>-20</y>
-        <width>1041</width>
+        <x>90</x>
+        <y>-25</y>
+        <width>1021</width>
         <height>751</height>
        </rect>
       </property>
@@ -370,7 +465,7 @@
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="label_8">
+     <widget class="QLabel" name="text_5">
       <property name="geometry">
        <rect>
         <x>530</x>
@@ -384,8 +479,91 @@
         <pointsize>48</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
       <property name="text">
-       <string>Student</string>
+       <string>Schedule</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Friends">
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>-25</y>
+        <width>1021</width>
+        <height>751</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/assists/All_Materials/frame4.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="text_2">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>260</y>
+        <width>321</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Friends</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Notifification">
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>-25</y>
+        <width>1021</width>
+        <height>751</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/assists/All_Materials/frame4.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="text_4">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>320</y>
+        <width>251</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Notification</string>
       </property>
      </widget>
     </widget>
@@ -399,49 +577,21 @@
       <height>831</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>17</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-image: url(:/assists/All_Materials/peakpx.jpg);</string>
     </property>
-    <widget class="QLabel" name="label_10">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>140</y>
-       <width>111</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>50</width>
-       <height>10</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>1000</width>
-       <height>1000</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: transparent;</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="Materials.qrc">:/assists/All_Materials/Admin.png</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_11">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>80</y>
-       <width>191</width>
+       <x>29</x>
+       <y>61</y>
+       <width>181</width>
        <height>20</height>
       </rect>
      </property>
@@ -470,10 +620,10 @@
     <widget class="QPushButton" name="logout_2">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>570</y>
-       <width>131</width>
-       <height>51</height>
+       <x>52</x>
+       <y>619</y>
+       <width>111</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="font">
@@ -482,6 +632,9 @@
        <italic>false</italic>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
@@ -498,18 +651,21 @@ color: rgb(255, 255, 255);
     <widget class="QPushButton" name="graph">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>300</y>
-       <width>201</width>
-       <height>36</height>
+       <x>-18</x>
+       <y>244</y>
+       <width>261</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>17</pointsize>
+       <pointsize>12</pointsize>
        <italic>false</italic>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
@@ -525,6 +681,12 @@ color: rgb(255, 255, 255);
       <iconset resource="Materials.qrc">
        <normaloff>:/assists/All_Materials/Location.png</normaloff>:/assists/All_Materials/Location.png</iconset>
      </property>
+     <property name="iconSize">
+      <size>
+       <width>50</width>
+       <height>30</height>
+      </size>
+     </property>
      <property name="checkable">
       <bool>true</bool>
      </property>
@@ -532,18 +694,21 @@ color: rgb(255, 255, 255);
     <widget class="QPushButton" name="student">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>370</y>
-       <width>192</width>
-       <height>36</height>
+       <x>-19</x>
+       <y>321</y>
+       <width>241</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>17</pointsize>
+       <pointsize>12</pointsize>
        <italic>false</italic>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
@@ -559,6 +724,12 @@ color: rgb(255, 255, 255);
       <iconset resource="Materials.qrc">
        <normaloff>:/assists/All_Materials/Student.png</normaloff>:/assists/All_Materials/Student.png</iconset>
      </property>
+     <property name="iconSize">
+      <size>
+       <width>50</width>
+       <height>30</height>
+      </size>
+     </property>
      <property name="checkable">
       <bool>true</bool>
      </property>
@@ -566,18 +737,21 @@ color: rgb(255, 255, 255);
     <widget class="QPushButton" name="course">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>220</y>
+       <x>-19</x>
+       <y>170</y>
        <width>192</width>
        <height>34</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>17</pointsize>
+       <pointsize>12</pointsize>
        <italic>false</italic>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
@@ -592,8 +766,8 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="iconSize">
       <size>
-       <width>20</width>
-       <height>20</height>
+       <width>50</width>
+       <height>30</height>
       </size>
      </property>
      <property name="checkable">
@@ -606,18 +780,21 @@ color: rgb(255, 255, 255);</string>
     <widget class="QPushButton" name="schedule">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>450</y>
+       <x>-12</x>
+       <y>398</y>
        <width>192</width>
        <height>34</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>17</pointsize>
+       <pointsize>12</pointsize>
        <italic>false</italic>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
@@ -627,11 +804,17 @@ color: rgb(255, 255, 255);
 }</string>
      </property>
      <property name="text">
-      <string> Scedule</string>
+      <string> Schedule</string>
      </property>
      <property name="icon">
       <iconset resource="Materials.qrc">
        <normaloff>:/assists/All_Materials/Calendar.png</normaloff>:/assists/All_Materials/Calendar.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>50</width>
+       <height>30</height>
+      </size>
      </property>
      <property name="checkable">
       <bool>true</bool>
@@ -640,8 +823,8 @@ color: rgb(255, 255, 255);
     <widget class="QPushButton" name="Test_2">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>10</y>
+       <x>19</x>
+       <y>4</y>
        <width>51</width>
        <height>51</height>
       </rect>
@@ -666,6 +849,98 @@ color: rgb(255, 255, 255);
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QPushButton" name="FrienddsButton">
+     <property name="geometry">
+      <rect>
+       <x>-11</x>
+       <y>478</y>
+       <width>170</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
+     </property>
+     <property name="text">
+      <string>Friends</string>
+     </property>
+     <property name="icon">
+      <iconset resource="Materials.qrc">
+       <normaloff>:/assists/All_Materials/Friends.png</normaloff>:/assists/All_Materials/Friends.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>50</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="NotificationButton">
+     <property name="geometry">
+      <rect>
+       <x>-5</x>
+       <y>552</y>
+       <width>191</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
+     </property>
+     <property name="text">
+      <string>Notification</string>
+     </property>
+     <property name="icon">
+      <iconset resource="Materials.qrc">
+       <normaloff>:/assists/All_Materials/notification.png</normaloff>:/assists/All_Materials/notification.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>50</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>73</x>
+       <y>92</y>
+       <width>71</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/assists/All_Materials/User.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <zorder>label</zorder>
    <zorder>stackedWidget</zorder>
@@ -678,7 +953,7 @@ color: rgb(255, 255, 255);
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
@@ -695,60 +970,12 @@ color: rgb(255, 255, 255);
    <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>254</x>
-     <y>23</y>
+     <x>70</x>
+     <y>55</y>
     </hint>
     <hint type="destinationlabel">
      <x>43</x>
      <y>200</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>Test</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>Full</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>260</x>
-     <y>21</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>210</x>
-     <y>425</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>course_icon</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>course</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>59</x>
-     <y>240</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>114</x>
-     <y>250</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>course</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>course_icon</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>175</x>
-     <y>241</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>38</x>
-     <y>257</y>
     </hint>
    </hints>
   </connection>
@@ -763,8 +990,72 @@ color: rgb(255, 255, 255);
      <y>321</y>
     </hint>
     <hint type="destinationlabel">
-     <x>130</x>
-     <y>331</y>
+     <x>370</x>
+     <y>340</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>notification</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>NotificationButton</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>75</x>
+     <y>583</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>257</x>
+     <y>603</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Test</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Full</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>55</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>450</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>course</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>course_icon</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>415</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>38</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>course_icon</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>course</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>59</x>
+     <y>240</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>354</x>
+     <y>268</y>
     </hint>
    </hints>
   </connection>
@@ -775,44 +1066,12 @@ color: rgb(255, 255, 255);
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>164</x>
-     <y>326</y>
+     <x>404</x>
+     <y>340</y>
     </hint>
     <hint type="destinationlabel">
      <x>41</x>
-     <y>326</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>student_icon</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>student</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>58</x>
-     <y>395</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>132</x>
-     <y>405</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>student</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>student_icon</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>154</x>
-     <y>405</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>12</x>
-     <y>391</y>
+     <y>325</y>
     </hint>
    </hints>
   </connection>
@@ -827,24 +1086,24 @@ color: rgb(255, 255, 255);
      <y>473</y>
     </hint>
     <hint type="destinationlabel">
-     <x>117</x>
-     <y>486</y>
+     <x>357</x>
+     <y>478</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>schedule</sender>
+   <sender>logout_2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>schedule_icon</receiver>
+   <receiver>logout</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>161</x>
-     <y>476</y>
+     <x>386</x>
+     <y>655</y>
     </hint>
     <hint type="destinationlabel">
-     <x>6</x>
-     <y>485</y>
+     <x>43</x>
+     <y>645</y>
     </hint>
    </hints>
   </connection>
@@ -856,27 +1115,75 @@ color: rgb(255, 255, 255);
    <hints>
     <hint type="sourcelabel">
      <x>71</x>
-     <y>597</y>
+     <y>635</y>
     </hint>
     <hint type="destinationlabel">
-     <x>160</x>
-     <y>619</y>
+     <x>400</x>
+     <y>655</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>logout_2</sender>
+   <sender>student</sender>
    <signal>toggled(bool)</signal>
-   <receiver>logout</receiver>
+   <receiver>student_icon</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>146</x>
-     <y>607</y>
+     <x>394</x>
+     <y>410</y>
     </hint>
     <hint type="destinationlabel">
-     <x>43</x>
-     <y>620</y>
+     <x>12</x>
+     <y>391</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>friends</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>FrienddsButton</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>57</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>264</x>
+     <y>534</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>schedule</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>schedule_icon</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>401</x>
+     <y>478</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>475</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>student_icon</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>student</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>58</x>
+     <y>395</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>372</x>
+     <y>410</y>
     </hint>
    </hints>
   </connection>

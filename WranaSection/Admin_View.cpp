@@ -1,5 +1,5 @@
-#include "Admin_View.h"
-#include "ui_Admin_View.h"
+#include "User_View.h"
+#include "ui_User_View.h"
 #include <QGraphicsBlurEffect>
 
 AdminView::AdminView(QWidget *parent)
@@ -65,9 +65,6 @@ void AdminView::on_student_icon_toggled(bool checked)
 {
     ui->stackedWidget->setCurrentIndex(2);
 }
-
-
-
 
 void AdminView::on_schedule_icon_toggled(bool checked)
 {
