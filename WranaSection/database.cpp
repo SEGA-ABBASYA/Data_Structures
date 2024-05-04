@@ -1,6 +1,7 @@
 #include "database.h"
 #include "user.h"
 #include "Schedule.h"
+#include"course.h"
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
@@ -14,8 +15,13 @@ QMap<string, QMap<Timetable, Schedule>> Database::schedules;
 vector<User> Database::users;
 Admin Database::admin;
 
+
+
+
 Database::Database() {
     adminFile.setFileName("Files/Admin.txt");
+
+    adminFile.setFileName( "Files/Admin.txt");
     CoursesFile.setFileName("Files/Courses.txt");
     usersFile.setFileName("Files/Users.txt");
     locationsFile.setFileName("Files/Locations.txt");
@@ -78,14 +84,17 @@ void Database::ReadAdmin() {
 }
 
 void Database::WriteCourses() {
+
+
     ofstream Writer(CoursesFile.fileName().toStdString());
     if (Writer.is_open()) {
         for (auto& course : courses) {
 
             Writer << course.second.getCourseName() << "\n";
             Writer << course.second.getDepartment() << "\n";
-            Writer <<  course.second.getSection_S() << "\n";
             Writer << course.second.getLab_S()<< "\n";
+            Writer <<  course.second.getSection_S() << "\n";
+
             // Write doctors
             for (auto& doctor : course.second.getDoctors()) {
                 Writer << doctor <<'\n';
@@ -124,8 +133,9 @@ void Database::ReadCourses() {
             vector<string> doctors, teachingAssistants;
 
             getline(Reader, department);
-            getline(Reader, section_string);
             getline(Reader, lab_string);
+             getline(Reader, section_string);
+
             while (getline(Reader, doctor) && doctor != "---") {
                 doctors.push_back(doctor);
             }
@@ -139,7 +149,7 @@ void Database::ReadCourses() {
 
             if(lab_string=="yes") Lab=1;
             else Lab=0;
-
+          //  if(courseName=="") continue;
             Course course(courseName, department,Lab,section, doctors, teachingAssistants);
             qDebug() << courseName << ' ' << department << '\n';
             courses[courseName]=course;

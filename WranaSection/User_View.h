@@ -16,6 +16,17 @@ class UserView : public QMainWindow
 public:
     UserView(QWidget *parent = nullptr);
     ~UserView();
+    AdminView(QWidget *parent = nullptr);
+    void Write_Courses_table();
+    void Add_course_row();
+    void Delete_course_row();
+
+    ~AdminView();
+
+
+
+
+
 
 
 private slots:
@@ -36,6 +47,40 @@ private slots:
     void on_FrienddsButton_toggled(bool checked);
 
     void on_NotificationButton_toggled(bool checked);
+
+
+
+
+
+
+
+
+    void on_pushButton_18_clicked();
+
+    void on_pushButton_clicked();
+
+
+
+
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_17_clicked();
+
+    void on_pushButton_12_clicked();
+
+    void on_pushButton_11_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_4_clicked();
+
+
+
+
+
+
+
 
 private:
     Ui::MainWindow *ui;

@@ -20,5 +20,15 @@
         <file>All_Materials/notification.png</file>
         <file>All_Materials/notificationtxt.png</file>
         <file>All_Materials/User.png</file>
+        <file>All_Materials/add.png</file>
+        <file>All_Materials/delete.png</file>
+        <file>All_Materials/edit.png</file>
+        <file>All_Materials/Line 3.png</file>
+        <file>All_Materials/Students_ Info.png</file>
+        <file>All_Materials/Line 1.png</file>
+        <file>All_Materials/Group 34442.png</file>
+        <file>All_Materials/Course.png</file>
+        <file>All_Materials/Building_Graph.png</file>
+        <file>All_Materials/Rectangle 79.png</file>
     </qresource>
 </RCC>
