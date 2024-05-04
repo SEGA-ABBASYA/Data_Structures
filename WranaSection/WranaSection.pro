@@ -22,14 +22,12 @@ SOURCES += \
 HEADERS += \
     Graph.h \
     Maingraph.h \
-    Admin_View.h \
     Location.h \
     Schedule.h \
     course.h \
     Admin.h \
     database.h \
     user.h \
-    Location.cpp
 FORMS +=
 
 # Default rules for deployment.
