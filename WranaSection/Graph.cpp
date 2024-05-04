@@ -4,7 +4,7 @@ bool Graph::inborders(int x, int y, int limitx, int limity)
 {
     return x >= 0 && x < limitx && y >= 0 && y < limity;
 }
-
+//Yarab nngz
 Graph::Graph(int rows, int cols, vector<string>grid) {
     this->rows = rows;
     this->cols = cols;
