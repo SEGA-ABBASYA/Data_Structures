@@ -94,7 +94,7 @@ background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>310</y>
+       <y>320</y>
        <width>89</width>
        <height>31</height>
       </rect>
@@ -395,7 +395,7 @@ color: rgb(157, 108, 255);</string>
      <widget class="QPushButton" name="pushButton_18">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>180</x>
         <y>130</y>
         <width>131</width>
         <height>41</height>
