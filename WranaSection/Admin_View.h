@@ -18,10 +18,6 @@ public:
     ~AdminView();
 
 
-
-
-
-
 private slots:
 
     void on_Test_toggled();

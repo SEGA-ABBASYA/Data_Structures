@@ -9,14 +9,6 @@ AdminView::AdminView(QWidget *parent)
     ui->setupUi(this);
     ui->Test->setCheckable(true);
     ui->Full->hide();
-    // QGraphicsBlurEffect* p_blur = new QGraphicsBlurEffect;
-    // p_blur->setBlurRadius(3);
-    // p_blur->setBlurHints(QGraphicsBlurEffect::QualityHint);
-
-    //ui->Full->setGraphicsEffect(p_blur);
-   // ui->icon_name_widget_2->)
-   // ui->icon_name_widget_2->auz;
- //  ui->icon_name_widget_2->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
 }
 
 AdminView::~AdminView()
