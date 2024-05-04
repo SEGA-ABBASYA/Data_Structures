@@ -1,6 +1,6 @@
 #ifndef ADMIN_VIEW_H
 #define ADMIN_VIEW_H
-
+//
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
