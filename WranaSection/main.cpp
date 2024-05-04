@@ -1,6 +1,5 @@
 #include "Maingraph.h"
 #include "Database.h"
-#include "User_View.h"
 #include <QApplication>
 using namespace std;
 void write()
@@ -12,9 +11,9 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Database db;
-    UserView w;
+    //UserView w;
     db.read();
-    w.show();
+    //w.show();
     vector<string>c;
     c.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++...+");
     c.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++...+");

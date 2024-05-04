@@ -18,8 +18,7 @@ SOURCES += \
     main.cpp \
     database.cpp \
     user.cpp \
-    Location.cpp\
-    User_View.cpp
+    Location.cpp
 HEADERS += \
     Graph.h \
     Maingraph.h \
@@ -30,10 +29,8 @@ HEADERS += \
     Admin.h \
     database.h \
     user.h \
-    Location.cpp\
-    User_View.h
-FORMS += \
-  User_View.ui
+    Location.cpp
+FORMS +=
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
