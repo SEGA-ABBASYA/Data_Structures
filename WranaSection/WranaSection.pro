@@ -29,8 +29,8 @@ HEADERS += \
     Admin.h \
     database.h \
     Admin_View.h \
-    user.h \
-FORMS +=
+    user.h
+FORMS += \
     Admin_View.ui
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
