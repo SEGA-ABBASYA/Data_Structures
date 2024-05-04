@@ -1,9 +1,10 @@
 #include "Admin_View.h"
 #include "ui_Admin_View.h"
-#include"course.h"
-#include"database.h"
+#include "course.h"
+#include "database.h"
 #include <QGraphicsBlurEffect>
 #include <QDebug>
+#include "login.h"
 
 AdminView::AdminView(QWidget *parent)
     : QMainWindow(parent)
@@ -246,5 +247,11 @@ void AdminView::Delete_course_row()
     string name= ui->tableWidget->item(row-1,0)->text().toStdString();
     Database::courses.erase(name);
     row--;
+}
+
+
+void AdminView::on_logout_clicked()
+{
+    Login::w_stack->setCurrentIndex(0);
 }
 

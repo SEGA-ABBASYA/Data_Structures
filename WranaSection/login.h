@@ -1,7 +1,9 @@
 #ifndef LOGIN_H
 #define LOGIN_H
-
+#include "newuser.h"
+#include "Admin_View.h"
 #include <QMainWindow>
+#include <QStackedWidget>
 
 namespace Ui {
 class Login;
@@ -12,7 +14,10 @@ class Login : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Login(QWidget *parent = nullptr);
+    static QStackedWidget *w_stack;
+    NewUser *regPage;
+    AdminView *admPage;
+    Login(QWidget *parent = nullptr);
     ~Login();
 
 private:

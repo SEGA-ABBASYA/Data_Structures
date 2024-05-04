@@ -1,6 +1,5 @@
 #ifndef ADMIN_VIEW_H
 #define ADMIN_VIEW_H
-//
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -22,11 +21,6 @@ public:
     ~AdminView();
 
 
-
-
-
-
-
 private slots:
 
     void on_Test_toggled();
@@ -42,21 +36,9 @@ private slots:
 
     void on_Test_2_toggled();
 
-
- //
-
-
-
-
-
-
     void on_pushButton_18_clicked();
 
     void on_pushButton_clicked();
-
-
-
-
 
     void on_pushButton_3_clicked();
 
@@ -70,12 +52,7 @@ private slots:
 
     void on_pushButton_4_clicked();
 
-
-
-
-
-
-
+    void on_logout_clicked();
 
 private:
     Ui::MainWindow *ui;

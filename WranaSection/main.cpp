@@ -1,7 +1,7 @@
 #include "Maingraph.h"
 #include "Database.h"
 #include <QApplication>
-#include "Admin_View.h"
+#include "login.h"
 using namespace std;
 void write()
 {
@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Database db;
-    AdminView w;
+    Login w;
     db.read();
     w.show();
     vector<string>c;

@@ -52,28 +52,25 @@ void NewUser::reg()
     if(ui->male->isChecked() || ui->female->isChecked()) gender = (ui->male->isChecked())? 'M': 'F';
 
     auto user = Database::users.find(userName);
-    if(user != Database::users.end())
+    if(!validEmail(email))
+    {
+        QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nNot Valid Email");
+    }
+    else if(user != Database::users.end())
     {
         QMessageBox::warning(this, "Error", "userName is Already Exist");
-        Login *login = new Login();
-        login->show();
-        this->close();
     }
-    else if(name.empty() || email.empty() || userName.empty() || password.empty() || gender == 'N')
+    else if(password.size() < 8)
     {
-        QMessageBox::warning(this, "Error", "Please complete all fields");
+        QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nPlease, Choose a password with 8 or more characters");
     }
     else if(ui->idLineEdit->text().size() < 10)
     {
         QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nPlease, Check the id, it should be at least 10 digits");
     }
-    else if(!validEmail(email))
+    else if(name.empty() || email.empty() || userName.empty() || password.empty() || gender == 'N')
     {
-        QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nNot Valid Email");
-    }
-    else if(password.size() < 8)
-    {
-        QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nPlease, Choose a password with 8 or more characters");
+        QMessageBox::warning(this, "Error", "Please complete all fields");
     }
     else
     {
@@ -84,14 +81,14 @@ void NewUser::reg()
         // Home *home = new Home();
         // home->show();
         // this->close();
+        Login::w_stack->setCurrentIndex(0);
     }
 }
 
 void NewUser::login()
 {
-    Login *login = new Login();
-    login->show();
-    this->close();
+    Login::w_stack->setCurrentIndex(0);
+
 }
 
 void NewUser::showPass()
