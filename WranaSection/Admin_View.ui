@@ -61,7 +61,17 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/assists/All_Materials/peakpx.jpg);</string>
+     <string notr="true">QWidget{
+	
+
+  background-image: url(:/assists/All_Materials/peakpx.jpg);
+}
+QPushButton:checked
+{
+ background-color: rgb(30, 30, 91);
+ 	
+color: rgb(255, 255, 255);
+}</string>
     </property>
     <widget class="QPushButton" name="logout">
      <property name="geometry">
@@ -73,7 +83,8 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
+      <string notr="true">background-color: rgb(249, 83, 0);
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -120,6 +131,9 @@
      <property name="checked">
       <bool>true</bool>
      </property>
+     <property name="autoExclusive">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QPushButton" name="graph_icon">
      <property name="geometry">
@@ -147,6 +161,9 @@
       </size>
      </property>
      <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="autoExclusive">
       <bool>true</bool>
      </property>
     </widget>
@@ -178,12 +195,15 @@
      <property name="checkable">
       <bool>true</bool>
      </property>
+     <property name="autoExclusive">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QPushButton" name="schedule_icon">
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>550</y>
+       <y>540</y>
        <width>89</width>
        <height>41</height>
       </rect>
@@ -206,6 +226,9 @@
       </size>
      </property>
      <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="autoExclusive">
       <bool>true</bool>
      </property>
     </widget>
@@ -265,19 +288,14 @@
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>530</x>
-        <y>260</y>
-        <width>141</width>
-        <height>91</height>
+        <x>120</x>
+        <y>60</y>
+        <width>191</width>
+        <height>41</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>28</pointsize>
-       </font>
-      </property>
       <property name="text">
-       <string>Course</string>
+       <string/>
       </property>
       <property name="pixmap">
        <pixmap resource="Materials.qrc">:/assists/All_Materials/Course.png</pixmap>
@@ -944,19 +962,143 @@ background-color: rgb(195, 0, 0);</string>
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>470</x>
-        <y>270</y>
-        <width>241</width>
-        <height>121</height>
+        <x>100</x>
+        <y>60</y>
+        <width>321</width>
+        <height>41</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>48</pointsize>
-       </font>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Materials.qrc">:/assists/All_Materials/Building_Graph.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_15">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>130</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
       </property>
       <property name="text">
-       <string>Graph</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="Materials.qrc">
+        <normaloff>:/assists/All_Materials/add.png</normaloff>:/assists/All_Materials/add.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>90</width>
+        <height>90</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>170</y>
+        <width>961</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Materials.qrc">:/assists/All_Materials/Line 3.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>130</y>
+        <width>20</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Materials.qrc">:/assists/All_Materials/Line 1.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_13">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>130</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="Materials.qrc">
+        <normaloff>:/assists/All_Materials/edit.png</normaloff>:/assists/All_Materials/edit.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>90</width>
+        <height>90</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>130</y>
+        <width>21</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Materials.qrc">:/assists/All_Materials/Line 1.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_14">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>130</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="Materials.qrc">
+        <normaloff>:/assists/All_Materials/delete.png</normaloff>:/assists/All_Materials/delete.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>110</width>
+        <height>110</height>
+       </size>
       </property>
      </widget>
     </widget>
@@ -982,18 +1124,434 @@ background-color: rgb(195, 0, 0);</string>
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="label_9">
+     <widget class="QLabel" name="label_12">
       <property name="geometry">
        <rect>
-        <x>510</x>
-        <y>310</y>
-        <width>361</width>
-        <height>231</height>
+        <x>120</x>
+        <y>60</y>
+        <width>301</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>Schedule</string>
+       <string/>
       </property>
+      <property name="pixmap">
+       <pixmap resource="Materials.qrc">:/assists/All_Materials/Students_ Info.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>170</y>
+        <width>961</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Materials.qrc">:/assists/All_Materials/Line 3.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>130</y>
+        <width>20</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Materials.qrc">:/assists/All_Materials/Line 1.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>130</y>
+        <width>21</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Materials.qrc">:/assists/All_Materials/Line 1.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_12">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>130</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="Materials.qrc">
+        <normaloff>:/assists/All_Materials/add.png</normaloff>:/assists/All_Materials/add.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>90</width>
+        <height>90</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_10">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>130</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="Materials.qrc">
+        <normaloff>:/assists/All_Materials/edit.png</normaloff>:/assists/All_Materials/edit.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>90</width>
+        <height>90</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_11">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>130</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="Materials.qrc">
+        <normaloff>:/assists/All_Materials/delete.png</normaloff>:/assists/All_Materials/delete.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>110</width>
+        <height>110</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>220</y>
+        <width>931</width>
+        <height>451</height>
+       </rect>
+      </property>
+      <widget class="QWidget" name="add_courses_widget_2" native="true">
+       <property name="geometry">
+        <rect>
+         <x>-40</x>
+         <y>-110</y>
+         <width>1171</width>
+         <height>611</height>
+        </rect>
+       </property>
+       <widget class="QLineEdit" name="lineEdit_20">
+        <property name="geometry">
+         <rect>
+          <x>1420</x>
+          <y>120</y>
+          <width>113</width>
+          <height>28</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_22">
+        <property name="geometry">
+         <rect>
+          <x>1170</x>
+          <y>150</y>
+          <width>113</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_33">
+        <property name="geometry">
+         <rect>
+          <x>1290</x>
+          <y>120</y>
+          <width>113</width>
+          <height>28</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_36">
+        <property name="geometry">
+         <rect>
+          <x>1290</x>
+          <y>187</y>
+          <width>113</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_37">
+        <property name="geometry">
+         <rect>
+          <x>1040</x>
+          <y>120</y>
+          <width>113</width>
+          <height>28</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_38">
+        <property name="geometry">
+         <rect>
+          <x>1040</x>
+          <y>187</y>
+          <width>113</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_39">
+        <property name="geometry">
+         <rect>
+          <x>1040</x>
+          <y>150</y>
+          <width>113</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_40">
+        <property name="geometry">
+         <rect>
+          <x>1420</x>
+          <y>187</y>
+          <width>113</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_41">
+        <property name="geometry">
+         <rect>
+          <x>1170</x>
+          <y>120</y>
+          <width>113</width>
+          <height>28</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_42">
+        <property name="geometry">
+         <rect>
+          <x>1170</x>
+          <y>187</y>
+          <width>113</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_43">
+        <property name="geometry">
+         <rect>
+          <x>1420</x>
+          <y>150</y>
+          <width>113</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_44">
+        <property name="geometry">
+         <rect>
+          <x>1290</x>
+          <y>150</y>
+          <width>113</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_45">
+        <property name="geometry">
+         <rect>
+          <x>1300</x>
+          <y>100</y>
+          <width>113</width>
+          <height>28</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tableWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>120</y>
+          <width>911</width>
+          <height>431</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>911</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>911</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(28, 28, 85);
+font: 700 9pt &quot;Segoe UI&quot;;</string>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>false</bool>
+        </property>
+        <property name="showGrid">
+         <bool>true</bool>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>150</number>
+        </attribute>
+        <row>
+         <property name="text">
+          <string>3</string>
+         </property>
+        </row>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <column>
+         <property name="text">
+          <string>Id</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Academic Year</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Section</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>User Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Password</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Gender</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="geometry">
+         <rect>
+          <x>830</x>
+          <y>450</y>
+          <width>101</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 85, 0);
+background-color: rgb(255, 0, 0);
+background-color: rgb(195, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>830</x>
+          <y>450</y>
+          <width>101</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 85, 0);
+background-color: rgb(255, 0, 0);
+background-color: rgb(195, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="Schedule">
@@ -1013,22 +1571,146 @@ background-color: rgb(195, 0, 0);</string>
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="label_8">
+     <widget class="QLabel" name="label_23">
       <property name="geometry">
        <rect>
-        <x>530</x>
-        <y>260</y>
-        <width>261</width>
-        <height>251</height>
+        <x>120</x>
+        <y>59</y>
+        <width>211</width>
+        <height>41</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>48</pointsize>
-       </font>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Materials.qrc">:/assists/All_Materials/Schedule.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_21">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>130</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
       </property>
       <property name="text">
-       <string>Student</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="Materials.qrc">
+        <normaloff>:/assists/All_Materials/add.png</normaloff>:/assists/All_Materials/add.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>90</width>
+        <height>90</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>170</y>
+        <width>961</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Materials.qrc">:/assists/All_Materials/Line 3.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_19">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>130</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="Materials.qrc">
+        <normaloff>:/assists/All_Materials/edit.png</normaloff>:/assists/All_Materials/edit.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>90</width>
+        <height>90</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>130</y>
+        <width>21</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Materials.qrc">:/assists/All_Materials/Line 1.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_25">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>130</y>
+        <width>20</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Materials.qrc">:/assists/All_Materials/Line 1.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_20">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>130</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="Materials.qrc">
+        <normaloff>:/assists/All_Materials/delete.png</normaloff>:/assists/All_Materials/delete.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>110</width>
+        <height>110</height>
+       </size>
       </property>
      </widget>
     </widget>
@@ -1043,7 +1725,17 @@ background-color: rgb(195, 0, 0);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/assists/All_Materials/peakpx.jpg);</string>
+     <string notr="true">QWidget{
+	
+
+  background-image: url(:/assists/All_Materials/peakpx.jpg);
+}
+QPushButton:checked
+{
+ background-color: rgb(30, 30, 91);
+ 	
+color: rgb(255, 255, 255);
+}</string>
     </property>
     <widget class="QLabel" name="label_10">
      <property name="geometry">
@@ -1128,6 +1820,7 @@ background-color: rgb(195, 0, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
+	background-color: rgb(249, 83, 0);
 background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 
 color: rgb(255, 255, 255);
@@ -1171,6 +1864,9 @@ color: rgb(255, 255, 255);
      <property name="checkable">
       <bool>true</bool>
      </property>
+     <property name="autoExclusive">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QPushButton" name="student">
      <property name="geometry">
@@ -1196,13 +1892,16 @@ color: rgb(255, 255, 255);
 }</string>
      </property>
      <property name="text">
-      <string> Students' Info</string>
+      <string>  Students' Info</string>
      </property>
      <property name="icon">
       <iconset resource="Materials.qrc">
        <normaloff>:/assists/All_Materials/Student.png</normaloff>:/assists/All_Materials/Student.png</iconset>
      </property>
      <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="autoExclusive">
       <bool>true</bool>
      </property>
     </widget>
@@ -1223,11 +1922,14 @@ color: rgb(255, 255, 255);
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
-color: rgb(255, 255, 255);</string>
+      <string notr="true">QPushButton{
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+color: rgb(255, 255, 255);
+}
+</string>
      </property>
      <property name="text">
-      <string> Course</string>
+      <string>  Course</string>
      </property>
      <property name="icon">
       <iconset resource="Materials.qrc">
@@ -1243,6 +1945,9 @@ color: rgb(255, 255, 255);</string>
       <bool>true</bool>
      </property>
      <property name="checked">
+      <bool>true</bool>
+     </property>
+     <property name="autoExclusive">
       <bool>true</bool>
      </property>
     </widget>
@@ -1270,13 +1975,16 @@ color: rgb(255, 255, 255);
 }</string>
      </property>
      <property name="text">
-      <string> Scedule</string>
+      <string>  Scedule</string>
      </property>
      <property name="icon">
       <iconset resource="Materials.qrc">
        <normaloff>:/assists/All_Materials/Calendar.png</normaloff>:/assists/All_Materials/Calendar.png</iconset>
      </property>
      <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="autoExclusive">
       <bool>true</bool>
      </property>
     </widget>
@@ -1338,8 +2046,8 @@ color: rgb(255, 255, 255);
    <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>254</x>
-     <y>23</y>
+     <x>70</x>
+     <y>55</y>
     </hint>
     <hint type="destinationlabel">
      <x>43</x>
@@ -1354,8 +2062,8 @@ color: rgb(255, 255, 255);
    <slot>show()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>260</x>
-     <y>21</y>
+     <x>70</x>
+     <y>55</y>
     </hint>
     <hint type="destinationlabel">
      <x>210</x>
@@ -1387,7 +2095,7 @@ color: rgb(255, 255, 255);
    <hints>
     <hint type="sourcelabel">
      <x>175</x>
-     <y>241</y>
+     <y>266</y>
     </hint>
     <hint type="destinationlabel">
      <x>38</x>
@@ -1520,6 +2228,70 @@ color: rgb(255, 255, 255);
     <hint type="destinationlabel">
      <x>43</x>
      <y>620</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>course</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>course_icon</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>135</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>73</x>
+     <y>256</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>schedule_icon</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>schedule</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>57</x>
+     <y>500</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>113</x>
+     <y>500</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>schedule</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>schedule_icon</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>487</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>42</x>
+     <y>487</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>student</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>student_icon</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>411</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>21</x>
+     <y>407</y>
     </hint>
    </hints>
   </connection>

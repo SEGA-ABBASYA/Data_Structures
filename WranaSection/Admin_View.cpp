@@ -1,6 +1,9 @@
 #include "Admin_View.h"
 #include "ui_Admin_View.h"
+#include"course.h"
+#include"database.h"
 #include <QGraphicsBlurEffect>
+#include <QDebug>
 
 AdminView::AdminView(QWidget *parent)
     : QMainWindow(parent)
@@ -9,6 +12,20 @@ AdminView::AdminView(QWidget *parent)
     ui->setupUi(this);
     ui->Test->setCheckable(true);
     ui->Full->hide();
+    ui->add_courses_widget->hide();
+    ui->pushButton->hide();
+    ui->pushButton_3->hide();
+    ui->pushButton_2->hide();
+    ui->pushButton_4->hide();
+     ui->add_courses_widget_2->hide();
+    // QGraphicsBlurEffect* p_blur = new QGraphicsBlurEffect;
+    // p_blur->setBlurRadius(3);
+    // p_blur->setBlurHints(QGraphicsBlurEffect::QualityHint);
+
+    //ui->Full->setGraphicsEffect(p_blur);
+   // ui->icon_name_widget_2->)
+   // ui->icon_name_widget_2->auz;
+ //  ui->icon_name_widget_2->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
 }
 
 AdminView::~AdminView()
@@ -43,19 +60,29 @@ void AdminView::on_Test_2_toggled()
 
 void AdminView::on_course_icon_toggled(bool checked)
 {
+
     ui->stackedWidget->setCurrentIndex(0);
+  //  if(checked) ui->course->setStyleSheet("color:rgb(177, 59, 177); ");
+  //  else ui->course->setStyleSheet("color: rgb(255, 255, 255)") ;
+
+
 }
 
 
 void AdminView::on_graph_icon_toggled(bool checked)
 {
     ui->stackedWidget->setCurrentIndex(1);
+  //  if(checked) ui->graph->setStyleSheet("color:rgb(177, 59, 177); ");
+   // else ui->graph->setStyleSheet("color: rgb(255, 255, 255)") ;
+
 }
 
 
 void AdminView::on_student_icon_toggled(bool checked)
 {
     ui->stackedWidget->setCurrentIndex(2);
+  //  if(checked) ui->student->setStyleSheet("color:rgb(177, 59, 177); ");
+  //  else ui->student->setStyleSheet("color: rgb(255, 255, 255)") ;
 }
 
 

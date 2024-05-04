@@ -1,6 +1,6 @@
 #ifndef ADMIN_VIEW_H
 #define ADMIN_VIEW_H
-
+//
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -15,7 +15,16 @@ class AdminView : public QMainWindow
 
 public:
     AdminView(QWidget *parent = nullptr);
+    void Write_Courses_table();
+    void Add_course_row();
+    void Delete_course_row();
+
     ~AdminView();
+
+
+
+
+
 
 
 private slots:
@@ -33,6 +42,8 @@ private slots:
 
     void on_Test_2_toggled();
 
+
+ //
 
 
 
