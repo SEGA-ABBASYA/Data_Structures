@@ -17,6 +17,7 @@ SOURCES += \
     Admin.cpp \
     main.cpp \
     database.cpp \
+    Admin_View.cpp \
     user.cpp \
     Location.cpp
 HEADERS += \
@@ -27,9 +28,10 @@ HEADERS += \
     course.h \
     Admin.h \
     database.h \
+    Admin_View.h \
     user.h \
 FORMS +=
-
+    Admin_View.ui
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
