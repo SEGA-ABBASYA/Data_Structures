@@ -28,7 +28,7 @@ Login::Login(QWidget *parent)
 
 Login::~Login()
 {
-
+    delete w_stack;
     delete ui;
 }
 
