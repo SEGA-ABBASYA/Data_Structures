@@ -30,5 +30,9 @@
         <file>All_Materials/Course.png</file>
         <file>All_Materials/Building_Graph.png</file>
         <file>All_Materials/Rectangle 79.png</file>
+        <file>All_Materials/Friends_text.png</file>
+        <file>All_Materials/Chat.png</file>
+        <file>All_Materials/View_Friends.png</file>
+        <file>All_Materials/Notifications.png</file>
     </qresource>
 </RCC>

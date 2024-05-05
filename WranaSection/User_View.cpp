@@ -1,5 +1,6 @@
 #include "User_View.h"
 #include "ui_User_View.h"
+#include "login.h"
 
 UserView::UserView(QWidget *parent)
     : QWidget(parent)
@@ -62,5 +63,30 @@ void UserView::on_friendicons_toggled(bool checked)
 void UserView::on_notificationicons_toggled(bool checked)
 {
     ui->stackedWidgetNew->setCurrentIndex(5);
+}
+
+
+void UserView::on_pushButton_toggled(bool checked)
+{
+    ui->stackedWidgetFriends->setCurrentIndex(0);
+}
+
+
+void UserView::on_pushButton_2_toggled(bool checked)
+{
+    ui->stackedWidgetFriends->setCurrentIndex(1);
+}
+
+
+
+void UserView::on_logouticons_clicked()
+{
+    Login::w_stack->setCurrentIndex(0);
+}
+
+
+void UserView::on_logoutfull_clicked()
+{
+    Login::w_stack->setCurrentIndex(0);
 }
 

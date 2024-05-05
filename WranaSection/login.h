@@ -2,6 +2,7 @@
 #define LOGIN_H
 #include "newuser.h"
 #include "Admin_View.h"
+#include "User_View.h"
 #include <QMainWindow>
 #include <QStackedWidget>
 
@@ -17,6 +18,7 @@ public:
     static QStackedWidget *w_stack;
     NewUser *regPage;
     AdminView *admPage;
+    UserView *userPage;
     Login(QWidget *parent = nullptr);
     ~Login();
 

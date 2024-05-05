@@ -255,3 +255,11 @@ void AdminView::on_logout_clicked()
     Login::w_stack->setCurrentIndex(0);
 }
 
+
+
+
+void AdminView::on_logout_2_clicked()
+{
+    Login::w_stack->setCurrentIndex(0);
+}
+

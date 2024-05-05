@@ -11,10 +11,12 @@ Login::Login(QWidget *parent)
     ui->setupUi(this);
     regPage = new NewUser();
     admPage = new AdminView();
+    userPage = new UserView();
     w_stack = new QStackedWidget(this);
     w_stack->addWidget(ui->centralwidget);
     w_stack->addWidget(regPage);
     w_stack->addWidget(admPage);
+    w_stack->addWidget(userPage);
     setCentralWidget(w_stack);
     w_stack->show();
     QFile styleFile("Files/dark_theme.qss");
@@ -52,10 +54,11 @@ void Login::login()
     else if(user->getPassword() == password)
     {
         // Data::currentUserName = userName;
-        QMessageBox::information(this, "Success", "Welcome Back " + QString::fromStdString(user->getName()));
+        //QMessageBox::information(this, "Success", "Welcome Back " + QString::fromStdString(user->getName()));
         // Home *home = new Home();
         // home->show();
         // this->close();
+        w_stack->setCurrentWidget(userPage);
     }
     else{
         QMessageBox::warning(this, "Error", "Wrong Password");

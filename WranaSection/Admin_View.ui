@@ -99,6 +99,9 @@ background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
        <height>40</height>
       </size>
      </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
     </widget>
     <widget class="QPushButton" name="course_icon">
      <property name="geometry">
@@ -941,6 +944,22 @@ background-color: rgb(195, 0, 0);</string>
        </property>
       </widget>
      </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>700</y>
+        <width>191</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Materials.qrc">:/assists/All_Materials/Course.png</pixmap>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="Graph">
      <widget class="QLabel" name="label_3">
@@ -1553,6 +1572,32 @@ background-color: rgb(195, 0, 0);</string>
        </widget>
       </widget>
      </widget>
+     <widget class="QPushButton" name="pushButton_22">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>700</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="Materials.qrc">
+        <normaloff>:/assists/All_Materials/add.png</normaloff>:/assists/All_Materials/add.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>90</width>
+        <height>90</height>
+       </size>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="Schedule">
      <widget class="QLabel" name="label_4">
@@ -1830,6 +1875,9 @@ color: rgb(255, 255, 255);
      <property name="text">
       <string>Logout</string>
      </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
     </widget>
     <widget class="QPushButton" name="graph">
      <property name="geometry">
@@ -2079,7 +2127,7 @@ color: rgb(255, 255, 255);
    <hints>
     <hint type="sourcelabel">
      <x>59</x>
-     <y>240</y>
+     <y>261</y>
     </hint>
     <hint type="destinationlabel">
      <x>114</x>
@@ -2196,38 +2244,6 @@ color: rgb(255, 255, 255);
     <hint type="destinationlabel">
      <x>6</x>
      <y>485</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>logout</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>logout_2</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>71</x>
-     <y>597</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>160</x>
-     <y>619</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>logout_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>logout</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>146</x>
-     <y>607</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>43</x>
-     <y>620</y>
     </hint>
    </hints>
   </connection>

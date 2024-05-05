@@ -3,6 +3,7 @@
 #include <QApplication>
 #include "login.h"
 #include "User_View.h"
+#include "Admin_View.h"
 using namespace std;
 void write()
 {
@@ -13,7 +14,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Database db;
-    UserView w;
+    Login w;
     db.read();
     w.show();
     vector<string>c;

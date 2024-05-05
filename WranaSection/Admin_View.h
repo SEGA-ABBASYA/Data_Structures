@@ -54,6 +54,8 @@ private slots:
 
     void on_logout_clicked();
 
+    void on_logout_2_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
