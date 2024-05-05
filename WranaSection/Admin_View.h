@@ -14,9 +14,11 @@ class AdminView : public QMainWindow
 
 public:
     AdminView(QWidget *parent = nullptr);
-    void Write_Courses_table();
-    void Add_course_row();
-    void Delete_course_row();
+    void Write_Courses_table_edit();
+     void Write_Courses_table_delete();
+    void Write_Students_table_edit();
+    void Write_Students_table_delete();
+
 
     ~AdminView();
 
@@ -36,15 +38,9 @@ private slots:
 
     void on_Test_2_toggled();
 
-    void on_pushButton_18_clicked();
 
-    void on_pushButton_clicked();
-
-    void on_pushButton_3_clicked();
 
     void on_pushButton_17_clicked();
-
-    void on_pushButton_12_clicked();
 
     void on_pushButton_11_clicked();
 
@@ -55,6 +51,16 @@ private slots:
     void on_logout_clicked();
 
     void on_logout_2_clicked();
+
+
+
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_16_clicked();
+
+    void on_pushButton_12_clicked();
+
+    void on_pushButton_18_clicked();
 
 private:
     Ui::MainWindow *ui;

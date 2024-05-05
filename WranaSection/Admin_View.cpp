@@ -13,12 +13,9 @@ AdminView::AdminView(QWidget *parent)
     ui->setupUi(this);
     ui->Test->setCheckable(true);
     ui->Full->hide();
-    ui->add_courses_widget->hide();
-    ui->pushButton->hide();
-    ui->pushButton_3->hide();
-    ui->pushButton_2->hide();
-    ui->pushButton_4->hide();
-     ui->add_courses_widget_2->hide();
+    ui->stack_widget_course->hide();
+    ui->stackedWidget_student->hide();
+
     // QGraphicsBlurEffect* p_blur = new QGraphicsBlurEffect;
     // p_blur->setBlurRadius(3);
     // p_blur->setBlurHints(QGraphicsBlurEffect::QualityHint);
@@ -98,67 +95,24 @@ void AdminView::on_schedule_icon_toggled(bool checked)
 
 
 
-void AdminView::on_pushButton_18_clicked()
-{
-    Write_Courses_table();
-    ui->add_courses_widget->show();
-      ui->pushButton_3->hide();
-    ui->pushButton->show();
-   //ui->pushButton_2->show();
-}
 
 
-void AdminView::on_pushButton_clicked()
-{
 
-
-    Add_course_row();
-
-
-}
 
 
 
  int row=5;
 
-void AdminView::on_pushButton_3_clicked()
-{
-    // int row=ui->tableWidget->rowCount();
-    Delete_course_row();
-    ui->tableWidget->item(row-1,0)->setText("null");
-   ui->tableWidget->item(row-1,1)->setText("null");
-   ui->tableWidget->item(row-1,2)->setText("null");
-   ui->tableWidget->item(row-1,3)->setText("null");
-   ui->tableWidget->item(row-1,4)->setText("null");
-   ui->tableWidget->item(row-1,5)->setText("null");
-}
 
 
-void AdminView::on_pushButton_17_clicked()
-{
-     Write_Courses_table();
-      ui->add_courses_widget->show();
-
-        ui->pushButton->hide();
-    ui->pushButton_3->show();
-
-
-}
-
-
-void AdminView::on_pushButton_12_clicked()
-{
-    ui->add_courses_widget_2->show();
-     ui->pushButton_4->hide();
-    ui->pushButton_2->show();
-}
 
 
 void AdminView::on_pushButton_11_clicked()
 {
-     ui->add_courses_widget_2->show();
-     ui->pushButton_2->hide();
-     ui->pushButton_4->show();
+    Write_Students_table_delete();
+    ui->stackedWidget_student->setCurrentWidget(ui->delete_student_widget);
+    ui->stackedWidget_student->show();
+
 }
 
 
@@ -174,7 +128,7 @@ void AdminView::on_pushButton_4_clicked()
     int row=ui->tableWidget_2->rowCount();
     ui->tableWidget_2->removeRow(row-1);
 }
-void AdminView::Write_Courses_table()
+void AdminView::Write_Courses_table_edit()
 {
 
 
@@ -196,58 +150,99 @@ void AdminView::Write_Courses_table()
     }
 
 }
-
-
-
-
-void AdminView::Add_course_row()
+void AdminView::Write_Courses_table_delete()
 {
 
-   // ui->tableWidget->item(5,0)->setText("malak");
-    string name,dept,lab,section,doctors,TA_s, tempString; bool section_b,lab_b;
-    name= ui->tableWidget->item(row,0)->text().toStdString();
-    dept= ui->tableWidget->item(row,1)->text().toStdString();
-    lab= ui->tableWidget->item(row,2)->text().toStdString();
-    section= ui->tableWidget->item(row,3)->text().toStdString();
-    doctors= ui->tableWidget->item(row,4)->text().toStdString();
-      TA_s= ui->tableWidget->item(row,5)->text().toStdString();
 
-    row++;
+    int i=0;
+    for (auto& course : Database:: courses) {
 
-    section_b=(section=="yes")? 1:0;
-    lab_b=(lab=="yes")? 1:0;
-    vector<string>ALLDoctors,ALLTAs;
+        // qDebug() << QString::fromStdString((course.second.getTAs_S()));
 
-    for (char c :  doctors) {
-        if (c != ',') {
-            tempString += c;
-        } else {
-            ALLDoctors.push_back(tempString);
-            tempString.clear();
-        }
+        ui->tableWidget_3->item(i,0)->setText(QString::fromStdString(course.second.getCourseName()));
+        ui->tableWidget_3->item(i,1)->setText(QString::fromStdString(course.second.getDepartment()));
+        ui->tableWidget_3->item(i,2)->setText(QString::fromStdString(course.second.getLab_S()));
+        ui->tableWidget->item(i,3)->setText(QString::fromStdString(course.second.getSection_S()));
+
+        ui->tableWidget_3->item(i,4)->setText(QString::fromStdString(course.second.getDoctors_S()));
+        ui->tableWidget_3->item(i,5)->setText(QString::fromStdString(course.second.getTAs_S()));
+
+
+        i++;
     }
 
-     tempString.clear(); //a,b,
-    for (char c :   TA_s) {
-        if (c != ',') {
-            tempString += c;
-        } else {
-            ALLTAs.push_back(tempString);
-            tempString.clear();
-        }
-    }
-
-   // ALLTAs.push_back(tempString);
-
-    Course c(name,dept,lab_b,section_b,ALLDoctors,ALLTAs);
-   Database::courses[name]=c;
 }
-void AdminView::Delete_course_row()
+
+
+void AdminView::Write_Students_table_edit()
 {
-    string name= ui->tableWidget->item(row-1,0)->text().toStdString();
-    Database::courses.erase(name);
-    row--;
+
+
+    int i=0;
+    for (auto& student : Database:: users) {
+
+        string Gender,ID,Academic_year,Section;
+
+        ui->tableWidget_2->item(i,0)->setText(QString::fromStdString(student.getName()));
+        ui->tableWidget_2->item(i,1)->setText(QString::fromStdString(student.getEmail()));
+
+        ID=to_string(student.getId());
+        ui->tableWidget_2->item(i,2)->setText(QString::fromStdString(ID));
+
+        Academic_year=to_string(student.getAcademicYear());
+        ui->tableWidget_2->item(i,3)->setText(QString::fromStdString( Academic_year));
+
+        Section=to_string(student.getSection());
+        ui->tableWidget_2->item(i,4)->setText(QString::fromStdString(Section));
+
+        ui->tableWidget_2->item(i,5)->setText(QString::fromStdString(student.getUsername()));
+        ui->tableWidget_2->item(i,6)->setText(QString::fromStdString(student.getPassword()));
+        ui->tableWidget_2->item(i,7)->setText(QString::fromStdString(student.getProgram()));
+
+
+        Gender.push_back(student.getGender());
+        ui->tableWidget_2->item(i,8)->setText(QString::fromStdString(Gender));
+
+
+        i++;
+    }
 }
+void AdminView::Write_Students_table_delete()
+{
+
+
+    int i=0;
+    for (auto& student : Database:: users) {
+
+       string Gender,ID,Academic_year,Section;
+
+        ui->tableWidget_4->item(i,0)->setText(QString::fromStdString(student.getName()));
+        ui->tableWidget_4->item(i,1)->setText(QString::fromStdString(student.getEmail()));
+
+        ID=to_string(student.getId());
+        ui->tableWidget_4->item(i,2)->setText(QString::fromStdString(ID));
+
+        Academic_year=to_string(student.getAcademicYear());
+        ui->tableWidget_4->item(i,3)->setText(QString::fromStdString( Academic_year));
+
+        Section=to_string(student.getSection());
+        ui->tableWidget_4->item(i,4)->setText(QString::fromStdString(Section));
+
+        ui->tableWidget_4->item(i,5)->setText(QString::fromStdString(student.getUsername()));
+      ui->tableWidget_4->item(i,6)->setText(QString::fromStdString(student.getPassword()));
+        ui->tableWidget_4->item(i,7)->setText(QString::fromStdString(student.getProgram()));
+
+      Gender.push_back(student.getGender());
+
+         ui->tableWidget_4->item(i,8)->setText(QString::fromStdString(Gender));
+
+
+        i++;
+    }
+
+}
+
+
 
 
 void AdminView::on_logout_clicked()
@@ -261,5 +256,45 @@ void AdminView::on_logout_clicked()
 void AdminView::on_logout_2_clicked()
 {
     Login::w_stack->setCurrentIndex(0);
+}
+
+
+
+
+void AdminView::on_pushButton_10_clicked()
+{
+    Write_Students_table_edit();
+    ui->stackedWidget_student->setCurrentWidget(ui->edit_student_widget);
+    ui->stackedWidget_student->show();
+}
+
+
+
+
+void AdminView::on_pushButton_16_clicked()
+{
+      Write_Courses_table_edit();
+      ui->stackedWidget_student->setCurrentWidget(ui->edit_course_widget);
+    ui->stack_widget_course->show();
+
+}
+
+
+void AdminView::on_pushButton_12_clicked()
+{
+    ui->stackedWidget_student->hide();
+}
+
+
+void AdminView::on_pushButton_17_clicked()
+{
+    Write_Courses_table_delete();
+    ui->stack_widget_course->setCurrentWidget(ui->delete_course_widget);
+    ui->stack_widget_course->show();
+}
+
+void AdminView::on_pushButton_18_clicked()
+{
+    ui->stack_widget_course->hide();
 }
 
