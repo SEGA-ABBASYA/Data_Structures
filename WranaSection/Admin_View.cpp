@@ -264,6 +264,7 @@ void AdminView::on_logout_2_clicked()
 void AdminView::on_pushButton_10_clicked()
 {
     Write_Students_table_edit();
+
     ui->stackedWidget_student->setCurrentWidget(ui->edit_student_widget);
     ui->stackedWidget_student->show();
 }
