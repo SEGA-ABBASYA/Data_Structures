@@ -13,6 +13,7 @@ SOURCES += \
     Maingraph.cpp \
     Location.cpp \
     Schedule.cpp \
+    User_View.cpp \
     course.cpp \
     Admin.cpp \
     main.cpp \
@@ -27,6 +28,7 @@ HEADERS += \
     Maingraph.h \
     Location.h \
     Schedule.h \
+    User_View.h \
     course.h \
     Admin.h \
     database.h \
@@ -36,6 +38,7 @@ HEADERS += \
     login.h
 
 FORMS += \
+    User_View.ui \
     newuser.ui \
     login.ui \
     Admin_View.ui
