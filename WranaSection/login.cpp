@@ -9,14 +9,8 @@ Login::Login(QWidget *parent)
     , ui(new Ui::Login)
 {
     ui->setupUi(this);
-    regPage = new NewUser();
-    admPage = new AdminView();
-    userPage = new UserView();
     w_stack = new QStackedWidget(this);
     w_stack->addWidget(ui->centralwidget);
-    w_stack->addWidget(regPage);
-    w_stack->addWidget(admPage);
-    w_stack->addWidget(userPage);
     setCentralWidget(w_stack);
     w_stack->show();
     QFile styleFile("Files/dark_theme.qss");
@@ -34,6 +28,7 @@ Login::Login(QWidget *parent)
 
 Login::~Login()
 {
+
     delete ui;
 }
 
@@ -43,9 +38,11 @@ void Login::login()
     string password = ui->passwordLineEdit->text().toStdString();
     auto user = Database::users.find(userName);
     if(userName == "admin" && password == "admin"){
+        admPage = new AdminView();
+        w_stack->addWidget(admPage);
         w_stack->setCurrentWidget(admPage);
-        ui->userNameLineEdit->text().clear();
-        ui->passwordLineEdit->text().clear();
+        ui->userNameLineEdit->clear();
+        ui->passwordLineEdit->clear();
     }
     else if(user == Database::users.end())
     {
@@ -58,7 +55,11 @@ void Login::login()
         // Home *home = new Home();
         // home->show();
         // this->close();
+        userPage = new UserView();
+        w_stack->addWidget(userPage);
         w_stack->setCurrentWidget(userPage);
+        ui->userNameLineEdit->clear();
+        ui->passwordLineEdit->clear();
     }
     else{
         QMessageBox::warning(this, "Error", "Wrong Password");
@@ -71,8 +72,11 @@ void Login::reg()
     // NewUser *newUser = new NewUser();
     // newUser->show();
     // this->close();
-
-    w_stack->setCurrentIndex(1);
+    regPage = new NewUser();
+    w_stack->addWidget(regPage);
+    w_stack->setCurrentWidget(regPage);
+    ui->userNameLineEdit->clear();
+    ui->passwordLineEdit->clear();
 }
 
 
