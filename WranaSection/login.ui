@@ -120,7 +120,7 @@ font-weight: 600;
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgba(229, 223, 206, 0.5);
+     <string notr="true">background-color: rgba(229, 223, 206, 1);
 color: #000000; 
 border: 2px solid rgba(229, 223, 206, 0.5); 
 font-weight: 600; 
