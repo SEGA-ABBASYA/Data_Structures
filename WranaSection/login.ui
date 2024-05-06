@@ -24,9 +24,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>-10</y>
       <width>1280</width>
-      <height>721</height>
+      <height>731</height>
      </rect>
     </property>
     <property name="text">
@@ -43,7 +43,7 @@
     <property name="geometry">
      <rect>
       <x>570</x>
-      <y>610</y>
+      <y>560</y>
       <width>141</width>
       <height>29</height>
      </rect>
@@ -62,7 +62,7 @@
     <property name="geometry">
      <rect>
       <x>469</x>
-      <y>450</y>
+      <y>460</y>
       <width>341</width>
       <height>41</height>
      </rect>
@@ -81,16 +81,24 @@
     <property name="geometry">
      <rect>
       <x>550</x>
-      <y>379</y>
-      <width>197</width>
-      <height>30</height>
+      <y>371</y>
+      <width>192</width>
+      <height>36</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
-      <bold>true</bold>
+      <fontweight>DemiBold</fontweight>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(229, 223, 206, 0.5);
+color: #000000; 
+border: 2px solid rgba(229, 223, 206, 0.5); 
+font-weight: 600; 
+
+</string>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::Password</enum>
@@ -100,24 +108,32 @@
     <property name="geometry">
      <rect>
       <x>550</x>
-      <y>301</y>
+      <y>292</y>
       <width>257</width>
-      <height>30</height>
+      <height>37</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
-      <bold>true</bold>
+      <fontweight>DemiBold</fontweight>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(229, 223, 206, 0.5);
+color: #000000; 
+border: 2px solid rgba(229, 223, 206, 0.5); 
+font-weight: 600; 
+
+</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="showPassCheckBox">
     <property name="geometry">
      <rect>
-      <x>753</x>
-      <y>382</y>
-      <width>50</width>
+      <x>745</x>
+      <y>378</y>
+      <width>21</width>
       <height>22</height>
      </rect>
     </property>
