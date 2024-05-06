@@ -77,7 +77,7 @@ void NewUser::reg()
         User newUser(name, email, id, year, section, userName, password, program, gender);
         Database::users.insert(userName, newUser);
         // Data::currentUserName = userName;
-        QMessageBox::information(this, "Success", "Hello " + QString::fromStdString(name));
+        //QMessageBox::information(this, "Success", "Hello " + QString::fromStdString(name));
         // Home *home = new Home();
         // home->show();
         // this->close();
