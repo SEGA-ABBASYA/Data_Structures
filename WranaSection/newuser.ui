@@ -188,7 +188,7 @@ font-weight: 600;
    <widget class="QSpinBox" name="sectionSpinBox">
     <property name="geometry">
      <rect>
-      <x>705</x>
+      <x>711</x>
       <y>457</y>
       <width>91</width>
       <height>30</height>
@@ -315,7 +315,7 @@ font-weight: 600;
    <widget class="QSpinBox" name="yearSpinBox">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>521</x>
       <y>457</y>
       <width>101</width>
       <height>30</height>
