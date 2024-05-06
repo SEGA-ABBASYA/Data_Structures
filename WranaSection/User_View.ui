@@ -519,6 +519,232 @@ color: rgb(255, 255, 255);</string>
       <pixmap resource="Materials.qrc">:/assists/All_Materials/Students_ Info.png</pixmap>
      </property>
     </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>130</y>
+       <width>671</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/assists/All_Materials/User_Edit.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="logoutfull_2">
+     <property name="geometry">
+      <rect>
+       <x>760</x>
+       <y>620</y>
+       <width>161</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>17</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(249, 83, 0);
+color: rgb(255, 255, 255);
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
+     </property>
+     <property name="text">
+      <string>Edit</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="male">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>598</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Login-Register.qrc">
+       <normaloff>:/Icons/All_Materials/Icons/Male Icon.png</normaloff>:/Icons/All_Materials/Icons/Male Icon.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>35</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="female">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>598</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Login-Register.qrc">
+       <normaloff>:/Icons/All_Materials/Icons/Female Icon.png</normaloff>:/Icons/All_Materials/Icons/Female Icon.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>25</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="yearSpinBox">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>505</y>
+       <width>101</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>4</number>
+     </property>
+     <property name="value">
+      <number>1</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="yearSpinBox_2">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>505</y>
+       <width>101</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>4</number>
+     </property>
+     <property name="value">
+      <number>1</number>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="idLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>140</y>
+       <width>257</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="idLineEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>200</y>
+       <width>257</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="idLineEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>270</y>
+       <width>257</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="idLineEdit_4">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>340</y>
+       <width>257</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="idLineEdit_5">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>415</y>
+       <width>257</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="ScheduleNew">
     <widget class="QLabel" name="windowNew_2">
@@ -1060,6 +1286,7 @@ border : none</string>
  </widget>
  <resources>
   <include location="Materials.qrc"/>
+  <include location="Login-Register.qrc"/>
  </resources>
  <connections>
   <connection>

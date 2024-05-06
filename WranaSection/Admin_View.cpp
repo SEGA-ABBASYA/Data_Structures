@@ -13,17 +13,6 @@ AdminView::AdminView(QWidget *parent)
     ui->setupUi(this);
     ui->Test->setCheckable(true);
     ui->Full->hide();
-    ui->stack_widget_course->hide();
-    ui->stackedWidget_student->hide();
-
-    // QGraphicsBlurEffect* p_blur = new QGraphicsBlurEffect;
-    // p_blur->setBlurRadius(3);
-    // p_blur->setBlurHints(QGraphicsBlurEffect::QualityHint);
-
-    //ui->Full->setGraphicsEffect(p_blur);
-   // ui->icon_name_widget_2->)
-   // ui->icon_name_widget_2->auz;
- //  ui->icon_name_widget_2->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
 }
 
 AdminView::~AdminView()
@@ -31,16 +20,13 @@ AdminView::~AdminView()
     delete ui;
 }
 
+
+//Panels Codes
 void AdminView::on_Test_toggled()
 {
 
         ui->Icons->hide();
         ui->Full->show();
-
-    // else{
-    //     ui->Icons->show();
-    //     ui->Full->hide();
-    // }
 }
 
 void AdminView::on_Test_2_toggled()
@@ -48,13 +34,7 @@ void AdminView::on_Test_2_toggled()
 
         ui->Icons->show();
         ui->Full->hide();
-
-    // else{
-    //     ui->Icons->hide();
-    //     ui->Full->show();
-    // }
 }
-
 
 void AdminView::on_course_icon_toggled(bool checked)
 {
@@ -62,19 +42,14 @@ void AdminView::on_course_icon_toggled(bool checked)
     ui->stackedWidget->setCurrentIndex(0);
   //  if(checked) ui->course->setStyleSheet("color:rgb(177, 59, 177); ");
   //  else ui->course->setStyleSheet("color: rgb(255, 255, 255)") ;
-
-
 }
-
 
 void AdminView::on_graph_icon_toggled(bool checked)
 {
     ui->stackedWidget->setCurrentIndex(1);
   //  if(checked) ui->graph->setStyleSheet("color:rgb(177, 59, 177); ");
    // else ui->graph->setStyleSheet("color: rgb(255, 255, 255)") ;
-
 }
-
 
 void AdminView::on_student_icon_toggled(bool checked)
 {
@@ -83,9 +58,6 @@ void AdminView::on_student_icon_toggled(bool checked)
   //  else ui->student->setStyleSheet("color: rgb(255, 255, 255)") ;
 }
 
-
-
-
 void AdminView::on_schedule_icon_toggled(bool checked)
 {
     ui->stackedWidget->setCurrentIndex(3);
@@ -93,41 +65,18 @@ void AdminView::on_schedule_icon_toggled(bool checked)
   //  else ui->schedule->setStyleSheet("color: rgb(255, 255, 255)") ;
 }
 
-
-
-
-
-
-
-
-
- int row=5;
-
-
-
-
-
-void AdminView::on_pushButton_11_clicked()
+void AdminView::on_logout_clicked()
 {
-    Write_Students_table_delete();
-    ui->stackedWidget_student->setCurrentWidget(ui->delete_student_widget);
-    ui->stackedWidget_student->show();
+    Login::w_stack->setCurrentIndex(0);
+}
 
+void AdminView::on_logout_2_clicked()
+{
+    Login::w_stack->setCurrentIndex(0);
 }
 
 
-void AdminView::on_pushButton_2_clicked()
-{
-    int row=ui->tableWidget_2->rowCount();
-    ui->tableWidget_2->insertRow(row);
-}
-
-
-void AdminView::on_pushButton_4_clicked()
-{
-    int row=ui->tableWidget_2->rowCount();
-    ui->tableWidget_2->removeRow(row-1);
-}
+//Table Manibulation
 void AdminView::Write_Courses_table_edit()
 {
 
@@ -137,12 +86,12 @@ void AdminView::Write_Courses_table_edit()
 
        // qDebug() << QString::fromStdString((course.second.getTAs_S()));
 
-          ui->tableWidget->item(i,0)->setText(QString::fromStdString(course.second.getCourseName()));
-         ui->tableWidget->item(i,1)->setText(QString::fromStdString(course.second.getDepartment()));
-         ui->tableWidget->item(i,2)->setText(QString::fromStdString(course.second.getLab_S()));
-         ui->tableWidget->item(i,3)->setText(QString::fromStdString(course.second.getSection_S()));
+        ui->tableWidget->item(i,0)->setText(QString::fromStdString(course.second.getCourseName()));
+        ui->tableWidget->item(i,1)->setText(QString::fromStdString(course.second.getDepartment()));
+        ui->tableWidget->item(i,2)->setText(QString::fromStdString(course.second.getLab_S()));
+        ui->tableWidget->item(i,3)->setText(QString::fromStdString(course.second.getSection_S()));
 
-         ui->tableWidget->item(i,4)->setText(QString::fromStdString(course.second.getDoctors_S()));
+        ui->tableWidget->item(i,4)->setText(QString::fromStdString(course.second.getDoctors_S()));
         ui->tableWidget->item(i,5)->setText(QString::fromStdString(course.second.getTAs_S()));
 
 
@@ -172,7 +121,6 @@ void AdminView::Write_Courses_table_delete()
     }
 
 }
-
 
 void AdminView::Write_Students_table_edit()
 {
@@ -243,59 +191,79 @@ void AdminView::Write_Students_table_delete()
 }
 
 
-
-
-void AdminView::on_logout_clicked()
+//Student Widget
+void AdminView::on_pushButton_11_toggled(bool checked)
 {
-    Login::w_stack->setCurrentIndex(0);
+    //Delete
+    ui->stackedWidget_student->setCurrentWidget(ui->delete_student_widget);
+    Write_Students_table_delete();
 }
 
-
-
-
-void AdminView::on_logout_2_clicked()
+void AdminView::on_pushButton_10_toggled(bool checked)
 {
-    Login::w_stack->setCurrentIndex(0);
-}
-
-
-
-
-void AdminView::on_pushButton_10_clicked()
-{
-    Write_Students_table_edit();
-
+    //Edit
     ui->stackedWidget_student->setCurrentWidget(ui->edit_student_widget);
-    ui->stackedWidget_student->show();
+    Write_Students_table_edit();
+}
+
+void AdminView::on_pushButton_12_toggled(bool checked)
+{
+    //Add
+    ui->stackedWidget_student->setCurrentWidget(ui->add_student_widget);
 }
 
 
+//Course Widget
 
-
-void AdminView::on_pushButton_16_clicked()
+void AdminView::on_pushButton_16_toggled(bool checked)
 {
-      Write_Courses_table_edit();
-      ui->stackedWidget_student->setCurrentWidget(ui->edit_course_widget);
-    ui->stack_widget_course->show();
-
+    //Edit
+    ui->stack_widget_course->setCurrentWidget(ui->edit_course_widget);
+    Write_Courses_table_edit();
 }
 
-
-void AdminView::on_pushButton_12_clicked()
+void AdminView::on_pushButton_17_toggled(bool checked)
 {
-    ui->stackedWidget_student->hide();
-}
-
-
-void AdminView::on_pushButton_17_clicked()
-{
-    Write_Courses_table_delete();
+    //Delete
     ui->stack_widget_course->setCurrentWidget(ui->delete_course_widget);
-    ui->stack_widget_course->show();
+    Write_Courses_table_delete();
 }
 
-void AdminView::on_pushButton_18_clicked()
+void AdminView::on_pushButton_18_toggled(bool checked)
 {
-    ui->stack_widget_course->hide();
+    //Add
+    ui->stack_widget_course->setCurrentWidget(ui->add_course_widget);
+}
+
+
+//Schedule Widget
+void AdminView::on_pushButton_21_toggled(bool checked)
+{
+    //Add
+    ui->stackedWidget_schedule->setCurrentIndex(0);
+}
+
+void AdminView::on_pushButton_20_toggled(bool checked)
+{
+    ui->stackedWidget_schedule->setCurrentIndex(1);
+}
+
+//Graph Widget
+void AdminView::on_pushButton_15_toggled(bool checked)
+{
+    //Add
+    ui->stackedWidget_graph->setCurrentIndex(0);
+}
+
+void AdminView::on_pushButton_13_toggled(bool checked)
+{
+    //Edit
+    ui->stackedWidget_graph->setCurrentIndex(1);
+}
+
+void AdminView::on_pushButton_14_toggled(bool checked)
+{
+    //Delete
+    ui->stackedWidget_graph->setCurrentIndex(2);
 }
 

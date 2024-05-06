@@ -34,5 +34,8 @@
         <file>All_Materials/Chat.png</file>
         <file>All_Materials/View_Friends.png</file>
         <file>All_Materials/Notifications.png</file>
+        <file>All_Materials/Add_Course.png</file>
+        <file>All_Materials/Add_User.png</file>
+        <file>All_Materials/User_Edit.png</file>
     </qresource>
 </RCC>

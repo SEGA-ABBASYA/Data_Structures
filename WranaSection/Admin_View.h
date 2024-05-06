@@ -40,13 +40,13 @@ private slots:
 
 
 
-    void on_pushButton_17_clicked();
+    void on_pushButton_17_toggled(bool checked);
 
-    void on_pushButton_11_clicked();
+    void on_pushButton_11_toggled(bool checked);
 
-    void on_pushButton_2_clicked();
+    //void on_pushButton_2_clicked();
 
-    void on_pushButton_4_clicked();
+    //void on_pushButton_4_clicked();
 
     void on_logout_clicked();
 
@@ -54,13 +54,23 @@ private slots:
 
 
 
-    void on_pushButton_10_clicked();
+    void on_pushButton_10_toggled(bool checked);
 
-    void on_pushButton_16_clicked();
+    void on_pushButton_16_toggled(bool checked);
 
-    void on_pushButton_12_clicked();
+    void on_pushButton_12_toggled(bool checked);
 
-    void on_pushButton_18_clicked();
+    void on_pushButton_18_toggled(bool checked);
+
+    void on_pushButton_21_toggled(bool checked);
+
+    void on_pushButton_20_toggled(bool checked);
+
+    void on_pushButton_15_toggled(bool checked);
+
+    void on_pushButton_13_toggled(bool checked);
+
+    void on_pushButton_14_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;

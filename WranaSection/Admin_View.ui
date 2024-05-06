@@ -346,6 +346,9 @@ color: rgb(157, 108, 255);</string>
         <height>90</height>
        </size>
       </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QLabel" name="label_20">
       <property name="geometry">
@@ -387,6 +390,9 @@ color: rgb(157, 108, 255);</string>
         <width>110</width>
         <height>110</height>
        </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="label_21">
@@ -430,38 +436,153 @@ color: rgb(157, 108, 255);</string>
         <height>90</height>
        </size>
       </property>
-     </widget>
-     <widget class="QLabel" name="label_8">
-      <property name="geometry">
-       <rect>
-        <x>770</x>
-        <y>700</y>
-        <width>191</width>
-        <height>41</height>
-       </rect>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="Materials.qrc">:/assists/All_Materials/Course.png</pixmap>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QStackedWidget" name="stack_widget_course">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>210</y>
-        <width>901</width>
-        <height>441</height>
+        <x>90</x>
+        <y>180</y>
+        <width>941</width>
+        <height>501</height>
        </rect>
       </property>
+      <widget class="QWidget" name="add_course_widget">
+       <widget class="QLabel" name="label_26">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>931</width>
+          <height>481</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>48</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-image: url(:/assists/All_Materials/Add_Course.png);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>83</y>
+          <width>261</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_2">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>160</y>
+          <width>261</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>245</y>
+          <width>78</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox_2">
+        <property name="geometry">
+         <rect>
+          <x>600</x>
+          <y>245</y>
+          <width>78</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit">
+        <property name="geometry">
+         <rect>
+          <x>243</x>
+          <y>340</y>
+          <width>111</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_2">
+        <property name="geometry">
+         <rect>
+          <x>505</x>
+          <y>340</y>
+          <width>111</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>760</x>
+          <y>400</y>
+          <width>161</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:none;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
       <widget class="QWidget" name="edit_course_widget">
        <widget class="QTableWidget" name="tableWidget">
         <property name="geometry">
          <rect>
-          <x>-10</x>
-          <y>0</y>
+          <x>20</x>
+          <y>10</y>
           <width>911</width>
           <height>431</height>
          </rect>
@@ -482,7 +603,7 @@ color: rgb(157, 108, 255);</string>
          <bool>false</bool>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(28, 28, 85);
+         <string notr="true">background-color: rgb(255, 85, 127);
 font: 700 9pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="editTriggers">
@@ -781,14 +902,46 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
           <string>null</string>
          </property>
         </item>
+       </widget>
+       <widget class="QPushButton" name="Edit">
+        <property name="geometry">
+         <rect>
+          <x>760</x>
+          <y>445</y>
+          <width>131</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>17</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(249, 83, 0);
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+
+color: rgb(255, 255, 255);
+	
+}</string>
+        </property>
+        <property name="text">
+         <string>Edit</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="delete_course_widget">
        <widget class="QTableWidget" name="tableWidget_3">
         <property name="geometry">
          <rect>
-          <x>-10</x>
-          <y>0</y>
+          <x>20</x>
+          <y>10</y>
           <width>911</width>
           <height>431</height>
          </rect>
@@ -809,7 +962,7 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
          <bool>false</bool>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(28, 28, 85);
+         <string notr="true">background-color: rgb(255, 85, 127);
 font: 700 9pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="editTriggers">
@@ -1109,8 +1262,49 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
          </property>
         </item>
        </widget>
+       <widget class="QPushButton" name="Delete">
+        <property name="geometry">
+         <rect>
+          <x>760</x>
+          <y>445</y>
+          <width>131</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>17</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(249, 83, 0);
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+
+color: rgb(255, 255, 255);
+	
+}</string>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
       </widget>
      </widget>
+     <zorder>label_2</zorder>
+     <zorder>label_18</zorder>
+     <zorder>label_20</zorder>
+     <zorder>label_21</zorder>
+     <zorder>label_6</zorder>
+     <zorder>pushButton_16</zorder>
+     <zorder>pushButton_17</zorder>
+     <zorder>pushButton_18</zorder>
+     <zorder>stack_widget_course</zorder>
     </widget>
     <widget class="QWidget" name="Graph">
      <widget class="QLabel" name="label_3">
@@ -1170,6 +1364,12 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
         <height>90</height>
        </size>
       </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QLabel" name="label_14">
       <property name="geometry">
@@ -1228,6 +1428,9 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
         <height>90</height>
        </size>
       </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QLabel" name="label_17">
       <property name="geometry">
@@ -1270,6 +1473,198 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
         <height>110</height>
        </size>
       </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QStackedWidget" name="stackedWidget_graph">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>180</y>
+        <width>941</width>
+        <height>501</height>
+       </rect>
+      </property>
+      <widget class="QWidget" name="add_location_widget">
+       <widget class="QLabel" name="label_31">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>180</y>
+          <width>341</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>36</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="edit_location_name">
+       <widget class="QTableWidget" name="tableWidget_6">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>911</width>
+          <height>431</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 85, 127);
+font: 700 9pt &quot;Segoe UI&quot;;</string>
+        </property>
+        <row>
+         <property name="text">
+          <string>New Row</string>
+         </property>
+        </row>
+        <column>
+         <property name="text">
+          <string>Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Hall</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Floor</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>X</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Y</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="QPushButton" name="Edit_2">
+        <property name="geometry">
+         <rect>
+          <x>770</x>
+          <y>450</y>
+          <width>131</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>17</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(249, 83, 0);
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+
+color: rgb(255, 255, 255);
+	
+}</string>
+        </property>
+        <property name="text">
+         <string>Edit</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="delete_location_page">
+       <widget class="QTableWidget" name="tableWidget_5">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>911</width>
+          <height>431</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 85, 127);
+font: 700 9pt &quot;Segoe UI&quot;;</string>
+        </property>
+        <row>
+         <property name="text">
+          <string>New Row</string>
+         </property>
+        </row>
+        <column>
+         <property name="text">
+          <string>Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Hall</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Floor</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>X</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Y</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="QPushButton" name="Delete_2">
+        <property name="geometry">
+         <rect>
+          <x>770</x>
+          <y>450</y>
+          <width>131</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>17</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(249, 83, 0);
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+
+color: rgb(255, 255, 255);
+	
+}</string>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="Students">
@@ -1383,6 +1778,12 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
         <height>90</height>
        </size>
       </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QPushButton" name="pushButton_10">
       <property name="geometry">
@@ -1408,6 +1809,9 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
         <width>90</width>
         <height>90</height>
        </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_11">
@@ -1435,586 +1839,880 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
         <height>110</height>
        </size>
       </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
      </widget>
-     <widget class="QWidget" name="widget" native="true">
+     <widget class="QStackedWidget" name="stackedWidget_student">
       <property name="geometry">
        <rect>
         <x>90</x>
-        <y>220</y>
-        <width>931</width>
-        <height>451</height>
+        <y>180</y>
+        <width>941</width>
+        <height>501</height>
        </rect>
       </property>
-      <widget class="QStackedWidget" name="stackedWidget_student">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>-60</y>
-         <width>931</width>
-         <height>521</height>
-        </rect>
-       </property>
-       <widget class="QWidget" name="edit_student_widget">
-        <widget class="QTableWidget" name="tableWidget_2">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>60</y>
-           <width>911</width>
-           <height>431</height>
-          </rect>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>911</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>911</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(28, 28, 85);
-font: 700 9pt &quot;Segoe UI&quot;;</string>
-         </property>
-         <property name="editTriggers">
-          <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
-         </property>
-         <property name="alternatingRowColors">
-          <bool>false</bool>
-         </property>
-         <property name="showGrid">
-          <bool>true</bool>
-         </property>
-         <property name="sortingEnabled">
-          <bool>true</bool>
-         </property>
-         <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>150</number>
-         </attribute>
-         <row>
-          <property name="text">
-           <string>3</string>
-          </property>
-         </row>
-         <row/>
-         <row/>
-         <row/>
-         <row/>
-         <row/>
-         <column>
-          <property name="text">
-           <string>Name</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Email</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Id</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Academic Year</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Section</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>User Name</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Password</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Program</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Gender</string>
-          </property>
-         </column>
-         <item row="0" column="0">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="1">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="2">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="3">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="4">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="5">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="6">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="7">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="8">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="0">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="1">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="2">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="3">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="4">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="5">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="6">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="7">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="8">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="0">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="1">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="2">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="3">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="4">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="5">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="6">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="7">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="8">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="0">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="1">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="2">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="3">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="4">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="5">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="6">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="7">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="8">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-        </widget>
+      <widget class="QWidget" name="add_student_widget">
+       <widget class="QLabel" name="label_24">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>941</width>
+          <height>481</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>48</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-image: url(:/assists/All_Materials/Add_User.png);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
        </widget>
-       <widget class="QWidget" name="delete_student_widget">
-        <widget class="QTableWidget" name="tableWidget_4">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>60</y>
-           <width>911</width>
-           <height>431</height>
-          </rect>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>911</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>911</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(28, 28, 85);
+       <widget class="QRadioButton" name="female">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>393</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Login-Register.qrc">
+          <normaloff>:/Icons/All_Materials/Icons/Female Icon.png</normaloff>:/Icons/All_Materials/Icons/Female Icon.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>30</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="male">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>393</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Login-Register.qrc">
+          <normaloff>:/Icons/All_Materials/Icons/Male Icon.png</normaloff>:/Icons/All_Materials/Icons/Male Icon.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>35</width>
+          <height>30</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="sectionSpinBox">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>315</y>
+          <width>91</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="sectionSpinBox_2">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>315</y>
+          <width>91</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nameLineEdit">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>42</y>
+          <width>291</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nameLineEdit_2">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>95</y>
+          <width>291</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nameLineEdit_3">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>148</y>
+          <width>291</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nameLineEdit_4">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>200</y>
+          <width>291</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="nameLineEdit_5">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>250</y>
+          <width>291</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Add">
+        <property name="geometry">
+         <rect>
+          <x>770</x>
+          <y>430</y>
+          <width>161</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>17</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(249, 83, 0);
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+
+color: rgb(255, 255, 255);
+	
+}</string>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="edit_student_widget">
+       <widget class="QTableWidget" name="tableWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>911</width>
+          <height>431</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>911</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>911</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 85, 127);
 font: 700 9pt &quot;Segoe UI&quot;;</string>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>false</bool>
+        </property>
+        <property name="showGrid">
+         <bool>true</bool>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>150</number>
+        </attribute>
+        <row>
+         <property name="text">
+          <string>3</string>
          </property>
-         <property name="editTriggers">
-          <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+        </row>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <column>
+         <property name="text">
+          <string>Name</string>
          </property>
-         <property name="alternatingRowColors">
-          <bool>false</bool>
+        </column>
+        <column>
+         <property name="text">
+          <string>Email</string>
          </property>
-         <property name="showGrid">
-          <bool>true</bool>
+        </column>
+        <column>
+         <property name="text">
+          <string>Id</string>
          </property>
-         <property name="sortingEnabled">
-          <bool>true</bool>
+        </column>
+        <column>
+         <property name="text">
+          <string>Academic Year</string>
          </property>
-         <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>150</number>
-         </attribute>
-         <row>
-          <property name="text">
-           <string>3</string>
-          </property>
-         </row>
-         <row/>
-         <row/>
-         <row/>
-         <row/>
-         <row/>
-         <column>
-          <property name="text">
-           <string>Name</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Email</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Id</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Academic Year</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Section</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>User Name</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Password</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>program</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Gender</string>
-          </property>
-         </column>
-         <item row="0" column="0">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="1">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="2">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="3">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="4">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="5">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="6">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="7">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="0" column="8">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="0">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="1">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="2">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="3">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="4">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="5">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="6">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="7">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="1" column="8">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="0">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="1">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="2">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="3">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="4">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="5">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="6">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="7">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="2" column="8">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="0">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="1">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="2">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="3">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="4">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="5">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="6">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="7">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-         <item row="3" column="8">
-          <property name="text">
-           <string>null</string>
-          </property>
-         </item>
-        </widget>
+        </column>
+        <column>
+         <property name="text">
+          <string>Section</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>User Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Password</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Program</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Gender</string>
+         </property>
+        </column>
+        <item row="0" column="0">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="1">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="2">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="3">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="4">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="5">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="6">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="7">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="8">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="0">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="1">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="2">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="3">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="4">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="5">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="6">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="7">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="8">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="0">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="1">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="2">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="3">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="4">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="5">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="6">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="7">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="8">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="0">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="1">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="2">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="3">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="4">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="5">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="6">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="7">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="8">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="EditStudent">
+        <property name="geometry">
+         <rect>
+          <x>770</x>
+          <y>450</y>
+          <width>131</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>17</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(249, 83, 0);
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+
+color: rgb(255, 255, 255);
+	
+}</string>
+        </property>
+        <property name="text">
+         <string>Edit</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="delete_student_widget">
+       <widget class="QTableWidget" name="tableWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>911</width>
+          <height>431</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>911</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>911</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 85, 127);
+font: 700 9pt &quot;Segoe UI&quot;;</string>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>false</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::ExtendedSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <property name="showGrid">
+         <bool>true</bool>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>150</number>
+        </attribute>
+        <row>
+         <property name="text">
+          <string>3</string>
+         </property>
+        </row>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <column>
+         <property name="text">
+          <string>Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Email</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Id</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Academic Year</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Section</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>User Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Password</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>program</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Gender</string>
+         </property>
+        </column>
+        <item row="0" column="0">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="1">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="2">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="3">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="4">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="5">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="6">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="7">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="0" column="8">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="0">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="1">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="2">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="3">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="4">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="5">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="6">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="7">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="1" column="8">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="0">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="1">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="2">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="3">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="4">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="5">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="6">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="7">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="2" column="8">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="0">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="1">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="2">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="3">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="4">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="5">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="6">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="7">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+        <item row="3" column="8">
+         <property name="text">
+          <string>null</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="deleteStudent">
+        <property name="geometry">
+         <rect>
+          <x>770</x>
+          <y>450</y>
+          <width>131</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>17</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(249, 83, 0);
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+
+color: rgb(255, 255, 255);
+	
+}</string>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
        </widget>
       </widget>
      </widget>
@@ -2055,7 +2753,7 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
      <widget class="QPushButton" name="pushButton_21">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>230</x>
         <y>130</y>
         <width>131</width>
         <height>41</height>
@@ -2077,6 +2775,12 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
         <height>90</height>
        </size>
       </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QLabel" name="label_19">
       <property name="geometry">
@@ -2094,54 +2798,12 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
        <pixmap resource="Materials.qrc">:/assists/All_Materials/Line 3.png</pixmap>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_19">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>130</y>
-        <width>111</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="Materials.qrc">
-        <normaloff>:/assists/All_Materials/edit.png</normaloff>:/assists/All_Materials/edit.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>90</width>
-        <height>90</height>
-       </size>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_22">
       <property name="geometry">
        <rect>
-        <x>670</x>
+        <x>540</x>
         <y>130</y>
         <width>21</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="Materials.qrc">:/assists/All_Materials/Line 1.png</pixmap>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_25">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>130</y>
-        <width>20</width>
         <height>41</height>
        </rect>
       </property>
@@ -2155,7 +2817,7 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
      <widget class="QPushButton" name="pushButton_20">
       <property name="geometry">
        <rect>
-        <x>770</x>
+        <x>740</x>
         <y>130</y>
         <width>131</width>
         <height>41</height>
@@ -2177,6 +2839,65 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
         <height>110</height>
        </size>
       </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QStackedWidget" name="stackedWidget_schedule">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>180</y>
+        <width>941</width>
+        <height>491</height>
+       </rect>
+      </property>
+      <widget class="QWidget" name="add_schedule_widget">
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>140</y>
+          <width>341</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>36</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="delete_schedule_widget">
+       <widget class="QLabel" name="label_30">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>160</y>
+          <width>341</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>36</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </widget>
    </widget>
@@ -2497,7 +3218,7 @@ color: rgb(255, 255, 255);
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -2505,6 +3226,7 @@ color: rgb(255, 255, 255);
  </widget>
  <resources>
   <include location="Materials.qrc"/>
+  <include location="Login-Register.qrc"/>
  </resources>
  <connections>
   <connection>
