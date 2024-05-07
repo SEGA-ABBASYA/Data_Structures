@@ -24,7 +24,7 @@
     <property name="geometry">
      <rect>
       <x>580</x>
-      <y>624</y>
+      <y>610</y>
       <width>121</width>
       <height>29</height>
      </rect>
@@ -43,7 +43,7 @@
     <property name="geometry">
      <rect>
       <x>470</x>
-      <y>550</y>
+      <y>532</y>
       <width>341</width>
       <height>41</height>
      </rect>
@@ -62,9 +62,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>-10</y>
       <width>1280</width>
-      <height>721</height>
+      <height>731</height>
      </rect>
     </property>
     <property name="font">
@@ -90,16 +90,24 @@
     <property name="geometry">
      <rect>
       <x>549</x>
-      <y>346</y>
+      <y>315</y>
       <width>195</width>
-      <height>30</height>
+      <height>36</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
-      <bold>true</bold>
+      <fontweight>DemiBold</fontweight>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(229, 223, 206, 0.5);
+color: #000000; 
+border: 2px solid rgba(229, 223, 206, 0.5); 
+font-weight: 600; 
+
+</string>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::Password</enum>
@@ -109,58 +117,99 @@
     <property name="geometry">
      <rect>
       <x>549</x>
-      <y>296</y>
+      <y>269</y>
       <width>257</width>
-      <height>30</height>
+      <height>36</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
-      <bold>true</bold>
+      <fontweight>DemiBold</fontweight>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(229, 223, 206, 0.5);
+color: #000000; 
+border: 2px solid rgba(229, 223, 206, 0.5); 
+font-weight: 600; 
+
+</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="nameLineEdit">
     <property name="geometry">
      <rect>
       <x>549</x>
-      <y>197</y>
+      <y>175</y>
       <width>257</width>
-      <height>30</height>
+      <height>36</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
-      <bold>true</bold>
+      <fontweight>DemiBold</fontweight>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(229, 223, 206, 0.5);
+color: #000000; 
+border: 2px solid rgba(229, 223, 206, 0.5); 
+font-weight: 600; 
+
+</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="idLineEdit">
     <property name="geometry">
      <rect>
       <x>549</x>
-      <y>395</y>
+      <y>361</y>
       <width>257</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <fontweight>DemiBold</fontweight>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(229, 223, 206, 0.5); 
+color: #000000; 
+border: 2px solid rgba(229, 223, 206, 0.5); 
+font-weight: 600; 
+
+</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="sectionSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>711</x>
+      <y>457</y>
+      <width>91</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
-      <bold>true</bold>
+      <fontweight>DemiBold</fontweight>
      </font>
     </property>
-   </widget>
-   <widget class="QSpinBox" name="sectionSpinBox">
-    <property name="geometry">
-     <rect>
-      <x>714</x>
-      <y>484</y>
-      <width>91</width>
-      <height>30</height>
-     </rect>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(229, 223, 206, 1);
+color: #000000; 
+border: 2px solid rgba(229, 223, 206, 0.5); 
+font-weight: 600; 
+
+</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
     <property name="minimum">
      <number>1</number>
@@ -172,9 +221,9 @@
    <widget class="QRadioButton" name="female">
     <property name="geometry">
      <rect>
-      <x>695</x>
-      <y>518</y>
-      <width>101</width>
+      <x>712</x>
+      <y>497</y>
+      <width>121</width>
       <height>31</height>
      </rect>
     </property>
@@ -183,6 +232,12 @@
       <pointsize>10</pointsize>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #CE2AB6; 
+
+
+</string>
     </property>
     <property name="text">
      <string>Female</string>
@@ -201,9 +256,9 @@
    <widget class="QRadioButton" name="male">
     <property name="geometry">
      <rect>
-      <x>485</x>
-      <y>518</y>
-      <width>91</width>
+      <x>470</x>
+      <y>497</y>
+      <width>111</width>
       <height>31</height>
      </rect>
     </property>
@@ -212,6 +267,12 @@
       <pointsize>10</pointsize>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #CE2AB6; 
+
+
+</string>
     </property>
     <property name="text">
      <string>Male</string>
@@ -231,20 +292,48 @@
     <property name="geometry">
      <rect>
       <x>549</x>
-      <y>441</y>
+      <y>408</y>
       <width>257</width>
-      <height>30</height>
+      <height>36</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <fontweight>DemiBold</fontweight>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(229, 223, 206, 1);
+color: #000000; 
+border: 2px solid rgba(229, 223, 206, 0.5); 
+font-weight: 600; 
+
+</string>
     </property>
    </widget>
    <widget class="QSpinBox" name="yearSpinBox">
     <property name="geometry">
      <rect>
-      <x>549</x>
-      <y>484</y>
+      <x>521</x>
+      <y>457</y>
       <width>101</width>
       <height>30</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <fontweight>DemiBold</fontweight>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(229, 223, 206, 1);
+color: #000000; 
+border: 2px solid rgba(229, 223, 206, 0.5); 
+font-weight: 600; 
+
+</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -263,24 +352,32 @@
     <property name="geometry">
      <rect>
       <x>549</x>
-      <y>247</y>
+      <y>222</y>
       <width>257</width>
-      <height>30</height>
+      <height>36</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>12</pointsize>
-      <bold>true</bold>
+      <fontweight>DemiBold</fontweight>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(229, 223, 206, 0.5);
+color: #000000; 
+border: 2px solid rgba(229, 223, 206, 0.5); 
+font-weight: 600; 
+
+</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="showPassCheckBox">
     <property name="geometry">
      <rect>
-      <x>750</x>
-      <y>350</y>
-      <width>60</width>
+      <x>744</x>
+      <y>321</y>
+      <width>21</width>
       <height>22</height>
      </rect>
     </property>
