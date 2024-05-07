@@ -19,6 +19,9 @@ public:
     vector<string> CreateGrid();
     ~ThirdFloor();
 
+private slots:
+    void on_tableWidget_cellActivated(int row, int column);
+
 private:
     Ui::ThirdFloor *ui;
 };

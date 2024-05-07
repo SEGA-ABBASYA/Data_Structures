@@ -6,6 +6,16 @@ ThirdFloor::ThirdFloor(QWidget *parent)
     , ui(new Ui::ThirdFloor)
 {
     ui->setupUi(this);
+
+    for(int i =0;i<76;i++)
+    {
+       ui->tableWidget->setColumnWidth(i,20);
+    }
+    for (int i=0;i<37;i++)
+    {
+        ui->tableWidget->setRowHeight(i, 20);
+    }
+
 }
 
 vector<string> ThirdFloor::CreateGrid()
@@ -52,7 +62,19 @@ vector<string> ThirdFloor::CreateGrid()
 
     return thirdFloor;
 }
+
+
+void ThirdFloor::on_tableWidget_cellActivated(int row, int column)
+{
+    string r = to_string(row);
+    string c = to_string(column);
+    QString s = QString::fromStdString(r +" "+ c);
+}
+
 ThirdFloor::~ThirdFloor()
 {
     delete ui;
 }
+
+
+
