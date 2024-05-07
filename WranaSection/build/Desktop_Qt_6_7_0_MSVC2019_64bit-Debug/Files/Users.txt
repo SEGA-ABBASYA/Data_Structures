@@ -1,3 +1,2 @@
-haneen,haneenhany1205@gmail.com,2022170136,2,6,four (just like the number),Hano2468,General,F,0,0
+gana,gana@gmail.com,1234567890,1,1,gana,123456789,General,F,0,0
 Mohamed Hussein,mohamedh2910@gmail.com,2022170581,2,15,mhmd7syn,123456789,General,M,0,0
-Ziad,ziadshraf100@gmail.com,2022170165,2,7,minion,ziadkhaled,General,M,0,0

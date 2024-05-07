@@ -5,10 +5,12 @@
 #include"database.h"
 using namespace std;
 
-// location key -> locationName.
-// course key -> courseName.
-// schedule key -> locationName, date, time.
-// user key -> username.
+/*
+ * location key -> locationName.
+ * course key -> courseName.
+ * schedule key -> locationName, date, time.
+ * user key -> username.
+*/
 
 // Object of Database class
 Database db;
@@ -57,7 +59,7 @@ void Admin::deleteCourse(string courseName)
     db.courses.erase(courseName);
 }
 
-// Loction class related methods.
+// Loction/Graph class related methods.
 void Admin::editLocation(Location location)
 {
     // Body

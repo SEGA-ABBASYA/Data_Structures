@@ -32,7 +32,7 @@ public:
     void addCourse(Course course);
     void deleteCourse(string courseName);
 
-    // Loction class related methods.
+    // Loction/Graph class related methods.
     void editLocation(Location location);
 
     // user related methods.

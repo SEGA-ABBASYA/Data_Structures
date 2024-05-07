@@ -34,48 +34,49 @@ AdminView::~AdminView()
     delete ui;
 }
 
+
 //Panels Codes
 void AdminView::on_Test_toggled()
 {
 
-        ui->Icons->hide();
-        ui->Full->show();
+    ui->Icons->hide();
+    ui->Full->show();
 }
 
 void AdminView::on_Test_2_toggled()
 {
 
-        ui->Icons->show();
-        ui->Full->hide();
+    ui->Icons->show();
+    ui->Full->hide();
 }
 
 void AdminView::on_course_icon_toggled(bool checked)
 {
 
     ui->stackedWidget->setCurrentIndex(0);
-  //  if(checked) ui->course->setStyleSheet("color:rgb(177, 59, 177); ");
-  //  else ui->course->setStyleSheet("color: rgb(255, 255, 255)") ;
+    //  if(checked) ui->course->setStyleSheet("color:rgb(177, 59, 177); ");
+    //  else ui->course->setStyleSheet("color: rgb(255, 255, 255)") ;
 }
 
 void AdminView::on_graph_icon_toggled(bool checked)
 {
     ui->stackedWidget->setCurrentIndex(1);
-  //  if(checked) ui->graph->setStyleSheet("color:rgb(177, 59, 177); ");
-   // else ui->graph->setStyleSheet("color: rgb(255, 255, 255)") ;
+    //  if(checked) ui->graph->setStyleSheet("color:rgb(177, 59, 177); ");
+    // else ui->graph->setStyleSheet("color: rgb(255, 255, 255)") ;
 }
 
 void AdminView::on_student_icon_toggled(bool checked)
 {
     ui->stackedWidget->setCurrentIndex(2);
-  //  if(checked) ui->student->setStyleSheet("color:rgb(177, 59, 177); ");
-  //  else ui->student->setStyleSheet("color: rgb(255, 255, 255)") ;
+    //  if(checked) ui->student->setStyleSheet("color:rgb(177, 59, 177); ");
+    //  else ui->student->setStyleSheet("color: rgb(255, 255, 255)") ;
 }
 
 void AdminView::on_schedule_icon_toggled(bool checked)
 {
     ui->stackedWidget->setCurrentIndex(3);
-  //  if(checked) ui->schedule->setStyleSheet("color:rgb(177, 59, 177); ");
-  //  else ui->schedule->setStyleSheet("color: rgb(255, 255, 255)") ;
+    //  if(checked) ui->schedule->setStyleSheet("color:rgb(177, 59, 177); ");
+    //  else ui->schedule->setStyleSheet("color: rgb(255, 255, 255)") ;
 }
 
 void AdminView::on_logout_clicked()
@@ -95,17 +96,17 @@ void AdminView::Write_Courses_table_edit()
 
 
     int i=0;
-    for (auto& course : Database:: courses) {
+    ui->tableWidget->setRowCount(Database::courses.size());
+    for (auto& course : Database::courses) {
 
-       // qDebug() << QString::fromStdString((course.second.getTAs_S()));
+        // qDebug() << QString::fromStdString((course.second.getTAs_S()));
+        ui->tableWidget->setItem(i,0, new QTableWidgetItem(QString::fromStdString(course.second.getCourseName())));
+        ui->tableWidget->setItem(i,1, new QTableWidgetItem(QString::fromStdString(course.second.getDepartment())));
+        ui->tableWidget->setItem(i,2, new QTableWidgetItem(QString::fromStdString(course.second.getLab_S())));
+        ui->tableWidget->setItem(i,3, new QTableWidgetItem(QString::fromStdString(course.second.getSection_S())));
 
-        ui->tableWidget->item(i,0)->setText(QString::fromStdString(course.second.getCourseName()));
-        ui->tableWidget->item(i,1)->setText(QString::fromStdString(course.second.getDepartment()));
-        ui->tableWidget->item(i,2)->setText(QString::fromStdString(course.second.getLab_S()));
-        ui->tableWidget->item(i,3)->setText(QString::fromStdString(course.second.getSection_S()));
-
-        ui->tableWidget->item(i,4)->setText(QString::fromStdString(course.second.getDoctors_S()));
-        ui->tableWidget->item(i,5)->setText(QString::fromStdString(course.second.getTAs_S()));
+        ui->tableWidget->setItem(i,4, new QTableWidgetItem(QString::fromStdString(course.second.getDoctors_S())));
+        ui->tableWidget->setItem(i,5, new QTableWidgetItem(QString::fromStdString(course.second.getTAs_S())));
 
 
         i++;
@@ -117,17 +118,19 @@ void AdminView::Write_Courses_table_delete()
 
 
     int i=0;
+    ui->tableWidget_3->setRowCount(Database::courses.size());
     for (auto& course : Database:: courses) {
 
         // qDebug() << QString::fromStdString((course.second.getTAs_S()));
 
-        ui->tableWidget_3->item(i,0)->setText(QString::fromStdString(course.second.getCourseName()));
-        ui->tableWidget_3->item(i,1)->setText(QString::fromStdString(course.second.getDepartment()));
-        ui->tableWidget_3->item(i,2)->setText(QString::fromStdString(course.second.getLab_S()));
-        ui->tableWidget->item(i,3)->setText(QString::fromStdString(course.second.getSection_S()));
+        ui->tableWidget_3->setItem(i,0, new QTableWidgetItem(QString::fromStdString(course.second.getCourseName())));
+        ui->tableWidget_3->setItem(i,1, new QTableWidgetItem(QString::fromStdString(course.second.getDepartment())));
+        ui->tableWidget_3->setItem(i,2, new QTableWidgetItem(QString::fromStdString(course.second.getLab_S())));
+        ui->tableWidget_3->setItem(i,3, new QTableWidgetItem(QString::fromStdString(course.second.getSection_S())));
 
-        ui->tableWidget_3->item(i,4)->setText(QString::fromStdString(course.second.getDoctors_S()));
-        ui->tableWidget_3->item(i,5)->setText(QString::fromStdString(course.second.getTAs_S()));
+        ui->tableWidget_3->setItem(i,4, new QTableWidgetItem(QString::fromStdString(course.second.getDoctors_S())));
+        ui->tableWidget_3->setItem(i,5, new QTableWidgetItem(QString::fromStdString(course.second.getTAs_S())));
+
 
 
         i++;
@@ -140,29 +143,30 @@ void AdminView::Write_Students_table_edit()
 
 
     int i=0;
+    ui->tableWidget_2->setRowCount(Database::users.size());
     for (auto& student : Database:: users) {
 
         string Gender,ID,Academic_year,Section;
 
-        ui->tableWidget_2->item(i,0)->setText(QString::fromStdString(student.getName()));
-        ui->tableWidget_2->item(i,1)->setText(QString::fromStdString(student.getEmail()));
+        ui->tableWidget_2->setItem(i,0, new QTableWidgetItem(QString::fromStdString(student.getName())));
+        ui->tableWidget_2->setItem(i,1, new QTableWidgetItem(QString::fromStdString(student.getEmail())));
 
         ID=to_string(student.getId());
-        ui->tableWidget_2->item(i,2)->setText(QString::fromStdString(ID));
+        ui->tableWidget_2->setItem(i,2, new QTableWidgetItem(QString::fromStdString(ID)));
 
         Academic_year=to_string(student.getAcademicYear());
-        ui->tableWidget_2->item(i,3)->setText(QString::fromStdString( Academic_year));
+        ui->tableWidget_2->setItem(i,3, new QTableWidgetItem(QString::fromStdString( Academic_year)));
 
         Section=to_string(student.getSection());
-        ui->tableWidget_2->item(i,4)->setText(QString::fromStdString(Section));
+        ui->tableWidget_2->setItem(i,4, new QTableWidgetItem(QString::fromStdString(Section)));
 
-        ui->tableWidget_2->item(i,5)->setText(QString::fromStdString(student.getUsername()));
-        ui->tableWidget_2->item(i,6)->setText(QString::fromStdString(student.getPassword()));
-        ui->tableWidget_2->item(i,7)->setText(QString::fromStdString(student.getProgram()));
+        ui->tableWidget_2->setItem(i,5, new QTableWidgetItem(QString::fromStdString(student.getUsername())));
+        ui->tableWidget_2->setItem(i,6, new QTableWidgetItem(QString::fromStdString(student.getPassword())));
+        ui->tableWidget_2->setItem(i,7, new QTableWidgetItem(QString::fromStdString(student.getProgram())));
 
 
         Gender.push_back(student.getGender());
-        ui->tableWidget_2->item(i,8)->setText(QString::fromStdString(Gender));
+        ui->tableWidget_2->setItem(i,8, new QTableWidgetItem(QString::fromStdString(Gender)));
 
 
         i++;
@@ -173,29 +177,30 @@ void AdminView::Write_Students_table_delete()
 
 
     int i=0;
+    ui->tableWidget_4->setRowCount(Database::users.size());
     for (auto& student : Database:: users) {
 
-       string Gender,ID,Academic_year,Section;
+        string Gender,ID,Academic_year,Section;
 
-        ui->tableWidget_4->item(i,0)->setText(QString::fromStdString(student.getName()));
-        ui->tableWidget_4->item(i,1)->setText(QString::fromStdString(student.getEmail()));
+        ui->tableWidget_4->setItem(i,0, new QTableWidgetItem(QString::fromStdString(student.getName())));
+        ui->tableWidget_4->setItem(i,1, new QTableWidgetItem(QString::fromStdString(student.getEmail())));
 
         ID=to_string(student.getId());
-        ui->tableWidget_4->item(i,2)->setText(QString::fromStdString(ID));
+        ui->tableWidget_4->setItem(i,2, new QTableWidgetItem(QString::fromStdString(ID)));
 
         Academic_year=to_string(student.getAcademicYear());
-        ui->tableWidget_4->item(i,3)->setText(QString::fromStdString( Academic_year));
+        ui->tableWidget_4->setItem(i,3, new QTableWidgetItem(QString::fromStdString( Academic_year)));
 
         Section=to_string(student.getSection());
-        ui->tableWidget_4->item(i,4)->setText(QString::fromStdString(Section));
+        ui->tableWidget_4->setItem(i,4, new QTableWidgetItem(QString::fromStdString(Section)));
 
-        ui->tableWidget_4->item(i,5)->setText(QString::fromStdString(student.getUsername()));
-      ui->tableWidget_4->item(i,6)->setText(QString::fromStdString(student.getPassword()));
-        ui->tableWidget_4->item(i,7)->setText(QString::fromStdString(student.getProgram()));
+        ui->tableWidget_4->setItem(i,5, new QTableWidgetItem(QString::fromStdString(student.getUsername())));
+        ui->tableWidget_4->setItem(i,6, new QTableWidgetItem(QString::fromStdString(student.getPassword())));
+        ui->tableWidget_4->setItem(i,7, new QTableWidgetItem(QString::fromStdString(student.getProgram())));
 
-      Gender.push_back(student.getGender());
+        Gender.push_back(student.getGender());
 
-         ui->tableWidget_4->item(i,8)->setText(QString::fromStdString(Gender));
+        ui->tableWidget_4->setItem(i,8, new QTableWidgetItem(QString::fromStdString(Gender)));
 
 
         i++;
@@ -245,8 +250,7 @@ void AdminView::on_pushButton_17_toggled(bool checked)
 void AdminView::on_pushButton_18_toggled(bool checked)
 {
     //Add
-     ui->stack_widget_course->setCurrentWidget(ui->add_course_widget);
-
+    ui->stack_widget_course->setCurrentWidget(ui->add_course_widget);
 }
 
 
@@ -280,6 +284,7 @@ void AdminView::on_pushButton_14_toggled(bool checked)
     //Delete
     ui->stackedWidget_graph->setCurrentIndex(2);
 }
+
 
 ///////////////////////////////Course///////////////////////////////////
 
@@ -383,6 +388,7 @@ void AdminView::on_tableWidget_3_itemClicked(QTableWidgetItem *item)
 void AdminView::on_Delete_clicked()
 {
     admin.deleteCourse(courseName);
+    Write_Courses_table_delete();
 }
 
 // Edit course.
@@ -562,6 +568,7 @@ void AdminView::on_tableWidget_4_itemClicked(QTableWidgetItem *item)
 void AdminView::on_deleteStudent_clicked()
 {
     admin.deleteUser(username);
+    Write_Students_table_delete();
 }
 
 // Edit user.

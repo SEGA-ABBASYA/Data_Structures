@@ -12,9 +12,17 @@ boo
 ---
 
 ---
-gannah
+math
+cs
+no
+no
+ali
+---
+
+---
+rawan
 is
-yes
+no
 yes
 1
 2
@@ -23,12 +31,4 @@ yes
 4
 5
 6
----
-samar
-kara
-no
-no
-kara
----
-
 ---
