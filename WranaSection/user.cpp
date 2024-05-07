@@ -7,6 +7,18 @@
 using namespace std;
 User::User(string& name, string& email, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender)
     :data{ name, email, id, academic_year, section, username, password, program, gender } {}
+User::User()
+{
+    data.user_name = '\0';
+    data.name = '\0';
+    data.academic_year = '\0';
+    data.email = '\0';
+    data.id = '\0';
+    data.password = '\0';
+    data.section = '\0';
+    data.program = '\0';
+    data.gender = '\0';
+}
 
 // Setters
 void User::setName(string& name) {

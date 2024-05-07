@@ -10,6 +10,10 @@
 #include"Admin.h"
 #include <QTableWidgetItem>
 #include <QMessageBox>
+#include "user.h"
+#include <QString>
+#include <QMessageBox>
+#include <regex>
 
 Admin admin;
 Database dbase;
@@ -21,13 +25,14 @@ AdminView::AdminView(QWidget *parent)
     ui->setupUi(this);
     ui->Test->setCheckable(true);
     ui->Full->hide();
+    QStringList programs = {"General", "SC", "CS", "CSys", "IS", "Bioinformatics", "AI", "SW", "Cyber Security", "Robotics", "Multimedia"};
+    ui->programComboBox->addItems(programs);
 }
 
 AdminView::~AdminView()
 {
     delete ui;
 }
-
 
 //Panels Codes
 void AdminView::on_Test_toggled()
@@ -370,7 +375,7 @@ void AdminView::on_tableWidget_3_itemClicked(QTableWidgetItem *item)
         QTableWidgetItem *cellItem = ui->tableWidget_3->item(row, 0);
         if (cellItem != nullptr)
         {
-            courseName = cellItem->data(Qt::DisplayRole).toString().toStdString();
+            courseName = cellItem->text().toStdString();
         }
     }
     cout<<courseName<<endl;
@@ -417,7 +422,7 @@ void AdminView::on_tableWidget_itemClicked(QTableWidgetItem *item)
         QTableWidgetItem *cellItem = ui->tableWidget->item(row, 0);
         if (cellItem != nullptr)
         {
-            currentCourseName = cellItem->data(Qt::DisplayRole).toString().toStdString();
+            currentCourseName = cellItem->text().toStdString();
         }
     }
     cout<<currentCourseName<<endl;
@@ -474,5 +479,159 @@ void AdminView::on_Edit_clicked()
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
+////////////////////////////////////////User//////////////////////////////////////////////////
+string name;
+string email;
+string username;
+string password;
+string program;
+char gender = 'N';
+int id;
+int academicYear;
+int section;
 
+// Add user.
+bool validEmails(string email){
+    std::regex pattern(R"(^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$)");
+    return std::regex_match(email, pattern);
+}
+
+void AdminView::on_Add_clicked()
+{
+    name = ui->nameLineEdit->text().toStdString();
+    email = ui->nameLineEdit_2->text().toStdString();
+    username = ui->nameLineEdit_3->text().toStdString();
+    password = ui->nameLineEdit_4->text().toStdString();
+    id = ui->nameLineEdit_5->text().toInt();
+    academicYear = ui->sectionSpinBox_2->value();
+    section = ui->sectionSpinBox->value();
+    program = ui->programComboBox->currentText().toStdString();
+    if(ui->male->isChecked())
+    {
+        gender = 'M';
+    }
+    if (ui->female->isChecked())
+    {
+        gender = 'F';
+    }
+
+    // Validation.
+    auto user = Database::users.find(username);
+    if(!validEmails(email))
+    {
+        QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nNot Valid Email");
+    }
+    else if(user != Database::users.end())
+    {
+        QMessageBox::warning(this, "Error", "userName is Already Exist");
+    }
+    else if(password.size() < 8)
+    {
+        QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nPlease, Choose a password with 8 or more characters");
+    }
+    else if(ui->nameLineEdit_5->text().size() < 10)
+    {
+        QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nPlease, Check the id, it should be at least 10 digits");
+    }
+    else if(name.empty() || email.empty() || username.empty() || password.empty() || gender == 'N')
+    {
+        QMessageBox::warning(this, "Error", "Please complete all fields");
+    }
+    else
+    {
+        //name, email, id, academic_year, section, username, password, program, gender
+        User user(name,email,id,academicYear,section,username,password,program,gender);
+        admin.addUser(user);
+    }
+}
+
+// Delete user.
+void AdminView::on_tableWidget_4_itemClicked(QTableWidgetItem *item)
+{
+    if (item != nullptr) {
+        int row = item->row();
+        QTableWidgetItem *cellItem = ui->tableWidget_4->item(row, 5);
+        if (cellItem != nullptr)
+        {
+            username = cellItem->text().toStdString();
+        }
+    }
+    cout<<username<<endl;
+}
+
+void AdminView::on_deleteStudent_clicked()
+{
+    admin.deleteUser(username);
+}
+
+// Edit user.
+
+string currentUsername;
+string oldGender;
+
+void AdminView::on_tableWidget_2_itemClicked(QTableWidgetItem *item)
+{
+    if (item != nullptr) {
+        int row = item->row();
+        QTableWidgetItem *cellItem = ui->tableWidget_2->item(row, 5);
+        if (cellItem != nullptr)
+        {
+            currentUsername = cellItem->text().toStdString();
+        }
+    }
+    cout<<currentUsername<<endl;
+}
+void AdminView::on_EditStudent_clicked()
+{
+    int row = ui->tableWidget_2->currentRow();
+    for (int col = 0; col < 9; ++col) {
+        QTableWidgetItem *cellItem = ui->tableWidget_2->item(row, col);
+        if (cellItem != nullptr) {
+            // Assign data to corresponding variables based on column index
+            switch (col) {
+            case 0:
+                name = cellItem->text().toLower().toStdString();
+                break;
+            case 1:
+                email = cellItem->text().toStdString();
+                break;
+            case 2:
+                id = cellItem->text().toInt();
+                break;
+            case 3:
+                academicYear = cellItem->text().toInt();
+                break;
+            case 4:
+                section = cellItem->text().toInt();
+                break;
+            case 5:
+                username = cellItem->text().toStdString();
+                break;
+            case 6:
+                password = cellItem->text().toStdString();
+                break;
+            case 7:
+                program = cellItem->text().toStdString();
+                break;
+            case 8:
+                oldGender = cellItem->text().toStdString();
+                gender = oldGender[0];
+                break;
+            default:
+                break;
+            }
+        }
+    }
+    User user(name,email,id,academicYear,section,username,password,program,gender);
+    if (!dbase.users.contains(user.getUsername()) || currentUsername == username)
+    {
+        // Key doesn't exist in the map, proceed to edit the course
+        admin.deleteUser(currentUsername);
+        admin.editUser(user);
+    }
+    else
+    {
+        QMessageBox::warning(this, "Error", "Username Already Exists and is Identical.");
+    }
+}
 

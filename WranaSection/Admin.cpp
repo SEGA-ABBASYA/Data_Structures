@@ -5,6 +5,11 @@
 #include"database.h"
 using namespace std;
 
+// location key -> locationName.
+// course key -> courseName.
+// schedule key -> locationName, date, time.
+// user key -> username.
+
 // Object of Database class
 Database db;
 
@@ -61,15 +66,15 @@ void Admin::editLocation(Location location)
 // user related methods.
 void Admin::addUser(User user)
 {
-    // Body
+    db.users[user.getUsername()] = user;
 }
 void Admin::editUser(User user)
 {
-    // Body
+    db.users[user.getUsername()] = user;
 }
-void Admin::deleteUser(User user)
+void Admin::deleteUser(string username)
 {
-    // Body
+    db.users.remove(username);
 }
 
 // Destructor

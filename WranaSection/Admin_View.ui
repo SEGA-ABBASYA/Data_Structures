@@ -1825,6 +1825,9 @@ color: rgb(255, 255, 255);
       <property name="checkable">
        <bool>true</bool>
       </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QPushButton" name="pushButton_11">
       <property name="geometry">
@@ -1852,6 +1855,9 @@ color: rgb(255, 255, 255);
        </size>
       </property>
       <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
        <bool>true</bool>
       </property>
      </widget>
@@ -1954,7 +1960,7 @@ color: rgb(255, 255, 255);
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <string notr="true">background-color: rgb(0, 0, 0);</string>
         </property>
         <property name="minimum">
          <number>1</number>
@@ -1973,7 +1979,7 @@ color: rgb(255, 255, 255);
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <string notr="true">background-color: rgb(0, 0, 0);</string>
         </property>
         <property name="minimum">
          <number>1</number>
@@ -2094,6 +2100,19 @@ color: rgb(255, 255, 255);
          <bool>false</bool>
         </property>
        </widget>
+       <widget class="QComboBox" name="programComboBox">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>257</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 0, 0);</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="edit_student_widget">
        <widget class="QTableWidget" name="tableWidget_2">
@@ -2125,10 +2144,16 @@ color: rgb(255, 255, 255);
 font: 700 9pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="editTriggers">
-         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
         </property>
         <property name="alternatingRowColors">
          <bool>false</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
         </property>
         <property name="showGrid">
          <bool>true</bool>
@@ -2438,13 +2463,13 @@ color: rgb(255, 255, 255);
 font: 700 9pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="editTriggers">
-         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+         <set>QAbstractItemView::NoEditTriggers</set>
         </property>
         <property name="alternatingRowColors">
          <bool>false</bool>
         </property>
         <property name="selectionMode">
-         <enum>QAbstractItemView::ExtendedSelection</enum>
+         <enum>QAbstractItemView::SingleSelection</enum>
         </property>
         <property name="selectionBehavior">
          <enum>QAbstractItemView::SelectRows</enum>
@@ -3237,8 +3262,8 @@ color: rgb(255, 255, 255);
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="Login-Register.qrc"/>
   <include location="Materials.qrc"/>
+  <include location="Login-Register.qrc"/>
  </resources>
  <connections>
   <connection>

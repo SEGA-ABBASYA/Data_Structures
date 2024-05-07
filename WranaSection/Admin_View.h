@@ -87,6 +87,16 @@ private slots:
     void on_Edit_clicked();
     void on_tableWidget_itemClicked(QTableWidgetItem *item);
 
+    void on_Add_clicked();
+
+    void on_tableWidget_4_itemClicked(QTableWidgetItem *item);
+
+    void on_deleteStudent_clicked();
+
+    void on_tableWidget_2_itemClicked(QTableWidgetItem *item);
+
+    void on_EditStudent_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
