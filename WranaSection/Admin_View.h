@@ -76,13 +76,22 @@ private slots:
 
     void on_pushButton_14_toggled(bool checked);
 
-    vector<string> disectString(string str);
+    vector<string> disectStringEnter(string str);
 
     void on_pushButton_clicked();
 
     void on_tableWidget_3_itemClicked(QTableWidgetItem *item);
 
     void on_Delete_clicked();
+
+    bool encodeValues(string has);
+
+    vector<string> disectStringComma(string str);
+
+    void on_Edit_clicked();
+
+
+    void on_tableWidget_itemClicked(QTableWidgetItem *item);
 
 private:
     Ui::MainWindow *ui;

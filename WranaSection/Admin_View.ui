@@ -76,7 +76,7 @@ color: rgb(255, 255, 255);
     <widget class="QPushButton" name="logout">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>166</x>
        <y>660</y>
        <width>81</width>
        <height>49</height>
@@ -611,6 +611,12 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="alternatingRowColors">
          <bool>false</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectItems</enum>
         </property>
         <property name="showGrid">
          <bool>true</bool>

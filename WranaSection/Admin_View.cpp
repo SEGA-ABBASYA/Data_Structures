@@ -9,8 +9,10 @@
 #include <string>
 #include"Admin.h"
 #include <QTableWidgetItem>
+#include <QMessageBox>
 
 Admin admin;
+Database dbase;
 
 AdminView::AdminView(QWidget *parent)
     : QMainWindow(parent)
@@ -274,11 +276,20 @@ void AdminView::on_pushButton_14_toggled(bool checked)
     ui->stackedWidget_graph->setCurrentIndex(2);
 }
 
+///////////////////////////////Course///////////////////////////////////
+
+string courseName;
+string courseDept;
+string hasLab;
+string hasSection;
+string doctors;
+string teachingAssistants;
+
 // Add Course.
 void AdminView::on_pushButton_clicked()
 {
-    string courseName = ui->lineEdit->text().toLower().toStdString();
-    string courseDept = ui->lineEdit_2->text().toStdString();
+    courseName = ui->lineEdit->text().toLower().toStdString();
+    courseDept = ui->lineEdit_2->text().toStdString();
     bool hasLab = false;
     if(ui->checkBox->isChecked())
     {
@@ -289,24 +300,32 @@ void AdminView::on_pushButton_clicked()
     {
         hasSection = true;
     }
-    string doctors = ui->textEdit->toPlainText().toStdString();
-    string teachingAssistants = ui->textEdit_2->toPlainText().toStdString();
+    doctors = ui->textEdit->toPlainText().toStdString();
+    teachingAssistants = ui->textEdit_2->toPlainText().toStdString();
 
-    vector<string> newDoctors = disectString(doctors);
-    vector<string> newTeachingAssistants = disectString(teachingAssistants);
+    vector<string> newDoctors = disectStringEnter(doctors);
+    vector<string> newTeachingAssistants = disectStringEnter(teachingAssistants);
 
     Course course(courseName,courseDept,hasLab,hasSection,newDoctors,newTeachingAssistants);
-    admin.addCourse(course);
+    // If course doesn't exist append it.
+    if (dbase.courses.find(course.getCourseName()) == dbase.courses.end())
+    {
+        admin.addCourse(course);
+    }
+    else // Course found in map
+    {
+        QMessageBox::warning(this, "Error", "Course Already Exists,\nYou can edit course in the edit screen.");
+    }
 }
-vector<string> AdminView::disectString(string str)
+vector<string> AdminView::disectStringEnter(string str)
 {
     string str2;
-    vector<string> newvect;
+    vector<string> newvector;
     for (int i=0;i< str.length();i++)
     {
         if (str[i] == '\n')
         {
-            newvect.push_back(str2);
+            newvector.push_back(str2);
             str2.clear();
         }
         else
@@ -314,12 +333,11 @@ vector<string> AdminView::disectString(string str)
             str2.push_back(str[i]);
         }
     }
-    newvect.push_back(str2);
-    return newvect;
+    newvector.push_back(str2);
+    return newvector;
 }
 
 // Delete course.
-string courseName;
 void AdminView::on_tableWidget_3_itemClicked(QTableWidgetItem *item)
 {
     if (item != nullptr) {
@@ -335,4 +353,101 @@ void AdminView::on_Delete_clicked()
 {
     admin.deleteCourse(courseName);
 }
+
+// Edit course.
+
+string currentCourseName;
+
+bool AdminView::encodeValues(string hasLabOrSection)
+{
+    if (hasLabOrSection == "yes")
+        return 1;
+    else
+        return 0;
+}
+vector<string> AdminView::disectStringComma(string str)
+{
+    string str2;
+    vector<string> newvector;
+    for (int i=0;i< str.length();i++)
+    {
+        if (str[i] == ',')
+        {
+            newvector.push_back(str2);
+            str2.clear();
+        }
+        else
+        {
+            str2.push_back(str[i]);
+        }
+    }
+    newvector.push_back(str2);
+    for (const auto& element : newvector) {
+        cout << element << endl;
+    }
+    return newvector;
+}
+void AdminView::on_tableWidget_itemClicked(QTableWidgetItem *item)
+{
+    if (item != nullptr) {
+        int row = item->row();
+        QTableWidgetItem *cellItem = ui->tableWidget_3->item(row, 0);
+        if (cellItem != nullptr)
+        {
+            currentCourseName = cellItem->text().toLower().toStdString();
+        }
+    }
+}
+void AdminView::on_Edit_clicked()
+{
+    int row = ui->tableWidget->currentRow();
+    for (int col = 0; col < 6; ++col) {
+        QTableWidgetItem *cellItem = ui->tableWidget->item(row, col);
+        if (cellItem != nullptr) {
+            // Assign data to corresponding variables based on column index
+            switch (col) {
+            case 0:
+                courseName = cellItem->text().toLower().toStdString();
+                break;
+            case 1:
+                courseDept = cellItem->text().toStdString();
+                break;
+            case 2:
+                hasLab = cellItem->text().toStdString();
+                break;
+            case 3:
+                hasSection = cellItem->text().toStdString();
+                break;
+            case 4:
+                doctors = cellItem->text().toStdString();
+                break;
+            case 5:
+                teachingAssistants = cellItem->text().toStdString();
+                break;
+            default:
+                break;
+            }
+        }
+    }
+
+    bool newHasLab = encodeValues(hasLab);
+    bool newHasSection = encodeValues(hasSection);
+    vector<string> newDoctors = disectStringComma(doctors);
+    vector<string> newTeachingAssistants = disectStringComma(teachingAssistants);
+
+    Course course(courseName,courseDept,newHasLab,newHasSection,newDoctors,newTeachingAssistants);
+
+    if (dbase.courses.find(course.getCourseName()) == dbase.courses.end() || currentCourseName == courseName)
+    {
+        // Key doesn't exist in the map, proceed to edit the course
+        admin.editCourse(course);
+    }
+    else
+    {
+        QMessageBox::warning(this, "Error", "Course Already Exists and is Identical.");
+    }
+
+}
+
+
 

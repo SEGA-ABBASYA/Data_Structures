@@ -38,12 +38,13 @@ void Admin::setPassword(string newPassword)
 // Course class related methods.
 void Admin::editCourse(Course course)
 {
-    // Body
+    /* the [] operator handels if the object has the same key
+     and overwrites the existing one.*/
+    db.courses[course.getCourseName()] = course;
 }
 void Admin::addCourse(Course course)
 {
-    /* the [] operator handels if the object has the same key
-     and overwrites the existing one.*/
+    /* the [] creates a new key in map with the course name */
     db.courses[course.getCourseName()] = course;
 }
 void Admin::deleteCourse(string courseName)
