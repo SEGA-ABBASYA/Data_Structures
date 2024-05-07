@@ -4,6 +4,7 @@
 #include "login.h"
 #include "User_View.h"
 #include "Admin_View.h"
+#include "ThirdFloor.h"
 using namespace std;
 void write()
 {
@@ -15,8 +16,9 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     Database db;
     Login w;
+    ThirdFloor thirdFloorGrid;
     db.read();
-    w.show();
+    thirdFloorGrid.show();
     vector<string>c;
     c.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++...+");
     c.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++...+");
