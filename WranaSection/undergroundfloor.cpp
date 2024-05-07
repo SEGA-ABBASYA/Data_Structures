@@ -15,25 +15,71 @@ UndergroundFloor::UndergroundFloor(QWidget *parent)
         ui->tableWidget->setRowHeight(i, 20);
     }
 
-    // vector<string> grid = CreateGrid();
+    vector<string> grid = CreateGrid();
 
-    // for(int i = 0; i < ui->tableWidget->rowCount(); ++i) {
+    for(int i = 0; i < ui->tableWidget->rowCount(); ++i) {
 
-    //     for(int j = 0; j < ui->tableWidget->columnCount(); ++j) {
+        for(int j = 0; j < ui->tableWidget->columnCount(); ++j) {
 
-    //         auto item = ui->tableWidget->item(i, j);
-    //         if(!item) { // make sure there's an item in that cell
-    //             item= new QTableWidgetItem();
-    //             ui->tableWidget->setItem(i, j, item);
-    //         }
-    //         string row = grid[i];
-    //         if(row[j] == '+')
-    //         {
-    //             item->setFlags(item->flags() & !~Qt::ItemIsSelectable);
-    //         }
+            auto item = ui->tableWidget->item(i, j);
+            if(!item) { // make sure there's an item in that cell
+                item= new QTableWidgetItem();
+                ui->tableWidget->setItem(i, j, item);
+            }
+            string row = grid[i];
+            if(row[j] == '+')
+            {
+                item->setFlags(item->flags() & !~Qt::ItemIsSelectable);
+            }
 
-    //     }
-    // }
+        }
+    }
+}
+
+vector<string> UndergroundFloor:: CreateGrid()
+{
+    vector<string> undergroundFloor;
+
+    undergroundFloor.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    undergroundFloor.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++.............++++++++++++++++++++++++++++++++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++.............++++++++++++++++++++++++++++++++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++.............+++++++++++++++++........+++++++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++..........++++++++++++++++++++++++......+++++++++++++++++++++++++");//credit stairs||electronics stairs
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++........+++++++++++++++++++++++++..........++++++++++++++++++++");
+    undergroundFloor.push_back("+++++++++++++............+++++++++++++++++++++....................++++++++++");
+    undergroundFloor.push_back("+++++++++++++............+++++++++++++++++++++....................++++++++++");
+    undergroundFloor.push_back("+++++++++++++............+++++++++++++++++++++....................++++++++++");
+    undergroundFloor.push_back("+++++++++++++............+++++++++++++++++++++....................++++++++++");
+    undergroundFloor.push_back("+++++++++++++............+++++++++++++++++++++....................++++++++++");
+    undergroundFloor.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    undergroundFloor.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    undergroundFloor.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    undergroundFloor.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    undergroundFloor.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    undergroundFloor.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    undergroundFloor.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    undergroundFloor.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    undergroundFloor.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    undergroundFloor.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+    return undergroundFloor;
+
 }
 
 
