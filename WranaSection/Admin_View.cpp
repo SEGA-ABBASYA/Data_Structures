@@ -306,15 +306,40 @@ void AdminView::on_pushButton_clicked()
     vector<string> newDoctors = disectStringEnter(doctors);
     vector<string> newTeachingAssistants = disectStringEnter(teachingAssistants);
 
-    Course course(courseName,courseDept,hasLab,hasSection,newDoctors,newTeachingAssistants);
-    // If course doesn't exist append it.
-    if (dbase.courses.find(course.getCourseName()) == dbase.courses.end())
+    // Validation.
+    bool violatedConstraint = 0;
+    if (courseName.empty())
     {
-        admin.addCourse(course);
+        QMessageBox::warning(this, "Error", "Please enter course name.");
+        violatedConstraint = 1;
     }
-    else // Course found in map
+    else if(courseDept.empty())
     {
-        QMessageBox::warning(this, "Error", "Course Already Exists,\nYou can edit course in the edit screen.");
+        QMessageBox::warning(this, "Error", "Please enter course department.");
+        violatedConstraint = 1;
+    }
+    else if (doctors.empty())
+    {
+        QMessageBox::warning(this, "Error", "Please enter course doctors names.");
+        violatedConstraint = 1;
+    }
+    else if (teachingAssistants.empty() && (hasLab == 1 || hasSection == 1))
+    {
+        QMessageBox::warning(this, "Error", "Please enter course TAs names.");
+        violatedConstraint = 1;
+    }
+    else
+    {
+        Course course(courseName,courseDept,hasLab,hasSection,newDoctors,newTeachingAssistants);
+        // If course doesn't exist append it.
+        if (dbase.courses.find(course.getCourseName()) == dbase.courses.end())
+        {
+            admin.addCourse(course);
+        }
+        else // Course found in map
+        {
+            QMessageBox::warning(this, "Error", "Course Already Exists,\nYou can edit course in the edit screen.");
+        }
     }
 }
 vector<string> AdminView::disectStringEnter(string str)
@@ -345,9 +370,10 @@ void AdminView::on_tableWidget_3_itemClicked(QTableWidgetItem *item)
         QTableWidgetItem *cellItem = ui->tableWidget_3->item(row, 0);
         if (cellItem != nullptr)
         {
-            courseName = cellItem->text().toStdString();
+            courseName = cellItem->data(Qt::DisplayRole).toString().toStdString();
         }
     }
+    cout<<courseName<<endl;
 }
 void AdminView::on_Delete_clicked()
 {
@@ -382,21 +408,19 @@ vector<string> AdminView::disectStringComma(string str)
         }
     }
     newvector.push_back(str2);
-    for (const auto& element : newvector) {
-        cout << element << endl;
-    }
     return newvector;
 }
 void AdminView::on_tableWidget_itemClicked(QTableWidgetItem *item)
 {
     if (item != nullptr) {
         int row = item->row();
-        QTableWidgetItem *cellItem = ui->tableWidget_3->item(row, 0);
+        QTableWidgetItem *cellItem = ui->tableWidget->item(row, 0);
         if (cellItem != nullptr)
         {
-            currentCourseName = cellItem->text().toLower().toStdString();
+            currentCourseName = cellItem->data(Qt::DisplayRole).toString().toStdString();
         }
     }
+    cout<<currentCourseName<<endl;
 }
 void AdminView::on_Edit_clicked()
 {
@@ -440,14 +464,15 @@ void AdminView::on_Edit_clicked()
     if (dbase.courses.find(course.getCourseName()) == dbase.courses.end() || currentCourseName == courseName)
     {
         // Key doesn't exist in the map, proceed to edit the course
+        admin.deleteCourse(currentCourseName);
         admin.editCourse(course);
     }
     else
     {
         QMessageBox::warning(this, "Error", "Course Already Exists and is Identical.");
     }
-
 }
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

@@ -607,7 +607,7 @@ color: rgb(157, 108, 255);</string>
 font: 700 9pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="editTriggers">
-         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
         </property>
         <property name="alternatingRowColors">
          <bool>false</bool>
@@ -616,7 +616,7 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
          <enum>QAbstractItemView::SingleSelection</enum>
         </property>
         <property name="selectionBehavior">
-         <enum>QAbstractItemView::SelectItems</enum>
+         <enum>QAbstractItemView::SelectRows</enum>
         </property>
         <property name="showGrid">
          <bool>true</bool>
