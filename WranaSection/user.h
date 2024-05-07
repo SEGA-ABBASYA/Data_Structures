@@ -1,3 +1,4 @@
+#pragma once
 #ifndef DSCODE_USER_H
 #define DSCODE_USER_H
 

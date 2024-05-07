@@ -1,17 +1,14 @@
-Mathematics
-Math
+
+
 no
+no
+---
+---
+ziad
+ziad
 yes
-Dr.Smith
----
-TA John
-TA Emma
----
-Physics
-Science
 no
-no
-Dr.Johnson
+ziad
 ---
-TA Alice
+ziad
 ---

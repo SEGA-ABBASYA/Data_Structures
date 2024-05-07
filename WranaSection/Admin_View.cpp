@@ -5,6 +5,12 @@
 #include <QGraphicsBlurEffect>
 #include <QDebug>
 #include "login.h"
+#include <vector>
+#include <string>
+#include"Admin.h"
+#include <QTableWidgetItem>
+
+Admin admin;
 
 AdminView::AdminView(QWidget *parent)
     : QMainWindow(parent)
@@ -232,7 +238,8 @@ void AdminView::on_pushButton_17_toggled(bool checked)
 void AdminView::on_pushButton_18_toggled(bool checked)
 {
     //Add
-    ui->stack_widget_course->setCurrentWidget(ui->add_course_widget);
+     ui->stack_widget_course->setCurrentWidget(ui->add_course_widget);
+
 }
 
 
@@ -265,5 +272,67 @@ void AdminView::on_pushButton_14_toggled(bool checked)
 {
     //Delete
     ui->stackedWidget_graph->setCurrentIndex(2);
+}
+
+// Add Course.
+void AdminView::on_pushButton_clicked()
+{
+    string courseName = ui->lineEdit->text().toLower().toStdString();
+    string courseDept = ui->lineEdit_2->text().toStdString();
+    bool hasLab = false;
+    if(ui->checkBox->isChecked())
+    {
+        hasLab = true;
+    }
+    bool hasSection = false;
+    if(ui->checkBox_2->isChecked())
+    {
+        hasSection = true;
+    }
+    string doctors = ui->textEdit->toPlainText().toStdString();
+    string teachingAssistants = ui->textEdit_2->toPlainText().toStdString();
+
+    vector<string> newDoctors = disectString(doctors);
+    vector<string> newTeachingAssistants = disectString(teachingAssistants);
+
+    Course course(courseName,courseDept,hasLab,hasSection,newDoctors,newTeachingAssistants);
+    admin.addCourse(course);
+}
+vector<string> AdminView::disectString(string str)
+{
+    string str2;
+    vector<string> newvect;
+    for (int i=0;i< str.length();i++)
+    {
+        if (str[i] == '\n')
+        {
+            newvect.push_back(str2);
+            str2.clear();
+        }
+        else
+        {
+            str2.push_back(str[i]);
+        }
+    }
+    newvect.push_back(str2);
+    return newvect;
+}
+
+// Delete course.
+string courseName;
+void AdminView::on_tableWidget_3_itemClicked(QTableWidgetItem *item)
+{
+    if (item != nullptr) {
+        int row = item->row();
+        QTableWidgetItem *cellItem = ui->tableWidget_3->item(row, 0);
+        if (cellItem != nullptr)
+        {
+            courseName = cellItem->text().toStdString();
+        }
+    }
+}
+void AdminView::on_Delete_clicked()
+{
+    admin.deleteCourse(courseName);
 }
 

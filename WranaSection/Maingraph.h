@@ -1,3 +1,4 @@
+#pragma once
 #ifndef MAINGRAPH_H
 #define MAINGRAPH_H
 #include <vector>

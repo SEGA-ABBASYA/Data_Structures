@@ -1,6 +1,10 @@
 #ifndef ADMIN_VIEW_H
 #define ADMIN_VIEW_H
 #include <QMainWindow>
+#include <string>
+#include <vector>
+#include <QTableWidgetItem>
+using namespace std;
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -71,6 +75,14 @@ private slots:
     void on_pushButton_13_toggled(bool checked);
 
     void on_pushButton_14_toggled(bool checked);
+
+    vector<string> disectString(string str);
+
+    void on_pushButton_clicked();
+
+    void on_tableWidget_3_itemClicked(QTableWidgetItem *item);
+
+    void on_Delete_clicked();
 
 private:
     Ui::MainWindow *ui;

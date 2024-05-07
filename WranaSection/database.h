@@ -1,5 +1,4 @@
-#ifndef DATABASE_H
-#define DATABASE_H
+#pragma once
 #include"Admin.h"
 #include <map>
 #include <fstream>
@@ -39,5 +38,4 @@ private:
 
 
 };
-
-#endif // DATABASE_H
+// DATABASE_H

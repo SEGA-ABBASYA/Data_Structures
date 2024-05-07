@@ -1,14 +1,18 @@
 #include <iostream>
 #include <vector>
+#include <string>
 #include"Admin.h"
-
+#include"database.h"
 using namespace std;
+
+// Object of Database class
+Database db;
 
 // Constructor
 Admin::Admin()
 {
     username = "Admin";
-    password = "Admin";
+    password = "Admin"; 
 }
 
 // Getter, and setter for username.
@@ -38,28 +42,34 @@ void Admin::editCourse(Course course)
 }
 void Admin::addCourse(Course course)
 {
-    // Body
+    /* the [] operator handels if the object has the same key
+     and overwrites the existing one.*/
+    db.courses[course.getCourseName()] = course;
 }
-void Admin::deleteCourse(Course course)
+void Admin::deleteCourse(string courseName)
 {
-    // Body
+    db.courses.erase(courseName);
 }
 
 // Loction class related methods.
-void Admin::addLocation(Location location)
-{
-    // Body
-}
 void Admin::editLocation(Location location)
 {
     // Body
 }
-void Admin::removeLocation(Location location)
+
+// user related methods.
+void Admin::addUser(User user)
 {
     // Body
 }
-
-
+void Admin::editUser(User user)
+{
+    // Body
+}
+void Admin::deleteUser(User user)
+{
+    // Body
+}
 
 // Destructor
 Admin::~Admin()

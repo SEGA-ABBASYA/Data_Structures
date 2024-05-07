@@ -1,3 +1,4 @@
+#pragma once
 #ifndef USER_VIEW_H
 #define USER_VIEW_H
 
