@@ -13,6 +13,7 @@ SOURCES += \
     Maingraph.cpp \
     Location.cpp \
     Schedule.cpp \
+    ThirdFloor.cpp \
     User_View.cpp \
     course.cpp \
     Admin.cpp \
@@ -29,6 +30,7 @@ HEADERS += \
     Maingraph.h \
     Location.h \
     Schedule.h \
+    ThirdFloor.h \
     User_View.h \
     course.h \
     Admin.h \
@@ -40,6 +42,7 @@ HEADERS += \
     login.h
 
 FORMS += \
+    ThirdFloor.ui \
     User_View.ui \
     newuser.ui \
     login.ui \
