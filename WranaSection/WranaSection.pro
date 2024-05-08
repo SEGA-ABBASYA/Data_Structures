@@ -19,6 +19,7 @@ SOURCES += \
     main.cpp \
     database.cpp \
     Admin_View.cpp \
+    undergroundfloor.cpp \
     user.cpp \
     newuser.cpp \
     login.cpp
@@ -33,6 +34,7 @@ HEADERS += \
     Admin.h \
     database.h \
     Admin_View.h \
+    undergroundfloor.h \
     user.h \
     newuser.h \
     login.h
@@ -41,7 +43,8 @@ FORMS += \
     User_View.ui \
     newuser.ui \
     login.ui \
-    Admin_View.ui
+    Admin_View.ui \
+    undergroundfloor.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
