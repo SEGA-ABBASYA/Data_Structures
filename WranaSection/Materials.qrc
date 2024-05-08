@@ -37,5 +37,9 @@
         <file>All_Materials/Add_Course.png</file>
         <file>All_Materials/Add_User.png</file>
         <file>All_Materials/User_Edit.png</file>
+        <file>All_Materials/TextBar.png</file>
+        <file>All_Materials/Search_location.png</file>
+        <file>All_Materials/Search_user.png</file>
+        <file>All_Materials/GraphMap.png</file>
     </qresource>
 </RCC>

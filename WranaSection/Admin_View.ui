@@ -83,8 +83,12 @@ color: rgb(255, 255, 255);
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(249, 83, 0);
-background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
+      <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+color: rgb(255, 255, 255);
+background-color: rgb(229, 112, 30);
+border-radius:50%;
+border: none;
+</string>
      </property>
      <property name="text">
       <string/>
@@ -920,13 +924,12 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{
-	background-color: rgb(249, 83, 0);
-background-image: url(:/assists/All_Materials/Rectangle 1380.png);
-
+         <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 color: rgb(255, 255, 255);
-	
-}</string>
+background-color: rgb(229, 112, 30);
+border-radius:50%;
+border: none;
+</string>
         </property>
         <property name="text">
          <string>Edit</string>
@@ -1279,13 +1282,12 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{
-	background-color: rgb(249, 83, 0);
-background-image: url(:/assists/All_Materials/Rectangle 1380.png);
-
+         <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 color: rgb(255, 255, 255);
-	
-}</string>
+background-color: rgb(229, 112, 30);
+border-radius:50%;
+border: none;
+</string>
         </property>
         <property name="text">
          <string>Delete</string>
@@ -2067,13 +2069,12 @@ color: rgb(255, 255, 255);
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{
-	background-color: rgb(249, 83, 0);
-background-image: url(:/assists/All_Materials/Rectangle 1380.png);
-
+         <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 color: rgb(255, 255, 255);
-	
-}</string>
+background-color: rgb(229, 112, 30);
+border-radius:50%;
+border: none;
+</string>
         </property>
         <property name="text">
          <string>Add</string>
@@ -2380,13 +2381,12 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{
-	background-color: rgb(249, 83, 0);
-background-image: url(:/assists/All_Materials/Rectangle 1380.png);
-
+         <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 color: rgb(255, 255, 255);
-	
-}</string>
+background-color: rgb(229, 112, 30);
+border-radius:50%;
+border: none;
+</string>
         </property>
         <property name="text">
          <string>Edit</string>
@@ -2699,13 +2699,12 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{
-	background-color: rgb(249, 83, 0);
-background-image: url(:/assists/All_Materials/Rectangle 1380.png);
-
+         <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 color: rgb(255, 255, 255);
-	
-}</string>
+background-color: rgb(229, 112, 30);
+border-radius:50%;
+border: none;
+</string>
         </property>
         <property name="text">
          <string>Delete</string>
@@ -3005,13 +3004,12 @@ color: rgb(255, 255, 255);
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton{
-	background-color: rgb(249, 83, 0);
-background-image: url(:/assists/All_Materials/Rectangle 1380.png);
-
+      <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 color: rgb(255, 255, 255);
-	
-}</string>
+background-color: rgb(229, 112, 30);
+border-radius:50%;
+border: none;
+</string>
      </property>
      <property name="text">
       <string>Logout</string>
@@ -3225,8 +3223,8 @@ color: rgb(255, 255, 255);
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="Materials.qrc"/>
   <include location="Login-Register.qrc"/>
+  <include location="Materials.qrc"/>
  </resources>
  <connections>
   <connection>
