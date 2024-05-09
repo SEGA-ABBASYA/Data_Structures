@@ -76,7 +76,7 @@ color: rgb(255, 255, 255);
     <widget class="QPushButton" name="logout">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>166</x>
        <y>660</y>
        <width>81</width>
        <height>49</height>
@@ -607,10 +607,16 @@ color: rgb(157, 108, 255);</string>
 font: 700 9pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="editTriggers">
-         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
         </property>
         <property name="alternatingRowColors">
          <bool>false</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
         </property>
         <property name="showGrid">
          <bool>true</bool>
@@ -619,19 +625,11 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
          <bool>true</bool>
         </property>
         <property name="rowCount">
-         <number>8</number>
+         <number>0</number>
         </property>
         <attribute name="horizontalHeaderDefaultSectionSize">
          <number>150</number>
         </attribute>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
         <column>
          <property name="text">
           <string>Course Name</string>
@@ -662,246 +660,6 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
           <string>  TeachingAssistants</string>
          </property>
         </column>
-        <item row="0" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="4" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="4" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="4" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="4" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="4" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="4" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="5" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="5" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="5" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="5" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="5" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="5" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="6" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="6" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="6" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="6" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="6" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="6" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="7" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="7" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="7" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="7" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="7" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="7" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
        </widget>
        <widget class="QPushButton" name="Edit">
         <property name="geometry">
@@ -966,10 +724,16 @@ color: rgb(255, 255, 255);
 font: 700 9pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="editTriggers">
-         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+         <set>QAbstractItemView::NoEditTriggers</set>
         </property>
         <property name="alternatingRowColors">
          <bool>false</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
         </property>
         <property name="showGrid">
          <bool>true</bool>
@@ -978,19 +742,11 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
          <bool>true</bool>
         </property>
         <property name="rowCount">
-         <number>8</number>
+         <number>0</number>
         </property>
         <attribute name="horizontalHeaderDefaultSectionSize">
          <number>150</number>
         </attribute>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
         <column>
          <property name="text">
           <string>Course Name</string>
@@ -1021,246 +777,6 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
           <string>  TeachingAssistants</string>
          </property>
         </column>
-        <item row="0" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="4" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="4" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="4" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="4" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="4" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="4" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="5" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="5" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="5" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="5" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="5" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="5" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="6" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="6" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="6" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="6" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="6" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="6" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="7" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="7" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="7" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="7" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="7" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="7" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
        </widget>
        <widget class="QPushButton" name="Delete">
         <property name="geometry">
@@ -1487,25 +1003,60 @@ color: rgb(255, 255, 255);
        </rect>
       </property>
       <widget class="QWidget" name="add_location_widget">
-       <widget class="QLabel" name="label_31">
+       <widget class="QListWidget" name="add_Graph_list">
         <property name="geometry">
          <rect>
-          <x>320</x>
-          <y>180</y>
-          <width>341</width>
-          <height>151</height>
+          <x>0</x>
+          <y>0</y>
+          <width>941</width>
+          <height>441</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>36</pointsize>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>false</bool>
+        </property>
+        <property name="itemAlignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="currentRow">
+         <number>-1</number>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="add_graph_Btn">
+        <property name="geometry">
+         <rect>
+          <x>800</x>
+          <y>450</y>
+          <width>131</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>17</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);</string>
+         <string notr="true">QPushButton{
+	background-color: rgb(249, 83, 0);
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+
+color: rgb(255, 255, 255);
+	
+}</string>
         </property>
         <property name="text">
          <string>Add</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
         </property>
        </widget>
       </widget>
@@ -1523,11 +1074,9 @@ color: rgb(255, 255, 255);
          <string notr="true">background-color: rgb(255, 85, 127);
 font: 700 9pt &quot;Segoe UI&quot;;</string>
         </property>
-        <row>
-         <property name="text">
-          <string>New Row</string>
-         </property>
-        </row>
+        <property name="rowCount">
+         <number>0</number>
+        </property>
         <column>
          <property name="text">
           <string>Name</string>
@@ -1601,11 +1150,9 @@ color: rgb(255, 255, 255);
          <string notr="true">background-color: rgb(255, 85, 127);
 font: 700 9pt &quot;Segoe UI&quot;;</string>
         </property>
-        <row>
-         <property name="text">
-          <string>New Row</string>
-         </property>
-        </row>
+        <property name="rowCount">
+         <number>0</number>
+        </property>
         <column>
          <property name="text">
           <string>Name</string>
@@ -1813,6 +1360,9 @@ color: rgb(255, 255, 255);
       <property name="checkable">
        <bool>true</bool>
       </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QPushButton" name="pushButton_11">
       <property name="geometry">
@@ -1840,6 +1390,9 @@ color: rgb(255, 255, 255);
        </size>
       </property>
       <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
        <bool>true</bool>
       </property>
      </widget>
@@ -1942,7 +1495,7 @@ color: rgb(255, 255, 255);
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <string notr="true">background-color: rgb(0, 0, 0);</string>
         </property>
         <property name="minimum">
          <number>1</number>
@@ -1961,7 +1514,7 @@ color: rgb(255, 255, 255);
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <string notr="true">background-color: rgb(0, 0, 0);</string>
         </property>
         <property name="minimum">
          <number>1</number>
@@ -2082,6 +1635,19 @@ color: rgb(255, 255, 255);
          <bool>false</bool>
         </property>
        </widget>
+       <widget class="QComboBox" name="programComboBox">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>257</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 0, 0);</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="edit_student_widget">
        <widget class="QTableWidget" name="tableWidget_2">
@@ -2113,10 +1679,16 @@ color: rgb(255, 255, 255);
 font: 700 9pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="editTriggers">
-         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
         </property>
         <property name="alternatingRowColors">
          <bool>false</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
         </property>
         <property name="showGrid">
          <bool>true</bool>
@@ -2124,19 +1696,12 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
         <property name="sortingEnabled">
          <bool>true</bool>
         </property>
+        <property name="rowCount">
+         <number>0</number>
+        </property>
         <attribute name="horizontalHeaderDefaultSectionSize">
          <number>150</number>
         </attribute>
-        <row>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </row>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
         <column>
          <property name="text">
           <string>Name</string>
@@ -2182,186 +1747,6 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
           <string>Gender</string>
          </property>
         </column>
-        <item row="0" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="6">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="7">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="8">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="6">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="7">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="8">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="6">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="7">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="8">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="6">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="7">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="8">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
        </widget>
        <widget class="QPushButton" name="EditStudent">
         <property name="geometry">
@@ -2426,13 +1811,13 @@ color: rgb(255, 255, 255);
 font: 700 9pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="editTriggers">
-         <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+         <set>QAbstractItemView::NoEditTriggers</set>
         </property>
         <property name="alternatingRowColors">
          <bool>false</bool>
         </property>
         <property name="selectionMode">
-         <enum>QAbstractItemView::ExtendedSelection</enum>
+         <enum>QAbstractItemView::SingleSelection</enum>
         </property>
         <property name="selectionBehavior">
          <enum>QAbstractItemView::SelectRows</enum>
@@ -2443,19 +1828,12 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
         <property name="sortingEnabled">
          <bool>true</bool>
         </property>
+        <property name="rowCount">
+         <number>0</number>
+        </property>
         <attribute name="horizontalHeaderDefaultSectionSize">
          <number>150</number>
         </attribute>
-        <row>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </row>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
         <column>
          <property name="text">
           <string>Name</string>
@@ -2501,186 +1879,6 @@ font: 700 9pt &quot;Segoe UI&quot;;</string>
           <string>Gender</string>
          </property>
         </column>
-        <item row="0" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="6">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="7">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="0" column="8">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="6">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="7">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="1" column="8">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="6">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="7">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="2" column="8">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="0">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="1">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="2">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="3">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="4">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="5">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="6">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="7">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
-        <item row="3" column="8">
-         <property name="text">
-          <string>null</string>
-         </property>
-        </item>
        </widget>
        <widget class="QPushButton" name="deleteStudent">
         <property name="geometry">
@@ -3225,8 +2423,8 @@ color: rgb(255, 255, 255);
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="Materials.qrc"/>
   <include location="Login-Register.qrc"/>
+  <include location="Materials.qrc"/>
  </resources>
  <connections>
   <connection>
