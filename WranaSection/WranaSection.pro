@@ -21,6 +21,7 @@ SOURCES += \
     database.cpp \
     Admin_View.cpp \
     undergroundfloor.cpp \
+    secondfloor.cpp \
     user.cpp \
     newuser.cpp \
     login.cpp
@@ -37,6 +38,7 @@ HEADERS += \
     database.h \
     Admin_View.h \
     undergroundfloor.h \
+    secondfloor.h \
     user.h \
     newuser.h \
     login.h
@@ -48,6 +50,7 @@ FORMS += \
     login.ui \
     Admin_View.ui \
     undergroundfloor.ui
+    secondfloor.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -56,4 +59,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     Login-Register.qrc \
-    Materials.qrc
+    Materials.qrc \
+    secondFloor.qrc

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef DSCODE_USER_H
 #define DSCODE_USER_H
 
@@ -34,7 +35,8 @@ public:
     map<string,User*> friends;
 
     // Constructor
-    User(string name, int id, int academic_year, int section, string username, string password, string program, char gender);
+    User();
+    //User(string name, string email, int id, int academic_year, int section, string username, string password, string program, char gender);
     User(string& name, string& email, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender);
 
     // Setters

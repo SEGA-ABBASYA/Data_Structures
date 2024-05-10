@@ -5,6 +5,18 @@
 #include <QGraphicsBlurEffect>
 #include <QDebug>
 #include "login.h"
+#include <vector>
+#include <string>
+#include"Admin.h"
+#include <QTableWidgetItem>
+#include <QMessageBox>
+#include "user.h"
+#include <QString>
+#include <QMessageBox>
+#include <regex>
+
+Admin admin;
+Database dbase;
 
 AdminView::AdminView(QWidget *parent)
     : QMainWindow(parent)
@@ -13,6 +25,8 @@ AdminView::AdminView(QWidget *parent)
     ui->setupUi(this);
     ui->Test->setCheckable(true);
     ui->Full->hide();
+    QStringList programs = {"General", "SC", "CS", "CSys", "IS", "Bioinformatics", "AI", "SW", "Cyber Security", "Robotics", "Multimedia"};
+    ui->programComboBox->addItems(programs);
 }
 
 AdminView::~AdminView()
@@ -25,44 +39,45 @@ AdminView::~AdminView()
 void AdminView::on_Test_toggled()
 {
 
-        ui->Icons->hide();
-        ui->Full->show();
+    ui->Icons->hide();
+    ui->Full->show();
 }
 
 void AdminView::on_Test_2_toggled()
 {
 
-        ui->Icons->show();
-        ui->Full->hide();
+    ui->Icons->show();
+    ui->Full->hide();
 }
 
 void AdminView::on_course_icon_toggled(bool checked)
 {
 
     ui->stackedWidget->setCurrentIndex(0);
-  //  if(checked) ui->course->setStyleSheet("color:rgb(177, 59, 177); ");
-  //  else ui->course->setStyleSheet("color: rgb(255, 255, 255)") ;
+    //  if(checked) ui->course->setStyleSheet("color:rgb(177, 59, 177); ");
+    //  else ui->course->setStyleSheet("color: rgb(255, 255, 255)") ;
 }
 
 void AdminView::on_graph_icon_toggled(bool checked)
 {
     ui->stackedWidget->setCurrentIndex(1);
-  //  if(checked) ui->graph->setStyleSheet("color:rgb(177, 59, 177); ");
-   // else ui->graph->setStyleSheet("color: rgb(255, 255, 255)") ;
+    on_pushButton_15_toggled(true);
+    //  if(checked) ui->graph->setStyleSheet("color:rgb(177, 59, 177); ");
+    // else ui->graph->setStyleSheet("color: rgb(255, 255, 255)") ;
 }
 
 void AdminView::on_student_icon_toggled(bool checked)
 {
     ui->stackedWidget->setCurrentIndex(2);
-  //  if(checked) ui->student->setStyleSheet("color:rgb(177, 59, 177); ");
-  //  else ui->student->setStyleSheet("color: rgb(255, 255, 255)") ;
+    //  if(checked) ui->student->setStyleSheet("color:rgb(177, 59, 177); ");
+    //  else ui->student->setStyleSheet("color: rgb(255, 255, 255)") ;
 }
 
 void AdminView::on_schedule_icon_toggled(bool checked)
 {
     ui->stackedWidget->setCurrentIndex(3);
-  //  if(checked) ui->schedule->setStyleSheet("color:rgb(177, 59, 177); ");
-  //  else ui->schedule->setStyleSheet("color: rgb(255, 255, 255)") ;
+    //  if(checked) ui->schedule->setStyleSheet("color:rgb(177, 59, 177); ");
+    //  else ui->schedule->setStyleSheet("color: rgb(255, 255, 255)") ;
 }
 
 void AdminView::on_logout_clicked()
@@ -82,17 +97,17 @@ void AdminView::Write_Courses_table_edit()
 
 
     int i=0;
-    for (auto& course : Database:: courses) {
+    ui->tableWidget->setRowCount(Database::courses.size());
+    for (auto& course : Database::courses) {
 
-       // qDebug() << QString::fromStdString((course.second.getTAs_S()));
+        // qDebug() << QString::fromStdString((course.second.getTAs_S()));
+        ui->tableWidget->setItem(i,0, new QTableWidgetItem(QString::fromStdString(course.second.getCourseName())));
+        ui->tableWidget->setItem(i,1, new QTableWidgetItem(QString::fromStdString(course.second.getDepartment())));
+        ui->tableWidget->setItem(i,2, new QTableWidgetItem(QString::fromStdString(course.second.getLab_S())));
+        ui->tableWidget->setItem(i,3, new QTableWidgetItem(QString::fromStdString(course.second.getSection_S())));
 
-        ui->tableWidget->item(i,0)->setText(QString::fromStdString(course.second.getCourseName()));
-        ui->tableWidget->item(i,1)->setText(QString::fromStdString(course.second.getDepartment()));
-        ui->tableWidget->item(i,2)->setText(QString::fromStdString(course.second.getLab_S()));
-        ui->tableWidget->item(i,3)->setText(QString::fromStdString(course.second.getSection_S()));
-
-        ui->tableWidget->item(i,4)->setText(QString::fromStdString(course.second.getDoctors_S()));
-        ui->tableWidget->item(i,5)->setText(QString::fromStdString(course.second.getTAs_S()));
+        ui->tableWidget->setItem(i,4, new QTableWidgetItem(QString::fromStdString(course.second.getDoctors_S())));
+        ui->tableWidget->setItem(i,5, new QTableWidgetItem(QString::fromStdString(course.second.getTAs_S())));
 
 
         i++;
@@ -104,17 +119,19 @@ void AdminView::Write_Courses_table_delete()
 
 
     int i=0;
+    ui->tableWidget_3->setRowCount(Database::courses.size());
     for (auto& course : Database:: courses) {
 
         // qDebug() << QString::fromStdString((course.second.getTAs_S()));
 
-        ui->tableWidget_3->item(i,0)->setText(QString::fromStdString(course.second.getCourseName()));
-        ui->tableWidget_3->item(i,1)->setText(QString::fromStdString(course.second.getDepartment()));
-        ui->tableWidget_3->item(i,2)->setText(QString::fromStdString(course.second.getLab_S()));
-        ui->tableWidget->item(i,3)->setText(QString::fromStdString(course.second.getSection_S()));
+        ui->tableWidget_3->setItem(i,0, new QTableWidgetItem(QString::fromStdString(course.second.getCourseName())));
+        ui->tableWidget_3->setItem(i,1, new QTableWidgetItem(QString::fromStdString(course.second.getDepartment())));
+        ui->tableWidget_3->setItem(i,2, new QTableWidgetItem(QString::fromStdString(course.second.getLab_S())));
+        ui->tableWidget_3->setItem(i,3, new QTableWidgetItem(QString::fromStdString(course.second.getSection_S())));
 
-        ui->tableWidget_3->item(i,4)->setText(QString::fromStdString(course.second.getDoctors_S()));
-        ui->tableWidget_3->item(i,5)->setText(QString::fromStdString(course.second.getTAs_S()));
+        ui->tableWidget_3->setItem(i,4, new QTableWidgetItem(QString::fromStdString(course.second.getDoctors_S())));
+        ui->tableWidget_3->setItem(i,5, new QTableWidgetItem(QString::fromStdString(course.second.getTAs_S())));
+
 
 
         i++;
@@ -127,29 +144,30 @@ void AdminView::Write_Students_table_edit()
 
 
     int i=0;
+    ui->tableWidget_2->setRowCount(Database::users.size());
     for (auto& student : Database:: users) {
 
         string Gender,ID,Academic_year,Section;
 
-        ui->tableWidget_2->item(i,0)->setText(QString::fromStdString(student.getName()));
-        ui->tableWidget_2->item(i,1)->setText(QString::fromStdString(student.getEmail()));
+        ui->tableWidget_2->setItem(i,0, new QTableWidgetItem(QString::fromStdString(student.getName())));
+        ui->tableWidget_2->setItem(i,1, new QTableWidgetItem(QString::fromStdString(student.getEmail())));
 
         ID=to_string(student.getId());
-        ui->tableWidget_2->item(i,2)->setText(QString::fromStdString(ID));
+        ui->tableWidget_2->setItem(i,2, new QTableWidgetItem(QString::fromStdString(ID)));
 
         Academic_year=to_string(student.getAcademicYear());
-        ui->tableWidget_2->item(i,3)->setText(QString::fromStdString( Academic_year));
+        ui->tableWidget_2->setItem(i,3, new QTableWidgetItem(QString::fromStdString( Academic_year)));
 
         Section=to_string(student.getSection());
-        ui->tableWidget_2->item(i,4)->setText(QString::fromStdString(Section));
+        ui->tableWidget_2->setItem(i,4, new QTableWidgetItem(QString::fromStdString(Section)));
 
-        ui->tableWidget_2->item(i,5)->setText(QString::fromStdString(student.getUsername()));
-        ui->tableWidget_2->item(i,6)->setText(QString::fromStdString(student.getPassword()));
-        ui->tableWidget_2->item(i,7)->setText(QString::fromStdString(student.getProgram()));
+        ui->tableWidget_2->setItem(i,5, new QTableWidgetItem(QString::fromStdString(student.getUsername())));
+        ui->tableWidget_2->setItem(i,6, new QTableWidgetItem(QString::fromStdString(student.getPassword())));
+        ui->tableWidget_2->setItem(i,7, new QTableWidgetItem(QString::fromStdString(student.getProgram())));
 
 
         Gender.push_back(student.getGender());
-        ui->tableWidget_2->item(i,8)->setText(QString::fromStdString(Gender));
+        ui->tableWidget_2->setItem(i,8, new QTableWidgetItem(QString::fromStdString(Gender)));
 
 
         i++;
@@ -160,29 +178,30 @@ void AdminView::Write_Students_table_delete()
 
 
     int i=0;
+    ui->tableWidget_4->setRowCount(Database::users.size());
     for (auto& student : Database:: users) {
 
-       string Gender,ID,Academic_year,Section;
+        string Gender,ID,Academic_year,Section;
 
-        ui->tableWidget_4->item(i,0)->setText(QString::fromStdString(student.getName()));
-        ui->tableWidget_4->item(i,1)->setText(QString::fromStdString(student.getEmail()));
+        ui->tableWidget_4->setItem(i,0, new QTableWidgetItem(QString::fromStdString(student.getName())));
+        ui->tableWidget_4->setItem(i,1, new QTableWidgetItem(QString::fromStdString(student.getEmail())));
 
         ID=to_string(student.getId());
-        ui->tableWidget_4->item(i,2)->setText(QString::fromStdString(ID));
+        ui->tableWidget_4->setItem(i,2, new QTableWidgetItem(QString::fromStdString(ID)));
 
         Academic_year=to_string(student.getAcademicYear());
-        ui->tableWidget_4->item(i,3)->setText(QString::fromStdString( Academic_year));
+        ui->tableWidget_4->setItem(i,3, new QTableWidgetItem(QString::fromStdString( Academic_year)));
 
         Section=to_string(student.getSection());
-        ui->tableWidget_4->item(i,4)->setText(QString::fromStdString(Section));
+        ui->tableWidget_4->setItem(i,4, new QTableWidgetItem(QString::fromStdString(Section)));
 
-        ui->tableWidget_4->item(i,5)->setText(QString::fromStdString(student.getUsername()));
-      ui->tableWidget_4->item(i,6)->setText(QString::fromStdString(student.getPassword()));
-        ui->tableWidget_4->item(i,7)->setText(QString::fromStdString(student.getProgram()));
+        ui->tableWidget_4->setItem(i,5, new QTableWidgetItem(QString::fromStdString(student.getUsername())));
+        ui->tableWidget_4->setItem(i,6, new QTableWidgetItem(QString::fromStdString(student.getPassword())));
+        ui->tableWidget_4->setItem(i,7, new QTableWidgetItem(QString::fromStdString(student.getProgram())));
 
-      Gender.push_back(student.getGender());
+        Gender.push_back(student.getGender());
 
-         ui->tableWidget_4->item(i,8)->setText(QString::fromStdString(Gender));
+        ui->tableWidget_4->setItem(i,8, new QTableWidgetItem(QString::fromStdString(Gender)));
 
 
         i++;
@@ -252,6 +271,10 @@ void AdminView::on_pushButton_20_toggled(bool checked)
 void AdminView::on_pushButton_15_toggled(bool checked)
 {
     //Add
+    ui->add_Graph_list->clear();
+    for(auto loc : Database::locations.values()){
+        if(!loc.getHall()) ui->add_Graph_list->addItem(QString::fromStdString(loc.getName()));
+    }
     ui->stackedWidget_graph->setCurrentIndex(0);
 }
 
@@ -267,3 +290,359 @@ void AdminView::on_pushButton_14_toggled(bool checked)
     ui->stackedWidget_graph->setCurrentIndex(2);
 }
 
+
+///////////////////////////////Course///////////////////////////////////
+
+string courseName;
+string courseDept;
+string hasLab;
+string hasSection;
+string doctors;
+string teachingAssistants;
+
+// Add Course.
+void AdminView::on_pushButton_clicked()
+{
+    courseName = ui->lineEdit->text().toLower().toStdString();
+    courseDept = ui->lineEdit_2->text().toStdString();
+    bool hasLab = false;
+    if(ui->checkBox->isChecked())
+    {
+        hasLab = true;
+    }
+    bool hasSection = false;
+    if(ui->checkBox_2->isChecked())
+    {
+        hasSection = true;
+    }
+    doctors = ui->textEdit->toPlainText().toStdString();
+    teachingAssistants = ui->textEdit_2->toPlainText().toStdString();
+
+    vector<string> newDoctors = disectStringEnter(doctors);
+    vector<string> newTeachingAssistants = disectStringEnter(teachingAssistants);
+
+    // Validation.
+    bool violatedConstraint = 0;
+    if (courseName.empty())
+    {
+        QMessageBox::warning(this, "Error", "Please enter course name.");
+        violatedConstraint = 1;
+    }
+    else if(courseDept.empty())
+    {
+        QMessageBox::warning(this, "Error", "Please enter course department.");
+        violatedConstraint = 1;
+    }
+    else if (doctors.empty())
+    {
+        QMessageBox::warning(this, "Error", "Please enter course doctors names.");
+        violatedConstraint = 1;
+    }
+    else if (teachingAssistants.empty() && (hasLab == 1 || hasSection == 1))
+    {
+        QMessageBox::warning(this, "Error", "Please enter course TAs names.");
+        violatedConstraint = 1;
+    }
+    else
+    {
+        Course course(courseName,courseDept,hasLab,hasSection,newDoctors,newTeachingAssistants);
+        // If course doesn't exist append it.
+        if (dbase.courses.find(course.getCourseName()) == dbase.courses.end())
+        {
+            admin.addCourse(course);
+        }
+        else // Course found in map
+        {
+            QMessageBox::warning(this, "Error", "Course Already Exists,\nYou can edit course in the edit screen.");
+        }
+    }
+}
+vector<string> AdminView::disectStringEnter(string str)
+{
+    string str2;
+    vector<string> newvector;
+    for (int i=0;i< str.length();i++)
+    {
+        if (str[i] == '\n')
+        {
+            newvector.push_back(str2);
+            str2.clear();
+        }
+        else
+        {
+            str2.push_back(str[i]);
+        }
+    }
+    newvector.push_back(str2);
+    return newvector;
+}
+
+// Delete course.
+void AdminView::on_tableWidget_3_itemClicked(QTableWidgetItem *item)
+{
+    if (item != nullptr) {
+        int row = item->row();
+        QTableWidgetItem *cellItem = ui->tableWidget_3->item(row, 0);
+        if (cellItem != nullptr)
+        {
+            courseName = cellItem->text().toStdString();
+        }
+    }
+    cout<<courseName<<endl;
+}
+void AdminView::on_Delete_clicked()
+{
+    admin.deleteCourse(courseName);
+    Write_Courses_table_delete();
+}
+
+// Edit course.
+
+string currentCourseName;
+
+bool AdminView::encodeValues(string hasLabOrSection)
+{
+    if (hasLabOrSection == "yes")
+        return 1;
+    else
+        return 0;
+}
+vector<string> AdminView::disectStringComma(string str)
+{
+    string str2;
+    vector<string> newvector;
+    for (int i=0;i< str.length();i++)
+    {
+        if (str[i] == ',')
+        {
+            newvector.push_back(str2);
+            str2.clear();
+        }
+        else
+        {
+            str2.push_back(str[i]);
+        }
+    }
+    newvector.push_back(str2);
+    return newvector;
+}
+void AdminView::on_tableWidget_itemClicked(QTableWidgetItem *item)
+{
+    if (item != nullptr) {
+        int row = item->row();
+        QTableWidgetItem *cellItem = ui->tableWidget->item(row, 0);
+        if (cellItem != nullptr)
+        {
+            currentCourseName = cellItem->text().toStdString();
+        }
+    }
+    cout<<currentCourseName<<endl;
+}
+void AdminView::on_Edit_clicked()
+{
+    int row = ui->tableWidget->currentRow();
+    for (int col = 0; col < 6; ++col) {
+        QTableWidgetItem *cellItem = ui->tableWidget->item(row, col);
+        if (cellItem != nullptr) {
+            // Assign data to corresponding variables based on column index
+            switch (col) {
+            case 0:
+                courseName = cellItem->text().toLower().toStdString();
+                break;
+            case 1:
+                courseDept = cellItem->text().toStdString();
+                break;
+            case 2:
+                hasLab = cellItem->text().toStdString();
+                break;
+            case 3:
+                hasSection = cellItem->text().toStdString();
+                break;
+            case 4:
+                doctors = cellItem->text().toStdString();
+                break;
+            case 5:
+                teachingAssistants = cellItem->text().toStdString();
+                break;
+            default:
+                break;
+            }
+        }
+    }
+
+    bool newHasLab = encodeValues(hasLab);
+    bool newHasSection = encodeValues(hasSection);
+    vector<string> newDoctors = disectStringComma(doctors);
+    vector<string> newTeachingAssistants = disectStringComma(teachingAssistants);
+
+    Course course(courseName,courseDept,newHasLab,newHasSection,newDoctors,newTeachingAssistants);
+
+    if (dbase.courses.find(course.getCourseName()) == dbase.courses.end() || currentCourseName == courseName)
+    {
+        // Key doesn't exist in the map, proceed to edit the course
+        admin.deleteCourse(currentCourseName);
+        admin.editCourse(course);
+    }
+    else
+    {
+        QMessageBox::warning(this, "Error", "Course Already Exists and is Identical.");
+    }
+}
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////User//////////////////////////////////////////////////
+string name;
+string email;
+string username;
+string password;
+string program;
+char gender = 'N';
+int id;
+int academicYear;
+int section;
+
+// Add user.
+bool validEmails(string email){
+    std::regex pattern(R"(^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$)");
+    return std::regex_match(email, pattern);
+}
+
+void AdminView::on_Add_clicked()
+{
+    name = ui->nameLineEdit->text().toStdString();
+    email = ui->nameLineEdit_2->text().toStdString();
+    username = ui->nameLineEdit_3->text().toStdString();
+    password = ui->nameLineEdit_4->text().toStdString();
+    id = ui->nameLineEdit_5->text().toInt();
+    academicYear = ui->sectionSpinBox_2->value();
+    section = ui->sectionSpinBox->value();
+    program = ui->programComboBox->currentText().toStdString();
+    if(ui->male->isChecked())
+    {
+        gender = 'M';
+    }
+    if (ui->female->isChecked())
+    {
+        gender = 'F';
+    }
+
+    // Validation.
+    auto user = Database::users.find(username);
+    if(!validEmails(email))
+    {
+        QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nNot Valid Email");
+    }
+    else if(user != Database::users.end())
+    {
+        QMessageBox::warning(this, "Error", "userName is Already Exist");
+    }
+    else if(password.size() < 8)
+    {
+        QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nPlease, Choose a password with 8 or more characters");
+    }
+    else if(ui->nameLineEdit_5->text().size() < 10)
+    {
+        QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nPlease, Check the id, it should be at least 10 digits");
+    }
+    else if(name.empty() || email.empty() || username.empty() || password.empty() || gender == 'N')
+    {
+        QMessageBox::warning(this, "Error", "Please complete all fields");
+    }
+    else
+    {
+        //name, email, id, academic_year, section, username, password, program, gender
+        User user(name,email,id,academicYear,section,username,password,program,gender);
+        admin.addUser(user);
+    }
+}
+
+// Delete user.
+void AdminView::on_tableWidget_4_itemClicked(QTableWidgetItem *item)
+{
+    if (item != nullptr) {
+        int row = item->row();
+        QTableWidgetItem *cellItem = ui->tableWidget_4->item(row, 5);
+        if (cellItem != nullptr)
+        {
+            username = cellItem->text().toStdString();
+        }
+    }
+    cout<<username<<endl;
+}
+
+void AdminView::on_deleteStudent_clicked()
+{
+    admin.deleteUser(username);
+    Write_Students_table_delete();
+}
+
+// Edit user.
+
+string currentUsername;
+string oldGender;
+
+void AdminView::on_tableWidget_2_itemClicked(QTableWidgetItem *item)
+{
+    if (item != nullptr) {
+        int row = item->row();
+        QTableWidgetItem *cellItem = ui->tableWidget_2->item(row, 5);
+        if (cellItem != nullptr)
+        {
+            currentUsername = cellItem->text().toStdString();
+        }
+    }
+    cout<<currentUsername<<endl;
+}
+void AdminView::on_EditStudent_clicked()
+{
+    int row = ui->tableWidget_2->currentRow();
+    for (int col = 0; col < 9; ++col) {
+        QTableWidgetItem *cellItem = ui->tableWidget_2->item(row, col);
+        if (cellItem != nullptr) {
+            // Assign data to corresponding variables based on column index
+            switch (col) {
+            case 0:
+                name = cellItem->text().toLower().toStdString();
+                break;
+            case 1:
+                email = cellItem->text().toStdString();
+                break;
+            case 2:
+                id = cellItem->text().toInt();
+                break;
+            case 3:
+                academicYear = cellItem->text().toInt();
+                break;
+            case 4:
+                section = cellItem->text().toInt();
+                break;
+            case 5:
+                username = cellItem->text().toStdString();
+                break;
+            case 6:
+                password = cellItem->text().toStdString();
+                break;
+            case 7:
+                program = cellItem->text().toStdString();
+                break;
+            case 8:
+                oldGender = cellItem->text().toStdString();
+                gender = oldGender[0];
+                break;
+            default:
+                break;
+            }
+        }
+    }
+    User user(name,email,id,academicYear,section,username,password,program,gender);
+    if (!dbase.users.contains(user.getUsername()) || currentUsername == username)
+    {
+        // Key doesn't exist in the map, proceed to edit the course
+        admin.deleteUser(currentUsername);
+        admin.editUser(user);
+    }
+    else
+    {
+        QMessageBox::warning(this, "Error", "Username Already Exists and is Identical.");
+    }
+}

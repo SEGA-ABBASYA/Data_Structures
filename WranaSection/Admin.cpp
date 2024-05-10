@@ -1,14 +1,25 @@
 #include <iostream>
 #include <vector>
+#include <string>
 #include"Admin.h"
-
+#include"database.h"
 using namespace std;
+
+/*
+ * location key -> locationName.
+ * course key -> courseName.
+ * schedule key -> locationName, date, time.
+ * user key -> username.
+*/
+
+// Object of Database class
+Database db;
 
 // Constructor
 Admin::Admin()
 {
     username = "Admin";
-    password = "Admin";
+    password = "Admin"; 
 }
 
 // Getter, and setter for username.
@@ -34,32 +45,39 @@ void Admin::setPassword(string newPassword)
 // Course class related methods.
 void Admin::editCourse(Course course)
 {
-    // Body
+    /* the [] operator handels if the object has the same key
+     and overwrites the existing one.*/
+    db.courses[course.getCourseName()] = course;
 }
 void Admin::addCourse(Course course)
 {
-    // Body
+    /* the [] creates a new key in map with the course name */
+    db.courses[course.getCourseName()] = course;
 }
-void Admin::deleteCourse(Course course)
+void Admin::deleteCourse(string courseName)
 {
-    // Body
+    db.courses.erase(courseName);
 }
 
-// Loction class related methods.
-void Admin::addLocation(Location location)
-{
-    // Body
-}
+// Loction/Graph class related methods.
 void Admin::editLocation(Location location)
 {
     // Body
 }
-void Admin::removeLocation(Location location)
+
+// user related methods.
+void Admin::addUser(User user)
 {
-    // Body
+    db.users[user.getUsername()] = user;
 }
-
-
+void Admin::editUser(User user)
+{
+    db.users[user.getUsername()] = user;
+}
+void Admin::deleteUser(string username)
+{
+    db.users.remove(username);
+}
 
 // Destructor
 Admin::~Admin()
