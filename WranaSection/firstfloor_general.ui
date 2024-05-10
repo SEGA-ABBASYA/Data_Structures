@@ -14,14 +14,11 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget{
-	background-color: transparent;
-
-}</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">back_ground--color:transparent;</string>
+    <string notr="true"/>
    </property>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -33,7 +30,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string/>

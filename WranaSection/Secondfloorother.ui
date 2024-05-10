@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SecondFloor</class>
- <widget class="QWidget" name="SecondFloor">
+ <class>SecondFloorOther</class>
+ <widget class="QWidget" name="SecondFloorOther">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,10 +13,10 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QTableWidget" name="SecondF_widget">
+  <widget class="QTableWidget" name="SecondF_widget_2">
    <property name="geometry">
     <rect>
-     <x>-2</x>
+     <x>0</x>
      <y>0</y>
      <width>1280</width>
      <height>720</height>
@@ -40,10 +40,10 @@ background-color: transparent;</string>
     <enum>QAbstractItemView::SingleSelection</enum>
    </property>
    <property name="rowCount">
-    <number>47</number>
+    <number>67</number>
    </property>
    <property name="columnCount">
-    <number>76</number>
+    <number>85</number>
    </property>
    <attribute name="horizontalHeaderVisible">
     <bool>false</bool>
@@ -52,7 +52,7 @@ background-color: transparent;</string>
     <number>0</number>
    </attribute>
    <attribute name="horizontalHeaderDefaultSectionSize">
-    <number>17</number>
+    <number>15</number>
    </attribute>
    <attribute name="verticalHeaderVisible">
     <bool>false</bool>
@@ -61,7 +61,7 @@ background-color: transparent;</string>
     <number>0</number>
    </attribute>
    <attribute name="verticalHeaderDefaultSectionSize">
-    <number>15</number>
+    <number>11</number>
    </attribute>
    <attribute name="verticalHeaderHighlightSections">
     <bool>true</bool>
@@ -113,6 +113,35 @@ background-color: transparent;</string>
    <row/>
    <row/>
    <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
    <column/>
    <column/>
    <column/>
@@ -190,11 +219,11 @@ background-color: transparent;</string>
    <column/>
    <column/>
   </widget>
-  <widget class="QLabel" name="background">
+  <widget class="QLabel" name="background_2">
    <property name="geometry">
     <rect>
-     <x>-10</x>
-     <y>-10</y>
+     <x>0</x>
+     <y>0</y>
      <width>1280</width>
      <height>720</height>
     </rect>
@@ -203,11 +232,11 @@ background-color: transparent;</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="secondFloor.qrc">:/Pages/All_Materials/SecondFloor/Second_Main.png</pixmap>
+    <pixmap resource="secondFloor.qrc">:/Pages/All_Materials/SecondFloor/Second_Part2.png</pixmap>
    </property>
   </widget>
-  <zorder>background</zorder>
-  <zorder>SecondF_widget</zorder>
+  <zorder>background_2</zorder>
+  <zorder>SecondF_widget_2</zorder>
  </widget>
  <resources>
   <include location="secondFloor.qrc"/>
