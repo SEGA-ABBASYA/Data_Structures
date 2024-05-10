@@ -43,5 +43,6 @@
         <file>All_Materials/GraphMap.png</file>
         <file>All_Materials/Underground_Floor.png</file>
         <file>All_Materials/Third_Floor.png</file>
+        <file>All_Materials/Ground_Floor.png</file>
     </qresource>
 </RCC>

@@ -6,6 +6,7 @@
 #include "Admin_View.h"
 #include "undergroundfloor.h"
 #include "ThirdFloor.h"
+#include "Groundfloor.h"
 using namespace std;
 void write()
 {
@@ -19,8 +20,9 @@ int main(int argc, char *argv[])
     Login w;
     UndergroundFloor undergroundFloor;
     ThirdFloor t;
+    GroundFloor g;
     db.read();
-    undergroundFloor.show();
+    g.show();
     vector<string>c;
     c.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++...+");
     c.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++...+");
