@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     Graph.cpp \
+    Groundfloor.cpp \
     Maingraph.cpp \
     Location.cpp \
     Schedule.cpp \
@@ -30,6 +31,7 @@ SOURCES += \
 
 HEADERS += \
     Graph.h \
+    Groundfloor.h \
     Maingraph.h \
     Location.h \
     Schedule.h \
@@ -48,6 +50,7 @@ HEADERS += \
     firstfloor_general.h
 
 FORMS += \
+    Groundfloor.ui \
     ThirdFloor.ui \
     User_View.ui \
     newuser.ui \

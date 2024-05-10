@@ -45,5 +45,6 @@
         <file>All_Materials/Third_Floor.png</file>
         <file>All_Materials/First_Credit.png</file>
         <file>All_Materials/Fisrt_Floor.png</file>
+        <file>All_Materials/Ground_Floor.png</file>
     </qresource>
 </RCC>

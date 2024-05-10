@@ -20,8 +20,6 @@ Admin Database::admin;
 
 Database::Database() {
     adminFile.setFileName("Files/Admin.txt");
-
-    adminFile.setFileName( "Files/Admin.txt");
     CoursesFile.setFileName("Files/Courses.txt");
     usersFile.setFileName("Files/Users.txt");
     locationsFile.setFileName("Files/Locations.txt");

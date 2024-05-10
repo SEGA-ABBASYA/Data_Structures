@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GroundFloor</class>
+ <widget class="QWidget" name="GroundFloor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>720</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/assists/All_Materials/Ground_Floor.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1281</width>
+     <height>721</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:none;
+background-color: transparent;</string>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+   <property name="rowCount">
+    <number>36</number>
+   </property>
+   <property name="columnCount">
+    <number>75</number>
+   </property>
+   <attribute name="horizontalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderMinimumSectionSize">
+    <number>1</number>
+   </attribute>
+   <attribute name="horizontalHeaderHighlightSections">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderMinimumSectionSize">
+    <number>1</number>
+   </attribute>
+   <attribute name="verticalHeaderHighlightSections">
+    <bool>false</bool>
+   </attribute>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <row/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
