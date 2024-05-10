@@ -24,7 +24,9 @@ SOURCES += \
     secondfloor.cpp \
     user.cpp \
     newuser.cpp \
-    login.cpp
+    login.cpp \
+    firstfloor_credit.cpp \
+    firstfloor_general.cpp
 
 HEADERS += \
     Graph.h \
@@ -41,7 +43,9 @@ HEADERS += \
     secondfloor.h \
     user.h \
     newuser.h \
-    login.h
+    login.h \
+    firstfloor_credit.h \
+    firstfloor_general.h
 
 FORMS += \
     ThirdFloor.ui \
@@ -50,7 +54,9 @@ FORMS += \
     login.ui \
     Admin_View.ui \
     undergroundfloor.ui \
-    secondfloor.ui
+    secondfloor.ui \
+    firstfloor_credit.ui \
+    firstfloor_general.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

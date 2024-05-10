@@ -2421,8 +2421,8 @@ color: rgb(255, 255, 255);
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="Login-Register.qrc"/>
   <include location="Materials.qrc"/>
+  <include location="Login-Register.qrc"/>
  </resources>
  <connections>
   <connection>

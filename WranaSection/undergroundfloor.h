@@ -19,6 +19,9 @@ public:
     vector<string> CreateGrid();
     ~UndergroundFloor();
 
+private slots:
+    void on_tableWidget_cellActivated(int row, int column);
+
 private:
     Ui::UndergroundFloor *ui;
 };
