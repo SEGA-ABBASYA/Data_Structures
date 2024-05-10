@@ -6,6 +6,7 @@
 #include "Admin_View.h"
 #include "undergroundfloor.h"
 #include "ThirdFloor.h"
+#include "secondfloor.h"
 using namespace std;
 void write()
 {
@@ -16,11 +17,12 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Database db;
-    Login w;
-    UndergroundFloor undergroundFloor;
+    Login l;
+    UndergroundFloor u;
     ThirdFloor t;
+    SecondFloor s;
     db.read();
-    undergroundFloor.show();
+    s.show();
     vector<string>c;
     c.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++...+");
     c.push_back("++++++++++++++++++++++++++++++++++++++++++++++++++++...+");

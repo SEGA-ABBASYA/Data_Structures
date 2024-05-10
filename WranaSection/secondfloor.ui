@@ -203,24 +203,6 @@ background-color: transparent;</string>
      <column/>
      <column/>
     </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>760</x>
-       <y>80</y>
-       <width>147</width>
-       <height>48</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>27</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="background">
      <property name="geometry">
       <rect>
@@ -237,9 +219,22 @@ background-color: transparent;</string>
       <pixmap resource="secondFloor.qrc">:/Pages/All_Materials/SecondFloor/Second_Main.png</pixmap>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>160</y>
+       <width>171</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
     <zorder>background</zorder>
     <zorder>SecondF_widget</zorder>
-    <zorder>label</zorder>
+    <zorder>pushButton_2</zorder>
    </widget>
    <widget class="QWidget" name="second_widget">
     <widget class="QLabel" name="background_2">
@@ -467,22 +462,17 @@ background-color: transparent;</string>
      <column/>
      <column/>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>750</x>
-       <y>290</y>
-       <width>147</width>
-       <height>48</height>
+       <x>730</x>
+       <y>310</y>
+       <width>171</width>
+       <height>41</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <pointsize>27</pointsize>
-      </font>
-     </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string>PushButton</string>
      </property>
     </widget>
    </widget>

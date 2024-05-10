@@ -79,11 +79,23 @@ SecondFloor::~SecondFloor()
 
 void SecondFloor::on_SecondF_widget_2_cellActivated(int row, int column)
 {
-    ui->label_2->setText(QString::number(row) + "    " + QString::number(column));
+    //ui->label_2->setText(QString::number(row) + "    " + QString::number(column));
 }
 
 void SecondFloor::on_SecondF_widget_cellActivated(int row, int column)
 {
-    ui->label->setText(QString::number(row) + "    " + QString::number(column));
+    //ui->label->setText(QString::number(row) + "    " + QString::number(column));
+}
+
+
+void SecondFloor::on_pushButton_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+
+void SecondFloor::on_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }
 

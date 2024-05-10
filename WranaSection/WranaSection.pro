@@ -49,7 +49,7 @@ FORMS += \
     newuser.ui \
     login.ui \
     Admin_View.ui \
-    undergroundfloor.ui
+    undergroundfloor.ui \
     secondfloor.ui
 
 # Default rules for deployment.
