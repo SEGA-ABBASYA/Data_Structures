@@ -1063,48 +1063,6 @@ color: rgb(255, 255, 255);
        </widget>
       </widget>
       <widget class="QWidget" name="edit_location_name">
-       <widget class="QTableWidget" name="tableWidget_6">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>10</y>
-          <width>911</width>
-          <height>431</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 85, 127);
-font: 700 9pt &quot;Segoe UI&quot;;</string>
-        </property>
-        <property name="rowCount">
-         <number>0</number>
-        </property>
-        <column>
-         <property name="text">
-          <string>Name</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Hall</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Floor</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>X</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Y</string>
-         </property>
-        </column>
-       </widget>
        <widget class="QPushButton" name="Edit_2">
         <property name="geometry">
          <rect>
@@ -1137,50 +1095,32 @@ color: rgb(255, 255, 255);
          <bool>false</bool>
         </property>
        </widget>
-      </widget>
-      <widget class="QWidget" name="delete_location_page">
-       <widget class="QTableWidget" name="tableWidget_5">
+       <widget class="QListWidget" name="delete_Graph_list">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>10</y>
-          <width>911</width>
-          <height>431</height>
+          <x>0</x>
+          <y>0</y>
+          <width>941</width>
+          <height>441</height>
          </rect>
         </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 85, 127);
-font: 700 9pt &quot;Segoe UI&quot;;</string>
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+         </font>
         </property>
-        <property name="rowCount">
-         <number>0</number>
+        <property name="alternatingRowColors">
+         <bool>false</bool>
         </property>
-        <column>
-         <property name="text">
-          <string>Name</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Hall</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Floor</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>X</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Y</string>
-         </property>
-        </column>
+        <property name="itemAlignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="currentRow">
+         <number>-1</number>
+        </property>
        </widget>
+      </widget>
+      <widget class="QWidget" name="delete_location_page">
        <widget class="QPushButton" name="Delete_2">
         <property name="geometry">
          <rect>
@@ -1211,6 +1151,30 @@ color: rgb(255, 255, 255);
         </property>
         <property name="checkable">
          <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QListWidget" name="edit_Graph_list">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>941</width>
+          <height>441</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>false</bool>
+        </property>
+        <property name="itemAlignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="currentRow">
+         <number>-1</number>
         </property>
        </widget>
       </widget>

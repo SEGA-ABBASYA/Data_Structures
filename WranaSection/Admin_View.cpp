@@ -272,8 +272,8 @@ void AdminView::on_pushButton_15_toggled(bool checked)
 {
     //Add
     ui->add_Graph_list->clear();
-    for(auto loc : Database::locations.values()){
-        if(!loc.getHall()) ui->add_Graph_list->addItem(QString::fromStdString(loc.getName()));
+    for(auto& loc : Database::locations){
+        if(!loc.second.getHall()) ui->add_Graph_list->addItem(QString::fromStdString(loc.second.getName()));
     }
     ui->stackedWidget_graph->setCurrentIndex(0);
 }
@@ -281,12 +281,20 @@ void AdminView::on_pushButton_15_toggled(bool checked)
 void AdminView::on_pushButton_13_toggled(bool checked)
 {
     //Edit
+    ui->edit_Graph_list->clear();
+    for(auto& loc : Database::locations){
+        ui->edit_Graph_list->addItem(QString::fromStdString(loc.second.getName()));
+    }
     ui->stackedWidget_graph->setCurrentIndex(1);
 }
 
 void AdminView::on_pushButton_14_toggled(bool checked)
 {
     //Delete
+    ui->delete_Graph_list->clear();
+    for(auto& loc : Database::locations){
+        ui->delete_Graph_list->addItem(QString::fromStdString(loc.second.getName()));
+    }
     ui->stackedWidget_graph->setCurrentIndex(2);
 }
 

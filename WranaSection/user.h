@@ -36,6 +36,7 @@ public:
     map<string,User*> friends;
 
     // Constructor
+    User();
     User(string& name, string& email, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender);
 
     // Setters
