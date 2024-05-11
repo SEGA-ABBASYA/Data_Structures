@@ -9,9 +9,9 @@
 #include <QStringList>
 #include <QMap>
 
-QMap<QString, Location> Database::locations;
+map<string, Location> Database::locations;
 map<string,Course> Database::courses;
-QMap<string, QMap<Timetable, Schedule>> Database::schedules;
+map<Timetable, vector<Schedule>> Database::schedules;
 QMap<string, User> Database::users;
 Admin Database::admin;
 
@@ -20,6 +20,8 @@ Admin Database::admin;
 
 Database::Database() {
     adminFile.setFileName("Files/Admin.txt");
+
+    adminFile.setFileName( "Files/Admin.txt");
     CoursesFile.setFileName("Files/Courses.txt");
     usersFile.setFileName("Files/Users.txt");
     locationsFile.setFileName("Files/Locations.txt");
@@ -179,7 +181,11 @@ void Database::readUsers()
             qDebug() << newUser.getName() << ' ' << newUser.getPassword() << '\n';
             ////////////add courses
             while(userData[++i] != "0"){
-                newUser.register_courses(courses[userData[i].toStdString()]);
+                string courseName = userData[i].toStdString();
+                newUser.register_courses(courseName);
+                newUser.lecture[courseName] = userData[++i].toInt();
+                newUser.lab[courseName] = userData[++i].toInt();
+                newUser.tutorial[courseName] = userData[++i].toInt();
                 qDebug() << userData[i] << '\n';
             }
             ////////////add schedule
@@ -187,7 +193,12 @@ void Database::readUsers()
                 string sch_name = userData[i].toStdString();
                 Timetable date = {userData[++i].toInt(), userData[++i].toInt(), userData[++i].toStdString()};
                 qDebug() << sch_name << ' ' << date.day << '\n';
-                newUser.add_Schedule(schedules[sch_name][date]);
+                for(auto& sch : schedules[date]){
+                    if(sch.getName() == sch_name){
+                        newUser.add_Schedule(sch);
+                        break;
+                    }
+                }
             }
             /////insert into map
             users.insert(user_name, newUser);
@@ -213,7 +224,7 @@ void Database::readLocations()
             pair<int, int> node = {locData[++i].toInt(), locData[++i].toInt()};
             Location newLoc(floor, hall, name, node);
             qDebug() << newLoc.getName() << ' ' << newLoc.getNode().first << ' '<< newLoc.getNode().second << '\n';
-            locations[QString::fromStdString(name)] = newLoc;
+            locations[name] = newLoc;
         }
         locationsFile.close();
         qDebug() << "LocationsFile read successfully.";
@@ -243,15 +254,18 @@ void Database::writeUsers()
 
             //////////read courses
             for(auto& course : user.registered_courses){
-                content.append(split + course.first);
+                content.append(split + course);
+                content.append(split + QString::number(user.lecture[course]));
+                content.append(split + QString::number(user.lab[course]));
+                content.append(split + QString::number(user.tutorial[course]));
             }
             //courses_finished
             content.append(",0");
 
             //////////read schedule
-            for(auto& sch : user.current_schedule.values()){
-                Timetable date = sch.getDate();
-                content.append(split + sch.getName());
+            for(auto& sch : user.current_schedule){
+                Timetable date = sch.second.getDate();
+                content.append(split + sch.second.getName());
                 content.append(split + QString::number(date.hour));
                 content.append(split + QString::number(date.minutes));
                 content.append(split + date.day);
@@ -275,14 +289,14 @@ void Database::writeLocations()
         QTextStream stream(&locationsFile);
         char split = ',';
         QString content;
-        for(auto& loc : locations.values()){
+        for(auto& loc : locations){
             content.clear();
 
-            content.append(QString::number(loc.getFloor()) + split);
-            content.append(QString::number(loc.getHall()) + split);
-            content.append(loc.getName() + split);
-            content.append(QString::number(loc.getNode().first) + split);
-            content.append(QString::number(loc.getNode().second));
+            content.append(QString::number(loc.second.getFloor()) + split);
+            content.append(QString::number(loc.second.getHall()) + split);
+            content.append(loc.second.getName() + split);
+            content.append(QString::number(loc.second.getNode().first) + split);
+            content.append(QString::number(loc.second.getNode().second));
 
             //push_to_the_file
             stream << content << '\n';
@@ -303,24 +317,16 @@ void Database::readSchedule()
             QStringList schData = line.split(',');
             int i = 0;
             string name  = schData[i].toStdString();
-            ////////////add doctors
-            queue<string> doctors;
-            while(schData[++i] != "0"){
-                doctors.push(schData[i].toStdString());
-                qDebug() << doctors.front() << '\n';
-            }
-            bool midterm = schData[++i].toInt();
             string type = schData[++i].toStdString();
             int section = schData[++i].toInt();
             bool group = schData[++i].toInt();
             Timetable date = {schData[++i].toInt(), schData[++i].toInt(), schData[++i].toStdString()};
-            Course course = courses[schData[++i].toStdString()];
-            string dep = schData[++i].toStdString();
+            string course = schData[++i].toStdString();
 
-            Schedule newSch(name, doctors, midterm, type, section, group, date, course, dep);
+            Schedule newSch(name, type, section, group, date, course);
             qDebug() << newSch.getName() << ' ' << newSch.getGroup() << '\n';
             //insert in map
-            schedules[name][date] = newSch;
+            schedules[date].push_back(newSch);
         }
         schedulesFile.close();
         qDebug() << "schedulesFile read successfully.";
@@ -335,27 +341,17 @@ void Database::writeSchedule()
         QTextStream stream(&schedulesFile);
         char split = ',';
         QString content;
-        for(auto& map : schedules.values()) for(auto& sch : map.values()){
+        for(auto& vec : schedules) for(auto& sch : vec.second){
                 content.clear();
 
                 content.append(sch.getName() + split);
-                ////////////add doctors
-                queue<string> doctors = sch.getDoctor();
-                while(!doctors.empty()){
-                    content.append(doctors.front() + split);
-                    doctors.pop();
-                }
-                content.append( "0,");
-
-                content.append(QString::number(sch.getMidterm()) + split);
                 content.append(sch.getType() + split);
                 content.append(QString::number(sch.getSection()) + split);
                 content.append(QString::number(sch.getGroup()) + split);
                 content.append(QString::number(sch.getDate().hour) + split);
                 content.append(QString::number(sch.getDate().minutes) + split);
                 content.append(sch.getDate().day + split);
-                content.append(sch.getCourse().getCourseName() + split);
-                content.append(sch.getDepartment());
+                content.append(sch.getCourse() + split);
 
                 //push_to_the_file
                 stream << content << '\n';

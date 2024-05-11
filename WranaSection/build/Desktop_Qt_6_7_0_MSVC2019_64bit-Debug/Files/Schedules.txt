@@ -1,2 +1,2 @@
-Hall A,Dr.Smith,Dr.Johnson,0,1,Lecture,1,0,9,0,Monday,Mathematics,Math
-Hall B,Dr.Johnson,Dr.Smith,0,0,Lab,2,1,10,0,Tuesday,Physics,Science
+Hall A,Lecture,1,0,9,0,Monday,Mathematics
+Hall B,Lab,2,1,10,30,Thursday,Physics

@@ -15,8 +15,8 @@ class Database
 
 public:
     static QMap<string, User> users;
-    static QMap<QString, Location> locations;
-    static QMap<string, QMap<Timetable, Schedule>> schedules;
+    static map<string, Location> locations;
+    static map<Timetable, vector<Schedule>> schedules;
     static Admin admin;
     static map<string,Course> courses;
 
