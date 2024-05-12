@@ -62,9 +62,7 @@ SecondFloor::SecondFloor(QWidget *parent)
                 ui->SecondF_widget->setItem(i, j, new QTableWidgetItem());
                 ui->SecondF_widget->item(i, j)->setFlags(Qt::NoItemFlags);
             }
-        // qDebug() << first[i] << '\n';
     }
-    // qDebug() <<"\t--------------------Second----------------------------------\n";
 }
 
 SecondFloor::~SecondFloor()

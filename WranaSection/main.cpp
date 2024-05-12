@@ -21,16 +21,17 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Database db;
-    //Login l;
+    Login l;
     //GroundFloor g;
     //UndergroundFloor u;
     //ThirdFloor t;
     //SecondFloor s;
     //Firstfloor_general f;
     //firstfloor_credit c;
-    SecondFloorOther o;
+    //SecondFloorOther o;
     db.read();
-    o.show();
+    l.show();
+
     // MainGraph mg;
     // mg.addfloor(c);
     // mg.addfloor(c2);
