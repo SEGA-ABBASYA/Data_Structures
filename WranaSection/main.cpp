@@ -11,6 +11,8 @@
 #include "firstfloor_general.h"
 #include "Groundfloor.h"
 #include "Secondfloorother.h"
+#include"Secondfloorother.h"
+#include"undergroundfloor.h"
 using namespace std;
 void write()
 {
@@ -21,19 +23,20 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Database db;
-    Login l;
-    //GroundFloor g;
-    //UndergroundFloor u;
-    //ThirdFloor t;
-    //SecondFloor s;
-    //Firstfloor_general f;
-    //firstfloor_credit c;
-    //SecondFloorOther o;
+    db.read();
+    //Login l;
+  // GroundFloor g;
+  // UndergroundFloor u;
+    ThirdFloor t;
+   // SecondFloor s;
+   // Firstfloor_general f;
+   // firstfloor_credit c;
+   // SecondFloorOther o;
 
-     db.read();
-    // firstfloor_credit f;
-     ThirdFloor th;
-    th.show();
+
+
+     //ThirdFloor th;
+   t.show();
 
     // MainGraph mg;
     // mg.addfloor(c);
