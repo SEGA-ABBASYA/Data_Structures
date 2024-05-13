@@ -26,8 +26,8 @@ int main(int argc, char *argv[])
     db.read();
     //Login l;
   // GroundFloor g;
-  // UndergroundFloor u;
-    ThirdFloor t;
+   UndergroundFloor u;
+   // ThirdFloor t;
    // SecondFloor s;
    // Firstfloor_general f;
    // firstfloor_credit c;
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
 
      //ThirdFloor th;
-   t.show();
+   u.show();
 
     // MainGraph mg;
     // mg.addfloor(c);

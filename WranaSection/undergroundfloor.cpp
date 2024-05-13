@@ -19,8 +19,6 @@ UndergroundFloor::UndergroundFloor(QWidget *parent)
     }
 
 
-
-
     for(int i = 0; i < ui->tableWidget->rowCount(); ++i) {
 
         for(int j = 0; j < ui->tableWidget->columnCount(); ++j) {
