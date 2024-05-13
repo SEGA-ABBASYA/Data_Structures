@@ -16,7 +16,6 @@ class GroundFloor : public QWidget
 public:
 
     explicit GroundFloor(QWidget *parent = nullptr);
-    vector<string> createGrid();
     ~GroundFloor();
 
 private slots:

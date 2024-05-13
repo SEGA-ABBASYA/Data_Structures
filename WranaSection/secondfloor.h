@@ -1,6 +1,7 @@
 #ifndef SECONDFLOOR_H
 #define SECONDFLOOR_H
-
+#include <iostream>
+using namespace std;
 #include <QWidget>
 
 namespace Ui {

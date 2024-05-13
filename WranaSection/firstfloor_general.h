@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include<string>
 #include<QString>
+#include<vector>
 #include <iostream>
 using namespace std;
 
@@ -17,7 +18,6 @@ class Firstfloor_general : public QMainWindow
 
 public:
     explicit Firstfloor_general(QWidget *parent = nullptr);
-    vector<string> write_Graph_general();
     ~Firstfloor_general();
 
 private slots:

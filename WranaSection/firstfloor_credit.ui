@@ -43,7 +43,12 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">gridline-color: transparent;
+     <string notr="true">
+QTableWidget::item:checked
+{
+ background-color:blue;
+}
+gridline-color: transparent;
 border:none;
 background-color: transparent;</string>
     </property>
@@ -187,7 +192,7 @@ background-color: transparent;</string>
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

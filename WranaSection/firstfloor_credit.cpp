@@ -1,5 +1,6 @@
 #include "firstfloor_credit.h"
 #include "ui_firstfloor_credit.h"
+#include"database.h"
 #include <iostream>
 using namespace std;
 
@@ -8,6 +9,7 @@ firstfloor_credit::firstfloor_credit(QWidget *parent)
     , ui(new Ui::firstfloor_credit)
 {
     ui->setupUi(this);
+
 
     for(int i =0;i<(42);i++)
     {
@@ -19,8 +21,7 @@ firstfloor_credit::firstfloor_credit(QWidget *parent)
 
     }
 
-    vector<string>c;
-    c=write_Graph_credit();
+
 
     for(int i = 0; i < ui->tableWidget->rowCount(); ++i) {
 
@@ -31,7 +32,7 @@ firstfloor_credit::firstfloor_credit(QWidget *parent)
                 item= new QTableWidgetItem();
                 ui->tableWidget->setItem(i, j, item);
             }
-            if(c[i][j]!='.')
+            if(Database::FirstCreditFloor[i][j]!='.')
                 item->setFlags(item->flags() & !~Qt::ItemIsSelectable);
 
         }
@@ -44,54 +45,7 @@ firstfloor_credit::~firstfloor_credit()
     delete ui;
 }
 
- vector<string> firstfloor_credit::write_Graph_credit()
-{
-      vector<string>c;
 
-      c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...............Lxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...............Lxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...............Lxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...........xxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...........xxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...........xxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...........xxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...........xxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...........xxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...........xxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...........xxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...........xxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...........xxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...........xxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...........xxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx...........xxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx..............xxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx..............xxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx..............xxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx..............xxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx..............xxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx..............xxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx..............xxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxx..............xxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-      c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-
-
-
-
-      return c;
-
-
-}
 
 void firstfloor_credit::on_tableWidget_cellActivated(int row, int column)
 {

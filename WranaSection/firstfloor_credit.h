@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include<string>
 #include<QString>
+#include<vector>
 #include <iostream>
 using namespace std;
 
@@ -17,7 +18,6 @@ class firstfloor_credit : public QMainWindow
 
 public:
     explicit firstfloor_credit(QWidget *parent = nullptr);
-     vector<string> write_Graph_credit();
     ~firstfloor_credit();
 
  private slots:

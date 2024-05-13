@@ -29,8 +29,11 @@ int main(int argc, char *argv[])
     //Firstfloor_general f;
     //firstfloor_credit c;
     //SecondFloorOther o;
-    db.read();
-    l.show();
+
+     db.read();
+    // firstfloor_credit f;
+     ThirdFloor th;
+    th.show();
 
     // MainGraph mg;
     // mg.addfloor(c);

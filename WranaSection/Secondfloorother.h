@@ -1,6 +1,8 @@
 #ifndef SECONDFLOOROTHER_H
 #define SECONDFLOOROTHER_H
-
+#include <iostream>
+#include<vector>
+using namespace std;
 #include <QWidget>
 
 namespace Ui {
@@ -13,6 +15,7 @@ class SecondFloorOther : public QWidget
 
 public:
     explicit SecondFloorOther(QWidget *parent = nullptr);
+    vector<string> CreateGrid();
     ~SecondFloorOther();
 
 private:

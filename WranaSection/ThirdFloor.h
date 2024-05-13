@@ -16,7 +16,6 @@ class ThirdFloor : public QWidget
 
 public:
     explicit ThirdFloor(QWidget *parent = nullptr);
-    vector<string> CreateGrid();
     ~ThirdFloor();
 
 private slots:
