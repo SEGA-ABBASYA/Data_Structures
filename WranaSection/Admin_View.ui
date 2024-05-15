@@ -666,20 +666,18 @@ border-radius: 11px; </string>
         </property>
         <property name="styleSheet">
          <string notr="true">QTableWidget {
-
   background-color: #1c2021;
   border: 1px solid ; /* Thicker border */
-  border-radius:8px;
+  border-radius: 8px;
   gridline-color: #694f3a;
   font-family: &quot;Verdana&quot;; /* This is a sans-serif font that is clear and easy to read */
   font-size: 14px; /* Adjust the size as needed */
-color: rgb(255, 255, 255);
-  selection-background-color : qlineargradient(x1:0, y1:0, x2:1, y2:0,
+  color: rgb(255, 255, 255);
+  selection-background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
                               stop:0 #a188d3, stop:1 #8bcdff);
-selection-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+  selection-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
                               stop:0 #a188d3, stop:1 #8bcdff);
-  }
-
+}
 
 QHeaderView::section {
   background-color: #344c54;
@@ -700,7 +698,20 @@ QTableWidget::item:hover {
   background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
                               stop:0 #a188d3, stop:1 #8bcdff);
   color: black;
-}</string>
+}
+
+/* Cell background color when selected */
+QTableWidget::item:selected {
+  background-color: black;
+  color: white; /* Change text color to make it visible */
+}
+
+/* Cell background color when double-clicked */
+QTableWidget::item:selected:focus {
+  background-color: black;
+  color: white; /* Change text color to make it visible */
+}
+</string>
         </property>
         <property name="editTriggers">
          <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>

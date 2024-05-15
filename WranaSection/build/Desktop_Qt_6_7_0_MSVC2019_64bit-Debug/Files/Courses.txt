@@ -26,6 +26,14 @@ ali omar
 ahmed hassan
 
 ---
+graphics
+cs
+yes
+no
+ali
+---
+belal
+---
 mathematics
 math1
 no

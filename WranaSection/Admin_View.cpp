@@ -468,6 +468,12 @@ vector<string> AdminView::disectStringComma(string str)
 }
 void AdminView::on_tableWidget_itemClicked(QTableWidgetItem *item)
 {
+    int row = ui->tableWidget->currentRow();
+    ui->tableWidget->item(row, 0)->setFlags(Qt::NoItemFlags);
+    ui->tableWidget->item(row, 1)->setFlags(Qt::NoItemFlags);
+    ui->tableWidget->item(row, 2)->setFlags(Qt::NoItemFlags);
+    ui->tableWidget->item(row, 3)->setFlags(Qt::NoItemFlags);
+
     if (item != nullptr) {
         int row = item->row();
         QTableWidgetItem *cellItem = ui->tableWidget->item(row, 0);
@@ -600,14 +606,6 @@ void AdminView::on_Add_clicked()
         ui->programComboBox->setEditText("General");
         ui->sectionSpinBox->setValue(1);
         ui->sectionSpinBox_2->setValue(1);
-        if(ui->male->isChecked())
-        {
-            ui->male->setChecked(false);
-        }
-        if (ui->female->isChecked())
-        {
-            ui->female->setChecked(false);
-        }
         QMessageBox::warning(this, "Message", "User successfully added!");
     }
 }
