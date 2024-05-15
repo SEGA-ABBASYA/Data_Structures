@@ -1,12 +1,3 @@
-Mathematics
-Math
-no
-yes
-Dr.Smith
----
-TA John
-TA Emma
----
 Physics
 Science
 no
@@ -14,4 +5,33 @@ no
 Dr.Johnson
 ---
 TA Alice
+---
+algorithms
+cs
+yes
+no
+ahmed saaid
+manar ali
+---
+ali mohammed
+omar khaled
+---
+french
+langs
+no
+yes
+soha ali
+ali omar
+---
+ahmed hassan
+
+---
+mathematics
+math1
+no
+yes
+Dr.Smith
+---
+TA John
+TA Emma
 ---

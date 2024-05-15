@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <QTableWidgetItem>
+#include <QListWidgetItem>
 using namespace std;
 
 QT_BEGIN_NAMESPACE
@@ -22,8 +23,8 @@ public:
     void Write_Courses_table_delete();
     void Write_Students_table_edit();
     void Write_Students_table_delete();
-
-
+    void Write_graph_list_add();
+    void Write_graph_list_delete();
     ~AdminView();
 
 
@@ -87,16 +88,23 @@ private slots:
     void on_Edit_clicked();
     void on_tableWidget_itemClicked(QTableWidgetItem *item);
 
+    ///////////////////////////User////////////////////////////
     void on_Add_clicked();
-
     void on_tableWidget_4_itemClicked(QTableWidgetItem *item);
-
     void on_deleteStudent_clicked();
-
     void on_tableWidget_2_itemClicked(QTableWidgetItem *item);
-
     void on_EditStudent_clicked();
 
+    //////////////////////////Graph////////////////////////////
+    void on_add_Graph_list_itemClicked(QListWidgetItem *item);
+
+    void on_add_graph_Btn_clicked();
+
+    void on_delete_Graph_list_itemClicked(QListWidgetItem *item);
+
+    void on_Delete_2_clicked();
+
+    void on_Edit_2_clicked();
 
 private:
     Ui::MainWindow *ui;

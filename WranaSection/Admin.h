@@ -33,7 +33,9 @@ public:
     void deleteCourse(string courseName);
 
     // Loction/Graph class related methods.
-    void editLocation(Location location);
+    void addLocation(string locationName);
+    void editLocation(string location1Name, string location2Name);
+    void deleteLocation(string locationName);
 
     // user related methods.
     void addUser (User user);

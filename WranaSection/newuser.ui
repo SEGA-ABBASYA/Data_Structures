@@ -196,17 +196,19 @@ font-weight: 600;
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
+      <pointsize>10</pointsize>
       <fontweight>DemiBold</fontweight>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgba(229, 223, 206, 1);
 color: #000000; 
-border: 2px solid rgba(229, 223, 206, 0.5); 
 font-weight: 600; 
 
 </string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -323,17 +325,19 @@ font-weight: 600;
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
+      <pointsize>10</pointsize>
       <fontweight>DemiBold</fontweight>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgba(229, 223, 206, 1);
 color: #000000; 
-border: 2px solid rgba(229, 223, 206, 0.5); 
 font-weight: 600; 
 
 </string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

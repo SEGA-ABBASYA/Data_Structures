@@ -60,9 +60,18 @@ void Admin::deleteCourse(string courseName)
 }
 
 // Loction/Graph class related methods.
-void Admin::editLocation(Location location)
+void Admin::addLocation(string locationName)
 {
-    // Body
+    db.locations[locationName].setHall(1);
+}
+void Admin::editLocation(string location1Name, string location2Name)
+{
+    db.locations[location1Name].setName(location2Name);
+    db.locations[location2Name].setName(location1Name);
+}
+void Admin::deleteLocation(string locationName)
+{
+    db.locations[locationName].setHall(0);
 }
 
 // user related methods.

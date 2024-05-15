@@ -268,33 +268,58 @@ void AdminView::on_pushButton_20_toggled(bool checked)
 }
 
 //Graph Widget
+void AdminView::Write_graph_list_add()
+{
+    ui->add_Graph_list->clear();
+    for(auto& loc : Database::locations)
+    {
+        if(!loc.second.getHall())
+        {
+            ui->add_Graph_list->addItem(QString::fromStdString(loc.second.getName()));
+        }
+    }
+}
 void AdminView::on_pushButton_15_toggled(bool checked)
 {
     //Add
-    ui->add_Graph_list->clear();
-    for(auto& loc : Database::locations){
-        if(!loc.second.getHall()) ui->add_Graph_list->addItem(QString::fromStdString(loc.second.getName()));
-    }
+    Write_graph_list_add();
     ui->stackedWidget_graph->setCurrentIndex(0);
 }
+
 
 void AdminView::on_pushButton_13_toggled(bool checked)
 {
     //Edit
-    ui->edit_Graph_list->clear();
-    for(auto& loc : Database::locations){
-        ui->edit_Graph_list->addItem(QString::fromStdString(loc.second.getName()));
+    ui->comboLocation1->clear();
+    for (auto& loc : Database::locations)
+    {
+        ui->comboLocation1->addItem(QString::fromStdString(loc.second.getName()));
+    }
+    ui->stackedWidget_graph->setCurrentIndex(1);
+
+    ui->comboLocation2->clear();
+    for (auto& loc : Database::locations)
+    {
+        ui->comboLocation2->addItem(QString::fromStdString(loc.second.getName()));
     }
     ui->stackedWidget_graph->setCurrentIndex(1);
 }
 
+void AdminView::Write_graph_list_delete()
+{
+    ui->delete_Graph_list->clear();
+    for(auto& loc : Database::locations)
+    {
+        if(loc.second.getHall())
+        {
+            ui->delete_Graph_list->addItem(QString::fromStdString(loc.second.getName()));
+        }
+    }
+}
 void AdminView::on_pushButton_14_toggled(bool checked)
 {
     //Delete
-    ui->delete_Graph_list->clear();
-    for(auto& loc : Database::locations){
-        ui->delete_Graph_list->addItem(QString::fromStdString(loc.second.getName()));
-    }
+    Write_graph_list_delete();
     ui->stackedWidget_graph->setCurrentIndex(2);
 }
 
@@ -358,6 +383,13 @@ void AdminView::on_pushButton_clicked()
         if (dbase.courses.find(course.getCourseName()) == dbase.courses.end())
         {
             admin.addCourse(course);
+            ui->lineEdit->clear();
+            ui->lineEdit_2->clear();
+            ui->textEdit->clear();
+            ui->textEdit_2->clear();
+            ui->checkBox->setCheckState(Qt::Unchecked);
+            ui->checkBox_2->setCheckState(Qt::Unchecked);
+            QMessageBox::warning(this, "Message", "Course successfully added!");
         }
         else // Course found in map
         {
@@ -558,9 +590,25 @@ void AdminView::on_Add_clicked()
     }
     else
     {
-        //name, email, id, academic_year, section, username, password, program, gender
         User user(name,email,id,academicYear,section,username,password,program,gender);
         admin.addUser(user);
+        ui->nameLineEdit->clear();
+        ui->nameLineEdit_2->clear();
+        ui->nameLineEdit_3->clear();
+        ui->nameLineEdit_4->clear();
+        ui->nameLineEdit_5->clear();
+        ui->programComboBox->setEditText("General");
+        ui->sectionSpinBox->setValue(1);
+        ui->sectionSpinBox_2->setValue(1);
+        if(ui->male->isChecked())
+        {
+            ui->male->setChecked(false);
+        }
+        if (ui->female->isChecked())
+        {
+            ui->female->setChecked(false);
+        }
+        QMessageBox::warning(this, "Message", "User successfully added!");
     }
 }
 
@@ -642,15 +690,77 @@ void AdminView::on_EditStudent_clicked()
             }
         }
     }
-    User user(name,email,id,academicYear,section,username,password,program,gender);
-    if (!dbase.users.contains(user.getUsername()) || currentUsername == username)
+    // Validation.
+    auto user = Database::users.find(username);
+    if(!validEmails(email))
     {
-        // Key doesn't exist in the map, proceed to edit the course
-        admin.deleteUser(currentUsername);
-        admin.editUser(user);
+        QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nNot Valid Email");
+    }
+    else if(user != Database::users.end())
+    {
+        QMessageBox::warning(this, "Error", "userName is Already Exist");
+    }
+    else if(password.size() < 8)
+    {
+        QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nPlease, Choose a password with 8 or more characters");
+    }
+    else if(ui->nameLineEdit_5->text().size() < 10)
+    {
+        QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nPlease, Check the id, it should be at least 10 digits");
+    }
+    else if(name.empty() || email.empty() || username.empty() || password.empty() || gender == 'N')
+    {
+        QMessageBox::warning(this, "Error", "Please complete all fields");
     }
     else
     {
-        QMessageBox::warning(this, "Error", "Username Already Exists and is Identical.");
+        User user(name,email,id,academicYear,section,username,password,program,gender);
+        admin.deleteUser(currentUsername);
+        admin.editUser(user);
     }
 }
+/////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////Graph////////////////////////////////////////////
+
+string locationName;
+string location1Name;
+string location2Name;
+
+// Add location.
+void AdminView::on_add_Graph_list_itemClicked(QListWidgetItem *item)
+{
+    locationName = item->text().toStdString();
+}
+void AdminView::on_add_graph_Btn_clicked()
+{
+    admin.addLocation(locationName);
+    Write_graph_list_add();
+}
+
+// Delete location.
+void AdminView::on_delete_Graph_list_itemClicked(QListWidgetItem *item)
+{
+    locationName = item->text().toStdString();
+}
+void AdminView::on_Delete_2_clicked()
+{
+    admin.deleteLocation(locationName);
+    Write_graph_list_delete();
+}
+
+// Edit location.
+void AdminView::on_Edit_2_clicked()
+{
+    location1Name = ui->comboLocation1->currentText().toStdString();
+    location2Name = ui->comboLocation2->currentText().toStdString();
+
+    if (location1Name == location2Name)
+    {
+        QMessageBox::warning(this, "Error", "Please choose 2 different locations so we can swap them.");
+    }
+    else
+    {
+        admin.editLocation(location1Name, location2Name);
+    }
+}
+
