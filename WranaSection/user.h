@@ -35,6 +35,7 @@ public:
 
     // Constructor
     User(string name, int id, int academic_year, int section, string username, string password, string program, char gender);
+    User();
     User(string& name, string& email, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender);
 
     // Setters

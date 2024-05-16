@@ -8,7 +8,7 @@ using namespace std;
 
 class Course
 {
-    string courseName;
+    string courseName = "None";
     string department;
 
     bool hasLab;

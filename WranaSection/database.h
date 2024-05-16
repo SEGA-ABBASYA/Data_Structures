@@ -19,6 +19,8 @@ public:
     static QMap<string, QMap<Timetable, Schedule>> schedules;
     static Admin admin;
     static map<string,Course> courses;
+    static Timetable CurrentUserTT;
+    static User CurrentUser;
 
     Database();
     void read();

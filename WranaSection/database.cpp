@@ -14,7 +14,8 @@ map<string,Course> Database::courses;
 QMap<string, QMap<Timetable, Schedule>> Database::schedules;
 QMap<string, User> Database::users;
 Admin Database::admin;
-
+Timetable Database::CurrentUserTT;
+User Database::CurrentUser;
 
 
 

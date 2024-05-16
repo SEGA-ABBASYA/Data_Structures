@@ -1,13 +1,17 @@
 #include "User_View.h"
+#include <iostream>
 #include "ui_User_View.h"
 #include "login.h"
-
+#include "cellcourseselection.h"
+#include "database.h"
+using namespace std;
 UserView::UserView(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::UserView)
 {
     ui->setupUi(this);
     ui->full->hide();
+    //RefreshTable();
 }
 
 UserView::~UserView()
@@ -88,5 +92,63 @@ void UserView::on_logouticons_clicked()
 void UserView::on_logoutfull_clicked()
 {
     Login::w_stack->setCurrentIndex(0);
+}
+
+void UserView::RefreshTable()
+{
+    for (int i = 0; i < 7;i++)
+    {
+        for (int j = 0;j < 6;j++)
+        {
+            string hour = ui->Schedule->horizontalHeaderItem(j)->text().toStdString();
+            string day = ui->Schedule->verticalHeaderItem(i)->text().toStdString();
+            int usablehour;
+            if (hour[0] == '1')
+            {
+                usablehour = stoi(hour.substr(0,2));
+            }
+            else
+                usablehour = stoi(hour.substr(0,1));
+
+            Timetable temptt;
+            temptt.day = day;
+            temptt.hour = usablehour;
+            temptt.minutes = 0;
+
+            ui->Schedule->item(i,j)->text() = QString::fromStdString(Database::CurrentUser.current_schedule[temptt].getCourse().getCourseName());
+            if(Database::CurrentUser.current_schedule[temptt].getCourse().getCourseName() != "None")
+            {
+                QColor color = QColor::fromRgb(229,112,30);
+                ui->Schedule->item(i,j)->background().setColor(color);
+            }
+        }
+    }
+}
+
+void UserView::on_Schedule_cellDoubleClicked(int row, int column)
+{
+    string hour = ui->Schedule->horizontalHeaderItem(column)->text().toStdString();
+    string day = ui->Schedule->verticalHeaderItem(row)->text().toStdString();
+    int usablehour;
+    if (hour[0] == '1')
+    {
+        usablehour = stoi(hour.substr(0,2));
+    }
+    else
+        usablehour = stoi(hour.substr(0,1));
+
+    Database::CurrentUserTT.hour = usablehour;
+    Database::CurrentUserTT.day = day;
+    Database::CurrentUserTT.minutes = 0;
+    // if (Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse().getCourseName() != "None")
+    // {
+    //     QColor color = QColor::fromRgb(229,112,30);
+    //     ui->Schedule->item(row,column)->background().setColor(color);
+    // }
+    //ui->Schedule->item(row,column)->text() = QString::fromStdString(Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse().getCourseName());
+    CellCourseSelection CCS;
+    CCS.setModal(true);
+    CCS.exec();
+    //RefreshTable();
 }
 

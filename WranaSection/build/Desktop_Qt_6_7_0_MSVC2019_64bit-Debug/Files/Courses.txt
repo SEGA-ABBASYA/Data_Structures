@@ -1,3 +1,15 @@
+
+
+no
+no
+---
+---
+Artificial Intelligence Lab
+
+no
+no
+---
+---
 Mathematics
 Math
 no
@@ -6,6 +18,12 @@ Dr.Smith
 ---
 TA John
 TA Emma
+---
+None
+
+no
+no
+---
 ---
 Physics
 Science

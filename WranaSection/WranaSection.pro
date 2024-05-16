@@ -14,6 +14,7 @@ SOURCES += \
     Location.cpp \
     Schedule.cpp \
     User_View.cpp \
+    cellcourseselection.cpp \
     course.cpp \
     Admin.cpp \
     main.cpp \
@@ -29,6 +30,7 @@ HEADERS += \
     Location.h \
     Schedule.h \
     User_View.h \
+    cellcourseselection.h \
     course.h \
     Admin.h \
     database.h \
@@ -39,6 +41,7 @@ HEADERS += \
 
 FORMS += \
     User_View.ui \
+    cellcourseselection.ui \
     newuser.ui \
     login.ui \
     Admin_View.ui

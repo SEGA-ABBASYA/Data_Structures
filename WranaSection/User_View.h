@@ -13,6 +13,7 @@ class UserView : public QWidget
 
 public:
     explicit UserView(QWidget *parent = nullptr);
+    void RefreshTable();
     ~UserView();
 
 private slots:
@@ -41,6 +42,8 @@ private slots:
     void on_logouticons_clicked();
 
     void on_logoutfull_clicked();
+
+    void on_Schedule_cellDoubleClicked(int row, int column);
 
 private:
     Ui::UserView *ui;

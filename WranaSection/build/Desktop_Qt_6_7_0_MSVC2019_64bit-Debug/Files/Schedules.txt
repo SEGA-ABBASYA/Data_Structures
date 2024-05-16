@@ -1,2 +1,17 @@
+,0,1,,1,0,-2117429005,32758,,Artificial Intelligence Lab,
+,0,1,,1,0,-2054579981,32758,,None,
+,0,0,,1,0,-2051565325,32758,,,
+,0,1,,1,0,-1682012365,32759,,,
+,0,1,,1,0,-1257793293,32759,,None,
+,0,1,,1,0,-1079802061,32758,,,
+,0,1,,1,0,-957638413,32759,,Artificial Intelligence Lab,
+,0,1,,1,0,-656762637,32759,,Artificial Intelligence Lab,
+,0,1,,1,0,-345990925,32759,,Artificial Intelligence Lab,
+,0,1,,1,0,377456435,32759,,,
+,0,1,,1,0,386239299,32758,,,
+,0,1,,1,0,1287821555,32758,,None,
+,0,1,,1,0,1558288627,32759,,None,
 Hall A,Dr.Smith,Dr.Johnson,0,1,Lecture,1,0,9,0,Monday,Mathematics,Math
 Hall B,Dr.Johnson,Dr.Smith,0,0,Lab,2,1,10,0,Tuesday,Physics,Science
+,0,240,,1,0,56662259,32759,,Artificial Intelligence Lab,
+,0,240,,1,0,56662259,32759,,Artificial Intelligence Lab,
