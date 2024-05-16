@@ -34,56 +34,34 @@ class Schedule
     //refers to location
     string name;
 
-    //teaching this lab or lecture
-    queue<string> doctor;
-
-    //if there are two doctors one before mid and another after
-    //0 before, 1 after
-    bool midterm;
-
     //Lab, section or lecture
     string type;
 
     int section;
 
-    //The floor it is located in
-    int floor;
-
     //0 for G1 , 1 for G2
     bool group;
-
-    //Mainstream for years 1,2 and from years 3,4 (CS, IS, SC, CSYS)
-    string department;
 
 
     // Day, Hour and minutes
     Timetable date;
-    Course course;
+    string course;
 
 public:
     Schedule();
-    Schedule(string, queue<string>, bool, string, int, bool,Timetable, Course, string);
+    Schedule(string, string, int, bool,Timetable, string);
 
     void setName(string);
-    void setDoctor(queue<string>);
     void setSection(int);
     void setGroup(bool);
     void setDate(Timetable);
-    void setMidterm(bool);
     void setType(string);
-    void setDepartment(string);
-    void setCourse(Course newCourse);
 
-    Course getCourse();
 
-    queue<string> getDoctor();
     int getSection();
     int getGroup();
-    int getfloor();
     Timetable getDate();
-    bool getMidterm();
     string getType();
-    string getDepartment();
     string getName();
 
     ~Schedule();
@@ -92,6 +70,8 @@ public:
 
 
 
+    string getCourse() const;
+    void setCourse(const string &newCourse);
 };
 
 #endif // SCHEDULE_H

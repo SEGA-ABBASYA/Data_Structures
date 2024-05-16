@@ -2,9 +2,9 @@
 
 Location::Location() {}
 
-Location::Location(int floor, bool hall, string name, pair<int, int> node){
+Location::Location(int floor, bool occupied, string name, pair<int, int> node){
     this->floor = floor;
-    this->hall = hall;
+    this->occupied = occupied;
     this->name = name;
     this->node = node;
 }
@@ -15,8 +15,8 @@ void Location::setFloor(int floor){
     this->floor = floor;
 }
 
-void Location::setHall(bool hall){
-    this->hall = hall;
+void Location::setHall(bool occupied){
+    this->occupied = occupied;
 }
 
 void Location::setName(string name){
@@ -34,7 +34,7 @@ int Location::getFloor(){
 }
 
 bool Location::getHall(){
-    return hall;
+    return occupied;
 }
 
 string Location::getName(){

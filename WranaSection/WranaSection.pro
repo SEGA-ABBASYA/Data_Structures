@@ -10,9 +10,12 @@ CONFIG += c++17
 
 SOURCES += \
     Graph.cpp \
+    Groundfloor.cpp \
     Maingraph.cpp \
     Location.cpp \
     Schedule.cpp \
+    Secondfloorother.cpp \
+    ThirdFloor.cpp \
     User_View.cpp \
     cellcourseselection.cpp \
     course.cpp \
@@ -20,31 +23,49 @@ SOURCES += \
     main.cpp \
     database.cpp \
     Admin_View.cpp \
+    undergroundfloor.cpp \
+    secondfloor.cpp \
     user.cpp \
     newuser.cpp \
-    login.cpp
+    login.cpp \
+    firstfloor_credit.cpp \
+    firstfloor_general.cpp
 
 HEADERS += \
     Graph.h \
+    Groundfloor.h \
     Maingraph.h \
     Location.h \
     Schedule.h \
+    Secondfloorother.h \
+    ThirdFloor.h \
     User_View.h \
     cellcourseselection.h \
     course.h \
     Admin.h \
     database.h \
     Admin_View.h \
+    undergroundfloor.h \
+    secondfloor.h \
     user.h \
     newuser.h \
-    login.h
+    login.h \
+    firstfloor_credit.h \
+    firstfloor_general.h
 
 FORMS += \
+    Groundfloor.ui \
+    Secondfloorother.ui \
+    ThirdFloor.ui \
     User_View.ui \
     cellcourseselection.ui \
     newuser.ui \
     login.ui \
-    Admin_View.ui
+    Admin_View.ui \
+    undergroundfloor.ui \
+    secondfloor.ui \
+    firstfloor_credit.ui \
+    firstfloor_general.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -53,4 +74,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     Login-Register.qrc \
-    Materials.qrc
+    Materials.qrc \
+    secondFloor.qrc

@@ -8,8 +8,8 @@ class Location
     // zero for the ground floor
     int floor;
 
-    //checks if it is a hall or not
-    bool hall;
+    //checks is used or not
+    bool occupied;
 
     //location name
     string name;

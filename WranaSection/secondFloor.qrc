@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/Pages">
+        <file>All_Materials/SecondFloor/Second_Main.png</file>
+        <file>All_Materials/SecondFloor/Second_Part2.png</file>
+    </qresource>
+</RCC>

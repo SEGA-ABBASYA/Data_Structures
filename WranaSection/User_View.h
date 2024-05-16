@@ -1,6 +1,8 @@
 #ifndef USER_VIEW_H
 #define USER_VIEW_H
-
+#include <QList>
+#include <QWidgetItem>
+#include <QListWidgetItem>
 #include <QWidget>
 
 namespace Ui {
@@ -44,6 +46,11 @@ private slots:
     void on_logoutfull_clicked();
 
     void on_Schedule_cellDoubleClicked(int row, int column);
+    void on_listWidget_itemPressed(QListWidgetItem *item);
+
+    void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
+
+    void on_DM_clicked();
 
 private:
     Ui::UserView *ui;

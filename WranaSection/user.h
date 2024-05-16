@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <QMap>
 #include <map>
+#include <set>
 
 using namespace std;
 struct userData {
@@ -29,8 +30,9 @@ private:
 
 public:
     //hashmaps
-    unordered_map<string, Course> registered_courses;
-    QMap<Timetable, Schedule> current_schedule;
+    set<string> registered_courses;
+    unordered_map<string, bool> lecture, lab, tutorial;
+    map<Timetable, Schedule> current_schedule;
     map<string,User*> friends;
 
     // Constructor
@@ -80,7 +82,7 @@ public:
     // Usable Functions for creation or anything
 
     // course functions
-    void register_courses(Course registered_course);
+    void register_courses(string courseName);
     void print_courses_list();
     void unregister_course(string courseName);
     bool is_registered_course(string courseName);

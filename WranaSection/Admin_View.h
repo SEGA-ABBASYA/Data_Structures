@@ -1,6 +1,10 @@
 #ifndef ADMIN_VIEW_H
 #define ADMIN_VIEW_H
 #include <QMainWindow>
+#include <string>
+#include <vector>
+#include <QTableWidgetItem>
+using namespace std;
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -15,7 +19,7 @@ class AdminView : public QMainWindow
 public:
     AdminView(QWidget *parent = nullptr);
     void Write_Courses_table_edit();
-     void Write_Courses_table_delete();
+    void Write_Courses_table_delete();
     void Write_Students_table_edit();
     void Write_Students_table_delete();
 
@@ -71,6 +75,28 @@ private slots:
     void on_pushButton_13_toggled(bool checked);
 
     void on_pushButton_14_toggled(bool checked);
+
+
+    /////////////////////////////Course/////////////////////////
+    void on_pushButton_clicked();
+    void on_tableWidget_3_itemClicked(QTableWidgetItem *item);
+    void on_Delete_clicked();
+    bool encodeValues(string hasLabOrSection);
+    vector<string> disectStringEnter(string str);
+    vector<string> disectStringComma(string str);
+    void on_Edit_clicked();
+    void on_tableWidget_itemClicked(QTableWidgetItem *item);
+
+    void on_Add_clicked();
+
+    void on_tableWidget_4_itemClicked(QTableWidgetItem *item);
+
+    void on_deleteStudent_clicked();
+
+    void on_tableWidget_2_itemClicked(QTableWidgetItem *item);
+
+    void on_EditStudent_clicked();
+
 
 private:
     Ui::MainWindow *ui;

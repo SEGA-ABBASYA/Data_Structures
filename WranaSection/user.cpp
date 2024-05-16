@@ -1,10 +1,16 @@
 #include "user.h"
 #include "course.h"
 #include "Schedule.h"
+#include"database.h"
 #include <map>
 #include<vector>
 
 using namespace std;
+User::User()
+{
+
+}
+
 User::User(string& name, string& email, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender)
     :data{ name, email, id, academic_year, section, username, password, program, gender } {}
 
@@ -87,8 +93,8 @@ char User::getGender() {
 }
 
 // course functions
-void User::register_courses(Course registered_course) {
-    registered_courses[registered_course.getCourseName()] = registered_course;
+void User::register_courses(string courseName) {
+    registered_courses.insert(courseName);
 }
 
 void User::unregister_course(string courseName) {
@@ -99,19 +105,19 @@ bool User::is_registered_course(string courseName) {
     return registered_courses.find(courseName) != registered_courses.end();
 }
 int User::get_course_count() {
-    int numberOftheCourses = registered_courses.size();
-    return numberOftheCourses;
+    return int(registered_courses.size());
 }
 
 void User::print_courses_list() {
     int i = 1;
-    for (auto& it : registered_courses) {
+    for(auto course : registered_courses){
+        auto it = Database::courses[course];
         int j = 1;
         int z = 1;
-        cout << "Course Name " << i << ":" << " " << it.second.getCourseName() << endl;
-        cout << "Course Department " << i << ":" << " " << it.second.getDepartment() << endl;
-        vector<string> doctors = it.second.getDoctors();
-        vector<string> teachingAssistants = it.second.getTAs();
+        cout << "Course Name " << i << ":" << " " << it.getCourseName() << endl;
+        cout << "Course Department " << i << ":" << " " << it.getDepartment() << endl;
+        vector<string> doctors = it.getDoctors();
+        vector<string> teachingAssistants = it.getTAs();
         for (auto& doctor : doctors) {
             cout << "Course Doctor " << j << ":" << doctor << endl;
             j++;
@@ -130,7 +136,7 @@ void User::add_Schedule(Schedule schedule_to_set) {
 }
 
 void User::remove_Schedule(Timetable schedule_timetable) {
-    current_schedule.remove(schedule_timetable);
+    current_schedule.erase(schedule_timetable);
 }
 
 // friends functions
@@ -154,7 +160,7 @@ bool User:: has_friend(string friendUsername) {
 }
 
 int User:: get_friendsCount() {
-    return friends.size();
+    return int(friends.size());
 }
 
 vector<User*> User:: get_allFriends() {

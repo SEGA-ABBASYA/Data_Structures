@@ -1,10 +1,10 @@
-#ifndef ADMIN_H
-#define ADMIN_H
+#pragma once
+#include <string>
 #include "course.h"
 #include "location.h"
-#include <string>
-using namespace std;
+#include "user.h"
 
+using namespace std;
 
 class Admin
 {
@@ -30,16 +30,17 @@ public:
     // Course class related methods.
     void editCourse(Course course);
     void addCourse(Course course);
-    void deleteCourse(Course course);
+    void deleteCourse(string courseName);
 
-    // Loction class related methods.
-    void addLocation(Location location);
+    // Loction/Graph class related methods.
     void editLocation(Location location);
-    void removeLocation(Location location);
 
+    // user related methods.
+    void addUser (User user);
+    void editUser (User user);
+    void deleteUser(string username);
 
     // Destructor
     ~Admin();
 };
 
-#endif // ADMIN_H
