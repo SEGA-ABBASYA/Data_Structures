@@ -420,7 +420,8 @@ vector<string> AdminView::disectStringEnter(string str)
 // Delete course.
 void AdminView::on_tableWidget_3_itemClicked(QTableWidgetItem *item)
 {
-    if (item != nullptr) {
+    if (item != nullptr)
+    {
         int row = item->row();
         QTableWidgetItem *cellItem = ui->tableWidget_3->item(row, 0);
         if (cellItem != nullptr)
@@ -428,7 +429,6 @@ void AdminView::on_tableWidget_3_itemClicked(QTableWidgetItem *item)
             courseName = cellItem->text().toStdString();
         }
     }
-    cout<<courseName<<endl;
 }
 void AdminView::on_Delete_clicked()
 {
@@ -474,7 +474,8 @@ void AdminView::on_tableWidget_itemClicked(QTableWidgetItem *item)
     ui->tableWidget->item(row, 2)->setFlags(Qt::NoItemFlags);
     ui->tableWidget->item(row, 3)->setFlags(Qt::NoItemFlags);
 
-    if (item != nullptr) {
+    if (item != nullptr)
+    {
         int row = item->row();
         QTableWidgetItem *cellItem = ui->tableWidget->item(row, 0);
         if (cellItem != nullptr)
@@ -482,14 +483,15 @@ void AdminView::on_tableWidget_itemClicked(QTableWidgetItem *item)
             currentCourseName = cellItem->text().toStdString();
         }
     }
-    cout<<currentCourseName<<endl;
 }
 void AdminView::on_Edit_clicked()
 {
     int row = ui->tableWidget->currentRow();
-    for (int col = 0; col < 6; ++col) {
+    for (int col = 0; col < 6; ++col)
+    {
         QTableWidgetItem *cellItem = ui->tableWidget->item(row, col);
-        if (cellItem != nullptr) {
+        if (cellItem != nullptr)
+        {
             // Assign data to corresponding variables based on column index
             switch (col) {
             case 0:
@@ -548,7 +550,8 @@ int academicYear;
 int section;
 
 // Add user.
-bool validEmails(string email){
+bool validEmails(string email)
+{
     std::regex pattern(R"(^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$)");
     return std::regex_match(email, pattern);
 }
@@ -613,7 +616,8 @@ void AdminView::on_Add_clicked()
 // Delete user.
 void AdminView::on_tableWidget_4_itemClicked(QTableWidgetItem *item)
 {
-    if (item != nullptr) {
+    if (item != nullptr)
+    {
         int row = item->row();
         QTableWidgetItem *cellItem = ui->tableWidget_4->item(row, 5);
         if (cellItem != nullptr)
@@ -621,7 +625,6 @@ void AdminView::on_tableWidget_4_itemClicked(QTableWidgetItem *item)
             username = cellItem->text().toStdString();
         }
     }
-    cout<<username<<endl;
 }
 
 void AdminView::on_deleteStudent_clicked()
@@ -637,7 +640,8 @@ string oldGender;
 
 void AdminView::on_tableWidget_2_itemClicked(QTableWidgetItem *item)
 {
-    if (item != nullptr) {
+    if (item != nullptr)
+    {
         int row = item->row();
         QTableWidgetItem *cellItem = ui->tableWidget_2->item(row, 5);
         if (cellItem != nullptr)
@@ -645,16 +649,18 @@ void AdminView::on_tableWidget_2_itemClicked(QTableWidgetItem *item)
             currentUsername = cellItem->text().toStdString();
         }
     }
-    cout<<currentUsername<<endl;
 }
 void AdminView::on_EditStudent_clicked()
 {
     int row = ui->tableWidget_2->currentRow();
-    for (int col = 0; col < 9; ++col) {
+    for (int col = 0; col < 9; ++col)
+    {
         QTableWidgetItem *cellItem = ui->tableWidget_2->item(row, col);
-        if (cellItem != nullptr) {
+        if (cellItem != nullptr)
+        {
             // Assign data to corresponding variables based on column index
-            switch (col) {
+            switch (col)
+            {
             case 0:
                 name = cellItem->text().toLower().toStdString();
                 break;

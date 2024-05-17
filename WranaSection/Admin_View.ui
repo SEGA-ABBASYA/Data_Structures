@@ -666,18 +666,20 @@ border-radius: 11px; </string>
         </property>
         <property name="styleSheet">
          <string notr="true">QTableWidget {
+
   background-color: #1c2021;
   border: 1px solid ; /* Thicker border */
-  border-radius: 8px;
+  border-radius:8px;
   gridline-color: #694f3a;
   font-family: &quot;Verdana&quot;; /* This is a sans-serif font that is clear and easy to read */
   font-size: 14px; /* Adjust the size as needed */
-  color: rgb(255, 255, 255);
-  selection-background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+color: rgb(255, 255, 255);
+  selection-background-color : qlineargradient(x1:0, y1:0, x2:1, y2:0,
                               stop:0 #a188d3, stop:1 #8bcdff);
-  selection-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+selection-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
                               stop:0 #a188d3, stop:1 #8bcdff);
-}
+  }
+
 
 QHeaderView::section {
   background-color: #344c54;
@@ -698,20 +700,7 @@ QTableWidget::item:hover {
   background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
                               stop:0 #a188d3, stop:1 #8bcdff);
   color: black;
-}
-
-/* Cell background color when selected */
-QTableWidget::item:selected {
-  background-color: black;
-  color: white; /* Change text color to make it visible */
-}
-
-/* Cell background color when double-clicked */
-QTableWidget::item:selected:focus {
-  background-color: black;
-  color: white; /* Change text color to make it visible */
-}
-</string>
+}</string>
         </property>
         <property name="editTriggers">
          <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
@@ -723,7 +712,7 @@ QTableWidget::item:selected:focus {
          <enum>QAbstractItemView::SingleSelection</enum>
         </property>
         <property name="selectionBehavior">
-         <enum>QAbstractItemView::SelectRows</enum>
+         <enum>QAbstractItemView::SelectItems</enum>
         </property>
         <property name="showGrid">
          <bool>true</bool>
@@ -1648,7 +1637,7 @@ QListWidget::item:selected { /* Apply the same style for both hover and selected
           <x>280</x>
           <y>10</y>
           <width>629</width>
-          <height>561</height>
+          <height>550</height>
          </rect>
         </property>
         <property name="font">
@@ -1899,10 +1888,10 @@ font-weight: 600;
        <widget class="QPushButton" name="Add">
         <property name="geometry">
          <rect>
-          <x>717</x>
-          <y>443</y>
-          <width>161</width>
-          <height>51</height>
+          <x>718</x>
+          <y>446</y>
+          <width>158</width>
+          <height>45</height>
          </rect>
         </property>
         <property name="font">
@@ -1913,11 +1902,15 @@ font-weight: 600;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: transparent;
-</string>
+         <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+color: rgb(255, 255, 255);
+background-color: rgb(229, 112, 30);
+border-radius:50%;
+border: none;
+border-radius: 11px; </string>
         </property>
         <property name="text">
-         <string/>
+         <string>Add</string>
         </property>
         <property name="checkable">
          <bool>false</bool>
@@ -2082,7 +2075,7 @@ QTableWidget::item:hover {
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>450</y>
+          <y>446</y>
           <width>131</width>
           <height>51</height>
          </rect>
@@ -2100,7 +2093,7 @@ color: rgb(255, 255, 255);
 background-color: rgb(229, 112, 30);
 border-radius:50%;
 border: none;
-</string>
+border-radius: 11px; </string>
         </property>
         <property name="text">
          <string>Edit</string>
@@ -2247,7 +2240,7 @@ QTableWidget::item:hover {
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>450</y>
+          <y>446</y>
           <width>131</width>
           <height>51</height>
          </rect>
@@ -2265,7 +2258,7 @@ color: rgb(255, 255, 255);
 background-color: rgb(229, 112, 30);
 border-radius:50%;
 border: none;
-</string>
+border-radius: 11px; </string>
         </property>
         <property name="text">
          <string>Delete</string>
