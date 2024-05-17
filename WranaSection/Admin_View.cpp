@@ -7,7 +7,7 @@
 #include "login.h"
 #include <vector>
 #include <string>
-#include"Admin.h"
+#include "Admin.h"
 #include <QTableWidgetItem>
 #include <QMessageBox>
 #include "user.h"
