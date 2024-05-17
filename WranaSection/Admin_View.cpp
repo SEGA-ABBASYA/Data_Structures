@@ -389,7 +389,7 @@ void AdminView::on_pushButton_clicked()
             ui->textEdit_2->clear();
             ui->checkBox->setCheckState(Qt::Unchecked);
             ui->checkBox_2->setCheckState(Qt::Unchecked);
-            QMessageBox::warning(this, "Message", "Course successfully added!");
+            QMessageBox::information(this, "Message", "Course successfully added!");
         }
         else // Course found in map
         {
@@ -589,7 +589,7 @@ void AdminView::on_Add_clicked()
     {
         QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nPlease, Choose a password with 8 or more characters");
     }
-    else if(ui->nameLineEdit_5->text().size() < 10)
+    else if(to_string(id).size() < 10)
     {
         QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nPlease, Check the id, it should be at least 10 digits");
     }
@@ -609,7 +609,7 @@ void AdminView::on_Add_clicked()
         ui->programComboBox->setEditText("General");
         ui->sectionSpinBox->setValue(1);
         ui->sectionSpinBox_2->setValue(1);
-        QMessageBox::warning(this, "Message", "User successfully added!");
+        QMessageBox::information(this, "Message", "User successfully added!");
     }
 }
 
@@ -700,7 +700,7 @@ void AdminView::on_EditStudent_clicked()
     {
         QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nNot Valid Email");
     }
-    else if(user != Database::users.end())
+    else if(!(user != Database::users.end() || currentUsername == username))
     {
         QMessageBox::warning(this, "Error", "userName is Already Exist");
     }
@@ -708,7 +708,7 @@ void AdminView::on_EditStudent_clicked()
     {
         QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nPlease, Choose a password with 8 or more characters");
     }
-    else if(ui->nameLineEdit_5->text().size() < 10)
+    else if(to_string(id).size() < 10)
     {
         QMessageBox::warning(this, "Error", "Hello " + QString::fromStdString(name) + "\nPlease, Check the id, it should be at least 10 digits");
     }
@@ -765,6 +765,7 @@ void AdminView::on_Edit_2_clicked()
     else
     {
         admin.editLocation(location1Name, location2Name);
+        QMessageBox::information(this, "Message", "You Have Swapped " + QString::fromStdString(location1Name) + " With " + QString::fromStdString(location2Name) + "\nSuccessfully!");
     }
 }
 
