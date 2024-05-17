@@ -16,7 +16,6 @@ class UndergroundFloor : public QWidget
 
 public:
     explicit UndergroundFloor(QWidget *parent = nullptr);
-    vector<string> CreateGrid();
     ~UndergroundFloor();
 
 private slots:

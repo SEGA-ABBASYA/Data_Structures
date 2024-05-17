@@ -1,5 +1,6 @@
 #include "firstfloor_general.h"
 #include "ui_firstfloor_general.h"
+#include"database.h"
 #include <iostream>
 using namespace std;
 
@@ -18,8 +19,9 @@ Firstfloor_general::Firstfloor_general(QWidget *parent)
         ui->tableWidget->setRowHeight(i, 20);
 
     }
-    vector<string>c;
-    c=write_Graph_general();
+
+
+
 
     for(int i = 0; i < ui->tableWidget->rowCount(); ++i) {
 
@@ -30,7 +32,7 @@ Firstfloor_general::Firstfloor_general(QWidget *parent)
                 item= new QTableWidgetItem();
                 ui->tableWidget->setItem(i, j, item);
             }
-            if(c[i][j]!='.')
+            if(Database::FirstGeneralFloor[i][j]!='.')
                 item->setFlags(item->flags() & !~Qt::ItemIsSelectable);
 
         }
@@ -50,49 +52,4 @@ void Firstfloor_general::on_tableWidget_cellActivated(int row, int column)
    //ui->label_2->setText(s);
     cout<<row<<" "<<column<<endl;
 }
-vector<string> Firstfloor_general::write_Graph_general()
-{
-    vector<string>c; //47 rows -> 46 // 76 columns
-    // Main Building Ladder Column 74 Row 20
-    //    Back Ladder (Electronics) Column 36 Row 6
-    // col 41 row 30
 
-        // ML
-
-     c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-     c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-     c.push_back("xxxxxxB.....xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-     c.push_back("xxxxxxB.....xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-     c.push_back("xxxxxxB.....xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-     c.push_back("xxxxxxxx....xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxx.xxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxx.xxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxx.xxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxx.xxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxx.xxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxx.xxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxx.xxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxx.xxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxxMMxxxx.xxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxx..xxxx.xxxx");
-     c.push_back("xxxxxxxx..xxxxxxxxxxxxxxxxxxxx.......xxxx");
-     c.push_back("xxxxxxxx......xxxxxxxxxxxxxxxx.......xxxx");
-     c.push_back("xxxxxxxx.............................xxxx");
-     c.push_back("xxxxxxxx.............................xxxx");
-     c.push_back("xxxxxxxx.............................xxxx");
-     c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-     c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-     c.push_back("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-
-
-
-
-     return c;
-
-}

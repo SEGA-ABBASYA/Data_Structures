@@ -15,6 +15,13 @@ map<Timetable, vector<Schedule>> Database::schedules;
 QMap<string, User> Database::users;
 Admin Database::admin;
 
+vector<string>Database::UnderGroundFloor;
+vector<string>Database::GroundFloor;
+vector<string>Database::FirstGeneralFloor;
+vector<string>Database::FirstCreditFloor;
+vector<string>Database::SecondFloor;
+vector<string>Database::SecondOtherFloor;
+vector<string>Database::ThirdFloor;
 
 
 
@@ -24,6 +31,13 @@ Database::Database() {
     usersFile.setFileName("Files/Users.txt");
     locationsFile.setFileName("Files/Locations.txt");
     schedulesFile.setFileName("Files/Schedules.txt");
+    UnderGroundFile.setFileName("Files/UnderGroundfloor.txt");
+    GroundFile.setFileName("Files/Groundfloor.txt");
+    FirstGeneralFile.setFileName("Files/FirstGeneralfloor.txt");
+    FirstCreditFile.setFileName("Files/FirstCreditfloor.txt");
+    SecondFile.setFileName("Files/Secondfloor.txt");
+    SecondOtherFile.setFileName("Files/SecondOtherfloor.txt");
+    ThirdFile.setFileName("Files/Thirdfloor.txt");
 }
 
 void Database::read()
@@ -33,6 +47,13 @@ void Database::read()
     readLocations();
     readSchedule();
     readUsers();
+    Read_UnderGroundFloor();
+    Read_GroundFloor();
+    Read_FirstGeneralFloor();
+    Read_FirstCreditFloor();
+    Read_SecondFloor();
+    Read_SecondOtherFloor();
+    Read_ThirdFloor();
 }
 
 void Database::write()
@@ -360,4 +381,122 @@ void Database::writeSchedule()
         qDebug() << "Failed to open the schedulesFile for writing.";
     }
 }
+void Database::Read_UnderGroundFloor()
+{
+    ifstream Reader(UnderGroundFile.fileName().toStdString());
 
+    if (Reader.is_open()) {
+        string line;
+
+        while (getline(Reader, line)) {
+
+            UnderGroundFloor.push_back(line);
+        }
+         cout << "UnderGroundFile read successfully"<< endl;
+    }
+      else
+    cout << "Error opening UnderGround.txt for reading." << endl;
+
+}
+void Database::Read_GroundFloor()
+{
+    ifstream Reader(GroundFile.fileName().toStdString());
+
+    if (Reader.is_open()) {
+        string line;
+
+        while (getline(Reader, line)) {
+
+            GroundFloor.push_back(line);
+        }
+        cout << "GroundFile read successfully"<< endl;
+    }
+    else
+        cout << "Error opening Ground.txt for reading." << endl;
+}
+void Database::Read_FirstGeneralFloor()
+{
+    ifstream Reader(FirstGeneralFile.fileName().toStdString());
+
+    if (Reader.is_open()) {
+        string line;
+
+        while (getline(Reader, line)) {
+
+            FirstGeneralFloor.push_back(line);
+        }
+        cout << "FirstGeneralFile read successfully"<< endl;
+    }
+    else
+        cout << "Error opening FirstGeneral.txt for reading." << endl;
+}
+void Database::Read_FirstCreditFloor()
+{
+
+
+
+    ifstream Reader(FirstCreditFile.fileName().toStdString());
+
+    if (Reader.is_open()) {
+        string line;
+
+        while (getline(Reader, line)) {
+
+            FirstCreditFloor.push_back(line);
+           // cout<<line<<'\n';
+
+        }
+
+
+    }
+    else
+        cout << "Error opening FirstCredit.txt for reading." << endl;
+}
+void Database::Read_SecondFloor()
+{
+    ifstream Reader(SecondFile.fileName().toStdString());
+
+    if (Reader.is_open()) {
+        string line;
+
+        while (getline(Reader, line)) {
+
+           SecondFloor.push_back(line);
+        }
+        cout << "SecondFile read successfully"<< endl;
+    }
+    else
+        cout << "Error opening Second.txt for reading." << endl;
+}
+void Database::Read_SecondOtherFloor()
+{
+    ifstream Reader(SecondOtherFile.fileName().toStdString());
+
+    if (Reader.is_open()) {
+        string line;
+
+        while (getline(Reader, line)) {
+
+            SecondOtherFloor.push_back(line);
+        }
+        cout << "SecondOtherFile read successfully"<< endl;
+    }
+    else
+        cout << "Error opening SecondOther.txt for reading." << endl;
+}
+void Database::Read_ThirdFloor()
+{
+    ifstream Reader(ThirdFile.fileName().toStdString());
+
+    if (Reader.is_open()) {
+        string line;
+
+        while (getline(Reader, line)) {
+
+            ThirdFloor.push_back(line);
+        }
+        cout << "ThirdFile read successfully"<< endl;
+    }
+    else
+        cout << "Error opening Third.txt for reading." << endl;
+}

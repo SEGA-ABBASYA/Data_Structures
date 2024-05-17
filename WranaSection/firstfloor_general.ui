@@ -49,9 +49,17 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-gridline-color: transparent;
-border:none;</string>
+     <string notr="true">QTableWidget::item:selected {
+  background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                              stop:0 #a188d3, stop:1 #8bcdff);
+
+}
+QTableWidget
+{
+   background-color:transparent;
+border:none;
+gridline-color:transparent;
+}</string>
     </property>
     <property name="verticalScrollBarPolicy">
      <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -174,7 +182,7 @@ border:none;</string>
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

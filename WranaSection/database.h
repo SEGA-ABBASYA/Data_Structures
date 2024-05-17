@@ -19,6 +19,14 @@ public:
     static map<Timetable, vector<Schedule>> schedules;
     static Admin admin;
     static map<string,Course> courses;
+    static vector<string>UnderGroundFloor;
+    static vector<string>GroundFloor;
+    static vector<string>FirstGeneralFloor;
+    static vector<string>FirstCreditFloor;
+    static vector<string>SecondFloor;
+    static vector<string>SecondOtherFloor;
+    static vector<string>ThirdFloor;
+
 
     Database();
     void read();
@@ -26,6 +34,7 @@ public:
 
 private:
     QFile usersFile, locationsFile, adminFile, CoursesFile, schedulesFile;
+    QFile UnderGroundFile,GroundFile,FirstGeneralFile,FirstCreditFile,SecondFile,SecondOtherFile,ThirdFile;
     void readUsers();
     void readLocations();
     void writeUsers();
@@ -37,6 +46,13 @@ private:
     void ReadCourses();
     void WriteCourses();
 
+    void Read_UnderGroundFloor();
+    void Read_GroundFloor();
+    void Read_FirstGeneralFloor();
+    void Read_FirstCreditFloor();
+    void Read_SecondFloor();
+    void Read_SecondOtherFloor();
+    void Read_ThirdFloor();
 
 };
 
