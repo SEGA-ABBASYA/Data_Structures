@@ -12,6 +12,7 @@ UserView::UserView(QWidget *parent)
 {
     ui->setupUi(this);
     ui->full->hide();
+
     genedyBuilding =
     {
         {"HP Lab", true},
@@ -35,6 +36,9 @@ UserView::UserView(QWidget *parent)
 
     ui->start_list_widget->addItems(roomsList);
     ui->end_list_widget->addItems(roomsList);
+
+    ui->start_list_widget->hide();
+    ui->end_list_widget->hide();
 }
 
 UserView::~UserView()
@@ -142,7 +146,21 @@ void UserView::on_DM_clicked()
         QMessageBox::warning(this, "Error", "Please select a user");
 }
 
+////////////////////////////////// Graph Page //////////////////////////////////
 
+// to show rooms list
+void UserView::on_search_start_selectionChanged()
+{
+    ui->start_list_widget->show();
+}
+
+void UserView::on_search_end_selectionChanged()
+{
+    ui->end_list_widget->show();
+}
+
+
+// filter rooms based on input
 void UserView::on_search_start_textChanged(const QString &arg1)
 {
     QRegularExpression regex(arg1, QRegularExpression::CaseInsensitiveOption);
@@ -157,6 +175,8 @@ void UserView::on_search_end_textChanged(const QString &arg1)
     ui -> end_list_widget -> addItems(roomsList.filter(regex));
 }
 
+
+// get start and end rooms from what the user selected
 void UserView::on_start_list_widget_itemClicked(QListWidgetItem *item)
 {
     string chosenRoom =item->data(Qt::DisplayRole).toString().toStdString();;
@@ -187,4 +207,7 @@ void UserView::on_end_list_widget_itemClicked(QListWidgetItem *item)
         endRoom = db.locations["Class 7"];
     }
 }
+
+
+
 

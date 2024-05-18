@@ -96,6 +96,13 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(229, 223, 206, 1);
+color: #000000; 
+font-weight: 600; 
+
+</string>
+     </property>
     </widget>
     <widget class="QPushButton" name="search_start_button">
      <property name="geometry">
@@ -159,6 +166,14 @@ border:none;</string>
        <width>181</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(229, 223, 206, 1);
+color: #000000; 
+font-weight: 600; 
+
+
+</string>
      </property>
     </widget>
     <widget class="QPushButton" name="underground_start">
@@ -340,6 +355,14 @@ border:none;</string>
        <height>71</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(229, 223, 206, 1);
+color: #000000; 
+font-weight: 600; 
+
+
+</string>
+     </property>
     </widget>
     <widget class="QListWidget" name="end_list_widget">
      <property name="geometry">
@@ -349,6 +372,14 @@ border:none;</string>
        <width>181</width>
        <height>71</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(229, 223, 206, 1);
+color: #000000; 
+font-weight: 600; 
+
+
+</string>
      </property>
     </widget>
    </widget>
@@ -1979,8 +2010,8 @@ color: rgb(255, 255, 255);</string>
   <zorder>icons</zorder>
  </widget>
  <resources>
-  <include location="Materials.qrc"/>
   <include location="Login-Register.qrc"/>
+  <include location="Materials.qrc"/>
  </resources>
  <connections>
   <connection>

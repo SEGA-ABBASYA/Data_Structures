@@ -68,6 +68,10 @@ private slots:
 
     void on_end_list_widget_itemClicked(QListWidgetItem *item);
 
+    void on_search_start_selectionChanged();
+
+    void on_search_end_selectionChanged();
+
 private:
     Ui::UserView *ui;
     unordered_map<string, bool> genedyBuilding;
