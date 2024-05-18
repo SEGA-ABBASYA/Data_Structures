@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Database db;
-    UserView l;
+    Login l;
     //GroundFloor g;
     //UndergroundFloor u;
     //ThirdFloor t;
