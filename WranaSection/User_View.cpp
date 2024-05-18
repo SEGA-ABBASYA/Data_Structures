@@ -11,7 +11,7 @@ UserView::UserView(QWidget *parent)
 {
     ui->setupUi(this);
     ui->verticalLayout_2->addWidget(statusBar);
-    statusBar->showMessage("Ready for the Mango");
+    statusBar->showMessage("Ready for the Sugar Cane");
     u = new UndergroundFloor();
     g = new GroundFloor();
     f = new Firstfloor_general();
