@@ -2,6 +2,9 @@
 #include "ui_User_View.h"
 #include "login.h"
 #include <QMessageBox>
+
+Location UserView::startRoom;
+Location UserView::endRoom;
 QListWidgetItem *user;
 UserView::UserView(QWidget *parent)
     : QWidget(parent)
@@ -9,7 +12,29 @@ UserView::UserView(QWidget *parent)
 {
     ui->setupUi(this);
     ui->full->hide();
+    genedyBuilding =
+    {
+        {"HP Lab", true},
+        {"Class 4", true},
+        {"CIS Lab 1", true},
+        {"CIS Lab 2", true},
+        {"CIS Lab 3", true},
+        {"CIS Lab 4", true},
+        {"CIS Lab 5", true},
+        {"CIS Lab 6", true},
+        {"CIS Lab 7", true},
+        {"Physics Lab", true},
+    };
 
+    for (const auto& pair : db.locations) {
+        roomsList.push_back(QString::fromStdString(pair.first));
+    }
+    for (const auto& pair : genedyBuilding) {
+        roomsList.push_back(QString::fromStdString(pair.first));
+    }
+
+    ui->start_list_widget->addItems(roomsList);
+    ui->end_list_widget->addItems(roomsList);
 }
 
 UserView::~UserView()
@@ -115,5 +140,51 @@ void UserView::on_DM_clicked()
     }
     else
         QMessageBox::warning(this, "Error", "Please select a user");
+}
+
+
+void UserView::on_search_start_textChanged(const QString &arg1)
+{
+    QRegularExpression regex(arg1, QRegularExpression::CaseInsensitiveOption);
+    ui-> start_list_widget -> clear();
+    ui -> start_list_widget -> addItems(roomsList.filter(regex));
+}
+
+void UserView::on_search_end_textChanged(const QString &arg1)
+{
+    QRegularExpression regex(arg1, QRegularExpression::CaseInsensitiveOption);
+    ui-> end_list_widget -> clear();
+    ui -> end_list_widget -> addItems(roomsList.filter(regex));
+}
+
+void UserView::on_start_list_widget_itemClicked(QListWidgetItem *item)
+{
+    string chosenRoom =item->data(Qt::DisplayRole).toString().toStdString();;
+
+    if (db.locations.find(chosenRoom) != db.locations.end())
+    {
+        startRoom = db.locations[chosenRoom];
+    }
+    else if (genedyBuilding.find(chosenRoom) != genedyBuilding.end())
+    {
+        QMessageBox::warning(this, "Error", "You're in Genedy, Go to the Main Building.");
+        startRoom = db.locations["Class 7"];
+    }
+}
+
+
+void UserView::on_end_list_widget_itemClicked(QListWidgetItem *item)
+{
+    string chosenRoom =item->data(Qt::DisplayRole).toString().toStdString();;
+
+    if (db.locations.find(chosenRoom) != db.locations.end())
+    {
+        endRoom = db.locations[chosenRoom];
+    }
+    else if (genedyBuilding.find(chosenRoom) != genedyBuilding.end())
+    {
+        QMessageBox::warning(this, "Error", "Your destination is in Genedy Building.");
+        endRoom = db.locations["Class 7"];
+    }
 }
 

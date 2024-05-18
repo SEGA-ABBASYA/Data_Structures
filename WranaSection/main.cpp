@@ -2,7 +2,6 @@
 #include "Database.h"
 #include <QApplication>
 #include "login.h"
-#include "User_View.h"
 #include "Admin_View.h"
 #include "undergroundfloor.h"
 #include "ThirdFloor.h"
@@ -13,6 +12,7 @@
 #include "Secondfloorother.h"
 #include"Secondfloorother.h"
 #include"undergroundfloor.h"
+#include "User_View.h"
 using namespace std;
 void write()
 {
@@ -26,14 +26,15 @@ int main(int argc, char *argv[])
     db.read();
     //Login l;
     //GroundFloor g;
-    UndergroundFloor u;
+    //UndergroundFloor u;
+    UserView uv;
     //ThirdFloor t;
     //SecondFloor s;
     //Firstfloor_general f;
     //firstfloor_credit c;
     //SecondFloorOther o;
     //ThirdFloor th;
-    u.show();
+    uv.show();
 
     // MainGraph mg;
     // mg.addfloor(c);
