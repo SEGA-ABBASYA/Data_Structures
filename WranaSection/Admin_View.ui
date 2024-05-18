@@ -627,8 +627,7 @@ font-weight: 600;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
-color: rgb(255, 255, 255);
+         <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(229, 112, 30);
 border-radius:50%;
 border: none;
