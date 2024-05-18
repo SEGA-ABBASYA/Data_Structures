@@ -41,18 +41,6 @@ UndergroundFloor::UndergroundFloor(QWidget *parent)
         }
     }
 
-    MainGraph mg;
-    mg.addfloor(Database::UnderGroundFloor);
-    Location ll(0, false, "Office", { 24,24 });
-    vector<pair<int, pair<int, int>>> ans = mg.SearchBig(0, 3, 24, ll);
-    for (auto i : ans)
-    {
-
-        ui->tableWidget->setItem(i.second.first, i.second.second, new QTableWidgetItem);
-        ui->tableWidget->item(i.second.first, i.second.second)->setBackground(Qt::red);
-        cout << i.first << ' ' << i.second.first << ' ' << i.second.second << endl;
-    }
-
 }
 
 

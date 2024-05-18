@@ -23,7 +23,7 @@ vector<pair<int, pair<int, int>>> MainGraph::SearchBig(int floor, int x, int y, 
             vector<pair<int, int>>v[3], ansabove, ansbelow;
             for (int i = 0;i < stairs.size();i++)
             {
-                v[i] = Floors[floor].Search(x, y, stairs[i]);
+                v[i] = Floors[floor].Search(x, y, stairs[i][floor]);
                 if (v[i].size())
                 {
                     CanReachStairs.insert(i);
@@ -44,14 +44,14 @@ vector<pair<int, pair<int, int>>> MainGraph::SearchBig(int floor, int x, int y, 
             {
                 for (auto i : CanReachStairs)
                 {
-                    vector<pair<int, int>> temp = Floors[requiredfloor].Search(stairs[i].getNode().first, stairs[i].getNode().second, stairs[(*CantReachStairs.begin())]);
+                    vector<pair<int, int>> temp = Floors[requiredfloor].Search(stairs[i][requiredfloor].getNode().first, stairs[i][requiredfloor].getNode().second, stairs[(*CantReachStairs.begin())][requiredfloor]);
                     if (ansabove.empty() || ansabove.size() + v[(*CanReachStairs.begin())].size() > temp.size() + v[i].size())
                     {
                         ansabove = temp;
                         indxwon = i;
                     }
                 }
-                ansbelow = Floors[floor].Search(stairs[(*CantReachStairs.begin())].getNode().first, stairs[(*CantReachStairs.begin())].getNode().second, L);
+                ansbelow = Floors[floor].Search(stairs[(*CantReachStairs.begin())][floor].getNode().first, stairs[(*CantReachStairs.begin())][floor].getNode().second, L);
 
                 for (auto i : v[indxwon])
                 {
@@ -70,14 +70,14 @@ vector<pair<int, pair<int, int>>> MainGraph::SearchBig(int floor, int x, int y, 
             {
                 for (auto i : CantReachStairs)
                 {
-                    vector<pair<int, int>> temp = Floors[requiredfloor].Search(stairs[(*CanReachStairs.begin())].getNode().first, stairs[(*CantReachStairs.begin())].getNode().second, stairs[i]);
+                    vector<pair<int, int>> temp = Floors[requiredfloor].Search(stairs[(*CanReachStairs.begin())][requiredfloor].getNode().first, stairs[(*CantReachStairs.begin())][requiredfloor].getNode().second, stairs[i][requiredfloor]);
                     if (ansabove.empty() || ansabove.size() > temp.size())
                     {
                         ansabove = temp;
                         indxwon = i;
                     }
                 }
-                ansbelow = Floors[floor].Search(stairs[indxwon].getNode().first, stairs[indxwon].getNode().second, L);
+                ansbelow = Floors[floor].Search(stairs[indxwon][floor].getNode().first, stairs[indxwon][floor].getNode().second, L);
 
                 for (auto i : v[(*CanReachStairs.begin())])
                 {
@@ -120,12 +120,12 @@ vector<pair<int, pair<int, int>>> MainGraph::SearchBig(int floor, int x, int y, 
         map<int, bool>available, available2;
         for (int i = 0; i < 3;i++)
         {
-            ans1[i] = Floors[floor].Search(x, y, stairs[i]);
+            ans1[i] = Floors[floor].Search(x, y, stairs[i][floor]);
             if (ans1[i].size() > 0) available[i] = true;
         }
         for (int i = 0;i < 3;i++)
         {
-            ans2[i] = Floors[L.getFloor()].Search(stairs[i].getNode().first, stairs[i].getNode().second, L);
+            ans2[i] = Floors[L.getFloor()].Search(stairs[i][L.getFloor()].getNode().first, stairs[i][L.getFloor()].getNode().second, L);
             if (ans2[i].size() > 0) available2[i] = true;
         }
         int indxbig = -1, mini = 1e7;
@@ -169,7 +169,7 @@ vector<pair<int, pair<int, int>>> MainGraph::SearchBig(int floor, int x, int y, 
                 {
                     if (available[i] && available2[j])
                     {
-                        ans3[{i, j}] = (Floors[requiredfloor].Search(stairs[i].getNode().first, stairs[i].getNode().second, stairs[j]));
+                        ans3[{i, j}] = (Floors[requiredfloor].Search(stairs[i][requiredfloor].getNode().first, stairs[i][requiredfloor].getNode().second, stairs[j][requiredfloor]));
                     }
                 }
             }

@@ -1,7 +1,7 @@
 #include "database.h"
 #include "user.h"
 #include "Schedule.h"
-#include"course.h"
+#include "course.h"
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
@@ -14,7 +14,7 @@ map<string,Course> Database::courses;
 map<Timetable, vector<Schedule>> Database::schedules;
 QMap<string, User> Database::users;
 Admin Database::admin;
-
+MainGraph Database::mg;
 vector<string>Database::UnderGroundFloor;
 vector<string>Database::GroundFloor;
 vector<string>Database::FirstGeneralFloor;
@@ -22,7 +22,8 @@ vector<string>Database::FirstCreditFloor;
 vector<string>Database::SecondFloor;
 vector<string>Database::SecondOtherFloor;
 vector<string>Database::ThirdFloor;
-
+vector<string>Database::FirstFloorMerged;
+vector<string>Database::SecondFloorMerged;
 
 
 Database::Database() {
@@ -38,6 +39,8 @@ Database::Database() {
     SecondFile.setFileName("Files/Secondfloor.txt");
     SecondOtherFile.setFileName("Files/SecondOtherfloor.txt");
     ThirdFile.setFileName("Files/Thirdfloor.txt");
+    SecondMFile.setFileName("Files/Secondfloormerged.txt");
+    FirstMFile.setFileName("Files/Firstmergedfloor.txt");
 }
 
 void Database::read()
@@ -54,6 +57,9 @@ void Database::read()
     Read_SecondFloor();
     Read_SecondOtherFloor();
     Read_ThirdFloor();
+    Read_FirstMFloor();
+    Read_SecondMFloor();
+    mgIntialization();
 }
 
 void Database::write()
@@ -499,4 +505,87 @@ void Database::Read_ThirdFloor()
     }
     else
         cout << "Error opening Third.txt for reading." << endl;
+}
+
+void Database::Read_SecondMFloor()
+{
+    ifstream Reader(SecondMFile.fileName().toStdString());
+
+    if (Reader.is_open()) {
+        string line;
+
+        while (getline(Reader, line)) {
+
+            SecondFloorMerged.push_back(line);
+        }
+        cout << "SecondFile read successfully"<< endl;
+    }
+    else
+        cout << "Error opening Second.txt for reading." << endl;
+}
+
+void Database::Read_FirstMFloor()
+{
+    ifstream Reader(FirstMFile.fileName().toStdString());
+
+    if (Reader.is_open()) {
+        string line;
+
+        while (getline(Reader, line)) {
+
+            FirstFloorMerged.push_back(line);
+        }
+        cout << "FirstMergedFile read successfully"<< endl;
+    }
+    else
+        cout << "Error opening FirstMerged.txt for reading." << endl;
+}
+
+void Database::mgIntialization(){
+    mg.addfloor(UnderGroundFloor);
+    mg.addfloor(GroundFloor);
+    mg.addfloor(FirstFloorMerged);
+    mg.addfloor(SecondFloorMerged);
+    mg.addfloor(ThirdFloor);
+
+    Location undergroundMain  (0,0,"underMain_NO",{-10,-10});
+    Location undergroundBack  (0,0,"undergBack",{4,43});
+    Location undergroundCredit(0,0,"undergSaied",{4,24});
+
+    Location groundMain  (1,0,"groundMain",{17,60});
+    Location groundBack  (1,0,"groundBack",{4,28});
+    Location groundCredit(1,0,"groundSaied",{4,10});
+
+    Location firstMain  (2,0,"firstMain",{32,72});
+    Location firstBack  (2,0,"firstBack",{14,49});
+    Location firstCredit(2,0,"firstSaied",{4,31});
+
+    Location secondMain  (3,0,"secondMain",{48,142});
+    Location secondBack  (3,0,"secondBack",{24,96});
+    Location secondCredit(3,0,"secondSaied",{14,26});
+
+    Location thirdMain  (4,0,"thirdMain",{18,54});
+    Location thirdBack  (4,0,"thirdBackNO",{-11,-11});
+    Location thirdCredit(4,0,"thirdSaiedNO",{-10,-10});
+
+    mg.stairs[0][0] = undergroundMain;
+    mg.stairs[0][1] = undergroundBack;
+    mg.stairs[0][2] = undergroundCredit;
+
+    mg.stairs[1][0] = groundMain;
+    mg.stairs[1][1] = groundBack;
+    mg.stairs[1][2] = groundCredit;
+
+    mg.stairs[2][0] = firstMain;
+    mg.stairs[2][1] = firstBack;
+    mg.stairs[2][2] = firstCredit;
+
+    mg.stairs[3][0] = secondMain;
+    mg.stairs[3][1] = secondBack;
+    mg.stairs[3][2] = secondCredit;
+
+    mg.stairs[4][0] = thirdMain;
+    mg.stairs[4][1] = thirdBack;
+    mg.stairs[4][2] = thirdCredit;
+
 }

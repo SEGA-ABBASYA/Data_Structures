@@ -35,6 +35,15 @@ int main(int argc, char *argv[])
     //ThirdFloor th;
     u.show();
 
+    Location ll(4, false, "Office", { 22,57 });
+    vector<pair<int, pair<int, int>>> ans = Database::mg.SearchBig(0, 22, 62, ll);
+    for (auto i : ans)
+    {
+
+        //ui->tableWidget->setItem(i.second.first, i.second.second, new QTableWidgetItem);
+        //ui->tableWidget->item(i.second.first, i.second.second)->setBackground(Qt::red);
+        cout << i.first << ' ' << i.second.first << ' ' << i.second.second << endl;
+    }
 
 
     QObject::connect(&a, &QCoreApplication::aboutToQuit, write);

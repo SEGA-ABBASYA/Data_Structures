@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QMap>
 #include <vector>
+#include "Maingraph.h"
 class Database
 {
 
@@ -26,6 +27,9 @@ public:
     static vector<string>SecondFloor;
     static vector<string>SecondOtherFloor;
     static vector<string>ThirdFloor;
+    static vector<string>SecondFloorMerged;
+    static vector<string>FirstFloorMerged;
+    static MainGraph mg;
 
 
     Database();
@@ -34,7 +38,7 @@ public:
 
 private:
     QFile usersFile, locationsFile, adminFile, CoursesFile, schedulesFile;
-    QFile UnderGroundFile,GroundFile,FirstGeneralFile,FirstCreditFile,SecondFile,SecondOtherFile,ThirdFile;
+    QFile UnderGroundFile,GroundFile,FirstGeneralFile,FirstCreditFile,SecondFile,SecondOtherFile,ThirdFile,SecondMFile,FirstMFile;
     void readUsers();
     void readLocations();
     void writeUsers();
@@ -53,7 +57,10 @@ private:
     void Read_SecondFloor();
     void Read_SecondOtherFloor();
     void Read_ThirdFloor();
+    void Read_SecondMFloor();
+    void Read_FirstMFloor();
 
+    void mgIntialization();
 };
 
 #endif // DATABASE_H
