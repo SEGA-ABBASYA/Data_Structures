@@ -11,15 +11,12 @@ CellCourseSelection::CellCourseSelection(QWidget *parent)
 {
     ui->setupUi(this);
     Timetable tt = Database::CurrentUserTT;
-    auto Schmap = Database::schedules.toStdMap();
-    for (auto i : Schmap)
+    for (auto itr : Database::schedules[tt])
     {
-        auto tempmap = i.second.toStdMap();
-        for (auto j : tempmap)
+        string coursename = itr.getCourse();
+        if (Database::CurrentUser.is_registered_course(coursename))
         {
-            if (j.first.day != tt.day || j.first.hour != tt.hour) continue;
-            QString str = "Name : " + QString::fromStdString(j.second.getCourse().getCourseName() + ",Location : " + i.first);
-            ui->CoursesList->addItem(str);
+            ui->CoursesList->addItem(QString::fromStdString("Name : " + coursename + ",Type : " + itr.getType() + ",Location : " + itr.getName()));
         }
     }
 }
@@ -32,8 +29,10 @@ CellCourseSelection::~CellCourseSelection()
 void CellCourseSelection::on_Exit_clicked()
 {
     string currentstring = curritem->text().toStdString();
-    string locationName = "",CourseName = "";
-    bool isLocationName = false;
+    string locationName = "",CourseName = "",TypeName = "";
+    string currtype = Database::CurrentUser.current_schedule[Database::CurrentUserTT].getType();
+    string currcourse = Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse();
+    bool isLocationName = false,isTypeName = false;
     if (currentstring != "None")
     {
         for (int i = 7;i < currentstring.size();i++)
@@ -42,11 +41,19 @@ void CellCourseSelection::on_Exit_clicked()
             {
                 if (isLocationName)
                     locationName += currentstring[i];
+                else if (isTypeName)
+                    TypeName += currentstring[i];
                 else
                     CourseName += currentstring[i];
             }
             else
             {
+                if (!isLocationName && !isTypeName)
+                {
+                    i+=7;
+                    isTypeName = true;
+                    continue;
+                }
                 i+=11;
                 isLocationName = true;
             }
@@ -55,46 +62,72 @@ void CellCourseSelection::on_Exit_clicked()
     else
     {
         //cout << Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse().getCourseName() << endl;
-        if (Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse().getCourseName() != "None")
+        if (Database::CurrentUser.current_schedule[Database::CurrentUserTT].getName() != "None")
         {
-            Database::CurrentUser.unregister_course(Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse().getCourseName());
+
+            if (currtype == "Lab")
+            {
+                Database::CurrentUser.lab[currcourse] = false;
+            }
+            else if (currtype == "Lecture")
+            {
+                Database::CurrentUser.lecture[currcourse] = false;
+            }
+            else
+            {
+                Database::CurrentUser.tutorial[currcourse] = false;
+            }
         }
-        Course cors;
-        cors.setCourseName("None");
-        Schedule currschedule;
-        currschedule.setCourse(Database::courses[CourseName]);
-        Database::CurrentUser.current_schedule[Database::CurrentUserTT] = currschedule;
+        Database::CurrentUser.current_schedule[Database::CurrentUserTT].setName("None");
         return;
     }
+    //cout << locationName << ' ' << CourseName << ' ' << TypeName << endl;
 
-    if (Database::CurrentUser.is_registered_course(CourseName))
+    if ((Database::CurrentUser.lab[CourseName] && TypeName == "Lab") || (Database::CurrentUser.lecture[CourseName] && TypeName == "Lecture")
+        || (Database::CurrentUser.tutorial[CourseName] && TypeName == "Tutorial"))
     {
         QMessageBox::warning(this, "Invalid Selection", "You have already registered this course on another time.");
-        cout << Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse().getCourseName() << endl;
+        cout << Database::CurrentUser.current_schedule[Database::CurrentUserTT].getName() << endl;
         return;
     }
-
     else
     {
-        if (Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse().getCourseName() != "None")
+        if (Database::CurrentUser.current_schedule[Database::CurrentUserTT].getName() != "None")
         {
-            Database::CurrentUser.unregister_course(Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse().getCourseName());
+
+            if (currtype == "Lab")
+            {
+                Database::CurrentUser.lab[currcourse] = false;
+            }
+            else if (currtype == "Lecture")
+            {
+                Database::CurrentUser.lecture[currcourse] = false;
+            }
+            else
+            {
+                Database::CurrentUser.tutorial[currcourse] = false;
+            }
         }
-        Schedule currschedule;
-        Course newcourse;
-        newcourse.setCourseName(CourseName);
-
-        if (Database::courses[CourseName].getCourseName() == "None")
-            Database::courses[CourseName] = newcourse;
-
-        currschedule.setCourse(Database::courses[CourseName]);
-        Database::CurrentUser.register_courses(Database::courses[CourseName]);
-        Database::CurrentUser.current_schedule[Database::CurrentUserTT] = currschedule;
+        Database::CurrentUser.current_schedule[Database::CurrentUserTT].setName(locationName);
+        Database::CurrentUser.current_schedule[Database::CurrentUserTT].setCourse(CourseName);
+        Database::CurrentUser.current_schedule[Database::CurrentUserTT].setType(TypeName);
+        if (TypeName == "Lab")
+        {
+            Database::CurrentUser.lab[CourseName] = true;
+        }
+        else if (TypeName == "Lecture")
+        {
+            Database::CurrentUser.lecture[CourseName] = true;
+        }
+        else
+        {
+            Database::CurrentUser.tutorial[CourseName] = true;
+        }
     }
-    cout << Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse().getCourseName() << endl;
+
 }
 
-void CellCourseSelection::on_CoursesList_itemClicked(QListWidgetItem *item)
+void CellCourseSelection::on_CoursesList_itemPressed(QListWidgetItem *item)
 {
         curritem = item;
 }

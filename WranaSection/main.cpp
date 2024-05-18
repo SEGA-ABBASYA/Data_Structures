@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Database db;
-    Login l;
+    UserView l;
     //GroundFloor g;
     //UndergroundFloor u;
     //ThirdFloor t;
@@ -30,7 +30,6 @@ int main(int argc, char *argv[])
     //firstfloor_credit c;
     //SecondFloorOther o;
     db.read();
-    w.show();
     Timetable newtt;
     l.show();
 
@@ -46,23 +45,31 @@ int main(int argc, char *argv[])
     //     cout << i.first << ' ' << i.second.first << ' ' << i.second.second << endl;
     // }
 
+    vector<string>emptydctrs,emptyTAs;
 
     newtt.day = "Sunday";
     newtt.hour = 8;
     newtt.minutes = 0;
     Schedule currsch;
-    Course currcrs;
-    currcrs.setCourseName("Artificial Intelligence Lab");
-    currsch.setCourse(currcrs);
-    Database::schedules["Lab 6"][newtt] = currsch;
-
+    Course currcrs("Artificial Intelligence","CS",1,0,emptydctrs,emptyTAs);
+    Database::CurrentUser.register_courses(currcrs.getCourseName());
+    currsch.setType("Lab");
+    currsch.setName("Robotics Lab");
+    currsch.setCourse("Artificial Intelligence");
+    Database::schedules[newtt].push_back(currsch);
 
     newtt.day = "Tuesday";
-    newtt.hour = 12;
+    newtt.hour = 2;
     newtt.minutes = 0;
-    currcrs.setCourseName("Artificial Intelligence Lab");
-    currsch.setCourse(currcrs);
-    Database::schedules["Robotics Lab"][newtt] = currsch;
+    Database::schedules[newtt].push_back(currsch);
+    newtt.hour = 12;
+    Course currcrs2("Operation Research","IS",0,1,emptydctrs,emptyTAs);
+    Database::CurrentUser.register_courses(currcrs2.getCourseName());
+    currsch.setName("Class 7");
+    currsch.setCourse("Operation Research");
+    currsch.setType("Tutorial");
+    Database::schedules[newtt].push_back(currsch);
+
 
     QObject::connect(&a, &QCoreApplication::aboutToQuit, write);
     return a.exec();

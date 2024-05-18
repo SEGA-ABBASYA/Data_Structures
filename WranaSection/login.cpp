@@ -36,16 +36,17 @@ void Login::login()
 {
     string userName = ui->userNameLineEdit->text().toLower().toStdString();
     string password = ui->passwordLineEdit->text().toStdString();
-    auto user = Database::users.find(userName);
-    Database::CurrentUser = *user;
     if(userName == "admin" && password == "admin"){
         admPage = new AdminView();
         w_stack->addWidget(admPage);
         w_stack->setCurrentWidget(admPage);
         ui->userNameLineEdit->clear();
         ui->passwordLineEdit->clear();
+        return;
     }
-    else if(user == Database::users.end())
+    auto user = Database::users.find(userName);
+    Database::CurrentUser = *user;
+    if(user == Database::users.end())
     {
         QMessageBox::warning(this, "Error", "Wrong UserName");
     }

@@ -13,11 +13,13 @@ UserView::UserView(QWidget *parent)
 {
     ui->setupUi(this);
     ui->full->hide();
+
     //RefreshTable();
 }
 
 UserView::~UserView()
 {
+    Database::users[Database::CurrentUser.getUsername()] = Database::CurrentUser;
     delete ui;
 }
 
@@ -94,6 +96,7 @@ void UserView::on_logouticons_clicked()
 
 void UserView::on_logoutfull_clicked()
 {
+    Database::users[Database::CurrentUser.getUsername()] = Database::CurrentUser;
     Login::w_stack->setCurrentIndex(0);
 }
 
@@ -118,8 +121,8 @@ void UserView::RefreshTable()
             temptt.hour = usablehour;
             temptt.minutes = 0;
 
-            ui->Schedule->item(i,j)->text() = QString::fromStdString(Database::CurrentUser.current_schedule[temptt].getCourse().getCourseName());
-            if(Database::CurrentUser.current_schedule[temptt].getCourse().getCourseName() != "None")
+            ui->Schedule->item(i,j)->text() = QString::fromStdString( Database::CurrentUser.current_schedule[temptt].getName());
+            if(Database::CurrentUser.current_schedule[temptt].getName() != "None")
             {
                 QColor color = QColor::fromRgb(229,112,30);
                 ui->Schedule->item(i,j)->background().setColor(color);
@@ -143,16 +146,18 @@ void UserView::on_Schedule_cellDoubleClicked(int row, int column)
     Database::CurrentUserTT.hour = usablehour;
     Database::CurrentUserTT.day = day;
     Database::CurrentUserTT.minutes = 0;
-    // if (Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse().getCourseName() != "None")
-    // {
-    //     QColor color = QColor::fromRgb(229,112,30);
-    //     ui->Schedule->item(row,column)->background().setColor(color);
-    // }
-    //ui->Schedule->item(row,column)->text() = QString::fromStdString(Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse().getCourseName());
+    //if (Database::CurrentUser.current_schedule[Database::CurrentUserTT].getName() != "None")
+    //{
+        //QColor color = QColor::fromRgb(229,112,30);
+        //ui->Schedule->item(row,column)->background().setColor(color);
+    //}
+    //ui->Schedule->item(row,column)->text() = QString::fromStdString(Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse());
     CellCourseSelection CCS;
     CCS.setModal(true);
     CCS.exec();
     //RefreshTable();
+}
+
 void UserView::on_listWidget_itemPressed(QListWidgetItem *item)
 {
     user = item;

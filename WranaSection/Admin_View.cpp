@@ -7,13 +7,14 @@
 #include "login.h"
 #include <vector>
 #include <string>
-#include"Admin.h"
+#include "Admin.h"
 #include <QTableWidgetItem>
 #include <QMessageBox>
 #include "user.h"
 #include <QString>
 #include <QMessageBox>
 #include <regex>
+#include "cellcourseselection.h"
 
 Admin admin;
 Database dbase;
@@ -254,18 +255,6 @@ void AdminView::on_pushButton_18_toggled(bool checked)
     ui->stack_widget_course->setCurrentWidget(ui->add_course_widget);
 }
 
-
-//Schedule Widget
-void AdminView::on_pushButton_21_toggled(bool checked)
-{
-    //Add
-    ui->stackedWidget_schedule->setCurrentIndex(0);
-}
-
-void AdminView::on_pushButton_20_toggled(bool checked)
-{
-    ui->stackedWidget_schedule->setCurrentIndex(1);
-}
 
 //Graph Widget
 void AdminView::on_pushButton_15_toggled(bool checked)
@@ -654,3 +643,33 @@ void AdminView::on_EditStudent_clicked()
         QMessageBox::warning(this, "Error", "Username Already Exists and is Identical.");
     }
 }
+
+
+
+void AdminView::on_Schedule_2_cellDoubleClicked(int row, int column)
+{
+    string hour = ui->Schedule_2->horizontalHeaderItem(column)->text().toStdString();
+    string day = ui->Schedule_2->verticalHeaderItem(row)->text().toStdString();
+    int usablehour;
+    if (hour[0] == '1')
+    {
+        usablehour = stoi(hour.substr(0,2));
+    }
+    else
+        usablehour = stoi(hour.substr(0,1));
+
+    Database::CurrentUserTT.hour = usablehour;
+    Database::CurrentUserTT.day = day;
+    Database::CurrentUserTT.minutes = 0;
+    //if (Database::CurrentUser.current_schedule[Database::CurrentUserTT].getName() != "None")
+    //{
+    //QColor color = QColor::fromRgb(229,112,30);
+    //ui->Schedule->item(row,column)->background().setColor(color);
+    //}
+    //ui->Schedule->item(row,column)->text() = QString::fromStdString(Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse());
+    CellCourseSelection CCS;
+    CCS.setModal(true);
+    CCS.exec();
+    //RefreshTable();
+}
+

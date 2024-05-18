@@ -3,7 +3,11 @@
 #include <QMainWindow>
 #include <string>
 #include <vector>
+#include <QList>
+#include <QWidgetItem>
 #include <QTableWidgetItem>
+#include <QWidget>
+
 using namespace std;
 
 QT_BEGIN_NAMESPACE
@@ -66,10 +70,6 @@ private slots:
 
     void on_pushButton_18_toggled(bool checked);
 
-    void on_pushButton_21_toggled(bool checked);
-
-    void on_pushButton_20_toggled(bool checked);
-
     void on_pushButton_15_toggled(bool checked);
 
     void on_pushButton_13_toggled(bool checked);
@@ -97,6 +97,7 @@ private slots:
 
     void on_EditStudent_clicked();
 
+    void on_Schedule_2_cellDoubleClicked(int row, int column);
 
 private:
     Ui::MainWindow *ui;

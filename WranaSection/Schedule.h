@@ -32,7 +32,7 @@ struct Timetable {
 class Schedule
 {
     //refers to location
-    string name;
+    string name = "None";
 
     //Lab, section or lecture
     string type;

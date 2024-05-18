@@ -14,10 +14,6 @@ User::User()
 User::User(string& name, string& email, int& id, int& academic_year, int& section, string& username, string& password, string& program, char& gender)
     :data{ name, email, id, academic_year, section, username, password, program, gender } {}
 
-User::User()
-{
-}
-
 // Setters
 void User::setName(string& name) {
     data.name = name;

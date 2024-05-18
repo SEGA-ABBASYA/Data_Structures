@@ -19,9 +19,9 @@ public:
 private slots:
     void on_Exit_clicked();
 
-    //void on_CoursesList_itemPressed(QListWidgetItem *item);
+    void on_CoursesList_itemPressed(QListWidgetItem *item);
 
-    void on_CoursesList_itemClicked(QListWidgetItem *item);
+    //void on_CoursesList_itemClicked(QListWidgetItem *item);
 
 private:
     Ui::CellCourseSelection *ui;

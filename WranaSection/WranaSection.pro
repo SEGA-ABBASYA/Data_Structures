@@ -23,6 +23,7 @@ SOURCES += \
     main.cpp \
     database.cpp \
     Admin_View.cpp \
+    scheduleadddelete.cpp \
     undergroundfloor.cpp \
     secondfloor.cpp \
     user.cpp \
@@ -45,6 +46,7 @@ HEADERS += \
     Admin.h \
     database.h \
     Admin_View.h \
+    scheduleadddelete.h \
     undergroundfloor.h \
     secondfloor.h \
     user.h \
@@ -62,6 +64,7 @@ FORMS += \
     newuser.ui \
     login.ui \
     Admin_View.ui \
+    scheduleadddelete.ui \
     undergroundfloor.ui \
     secondfloor.ui \
     firstfloor_credit.ui \
