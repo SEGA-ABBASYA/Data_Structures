@@ -51,5 +51,6 @@
         <file>All_Materials/Undo.png</file>
         <file>All_Materials/Tasks_right.png</file>
         <file>All_Materials/Building_Map.png</file>
+        <file>All_Materials/Building.png</file>
     </qresource>
 </RCC>

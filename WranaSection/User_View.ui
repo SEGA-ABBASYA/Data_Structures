@@ -754,7 +754,7 @@ color: rgb(255, 255, 255);</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-image: url(:/assists/All_Materials/GraphMap.png);</string>
+        <string notr="true">background-image: url(:/assists/All_Materials/Building.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -903,7 +903,7 @@ border:none;</string>
       <widget class="QPushButton" name="third_start">
        <property name="geometry">
         <rect>
-         <x>130</x>
+         <x>290</x>
          <y>600</y>
          <width>141</width>
          <height>61</height>
@@ -920,7 +920,7 @@ border:none;</string>
       <widget class="QPushButton" name="second_start">
        <property name="geometry">
         <rect>
-         <x>290</x>
+         <x>130</x>
          <y>600</y>
          <width>141</width>
          <height>61</height>
@@ -988,7 +988,7 @@ border:none;</string>
       <widget class="QPushButton" name="third_end">
        <property name="geometry">
         <rect>
-         <x>580</x>
+         <x>740</x>
          <y>600</y>
          <width>141</width>
          <height>61</height>
@@ -1005,7 +1005,7 @@ border:none;</string>
       <widget class="QPushButton" name="second_end">
        <property name="geometry">
         <rect>
-         <x>740</x>
+         <x>580</x>
          <y>600</y>
          <width>141</width>
          <height>61</height>
@@ -1025,7 +1025,7 @@ border:none;</string>
          <x>160</x>
          <y>320</y>
          <width>181</width>
-         <height>71</height>
+         <height>111</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -1043,7 +1043,7 @@ font-weight: 600;
          <x>620</x>
          <y>320</y>
          <width>181</width>
-         <height>71</height>
+         <height>111</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -1082,14 +1082,18 @@ font-weight: 600;
       <widget class="QPushButton" name="pushButton_4">
        <property name="geometry">
         <rect>
-         <x>460</x>
+         <x>430</x>
          <y>370</y>
-         <width>111</width>
-         <height>41</height>
+         <width>151</width>
+         <height>71</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:transparent;
+border:none;</string>
+       </property>
        <property name="text">
-        <string>PushButton</string>
+        <string/>
        </property>
       </widget>
      </widget>
