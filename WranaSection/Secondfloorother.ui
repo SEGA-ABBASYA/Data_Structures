@@ -13,6 +13,12 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+    background: none;
+    border: none;
+}</string>
+  </property>
   <widget class="QTableWidget" name="SecondF_widget_2">
    <property name="geometry">
     <rect>
@@ -243,8 +249,162 @@ gridline-color:transparent;
     <pixmap resource="secondFloor.qrc">:/Pages/All_Materials/SecondFloor/Second_Part2.png</pixmap>
    </property>
   </widget>
+  <widget class="QPushButton" name="creditBtn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>110</y>
+     <width>251</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="IJICIS">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>220</y>
+     <width>111</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SWBtn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>316</y>
+     <width>249</width>
+     <height>133</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Room3Btn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>450</y>
+     <width>251</width>
+     <height>261</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Room2Btn">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>580</y>
+     <width>241</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SaiedHallBtn">
+   <property name="geometry">
+    <rect>
+     <x>505</x>
+     <y>590</y>
+     <width>329</width>
+     <height>119</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Prayer">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>396</y>
+     <width>177</width>
+     <height>97</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="DrAbdElAzizBtn">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>380</y>
+     <width>191</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="DrKhalifaBtn">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>306</y>
+     <width>191</width>
+     <height>72</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="WC">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>196</y>
+     <width>191</width>
+     <height>106</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="TAsRoomBtn">
+   <property name="geometry">
+    <rect>
+     <x>752</x>
+     <y>6</y>
+     <width>171</width>
+     <height>188</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <zorder>background_2</zorder>
   <zorder>SecondF_widget_2</zorder>
+  <zorder>creditBtn</zorder>
+  <zorder>IJICIS</zorder>
+  <zorder>SWBtn</zorder>
+  <zorder>Room3Btn</zorder>
+  <zorder>Room2Btn</zorder>
+  <zorder>SaiedHallBtn</zorder>
+  <zorder>Prayer</zorder>
+  <zorder>DrAbdElAzizBtn</zorder>
+  <zorder>DrKhalifaBtn</zorder>
+  <zorder>WC</zorder>
+  <zorder>TAsRoomBtn</zorder>
  </widget>
  <resources>
   <include location="secondFloor.qrc"/>

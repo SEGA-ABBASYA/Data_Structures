@@ -13,6 +13,12 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+    background: none;
+    border: none;
+}</string>
+  </property>
   <widget class="QTableWidget" name="SecondF_widget">
    <property name="geometry">
     <rect>
@@ -214,8 +220,344 @@ gridline-color:transparent;
     <pixmap resource="secondFloor.qrc">:/Pages/All_Materials/SecondFloor/Second_Main.png</pixmap>
    </property>
   </widget>
+  <widget class="QPushButton" name="RoboticsLabBtn">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>110</y>
+     <width>201</width>
+     <height>291</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SecondEntrance">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>410</y>
+     <width>201</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="BackLadderBtn">
+   <property name="geometry">
+    <rect>
+     <x>29</x>
+     <y>10</y>
+     <width>121</width>
+     <height>95</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ElevatorBtn">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>16</y>
+     <width>141</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="CisLab2Btn">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>560</y>
+     <width>318</width>
+     <height>135</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="CisLab2Btn_2">
+   <property name="geometry">
+    <rect>
+     <x>3</x>
+     <y>497</y>
+     <width>193</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ISdepartBtn">
+   <property name="geometry">
+    <rect>
+     <x>328</x>
+     <y>560</y>
+     <width>224</width>
+     <height>135</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ISLabBtn">
+   <property name="geometry">
+    <rect>
+     <x>556</x>
+     <y>560</y>
+     <width>351</width>
+     <height>135</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SCLabBtn">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>560</y>
+     <width>181</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="CSDepBtn">
+   <property name="geometry">
+    <rect>
+     <x>1090</x>
+     <y>560</y>
+     <width>171</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="CsSecertaryBtn">
+   <property name="geometry">
+    <rect>
+     <x>1150</x>
+     <y>488</y>
+     <width>110</width>
+     <height>69</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="CentralControlBtn">
+   <property name="geometry">
+    <rect>
+     <x>1150</x>
+     <y>422</y>
+     <width>111</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="WC">
+   <property name="geometry">
+    <rect>
+     <x>1150</x>
+     <y>377</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="EmergencyBtn">
+   <property name="geometry">
+    <rect>
+     <x>1099</x>
+     <y>230</y>
+     <width>161</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="MainLadderBtn">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>230</y>
+     <width>181</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="DrAliBtn">
+   <property name="geometry">
+    <rect>
+     <x>799</x>
+     <y>370</y>
+     <width>111</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SalamOfficeBtn">
+   <property name="geometry">
+    <rect>
+     <x>686</x>
+     <y>370</y>
+     <width>111</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ZakyOfficeBtn">
+   <property name="geometry">
+    <rect>
+     <x>558</x>
+     <y>370</y>
+     <width>121</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ElSayedOfficeBtn">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>369</y>
+     <width>121</width>
+     <height>92</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="NetwrokBtn">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>369</y>
+     <width>131</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="StorageBtn">
+   <property name="geometry">
+    <rect>
+     <x>298</x>
+     <y>295</y>
+     <width>201</width>
+     <height>68</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ArefOfficeBtn">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>210</y>
+     <width>201</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="StorageBtn_2">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>120</y>
+     <width>201</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="WC_2">
+   <property name="geometry">
+    <rect>
+     <x>1150</x>
+     <y>320</y>
+     <width>111</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <zorder>background</zorder>
   <zorder>SecondF_widget</zorder>
+  <zorder>RoboticsLabBtn</zorder>
+  <zorder>SecondEntrance</zorder>
+  <zorder>BackLadderBtn</zorder>
+  <zorder>ElevatorBtn</zorder>
+  <zorder>CisLab2Btn</zorder>
+  <zorder>CisLab2Btn_2</zorder>
+  <zorder>ISdepartBtn</zorder>
+  <zorder>ISLabBtn</zorder>
+  <zorder>SCLabBtn</zorder>
+  <zorder>CSDepBtn</zorder>
+  <zorder>CsSecertaryBtn</zorder>
+  <zorder>CentralControlBtn</zorder>
+  <zorder>WC</zorder>
+  <zorder>EmergencyBtn</zorder>
+  <zorder>MainLadderBtn</zorder>
+  <zorder>DrAliBtn</zorder>
+  <zorder>SalamOfficeBtn</zorder>
+  <zorder>ZakyOfficeBtn</zorder>
+  <zorder>ElSayedOfficeBtn</zorder>
+  <zorder>NetwrokBtn</zorder>
+  <zorder>StorageBtn</zorder>
+  <zorder>ArefOfficeBtn</zorder>
+  <zorder>StorageBtn_2</zorder>
+  <zorder>WC_2</zorder>
  </widget>
  <resources>
   <include location="secondFloor.qrc"/>
