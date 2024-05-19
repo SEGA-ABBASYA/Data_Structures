@@ -27,3 +27,8 @@ SecondFloor::~SecondFloor()
 }
 
 
+void SecondFloor::on_SecondF_widget_cellActivated(int row, int column)
+{
+    cout<<row<<" "<<column<<endl;
+}
+

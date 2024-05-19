@@ -24,8 +24,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     Database db;
     db.read();
-    //Login l;
-    GroundFloor g;
+    Login l;
+    //GroundFloor g;
     //UndergroundFloor u;
     //ThirdFloor t;
     //SecondFloor s;
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     //firstfloor_credit c;
     //SecondFloorOther o;
     //ThirdFloor th;
-    g.show();
+    l.show();
 
     // MainGraph mg;
     // mg.addfloor(c);

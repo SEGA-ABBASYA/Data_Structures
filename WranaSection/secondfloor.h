@@ -17,6 +17,9 @@ public:
     ~SecondFloor();
 
 
+private slots:
+    void on_SecondF_widget_cellActivated(int row, int column);
+
 private:
     Ui::SecondFloor *ui;
 };

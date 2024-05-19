@@ -18,6 +18,9 @@ public:
     vector<string> CreateGrid();
     ~SecondFloorOther();
 
+private slots:
+    void on_SecondF_widget_2_cellActivated(int row, int column);
+
 private:
     Ui::SecondFloorOther *ui;
 };

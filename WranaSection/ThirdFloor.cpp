@@ -42,9 +42,7 @@ ThirdFloor::ThirdFloor(QWidget *parent)
 
 void ThirdFloor::on_tableWidget_cellActivated(int row, int column)
 {
-    string r = to_string(row);
-    string c = to_string(column);
-    QString s = QString::fromStdString(r +" "+ c);
+    cout<<row<<" "<<column<<endl;
 }
 
 ThirdFloor::~ThirdFloor()

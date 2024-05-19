@@ -25,3 +25,9 @@ SecondFloorOther::~SecondFloorOther()
 {
     delete ui;
 }
+
+void SecondFloorOther::on_SecondF_widget_2_cellActivated(int row, int column)
+{
+    cout<<row<<" "<<column<<endl;
+}
+

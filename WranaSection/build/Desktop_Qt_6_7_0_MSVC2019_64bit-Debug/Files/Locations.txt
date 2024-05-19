@@ -1,9 +1,115 @@
+2,1,AI coordinator,21,30
+1,1,Basic science department head,29,65
+2,1,Bioinformatics coordinator,21,30
+2,1,Buffet,9,9
+3,1,CIS Lab 2,35,16
+1,1,CIS Lab 6,9,29
+3,1,CS secretary,35,64
+3,1,Calculations of the credit hours,21,13
+3,1,Central control,29,65
+2,1,Class 1,10,17
+2,1,Class 2,14,27
+2,1,Class 3,25,24
 0,1,Class 5,13,20
 0,1,Class 6,12,13
-0,1,Computer systems lab,10,47
+1,1,Class 7,27,56
+2,1,Collage dean secretary,22,8
+1,1,College council hall,24,7
+2,1,College dean,22,8
+2,1,College secretary,26,16
+2,1,College vice dean for community & env. affairs,16,8
+2,1,College vice dean for edu & student affairs,10,8
+2,1,College vice dean for graduate studies,24,16
+2,1,Community & env affairs secretary,16,9
+0,1,Computer systems Lab,10,47
+2,1,Conference hall,26,9
+3,1,Dr AbdElBadyea Salam,31,43
+3,1,Dr Abir Mahmoud,35,64
+1,1,Dr Ahmed Ezzat,25,46
+3,1,Dr Ahmed Hamed,31,50
+3,1,Dr Ahmed Salah,27,13
+3,1,Dr Ali ElNaa'm,31,50
+1,1,Dr Ayat Mohamed Naguib,25,41
+2,1,Dr Dina ElSayad,21,30
+4,1,Dr Dina Fawzy,25,30
+4,1,Dr Dina Khattab,21,43
+1,1,Dr Doaa Ezzat,25,41
+3,1,Dr ElSayed Mohamed,31,28
+4,1,Dr Eman Amin,25,30
+3,1,Dr Eman Shaban,35,28
+4,1,Dr Eslam Hegazy,21,50
+4,1,Dr Esraa AbdElRaouf,20,65
+2,1,Dr Hala Moshir,10,8
+4,1,Dr Heba Khaled,20,65
+4,1,Dr Howayda Abdelfatah,21,37
+4,1,Dr Huda Amin,25,30
+4,1,Dr Mahmoud Elgamal,21,30
+1,1,Dr Mahmoud Fayez,25,46
+1,1,Dr Mahmoud Mounir,25,46
+4,1,Dr Manal Tantawy,21,50
+2,1,Dr Mariam Nabil,21,30
+4,1,Dr Mervat ElQut,20,65
+3,1,Dr Mohamed AbdElAziz,38,25
+3,1,Dr Mohamed Khalifa,31,25
+3,1,Dr Mohamed Mara'y,31,25
+3,1,Dr Mohamed Roshdy,31,50
+3,1,Dr Mustafa Mohamed Aref,16,16
+3,1,Dr Neveen Atef,27,13
+1,1,Dr Passant ElBagoury,25,41
+3,1,Dr Safaa Amin,27,13
+4,1,Dr Safeya Abas,20,65
+3,1,Dr Saied Ghoniemy,31,50
+1,1,Dr Sally Saad,25,41
+4,1,Dr Salsabeel Amin,21,43
+4,1,Dr Sayed Fadel,21,30
+4,1,Dr Shimaa Abu Elyan,21,50
+3,1,Dr Shreen Moussa,38,25
+3,1,Dr Taha El Areef,31,36
+3,1,Dr Taimor Nazmy,31,28
+2,1,Dr Tamer Mustafa,16,8
+4,1,Dr Wedad Hussein,20,65
+3,1,Dr Zaky Taha,31,36
+2,1,Dr sherine Rady,18,17
+4,1,Dr walaa khaled Ibn AlWaleed,25,64
+1,1,Electric room,9,31
 0,1,Electronics lab,26,54
 0,1,Equipment maintenance department,19,54
+4,1,Fahmy Tolba hall,23,26
+1,1,Female toilet 1,16,67
+2,1,Female toilet 2,20,36
+2,1,Female toilet 3,8,27
+3,1,Female toilet 4,26,65
+3,1,Female toilet 5,23,25
+4,1,Female toilet 6,16,65
+3,1,Head of IS department,35,28
+4,1,Head of IS dept,25,64
+3,1,Head of the CS department,35,64
+1,1,Head of the security unit,20,67
+3,1,IJICIS,24,10
+3,1,IS Lab,35,44
+1,1,Lab B,27,31
+1,1,Laboratory manager,13,31
+1,1,Maintenance and external technical support,16,31
+1,1,Male toilet 1,13,67
+1,1,Male toilet 2,10,12
+2,1,Male toilet 3,17,36
+3,1,Male toilet 4,23,65
+4,1,Male toilet 5,14,65
+2,1,Multimedia coordinator,21,30
+1,1,Network 1,24,36
+3,1,Network 2,30,21
+2,1,Postgraduate teaching hall,22,36
+1,1,Procurement section,11,11
+1,1,Prof Hassan Ramadan,29,65
+2,1,Programs Director,18,17
+2,1,Programs manager,24,17
+2,1,Quality assurance,26,35
+2,1,Research laboratory,24,27
+3,1,Robotics Lab,11,14
 0,1,Room 1,7,54
+2,0,Room 10,24,24
+3,0,Room 11,50,26
+3,0,Room 12,47,19
 0,0,Room 2,13,54
 0,0,Room 3,16,54
 0,0,Room 4,24,47
@@ -11,26 +117,25 @@
 0,0,Room 6,23,24
 0,0,Room 7,22,13
 0,0,Room 8,19,13
+1,0,Room 9,11,12
+3,1,SC Lab,35,57
+4,1,SWE Lab 1,25,46
+4,1,SWE Lab 2,25,57
+3,1,Saeed AbdElWahab hall,53,36
+1,1,Scientific computation project management center,27,40
+1,1,Scientific computation training center,25,51
+2,1,Secratary of vice dean for graduate studies,24,20
+2,1,Secretary of college secretary,23,12
+2,1,Secretary of quality assurance,26,35
+2,1,Seminar hall,26,27
+3,1,Software engineering Coordinator,27,13
 0,1,Storage 1,24,64
 0,1,Storage 2,26,18
-1,1,Male toilet 1,13,67
-1,1,Female toilet 1,16,67
-1,1,Head of the security unit office,20,67
-1,1,Prof. Hassan Ramadan head of basic science department office,29,65
-1,1,Class 7,27,56
 1,1,Storage 3,25,56
-1,1,Scientific computation center (Training),25,51
-1,1,Ahmed Ezzat - Mahmoud Mounir - Mahmoud Fayez - program coordinator (CyberSecurity/Robotics),25,46
-1,1,Ayat Mohamed Naguib - Doaa Ezzat - Sally Saad - Passant ElBagoury,25,41
-1,1,Scientific computation center (Project management),27,40
-1,1,Network,24,36
-1,1,Lab B,27,31
-1,1,Maintenance and external technical support,16,31
-1,1,Laboratory manager,13,31
-1,1,Electric room,9,31
-1,1,CIS Lab 6,9,29
-1,1,College council hall,24,7
-1,1,Procurement section,11,11
-1,0,Room 9,11,12
-1,1,Male toilet 2,10,12
+3,1,Storage 4,21,16
+3,1,Storage 5,11,16
+3,1,TA's room,11,48
+2,1,Technical office of the college dean,23,12
 1,1,University automation project,12,9
+2,1,VIP toilet,13,9
+1,1,program coordinator (Cybersecurity/Robotics),25,46
