@@ -43,6 +43,7 @@ void Login::login()
         ui->userNameLineEdit->clear();
         ui->passwordLineEdit->clear();
         return;
+        ui->showPassCheckBox->setChecked(false);
     }
     auto user = Database::users.find(userName);
     if(user == Database::users.end())
@@ -52,7 +53,7 @@ void Login::login()
     else if(user->getPassword() == password)
     {
         // Data::currentUserName = userName;
-        //QMessageBox::information(this, "Success", "Welcome Back " + QString::fromStdString(user->getName()));
+        // QMessageBox::information(this, "Success", "Welcome Back " + QString::fromStdString(user->getName()));
         // Home *home = new Home();
         // home->show();
         // this->close();
@@ -62,6 +63,7 @@ void Login::login()
         w_stack->setCurrentWidget(userPage);
         ui->userNameLineEdit->clear();
         ui->passwordLineEdit->clear();
+        ui->showPassCheckBox->setChecked(false);
     }
     else{
         QMessageBox::warning(this, "Error", "Wrong Password");
@@ -79,6 +81,7 @@ void Login::reg()
     w_stack->setCurrentWidget(regPage);
     ui->userNameLineEdit->clear();
     ui->passwordLineEdit->clear();
+    ui->showPassCheckBox->setChecked(false);
 }
 
 
