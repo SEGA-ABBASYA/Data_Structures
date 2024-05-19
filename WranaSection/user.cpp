@@ -176,3 +176,38 @@ void User::printMap(){
         cout<<i.first<<endl;
     }
 }
+
+void User::addMessage(string friendName,QString message){
+    chatHistory[friendName].append(message);
+}
+
+QStringList User::getChatHistory(string friendName){
+    return chatHistory[friendName];
+}
+
+void User::addNotification(QString notification) {
+    notifications.append(notification);
+}
+
+QStringList User::getNotifications(){
+    return notifications;
+}
+
+void User::clearNotifications() {
+    notifications.clear();
+}
+
+void User::updateDetails(const string& name, const string& email, int id, int academic_year, int section, const string& username, const string& password, const string& program, char gender) {
+    data.name = name;
+    data.email = email;
+    data.id = id;
+    data.academic_year = academic_year;
+    data.section = section;
+    data.user_name = username;
+    data.password = password;
+    data.program = program;
+    data.gender = gender;
+}
+
+
+

@@ -9,7 +9,7 @@
 #include <QMap>
 #include <map>
 #include <set>
-
+#include <QStringList>
 using namespace std;
 struct userData {
     string name;
@@ -34,6 +34,8 @@ public:
     unordered_map<string, bool> lecture, lab, tutorial;
     map<Timetable, Schedule> current_schedule;
     map<string,User*> friends;
+    map<string,QStringList> chatHistory;
+    QStringList notifications;
 
     // Constructor
     User();
@@ -79,7 +81,7 @@ public:
     char getGender();
 
     // Usable Functions for creation or anything
-
+    void updateDetails(const string& name, const string& email, int id, int academic_year, int section, const string& username, const string& password, const string& program, char gender);
     // course functions
     void register_courses(string courseName);
     void print_courses_list();
@@ -100,6 +102,14 @@ public:
     void clear_friends();
     void printMap();
 
+    // chat functions
+    void addMessage(string friendName,QString message);
+    QStringList getChatHistory(string friendName);
+
+    // notification things
+    void addNotification(QString notification);
+    QStringList getNotifications();
+    void clearNotifications();
 };
 
 

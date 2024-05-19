@@ -55,6 +55,7 @@ void Login::login()
         // Home *home = new Home();
         // home->show();
         // this->close();
+        Login::USERNAME = user->getUsername();
         userPage = new UserView();
         w_stack->addWidget(userPage);
         w_stack->setCurrentWidget(userPage);

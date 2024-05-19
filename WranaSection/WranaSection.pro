@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ChatWindow.cpp \
     Graph.cpp \
     Groundfloor.cpp \
     Maingraph.cpp \
@@ -31,6 +32,7 @@ SOURCES += \
     firstfloor_general.cpp
 
 HEADERS += \
+    ChatWindow.h \
     Graph.h \
     Groundfloor.h \
     Maingraph.h \
@@ -52,6 +54,7 @@ HEADERS += \
     firstfloor_general.h
 
 FORMS += \
+    ChatWindow.ui \
     Groundfloor.ui \
     Secondfloorother.ui \
     ThirdFloor.ui \
