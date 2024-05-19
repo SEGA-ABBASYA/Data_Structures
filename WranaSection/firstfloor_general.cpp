@@ -177,7 +177,7 @@ void Firstfloor_general::on_AffairsOffice_clicked()
 
 void Firstfloor_general::on_WC_clicked()
 {
-    QMessageBox::information(this,"Room Name","W.C                           ");
+    QMessageBox::information(this,"Room Name","W.C For Women                          ");
 }
 
 
