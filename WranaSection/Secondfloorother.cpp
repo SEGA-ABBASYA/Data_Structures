@@ -30,6 +30,7 @@ SecondFloorOther::~SecondFloorOther()
 void SecondFloorOther::on_SecondF_widget_2_cellActivated(int row, int column)
 {
     cout<<row<<" "<<column<<endl;
+}
 void SecondFloorOther::on_menuButton_toggled()
 {
     ui->verticalLayoutWidget->show();

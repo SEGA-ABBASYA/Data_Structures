@@ -240,18 +240,6 @@ border:none;
 background-color: transparent;
 color: white;
 font-size: 12px;</string>
-  <widget class="QPushButton" name="menuButton">
-   <property name="geometry">
-    <rect>
-     <x>1190</x>
-     <y>50</y>
-     <width>61</width>
-     <height>35</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: transparent;
-border: none;</string>
    </property>
    <property name="text">
     <string/>
@@ -640,6 +628,23 @@ text {
    <property name="text">
     <string/>
    </property>
+  </widget>
+  <widget class="QPushButton" name="menuButton">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>50</y>
+     <width>61</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;
+border: none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
    <property name="icon">
     <iconset resource="Materials.qrc">
      <normaloff>:/assists/All_Materials/Tasks_right.png</normaloff>:/assists/All_Materials/Tasks_right.png</iconset>
@@ -657,9 +662,9 @@ text {
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>1180</x>
+     <x>1150</x>
      <y>10</y>
-     <width>82</width>
+     <width>101</width>
      <height>162</height>
     </rect>
    </property>

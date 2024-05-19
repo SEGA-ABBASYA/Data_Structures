@@ -82,6 +82,9 @@ color: rgb(255, 255, 255);
        <height>50</height>
       </rect>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 color: rgb(255, 255, 255);
@@ -116,6 +119,9 @@ border-radius: 11px;
        <width>89</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
@@ -152,6 +158,9 @@ border-radius: 11px;
        <height>31</height>
       </rect>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
      </property>
@@ -184,6 +193,9 @@ border-radius: 11px;
        <height>31</height>
       </rect>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);</string>
      </property>
@@ -215,6 +227,9 @@ border-radius: 11px;
        <width>89</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
@@ -334,6 +349,9 @@ border-radius: 11px;
         <height>41</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);
 color: rgb(157, 108, 255);</string>
@@ -380,6 +398,9 @@ color: rgb(157, 108, 255);</string>
         <height>41</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
       </property>
@@ -424,6 +445,9 @@ color: rgb(157, 108, 255);</string>
         <width>131</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
@@ -626,6 +650,9 @@ font-weight: 600;
           <bold>true</bold>
          </font>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="layoutDirection">
          <enum>Qt::LeftToRight</enum>
         </property>
@@ -774,6 +801,9 @@ QTableWidget::item:hover {
           <italic>false</italic>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="styleSheet">
          <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
@@ -926,6 +956,9 @@ QTableWidget::item:hover {
           <bold>true</bold>
          </font>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 color: rgb(255, 255, 255);
@@ -995,6 +1028,9 @@ border-radius: 11px; </string>
         <height>41</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
       </property>
@@ -1059,6 +1095,9 @@ border-radius: 11px; </string>
         <height>41</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
       </property>
@@ -1103,6 +1142,9 @@ border-radius: 11px; </string>
         <width>131</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
@@ -1149,6 +1191,9 @@ border-radius: 11px; </string>
           <italic>false</italic>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(255, 255, 255);
@@ -1228,6 +1273,9 @@ QListWidget::item:selected { /* Apply the same style for both hover and selected
           <italic>false</italic>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(255, 255, 255);
@@ -1377,6 +1425,9 @@ border-radius: 11px; </string>
           <italic>false</italic>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(255, 255, 255);
@@ -1537,6 +1588,9 @@ QListWidget::item:selected { /* Apply the same style for both hover and selected
         <height>41</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
       </property>
@@ -1569,6 +1623,9 @@ QListWidget::item:selected { /* Apply the same style for both hover and selected
         <height>41</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
       </property>
@@ -1600,6 +1657,9 @@ QListWidget::item:selected { /* Apply the same style for both hover and selected
         <width>131</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 79.png);</string>
@@ -1904,6 +1964,9 @@ font-weight: 600;
           <bold>true</bold>
          </font>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 color: rgb(255, 255, 255);
@@ -1942,6 +2005,9 @@ font-weight: 600;
        </widget>
       </widget>
       <widget class="QWidget" name="edit_student_widget">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <widget class="QTableWidget" name="tableWidget_2">
         <property name="geometry">
          <rect>
@@ -2107,6 +2173,9 @@ border-radius: 11px; </string>
        </widget>
       </widget>
       <widget class="QWidget" name="delete_student_widget">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <widget class="QTableWidget" name="tableWidget_4">
         <property name="geometry">
          <rect>
@@ -2702,6 +2771,9 @@ color: rgb(255, 255, 255);
        <bold>true</bold>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="layoutDirection">
       <enum>Qt::LeftToRight</enum>
      </property>
@@ -2736,6 +2808,9 @@ border-radius: 11px;
        <italic>false</italic>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
@@ -2774,6 +2849,9 @@ color: rgb(255, 255, 255);
        <bold>true</bold>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
 	background-image: url(:/assists/All_Materials/Rectangle 1380.png);
@@ -2810,6 +2888,9 @@ color: rgb(255, 255, 255);
        <italic>false</italic>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
@@ -2856,6 +2937,9 @@ color: rgb(255, 255, 255);
        <italic>false</italic>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{

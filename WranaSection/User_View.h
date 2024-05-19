@@ -22,7 +22,6 @@ using namespace std;
 #include "undergroundfloor.h"
 #include <QStatusBar>
 #include <QVBoxLayout>
->>>>>>> GUI_Graph
 
 namespace Ui {
 class UserView;
@@ -48,7 +47,7 @@ public:
     firstfloor_credit *c;
     SecondFloorOther *o;
     ThirdFloor *th;
->>>>>>> GUI_Graph
+
     explicit UserView(QWidget *parent = nullptr);
     void RefreshTable();
     ~UserView();
@@ -87,7 +86,6 @@ private slots:
 
     void on_DM_clicked();
 
-<<<<<<< HEAD
     void on_search_start_textChanged(const QString &arg1);
 
     void on_search_end_textChanged(const QString &arg1);
@@ -99,7 +97,7 @@ private slots:
     void on_search_start_selectionChanged();
 
     void on_search_end_selectionChanged();
-=======
+
     void on_underground_start_clicked();
 
     void on_ground_start_clicked();

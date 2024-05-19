@@ -34,7 +34,7 @@ QTableWidget *Database::firstGeneralTable = nullptr;
 QTableWidget *Database::second1Table = nullptr;
 QTableWidget *Database::second2Table = nullptr;
 QTableWidget *Database::thirdFloorTable = nullptr;
->>>>>>> parent of 131aaaf (Revert "Reapply "Merged Conflicts"")
+
 
 
 Database::Database() {

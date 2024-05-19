@@ -122,6 +122,7 @@ void ThirdFloor::on_sweL1_clicked()
 void ThirdFloor::on_sweL2_clicked()
 {
     QMessageBox::information(this, "Room Name", "SWE Lab 2");
+}
 
 void ThirdFloor::on_menuButton_toggled()
 {
