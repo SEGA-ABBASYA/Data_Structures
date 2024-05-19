@@ -1,6 +1,7 @@
 #include "ThirdFloor.h"
 #include "ui_ThirdFloor.h"
 #include"database.h"
+#include <QMessageBox>
 ThirdFloor::ThirdFloor(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::ThirdFloor)
@@ -40,15 +41,82 @@ ThirdFloor::ThirdFloor(QWidget *parent)
 }
 
 
-void ThirdFloor::on_tableWidget_cellActivated(int row, int column)
-{
-    cout<<row<<" "<<column<<endl;
-}
-
 ThirdFloor::~ThirdFloor()
 {
     delete ui;
 }
 
+void ThirdFloor::on_room1_clicked()
+{
+    QMessageBox::information(this, "Room Name", "Dr Huda Amin, Dr Dina Fawzy, Dr Eman Amin");
+}
 
+
+void ThirdFloor::on_room2_clicked()
+{
+    QMessageBox::information(this, "Room Name", "Dr Sayed Fadel, Dr Mahmoud Elgamal");
+}
+
+
+
+void ThirdFloor::on_room3_clicked()
+{
+    QMessageBox::information(this, "Room Name", "Dr Howayda Abdelfatah");
+}
+
+void ThirdFloor::on_room4_clicked()
+{
+    QMessageBox::information(this, "Room Name", "Dr Salsabeel Amin, Dr Dina Khattab");
+}
+
+
+void ThirdFloor::on_room5_clicked()
+{
+    QMessageBox::information(this, "Room Name", "Dr Eslam Hegazy, Dr Manal Tantawy, Dr Shimaa Abu Elyan");
+}
+
+
+
+
+void ThirdFloor::on_room6_clicked()
+{
+    QMessageBox::information(this, "Room Name", "Dr Esraa Abdelraouf, Dr Mervat el Qut, Dr Wedad Hussein, Dr Heba Khaled, Dr Safeya Abas");
+}
+
+
+void ThirdFloor::on_room7_clicked()
+{
+    QMessageBox::information(this, "Room Name", "Dr walaa khaled ibn al waleed (Head of IS dept)");
+}
+
+
+
+void ThirdFloor::on_fahmyTolba_clicked()
+{
+    QMessageBox::information(this, "Room Name", "Fahmy Tolba Hall");
+}
+
+
+void ThirdFloor::on_wcM_clicked()
+{
+    QMessageBox::information(this, "Room Name", "Male WC");
+}
+
+
+void ThirdFloor::on_wcF_clicked()
+{
+    QMessageBox::information(this, "Room Name", "Female WC");
+}
+
+
+void ThirdFloor::on_sweL1_clicked()
+{
+    QMessageBox::information(this, "Room Name", "SWE Lab 1");
+}
+
+
+void ThirdFloor::on_sweL2_clicked()
+{
+    QMessageBox::information(this, "Room Name", "SWE Lab 2");
+}
 

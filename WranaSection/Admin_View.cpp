@@ -255,18 +255,6 @@ void AdminView::on_pushButton_18_toggled(bool checked)
 }
 
 
-//Schedule Widget
-void AdminView::on_pushButton_21_toggled(bool checked)
-{
-    //Add
-    ui->stackedWidget_schedule->setCurrentIndex(0);
-}
-
-void AdminView::on_pushButton_20_toggled(bool checked)
-{
-    ui->stackedWidget_schedule->setCurrentIndex(1);
-}
-
 //Graph Widget
 void AdminView::Write_graph_list_add()
 {
