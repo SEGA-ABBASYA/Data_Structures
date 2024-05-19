@@ -2307,39 +2307,6 @@ border-radius: 11px; </string>
        <pixmap resource="Materials.qrc">:/assists/All_Materials/Schedule.png</pixmap>
       </property>
      </widget>
-     <widget class="QStackedWidget" name="stackedWidget_schedule">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>180</y>
-        <width>941</width>
-        <height>491</height>
-       </rect>
-      </property>
-      <widget class="QWidget" name="add_schedule_widget"/>
-      <widget class="QWidget" name="delete_schedule_widget">
-       <widget class="QLabel" name="label_30">
-        <property name="geometry">
-         <rect>
-          <x>320</x>
-          <y>160</y>
-          <width>341</width>
-          <height>151</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>36</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>Delete</string>
-        </property>
-       </widget>
-      </widget>
      <widget class="QTableWidget" name="Schedule_2">
       <property name="geometry">
        <rect>

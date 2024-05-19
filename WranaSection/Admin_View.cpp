@@ -758,7 +758,7 @@ void AdminView::on_Edit_2_clicked()
     }
 
 
-
+}
 void AdminView::on_Schedule_2_cellDoubleClicked(int row, int column)
 {
     string hour = ui->Schedule_2->horizontalHeaderItem(column)->text().toStdString();
