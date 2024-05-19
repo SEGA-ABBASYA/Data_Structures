@@ -10,8 +10,7 @@ firstfloor_credit::firstfloor_credit(QWidget *parent)
     , ui(new Ui::firstfloor_credit)
 {
     ui->setupUi(this);
-
-
+    Database::firstCreditTable = ui->tableWidget;
     for(int i =0;i<(42);i++)
     {
         ui->tableWidget->setColumnWidth(i,30);

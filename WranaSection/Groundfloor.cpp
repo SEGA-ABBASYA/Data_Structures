@@ -12,7 +12,7 @@ GroundFloor::GroundFloor(QWidget *parent)
 {
 
     ui->setupUi(this);
-
+    Database::groundFloorTable = ui->tableWidget;
     ui->verticalLayoutWidget->hide();
 
     for(int i =0;i<ui->tableWidget->columnCount();i++)

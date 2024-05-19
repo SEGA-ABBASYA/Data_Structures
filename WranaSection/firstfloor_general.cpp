@@ -10,7 +10,7 @@ Firstfloor_general::Firstfloor_general(QWidget *parent)
     , ui(new Ui::Firstfloor_general)
 {
     ui->setupUi(this);
-
+    Database::firstGeneralTable = ui->tableWidget;
     for(int i =0;i<(41);i++)
     {
         ui->tableWidget->setColumnWidth(i,30);

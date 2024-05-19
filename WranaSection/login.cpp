@@ -52,7 +52,7 @@ void Login::login()
     else if(user->getPassword() == password)
     {
         // Data::currentUserName = userName;
-        //QMessageBox::information(this, "Success", "Welcome Back " + QString::fromStdString(user->getName()));
+        // QMessageBox::information(this, "Success", "Welcome Back " + QString::fromStdString(user->getName()));
         // Home *home = new Home();
         // home->show();
         // this->close();

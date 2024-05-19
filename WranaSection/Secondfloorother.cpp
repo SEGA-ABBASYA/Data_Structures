@@ -9,8 +9,7 @@ SecondFloorOther::SecondFloorOther(QWidget *parent)
     , ui(new Ui::SecondFloorOther)
 {
     ui->setupUi(this);
-
-
+    Database::second2Table = ui->SecondF_widget_2;
 
     for(int i = 0; i < 67; i++){
         for(int j = 0; j < 85; j++) if(Database::SecondOtherFloor[i][j] == '+'){

@@ -8,6 +8,7 @@ ThirdFloor::ThirdFloor(QWidget *parent)
     , ui(new Ui::ThirdFloor)
 {
     ui->setupUi(this);
+    Database::thirdFloorTable = ui->tableWidget;
     for(int i =0;i<76;i++)
     {
         ui->tableWidget->setColumnWidth(i,17);
@@ -16,7 +17,6 @@ ThirdFloor::ThirdFloor(QWidget *parent)
     {
         ui->tableWidget->setRowHeight(i, 20);
     }
-
 
 
 

@@ -92,6 +92,8 @@ private slots:
     void on_third_end_clicked();
 
     void on_second_end_clicked();
+    void on_pushButton_4_clicked();
+
 private:
     Ui::UserView *ui;
 };

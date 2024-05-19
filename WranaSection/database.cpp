@@ -23,7 +23,14 @@ vector<string>Database::SecondFloor;
 vector<string>Database::SecondOtherFloor;
 vector<string>Database::ThirdFloor;
 vector<string>Database::FirstFloorMerged;
-vector<string>Database::SecondFloorMerged;
+vector<string>Database::SecondFloorMerged ;
+QTableWidget *Database::underGroundFloorTable = nullptr;
+QTableWidget *Database::groundFloorTable = nullptr;
+QTableWidget *Database::firstCreditTable = nullptr;
+QTableWidget *Database::firstGeneralTable = nullptr;
+QTableWidget *Database::second1Table = nullptr;
+QTableWidget *Database::second2Table = nullptr;
+QTableWidget *Database::thirdFloorTable = nullptr;
 
 
 Database::Database() {
@@ -556,8 +563,8 @@ void Database::mgIntialization(){
     Location groundBack  (1,0,"groundBack",{4,28});
     Location groundCredit(1,0,"groundSaied",{4,10});
 
-    Location firstMain  (2,0,"firstMain",{32,72});
-    Location firstBack  (2,0,"firstBack",{14,49});
+    Location firstMain  (2,0,"firstMain",{22,74});
+    Location firstBack  (2,0,"firstBack",{4,50});
     Location firstCredit(2,0,"firstSaied",{4,31});
 
     Location secondMain  (3,0,"secondMain",{48,142});

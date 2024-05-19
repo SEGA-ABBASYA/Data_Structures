@@ -12,6 +12,7 @@ UndergroundFloor::UndergroundFloor(QWidget *parent)
     , ui(new Ui::UndergroundFloor)
 {
     ui->setupUi(this);
+    Database::underGroundFloorTable = ui->tableWidget;
     ui->verticalLayoutWidget->hide();
     for(int i =0;i<76;i++)
     {

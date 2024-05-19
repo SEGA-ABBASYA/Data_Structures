@@ -10,7 +10,7 @@ SecondFloor::SecondFloor(QWidget *parent)
     , ui(new Ui::SecondFloor)
 {
     ui->setupUi(this);
-
+    Database::second1Table = ui->SecondF_widget;
 
 
 

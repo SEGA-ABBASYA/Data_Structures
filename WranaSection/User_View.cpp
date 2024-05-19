@@ -3,6 +3,8 @@
 #include "login.h"
 #include "Buildingchoose.h"
 #include <QMessageBox>
+#include "database.h"
+#include "Navigation.h"
 QStackedWidget* UserView::g_stack = nullptr;
 QListWidgetItem *user;
 UserView::UserView(QWidget *parent)
@@ -32,6 +34,14 @@ UserView::UserView(QWidget *parent)
 
 UserView::~UserView()
 {
+    delete Database::underGroundFloorTable;
+    delete Database::firstCreditTable;
+    delete Database::firstGeneralTable;
+    delete Database::groundFloorTable;
+    delete Database::second1Table;
+    delete Database::second2Table;
+    delete Database::thirdFloorTable;
+    delete g_stack;
     delete ui;
 }
 
@@ -224,3 +234,10 @@ void UserView::on_second_end_clicked()
     else
         QMessageBox::warning(this, "Error", "Please Select a half!");
 }
+
+void UserView::on_pushButton_4_clicked()
+{
+    Navigation *navigator = new Navigation(nullptr);
+    navigator->show();
+}
+

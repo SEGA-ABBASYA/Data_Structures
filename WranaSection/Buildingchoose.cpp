@@ -18,6 +18,7 @@ BuildingChoose::~BuildingChoose()
 void BuildingChoose::on_pushButton_2_clicked(bool checked)
 {
     left = checked;
+    right = false;
     close();
 }
 
@@ -25,6 +26,7 @@ void BuildingChoose::on_pushButton_2_clicked(bool checked)
 void BuildingChoose::on_pushButton_clicked(bool checked)
 {
     right = checked;
+    left = false;
     close();
 }
 
