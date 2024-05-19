@@ -1,2 +1,36 @@
-1,1,Hall A,10,20
-2,0,Hall B,15,25
+0,1,Class 5,13,20
+0,1,Class 6,12,13
+0,1,Computer systems lab,10,47
+0,1,Electronics lab,26,54
+0,1,Equipment maintenance department,19,54
+0,1,Room 1,7,54
+0,0,Room 2,13,54
+0,0,Room 3,16,54
+0,0,Room 4,24,47
+0,0,Room 5,7,20
+0,0,Room 6,23,24
+0,0,Room 7,22,13
+0,0,Room 8,19,13
+0,1,Storage 1,24,64
+0,1,Storage 2,26,18
+1,1,Male toilet 1,13,67
+1,1,Female toilet 1,16,67
+1,1,Head of the security unit office,20,67
+1,1,Prof. Hassan Ramadan head of basic science department office,29,65
+1,1,Class 7,27,56
+1,1,Storage 3,25,56
+1,1,Scientific computation center (Training),25,51
+1,1,Ahmed Ezzat - Mahmoud Mounir - Mahmoud Fayez - program coordinator (CyberSecurity/Robotics),25,46
+1,1,Ayat Mohamed Naguib - Doaa Ezzat - Sally Saad - Passant ElBagoury,25,41
+1,1,Scientific computation center (Project management),27,40
+1,1,Network,24,36
+1,1,Lab B,27,31
+1,1,Maintenance and external technical support,16,31
+1,1,Laboratory manager,13,31
+1,1,Electric room,9,31
+1,1,CIS Lab 6,9,29
+1,1,College council hall,24,7
+1,1,Procurement section,11,11
+1,0,Room 9,11,12
+1,1,Male toilet 2,10,12
+1,1,University automation project,12,9

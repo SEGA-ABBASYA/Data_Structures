@@ -25,15 +25,15 @@ int main(int argc, char *argv[])
     Database db;
     db.read();
     //Login l;
-    //GroundFloor g;
-    UndergroundFloor u;
+    GroundFloor g;
+    //UndergroundFloor u;
     //ThirdFloor t;
     //SecondFloor s;
     //Firstfloor_general f;
     //firstfloor_credit c;
     //SecondFloorOther o;
     //ThirdFloor th;
-    u.show();
+    g.show();
 
     // MainGraph mg;
     // mg.addfloor(c);
