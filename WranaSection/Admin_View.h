@@ -67,10 +67,6 @@ private slots:
 
     void on_pushButton_18_toggled(bool checked);
 
-    // void on_pushButton_21_toggled(bool checked);
-
-    // void on_pushButton_20_toggled(bool checked);
-
     void on_pushButton_15_toggled(bool checked);
 
     void on_pushButton_13_toggled(bool checked);
