@@ -1,10 +1,8 @@
 #include "undergroundfloor.h"
 #include "ui_undergroundfloor.h"
-#include "database.h"
+#include"database.h"
 #include <iostream>
 #include <QMessageBox>
-#include "User_View.h"
-#include "Maingraph.h"
 using namespace std;
 
 UndergroundFloor::UndergroundFloor(QWidget *parent)
@@ -12,8 +10,6 @@ UndergroundFloor::UndergroundFloor(QWidget *parent)
     , ui(new Ui::UndergroundFloor)
 {
     ui->setupUi(this);
-    Database::underGroundFloorTable = ui->tableWidget;
-    ui->verticalLayoutWidget->hide();
     for(int i =0;i<76;i++)
     {
         ui->tableWidget->setColumnWidth(i,17);
@@ -140,36 +136,4 @@ void UndergroundFloor::on_room8_clicked()
 {
     QMessageBox::information(this, "Room Name", "Room");
 }
-
-void UndergroundFloor::on_nextButton_2_clicked()
-{
-    UserView::g_stack->setCurrentIndex(UserView::g_stack->currentIndex() + 1);
-}
-
-
-void UndergroundFloor::on_previousButton_2_clicked()
-{
-    QMessageBox::warning(this, "Error", "This is the last floor!");
-}
-
-
-void UndergroundFloor::on_backButton_2_clicked()
-{
-    UserView::g_stack->setCurrentIndex(0);
-}
-
-
-void UndergroundFloor::on_menuButton_toggled()
-{
-    ui->verticalLayoutWidget->show();
-    ui->menuButton->hide();
-}
-
-
-void UndergroundFloor::on_menuButton_3_toggled()
-{
-    ui->verticalLayoutWidget->hide();
-    ui->menuButton->show();
-}
-
 

@@ -9,12 +9,10 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Buildingchoose.cpp \
     Graph.cpp \
     Groundfloor.cpp \
     Maingraph.cpp \
     Location.cpp \
-    Navigation.cpp \
     Schedule.cpp \
     Secondfloorother.cpp \
     ThirdFloor.cpp \
@@ -33,12 +31,10 @@ SOURCES += \
     firstfloor_general.cpp
 
 HEADERS += \
-    Buildingchoose.h \
     Graph.h \
     Groundfloor.h \
     Maingraph.h \
     Location.h \
-    Navigation.h \
     Schedule.h \
     Secondfloorother.h \
     ThirdFloor.h \
@@ -56,9 +52,7 @@ HEADERS += \
     firstfloor_general.h
 
 FORMS += \
-    Buildingchoose.ui \
     Groundfloor.ui \
-    Navigation.ui \
     Secondfloorother.ui \
     ThirdFloor.ui \
     User_View.ui \

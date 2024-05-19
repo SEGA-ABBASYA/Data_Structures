@@ -19,15 +19,6 @@ public:
 
 private slots:
     void on_SecondF_widget_cellActivated(int row, int column);
-    void on_menuButton_3_toggled();
-
-    void on_menuButton_toggled();
-
-    void on_backButton_2_clicked();
-
-    void on_nextButton_2_clicked();
-
-    void on_previousButton_2_clicked();
 
 private:
     Ui::SecondFloor *ui;

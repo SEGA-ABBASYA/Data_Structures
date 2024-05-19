@@ -1,8 +1,7 @@
 #include "firstfloor_general.h"
 #include "ui_firstfloor_general.h"
-#include "database.h"
+#include"database.h"
 #include <iostream>
-#include "User_View.h"
 using namespace std;
 
 Firstfloor_general::Firstfloor_general(QWidget *parent)
@@ -10,7 +9,7 @@ Firstfloor_general::Firstfloor_general(QWidget *parent)
     , ui(new Ui::Firstfloor_general)
 {
     ui->setupUi(this);
-    Database::firstGeneralTable = ui->tableWidget;
+
     for(int i =0;i<(41);i++)
     {
         ui->tableWidget->setColumnWidth(i,30);
@@ -52,37 +51,5 @@ void Firstfloor_general::on_tableWidget_cellActivated(int row, int column)
     QString s = QString:: fromStdString(r + " " + c) ;
    //ui->label_2->setText(s);
     cout<<row<<" "<<column<<endl;
-}
-
-
-void Firstfloor_general::on_menuButton_toggled()
-{
-    ui->verticalLayoutWidget->show();
-    ui->menuButton->hide();
-}
-
-
-void Firstfloor_general::on_menuButton_3_toggled()
-{
-    ui->verticalLayoutWidget->hide();
-    ui->menuButton->show();
-}
-
-
-void Firstfloor_general::on_backButton_2_clicked()
-{
-    UserView::g_stack->setCurrentIndex(0);
-}
-
-
-void Firstfloor_general::on_nextButton_2_clicked()
-{
-    UserView::g_stack->setCurrentIndex(UserView::g_stack->currentIndex() + 1);
-}
-
-
-void Firstfloor_general::on_previousButton_2_clicked()
-{
-    UserView::g_stack->setCurrentIndex(UserView::g_stack->currentIndex() - 1);
 }
 

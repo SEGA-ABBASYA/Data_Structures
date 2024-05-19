@@ -46,9 +46,5 @@
         <file>All_Materials/First_Credit.png</file>
         <file>All_Materials/Fisrt_Floor.png</file>
         <file>All_Materials/Ground_Floor.png</file>
-        <file>All_Materials/Left_arrow.png</file>
-        <file>All_Materials/Right arrow.png</file>
-        <file>All_Materials/Undo.png</file>
-        <file>All_Materials/Tasks_right.png</file>
     </qresource>
 </RCC>
