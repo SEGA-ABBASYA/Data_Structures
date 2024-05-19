@@ -70,7 +70,7 @@ vector<pair<int, pair<int, int>>> MainGraph::SearchBig(int floor, int x, int y, 
             {
                 for (auto i : CantReachStairs)
                 {
-                    vector<pair<int, int>> temp = Floors[requiredfloor].Search(stairs[(*CanReachStairs.begin())][requiredfloor].getNode().first, stairs[(*CantReachStairs.begin())][requiredfloor].getNode().second, stairs[i][requiredfloor]);
+                    vector<pair<int, int>> temp = Floors[requiredfloor].Search(stairs[(*CanReachStairs.begin())][requiredfloor].getNode().first, stairs[(*CanReachStairs.begin())][requiredfloor].getNode().second, stairs[i][requiredfloor]);
                     if (ansabove.empty() || ansabove.size() > temp.size())
                     {
                         ansabove = temp;

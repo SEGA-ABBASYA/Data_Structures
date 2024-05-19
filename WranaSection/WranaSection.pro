@@ -14,6 +14,7 @@ SOURCES += \
     Groundfloor.cpp \
     Maingraph.cpp \
     Location.cpp \
+    Navigation.cpp \
     Schedule.cpp \
     Secondfloorother.cpp \
     ThirdFloor.cpp \
@@ -37,6 +38,7 @@ HEADERS += \
     Groundfloor.h \
     Maingraph.h \
     Location.h \
+    Navigation.h \
     Schedule.h \
     Secondfloorother.h \
     ThirdFloor.h \
@@ -56,6 +58,7 @@ HEADERS += \
 FORMS += \
     Buildingchoose.ui \
     Groundfloor.ui \
+    Navigation.ui \
     Secondfloorother.ui \
     ThirdFloor.ui \
     User_View.ui \

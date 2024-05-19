@@ -568,24 +568,27 @@ void Database::mgIntialization(){
     Location thirdBack  (4,0,"thirdBackNO",{-11,-11});
     Location thirdCredit(4,0,"thirdSaiedNO",{-10,-10});
 
-    mg.stairs[0][0] = undergroundMain;
-    mg.stairs[0][1] = undergroundBack;
-    mg.stairs[0][2] = undergroundCredit;
+    vector<Location>main ,back ,credit;
+    main.push_back(undergroundMain);
+    main.push_back(groundMain);
+    main.push_back(firstMain);
+    main.push_back(secondMain);
+    main.push_back(thirdMain);
 
-    mg.stairs[1][0] = groundMain;
-    mg.stairs[1][1] = groundBack;
-    mg.stairs[1][2] = groundCredit;
+    back.push_back(undergroundBack);
+    back.push_back(groundBack);
+    back.push_back(firstBack);
+    back.push_back(secondBack);
+    back.push_back(thirdBack);
 
-    mg.stairs[2][0] = firstMain;
-    mg.stairs[2][1] = firstBack;
-    mg.stairs[2][2] = firstCredit;
+    credit.push_back(undergroundCredit);
+    credit.push_back(groundCredit);
+    credit.push_back(firstCredit);
+    credit.push_back(secondCredit);
+    credit.push_back(thirdCredit);
 
-    mg.stairs[3][0] = secondMain;
-    mg.stairs[3][1] = secondBack;
-    mg.stairs[3][2] = secondCredit;
-
-    mg.stairs[4][0] = thirdMain;
-    mg.stairs[4][1] = thirdBack;
-    mg.stairs[4][2] = thirdCredit;
+    mg.stairs.push_back(main);
+    mg.stairs.push_back(back);
+    mg.stairs.push_back(credit);
 
 }

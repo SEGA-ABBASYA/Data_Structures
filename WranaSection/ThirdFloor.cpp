@@ -1,6 +1,8 @@
 #include "ThirdFloor.h"
 #include "ui_ThirdFloor.h"
-#include"database.h"
+#include "database.h"
+#include "User_View.h"
+#include <QMessageBox>
 ThirdFloor::ThirdFloor(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::ThirdFloor)
@@ -37,6 +39,8 @@ ThirdFloor::ThirdFloor(QWidget *parent)
         }
     }
 
+    ui->widget->hide();
+
 }
 
 
@@ -53,4 +57,34 @@ ThirdFloor::~ThirdFloor()
 }
 
 
+
+
+void ThirdFloor::on_menuButton_toggled()
+{
+    ui->widget->show();
+}
+
+
+void ThirdFloor::on_menuButton_3_toggled()
+{
+    ui->widget->hide();
+}
+
+
+void ThirdFloor::on_nextButton_2_clicked()
+{
+    QMessageBox::warning(this, "Error", "This is the last floor!");
+}
+
+
+void ThirdFloor::on_previousButton_2_clicked()
+{
+    UserView::g_stack->setCurrentIndex(UserView::g_stack->currentIndex() - 1);
+}
+
+
+void ThirdFloor::on_backButton_2_clicked()
+{
+    UserView::g_stack->setCurrentIndex(0);
+}
 

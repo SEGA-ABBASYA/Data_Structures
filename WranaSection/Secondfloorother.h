@@ -18,6 +18,17 @@ public:
     vector<string> CreateGrid();
     ~SecondFloorOther();
 
+private slots:
+    void on_menuButton_toggled();
+
+    void on_menuButton_3_toggled();
+
+    void on_nextButton_2_clicked();
+
+    void on_previousButton_2_clicked();
+
+    void on_backButton_2_clicked();
+
 private:
     Ui::SecondFloorOther *ui;
 };
