@@ -22,6 +22,8 @@ vector<string>Database::FirstCreditFloor;
 vector<string>Database::SecondFloor;
 vector<string>Database::SecondOtherFloor;
 vector<string>Database::ThirdFloor;
+Timetable Database::CurrentUserTT;
+string Database::CurrentUser;
 
 
 

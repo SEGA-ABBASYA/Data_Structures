@@ -27,6 +27,8 @@ public:
     static vector<string>SecondOtherFloor;
     static vector<string>ThirdFloor;
 
+    static Timetable CurrentUserTT;
+    static string CurrentUser;
 
     Database();
     void read();

@@ -28,11 +28,16 @@ struct Timetable {
         // If days and hours are equal, compare minutes
         return minutes < other.minutes;
     }
+
+    // Define equal than operator for Timetable
+    bool operator==(const Timetable& other) const {
+        return day==other.day && hour == other.hour && minutes==other.minutes;
+    }
 };
 class Schedule
 {
     //refers to location
-    string name;
+    string name = "None";
 
     //Lab, section or lecture
     string type;
@@ -63,6 +68,13 @@ public:
     Timetable getDate();
     string getType();
     string getName();
+
+    //define equal operator for schedule
+    bool operator==(const Schedule& other)
+    const {
+        return name == other.name && section == other.section && course == other.course && type == other.type && group == other.group
+               && date == other.date;
+    }
 
     ~Schedule();
 

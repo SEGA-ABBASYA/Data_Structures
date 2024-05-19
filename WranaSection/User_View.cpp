@@ -1,6 +1,10 @@
 #include "User_View.h"
+#include <iostream>
 #include "ui_User_View.h"
 #include "login.h"
+#include "cellcourseselection.h"
+#include "database.h"
+using namespace std;
 #include <QMessageBox>
 
 Location UserView::startRoom;
@@ -39,6 +43,7 @@ UserView::UserView(QWidget *parent)
 
     ui->start_list_widget->hide();
     ui->end_list_widget->hide();
+    RefreshTable();
 }
 
 UserView::~UserView()
@@ -120,6 +125,68 @@ void UserView::on_logouticons_clicked()
 void UserView::on_logoutfull_clicked()
 {
     Login::w_stack->setCurrentIndex(0);
+}
+
+void UserView::RefreshTable()
+{
+    for (int i = 0; i < 6;i++)
+    {
+        for (int j = 0;j < 6;j++)
+        {
+            string hour = ui->Schedule->horizontalHeaderItem(j)->text().toStdString();
+            string day = ui->Schedule->verticalHeaderItem(i)->text().toStdString();
+            int usablehour;
+            if (hour[0] == '1')
+            {
+                usablehour = stoi(hour.substr(0,2));
+            }
+            else
+                usablehour = stoi(hour.substr(0,1));
+
+            Timetable temptt;
+            temptt.day = day;
+            temptt.hour = usablehour;
+            temptt.minutes = 0;
+
+
+            //cout << day << ' ' << usablehour << ": " << Database::users[Database::CurrentUser].current_schedule[temptt].getName() << endl;
+
+            if (Database::users[Database::CurrentUser].current_schedule[temptt].getName() != "None")
+            {
+                ui->Schedule->setItem(i,j, new QTableWidgetItem(QString::fromStdString(Database::users[Database::CurrentUser].current_schedule[temptt].getCourse() + "\n" + Database::users[Database::CurrentUser].current_schedule[temptt].getType()  + "\n" + Database::users[Database::CurrentUser].current_schedule[temptt].getName())));
+                QColor color = QColor::fromRgb(229,112,30);
+                ui->Schedule->item(i, j)->setBackground(color);
+            }
+            else
+            {
+                ui->Schedule->setItem(i,j,new QTableWidgetItem(QString::fromStdString("")));
+                QColor color = QColor::fromRgb(28, 32, 33);
+                ui->Schedule->item(i, j)->setBackground(color);
+            }
+        }
+    }
+}
+
+void UserView::on_Schedule_cellDoubleClicked(int row, int column)
+{
+    string hour = ui->Schedule->horizontalHeaderItem(column)->text().toStdString();
+    string day = ui->Schedule->verticalHeaderItem(row)->text().toStdString();
+    int usablehour;
+    if (hour[0] == '1')
+    {
+        usablehour = stoi(hour.substr(0,2));
+    }
+    else
+        usablehour = stoi(hour.substr(0,1));
+
+    Database::CurrentUserTT.hour = usablehour;
+    Database::CurrentUserTT.day = day;
+    Database::CurrentUserTT.minutes = 0;
+
+    CellCourseSelection CCS;
+    CCS.setModal(true);
+    CCS.exec();
+    RefreshTable();
 }
 
 void UserView::on_listWidget_itemPressed(QListWidgetItem *item)

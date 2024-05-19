@@ -1,4 +1,5 @@
 #include "Admin_View.h"
+#include "scheduleadddelete.h"
 #include "ui_Admin_View.h"
 #include "course.h"
 #include "database.h"
@@ -755,5 +756,32 @@ void AdminView::on_Edit_2_clicked()
         admin.editLocation(location1Name, location2Name);
         QMessageBox::information(this, "Message", "You Have Swapped " + QString::fromStdString(location1Name) + " With " + QString::fromStdString(location2Name) + "\nSuccessfully!");
     }
+
+
+
+void AdminView::on_Schedule_2_cellDoubleClicked(int row, int column)
+{
+    string hour = ui->Schedule_2->horizontalHeaderItem(column)->text().toStdString();
+    string day = ui->Schedule_2->verticalHeaderItem(row)->text().toStdString();
+    int usablehour;
+    if (hour[0] == '1')
+    {
+        usablehour = stoi(hour.substr(0,2));
+    }
+    else
+        usablehour = stoi(hour.substr(0,1));
+
+    Database::CurrentUserTT.hour = usablehour;
+    Database::CurrentUserTT.day = day;
+    Database::CurrentUserTT.minutes = 0;
+    //if (Database::CurrentUser.current_schedule[Database::CurrentUserTT].getName() != "None")
+    //{
+    //QColor color = QColor::fromRgb(229,112,30);
+    //ui->Schedule->item(row,column)->background().setColor(color);
+    //}
+    //ui->Schedule->item(row,column)->text() = QString::fromStdString(Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse());
+    ScheduleAddDelete CCS;
+    CCS.setModal(true);
+    CCS.exec();
 }
 

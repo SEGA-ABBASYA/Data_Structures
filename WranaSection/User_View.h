@@ -25,6 +25,7 @@ public:
     static Location endRoom;
 
     explicit UserView(QWidget *parent = nullptr);
+    void RefreshTable();
     ~UserView();
 
 private slots:
@@ -54,6 +55,7 @@ private slots:
 
     void on_logoutfull_clicked();
 
+    void on_Schedule_cellDoubleClicked(int row, int column);
     void on_listWidget_itemPressed(QListWidgetItem *item);
 
     void on_listWidget_itemDoubleClicked(QListWidgetItem *item);

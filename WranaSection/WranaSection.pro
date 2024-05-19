@@ -17,11 +17,13 @@ SOURCES += \
     Secondfloorother.cpp \
     ThirdFloor.cpp \
     User_View.cpp \
+    cellcourseselection.cpp \
     course.cpp \
     Admin.cpp \
     main.cpp \
     database.cpp \
     Admin_View.cpp \
+    scheduleadddelete.cpp \
     undergroundfloor.cpp \
     secondfloor.cpp \
     user.cpp \
@@ -39,10 +41,12 @@ HEADERS += \
     Secondfloorother.h \
     ThirdFloor.h \
     User_View.h \
+    cellcourseselection.h \
     course.h \
     Admin.h \
     database.h \
     Admin_View.h \
+    scheduleadddelete.h \
     undergroundfloor.h \
     secondfloor.h \
     user.h \
@@ -56,9 +60,11 @@ FORMS += \
     Secondfloorother.ui \
     ThirdFloor.ui \
     User_View.ui \
+    cellcourseselection.ui \
     newuser.ui \
     login.ui \
     Admin_View.ui \
+    scheduleadddelete.ui \
     undergroundfloor.ui \
     secondfloor.ui \
     firstfloor_credit.ui \

@@ -8,7 +8,7 @@ using namespace std;
 
 class Course
 {
-    string courseName;
+    string courseName = "None";
     string department;
 
     bool hasLab;
@@ -33,16 +33,16 @@ public:
     void setLab(bool lab);
     void setSection(bool section);
 
-   bool getLab();
-   bool getSection();
+    bool getLab();
+    bool getSection();
 
-   void setLab_S(string lab);
-   void setSection_S(string section);
+    void setLab_S(string lab);
+    void setSection_S(string section);
 
-  string getLab_S();
-   string getSection_S();
-  string getDoctors_S();
-  string getTAs_S();
+    string getLab_S();
+    string getSection_S();
+    string getDoctors_S();
+    string getTAs_S();
 
 
     vector<string> getDoctors();

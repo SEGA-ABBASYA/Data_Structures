@@ -3,8 +3,12 @@
 #include <QMainWindow>
 #include <string>
 #include <vector>
+#include <QList>
+#include <QWidgetItem>
 #include <QTableWidgetItem>
 #include <QListWidgetItem>
+#include <QWidget>
+
 using namespace std;
 
 QT_BEGIN_NAMESPACE
@@ -101,6 +105,7 @@ private slots:
     void on_Delete_2_clicked();
 
     void on_Edit_2_clicked();
+    void on_Schedule_2_cellDoubleClicked(int row, int column);
 
 private:
     Ui::MainWindow *ui;
