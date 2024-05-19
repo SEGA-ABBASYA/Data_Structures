@@ -670,6 +670,5 @@ void AdminView::on_Schedule_2_cellDoubleClicked(int row, int column)
     ScheduleAddDelete CCS;
     CCS.setModal(true);
     CCS.exec();
-    //RefreshTable();
 }
 

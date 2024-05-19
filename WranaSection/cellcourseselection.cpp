@@ -17,7 +17,7 @@ CellCourseSelection::CellCourseSelection(QWidget *parent)
         if (Database::users[Database::CurrentUser].is_registered_course(coursename))
         {
             string groupstring,sectionstring = to_string(itr.getSection());
-            if (itr.getGroup())
+            if (itr.getGroup()==0)
                 groupstring = "G1";
             else
                 groupstring = "G2";
@@ -28,7 +28,7 @@ CellCourseSelection::CellCourseSelection(QWidget *parent)
 
 CellCourseSelection::~CellCourseSelection()
 {
-    cout << "u luv me" << endl;
+    //cout << "u luv me" << endl;
     delete ui;
 }
 
@@ -76,6 +76,7 @@ void CellCourseSelection::on_Exit_clicked()
             }
         }
         groupNum = currentstring[currentstring.size()-1] - '0';
+        groupNum--;
         sectionNum = stoi(SectionString);
     }
     else

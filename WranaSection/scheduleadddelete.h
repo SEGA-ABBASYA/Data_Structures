@@ -2,6 +2,7 @@
 #define SCHEDULEADDDELETE_H
 
 #include <QDialog>
+#include <QListWidgetItem>
 
 namespace Ui {
 class ScheduleAddDelete;
@@ -17,6 +18,10 @@ public:
 
 private slots:
     void on_AddButton_clicked();
+
+    void on_DeleteButton_clicked();
+
+    void on_CoursesList_itemPressed(QListWidgetItem *item);
 
 private:
     Ui::ScheduleAddDelete *ui;

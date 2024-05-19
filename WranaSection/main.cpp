@@ -78,6 +78,11 @@ int main(int argc, char *argv[])
     // Location newLocation2(3,0,"Class 4",{32,19});
     // Database::locations["Class 4"] = newLocation2;
 
+    //Database::users["youssefproof"].lab["Artificial Intelligence"] = false;
+    //Database::users["youssefproof"].tutorial["Operation Research"] = false;
+    //Database::users["youssefproof"].lecture["Artificial Intelligence"] = false;
+
+
     QObject::connect(&a, &QCoreApplication::aboutToQuit, write);
     return a.exec();
 }
