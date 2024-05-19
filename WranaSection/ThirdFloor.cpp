@@ -39,6 +39,12 @@ ThirdFloor::ThirdFloor(QWidget *parent)
 
 }
 
+
+void ThirdFloor::on_tableWidget_cellActivated(int row, int column)
+{
+    cout<<row<<" "<<column<<endl;
+}
+
 ThirdFloor::~ThirdFloor()
 {
     delete ui;
