@@ -1,6 +1,5 @@
 #ifndef UNDERGROUNDFLOOR_H
 #define UNDERGROUNDFLOOR_H
-
 #include <QWidget>
 #include <string>
 #include <vector>
@@ -52,6 +51,15 @@ private slots:
     void on_room7_clicked();
 
     void on_room8_clicked();
+    void on_nextButton_2_clicked();
+
+    void on_previousButton_2_clicked();
+
+    void on_backButton_2_clicked();
+
+    void on_menuButton_toggled();
+
+    void on_menuButton_3_toggled();
 
 private:
     Ui::UndergroundFloor *ui;
