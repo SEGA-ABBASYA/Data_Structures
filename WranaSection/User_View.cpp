@@ -1,38 +1,17 @@
 #include "User_View.h"
 #include "ui_User_View.h"
 #include "login.h"
-#include "Buildingchoose.h"
 #include <QMessageBox>
 
 Location UserView::startRoom;
 Location UserView::endRoom;
-#include "database.h"
-#include "Navigation.h"
-QStackedWidget* UserView::g_stack = nullptr;
 QListWidgetItem *user;
 UserView::UserView(QWidget *parent)
-    : QWidget(parent), statusBar(new QStatusBar(this))
+    : QWidget(parent)
     , ui(new Ui::UserView)
 {
     ui->setupUi(this);
-    ui->verticalLayout_2->addWidget(statusBar);
-    statusBar->showMessage("Ready for the Sugar Cane");
-    u = new UndergroundFloor();
-    g = new GroundFloor();
-    f = new Firstfloor_general();
-    c = new firstfloor_credit();
-    o = new SecondFloorOther();
-    s = new SecondFloor();
-    t = new ThirdFloor();
-    ui->centralStackedWidget->addWidget(u);//1 underground
-    ui->centralStackedWidget->addWidget(g);//2 ground
-    ui->centralStackedWidget->addWidget(f);//3 first general
-    ui->centralStackedWidget->addWidget(c);//4 first credit
-    ui->centralStackedWidget->addWidget(s);//5 second
-    ui->centralStackedWidget->addWidget(o);//6 second other
-    ui->centralStackedWidget->addWidget(t);//7 third
     ui->full->hide();
-<<<<<<< HEAD
 
     genedyBuilding =
     {
@@ -60,21 +39,10 @@ UserView::UserView(QWidget *parent)
 
     ui->start_list_widget->hide();
     ui->end_list_widget->hide();
-=======
-    g_stack = ui->centralStackedWidget;
->>>>>>> GUI_Graph
 }
 
 UserView::~UserView()
 {
-    delete Database::underGroundFloorTable;
-    delete Database::firstCreditTable;
-    delete Database::firstGeneralTable;
-    delete Database::groundFloorTable;
-    delete Database::second1Table;
-    delete Database::second2Table;
-    delete Database::thirdFloorTable;
-    delete g_stack;
     delete ui;
 }
 
@@ -161,6 +129,7 @@ void UserView::on_listWidget_itemPressed(QListWidgetItem *item)
 
 void UserView::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
 {
+
     QMessageBox::information(this, "Your Friend ", item->text() + " Have section in IS");
 }
 
@@ -177,7 +146,6 @@ void UserView::on_DM_clicked()
         QMessageBox::warning(this, "Error", "Please select a user");
 }
 
-<<<<<<< HEAD
 ////////////////////////////////// Graph Page //////////////////////////////////
 
 // to show rooms list
@@ -243,102 +211,3 @@ void UserView::on_end_list_widget_itemClicked(QListWidgetItem *item)
 
 
 
-=======
-
-void UserView::on_underground_start_clicked()
-{
-    ui->centralStackedWidget->setCurrentIndex(1);
-}
-
-
-void UserView::on_ground_start_clicked()
-{
-    ui->centralStackedWidget->setCurrentIndex(2);
-}
-
-
-void UserView::on_first_start_clicked()
-{
-    BuildingChoose choice;
-    choice.setModal(true);
-    choice.exec();
-    if (BuildingChoose::right)
-        ui->centralStackedWidget->setCurrentIndex(3);
-    else if (BuildingChoose::left)
-        ui->centralStackedWidget->setCurrentIndex(4);
-    else
-        QMessageBox::warning(this, "Error", "Please Select a half!");
-}
-
-
-void UserView::on_third_start_clicked()
-{
-    ui->centralStackedWidget->setCurrentIndex(7);
-}
-
-
-void UserView::on_second_start_clicked()
-{
-    BuildingChoose choice;
-    choice.setModal(true);
-    choice.exec();
-    if (BuildingChoose::right)
-        ui->centralStackedWidget->setCurrentIndex(5);
-    else if (BuildingChoose::left)
-        ui->centralStackedWidget->setCurrentIndex(6);
-    else
-        QMessageBox::warning(this, "Error", "Please Select a half!");
-}
-
-void UserView::on_underground_end_clicked()
-{
-    ui->centralStackedWidget->setCurrentIndex(1);
-}
-
-
-void UserView::on_ground_end_clicked()
-{
-    ui->centralStackedWidget->setCurrentIndex(2);
-}
-
-
-void UserView::on_first_end_clicked()
-{
-    BuildingChoose choice;
-    choice.setModal(true);
-    choice.exec();
-    if (BuildingChoose::right)
-        ui->centralStackedWidget->setCurrentIndex(3);
-    else if (BuildingChoose::left)
-        ui->centralStackedWidget->setCurrentIndex(4);
-    else
-        QMessageBox::warning(this, "Error", "Please Select a half!");
-}
-
-
-void UserView::on_third_end_clicked()
-{
-    ui->centralStackedWidget->setCurrentIndex(7);
-}
-
-
-void UserView::on_second_end_clicked()
-{
-    BuildingChoose choice;
-    choice.setModal(true);
-    choice.exec();
-    if (BuildingChoose::right)
-        ui->centralStackedWidget->setCurrentIndex(5);
-    else if (BuildingChoose::left)
-        ui->centralStackedWidget->setCurrentIndex(6);
-    else
-        QMessageBox::warning(this, "Error", "Please Select a half!");
-}
-
-void UserView::on_pushButton_4_clicked()
-{
-    Navigation *navigator = new Navigation(nullptr);
-    navigator->show();
-}
-
->>>>>>> GUI_Graph

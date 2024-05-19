@@ -10,7 +10,7 @@ class MainGraph
     int maxfloor = 0;
 
 public:
-    vector<vector<Location>>stairs;
+    vector<Location>stairs;
     MainGraph();
     void addfloor(vector<string>);
     vector<pair<int, pair<int, int>>> SearchBig(int, int, int, Location);
