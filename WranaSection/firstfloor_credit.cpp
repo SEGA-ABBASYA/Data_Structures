@@ -1,7 +1,8 @@
 #include "firstfloor_credit.h"
 #include "ui_firstfloor_credit.h"
-#include"database.h"
+#include "database.h"
 #include <iostream>
+#include "User_View.h"
 using namespace std;
 
 firstfloor_credit::firstfloor_credit(QWidget *parent)
@@ -9,8 +10,7 @@ firstfloor_credit::firstfloor_credit(QWidget *parent)
     , ui(new Ui::firstfloor_credit)
 {
     ui->setupUi(this);
-
-
+    Database::firstCreditTable = ui->tableWidget;
     for(int i =0;i<(42);i++)
     {
         ui->tableWidget->setColumnWidth(i,30);
@@ -37,6 +37,7 @@ firstfloor_credit::firstfloor_credit(QWidget *parent)
 
         }
     }
+    ui->widget->hide();
 
 }
 
@@ -54,5 +55,35 @@ void firstfloor_credit::on_tableWidget_cellActivated(int row, int column)
     QString s = QString::fromStdString(r + " " + c) ;
     //ui->label_2->setText(s) ;
     cout<<row<<" "<<column<<endl;
+}
+
+
+void firstfloor_credit::on_menuButton_toggled()
+{
+    ui->widget->show();
+}
+
+
+void firstfloor_credit::on_backButton_2_clicked()
+{
+    UserView::g_stack->setCurrentIndex(0);
+}
+
+
+void firstfloor_credit::on_previousButton_2_clicked()
+{
+    UserView::g_stack->setCurrentIndex(UserView::g_stack->currentIndex() - 1);
+}
+
+
+void firstfloor_credit::on_nextButton_2_clicked()
+{
+    UserView::g_stack->setCurrentIndex(UserView::g_stack->currentIndex() + 1);
+}
+
+
+void firstfloor_credit::on_menuButton_3_toggled()
+{
+    ui->widget->hide();
 }
 
