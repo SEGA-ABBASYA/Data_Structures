@@ -13,6 +13,7 @@
 #include "Secondfloorother.h"
 #include"Secondfloorother.h"
 #include"undergroundfloor.h"
+#include "floortransition.h"
 using namespace std;
 void write()
 {
@@ -26,6 +27,7 @@ int main(int argc, char *argv[])
     db.read();
     //Login l;
     GroundFloor g;
+    FloorTransition ft;
     //UndergroundFloor u;
     //ThirdFloor t;
     //SecondFloor s;
@@ -33,6 +35,10 @@ int main(int argc, char *argv[])
     //firstfloor_credit c;
     //SecondFloorOther o;
     //ThirdFloor th;
+
+    ft.show();
+    ft.startAnimation();
+    ft.close();
     g.show();
 
     // MainGraph mg;

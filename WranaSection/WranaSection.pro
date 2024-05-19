@@ -19,6 +19,7 @@ SOURCES += \
     User_View.cpp \
     course.cpp \
     Admin.cpp \
+    floortransition.cpp \
     main.cpp \
     database.cpp \
     Admin_View.cpp \
@@ -43,6 +44,7 @@ HEADERS += \
     Admin.h \
     database.h \
     Admin_View.h \
+    floortransition.h \
     undergroundfloor.h \
     secondfloor.h \
     user.h \
@@ -56,6 +58,7 @@ FORMS += \
     Secondfloorother.ui \
     ThirdFloor.ui \
     User_View.ui \
+    floortransition.ui \
     newuser.ui \
     login.ui \
     Admin_View.ui \
