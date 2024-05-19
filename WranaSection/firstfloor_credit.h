@@ -5,6 +5,7 @@
 #include<string>
 #include<QString>
 #include <iostream>
+#include<QMessageBox>
 using namespace std;
 
 namespace Ui {
@@ -22,6 +23,29 @@ public:
 
  private slots:
      void on_tableWidget_cellActivated(int row, int column);
+
+
+
+
+
+     void on_class1_clicked();
+
+     void on_class2_1_clicked();
+
+
+
+     void on_class3_clicked();
+
+
+
+     void on_programs_office_clicked();
+
+
+     void on_WCgirls_clicked();
+
+     void on_ProgramDirector_clicked();
+
+     void on_MultiMedia_Bioinformatics_clicked();
 
  private:
     Ui::firstfloor_credit *ui;

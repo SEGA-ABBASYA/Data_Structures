@@ -20,16 +20,17 @@ void write()
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Database db;
+    Database db; db.read();
     Login l;
     //GroundFloor g;
     //UndergroundFloor u;
     //ThirdFloor t;
     //SecondFloor s;
     //Firstfloor_general f;
-    //firstfloor_credit c;
+    // firstfloor_credit c;
     //SecondFloorOther o;
-    db.read();
+
+
     l.show();
 
     // MainGraph mg;

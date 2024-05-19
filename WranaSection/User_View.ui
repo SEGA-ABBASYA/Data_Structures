@@ -358,12 +358,177 @@ border:none;</string>
        <height>41</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
       <pixmap resource="Materials.qrc">:/assists/All_Materials/Course.png</pixmap>
      </property>
+    </widget>
+    <widget class="QListWidget" name="ALL_courses_list">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>240</y>
+       <width>411</width>
+       <height>431</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(85, 170, 255);</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="add_button">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>610</y>
+       <width>83</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+color: rgb(255, 255, 255);
+background-color: rgb(229, 112, 30);
+border-radius:50%;
+border: none;</string>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>150</y>
+       <width>161</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 144, 255);</string>
+     </property>
+     <property name="text">
+      <string>    ALL Courses</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="Registerd_courses">
+     <property name="geometry">
+      <rect>
+       <x>570</x>
+       <y>230</y>
+       <width>391</width>
+       <height>441</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(85, 170, 255);</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="delete_button">
+     <property name="geometry">
+      <rect>
+       <x>860</x>
+       <y>610</y>
+       <width>83</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+color: rgb(255, 255, 255);
+background-color: rgb(229, 112, 30);
+border-radius:50%;
+border: none;</string>
+     </property>
+     <property name="text">
+      <string>Delete</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>200</y>
+       <width>231</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(14, 22, 18);</string>
+        </property>
+        <property name="text">
+         <string>filter</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="text_filter"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>652</x>
+       <y>190</y>
+       <width>231</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_8">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(14, 22, 18);</string>
+        </property>
+        <property name="text">
+         <string>filter</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="text_filter_2"/>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QWidget" name="StudentsNew">
@@ -1290,9 +1455,17 @@ border: none;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">
+    <string notr="true">QWidget{
+	
+
   background-image: url(:/assists/All_Materials/peakpx.jpg);
-</string>
+}
+QPushButton:checked
+{
+ background-color: rgb(30, 30, 91);
+ 	
+color: rgb(255, 255, 255);
+}</string>
    </property>
    <widget class="QPushButton" name="logouticons">
     <property name="geometry">
@@ -1587,9 +1760,14 @@ border : none</string>
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">
+    <string notr="true">QWidget{
   background-image: url(:/assists/All_Materials/peakpx.jpg);
-</string>
+}
+QPushButton:checked
+{
+ background-color: rgb(30, 30, 91);
+color: rgb(255, 255, 255);
+}</string>
    </property>
    <widget class="QLabel" name="labelwaranasectionfull">
     <property name="geometry">
@@ -1670,9 +1848,10 @@ color: rgb(255, 255, 255);</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+     <string notr="true">QPushButton{
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 border : none;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);}</string>
     </property>
     <property name="text">
      <string> Buldings' Graph</string>
@@ -1688,6 +1867,9 @@ color: rgb(255, 255, 255);</string>
      </size>
     </property>
     <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
      <bool>true</bool>
     </property>
    </widget>
@@ -1711,9 +1893,10 @@ color: rgb(255, 255, 255);</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+     <string notr="true">QPushButton{
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 border : none;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);}</string>
     </property>
     <property name="text">
      <string> Students' Info</string>
@@ -1729,6 +1912,9 @@ color: rgb(255, 255, 255);</string>
      </size>
     </property>
     <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
      <bool>true</bool>
     </property>
    </widget>
@@ -1752,9 +1938,10 @@ color: rgb(255, 255, 255);</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+     <string notr="true">QPushButton{
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 border : none;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);}</string>
     </property>
     <property name="text">
      <string> Schedule</string>
@@ -1770,6 +1957,9 @@ color: rgb(255, 255, 255);</string>
      </size>
     </property>
     <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
      <bool>true</bool>
     </property>
    </widget>
@@ -1821,9 +2011,10 @@ color: rgb(255, 255, 255);</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+     <string notr="true">QPushButton{
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 border : none;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);}</string>
     </property>
     <property name="text">
      <string>Friends</string>
@@ -1839,6 +2030,9 @@ color: rgb(255, 255, 255);</string>
      </size>
     </property>
     <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
      <bool>true</bool>
     </property>
    </widget>
@@ -1861,9 +2055,10 @@ color: rgb(255, 255, 255);</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+     <string notr="true">QPushButton{
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 border : none;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);}</string>
     </property>
     <property name="text">
      <string>Notification</string>
@@ -1879,6 +2074,9 @@ color: rgb(255, 255, 255);</string>
      </size>
     </property>
     <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
      <bool>true</bool>
     </property>
    </widget>
@@ -1918,9 +2116,13 @@ color: rgb(255, 255, 255);</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/assists/All_Materials/Rectangle 1380.png);
+     <string notr="true">
+QPushButton{
+background-image: url(:/assists/All_Materials/Rectangle 1380.png);
 border : none;
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+}
+</string>
     </property>
     <property name="text">
      <string> Course</string>
@@ -1941,6 +2143,9 @@ color: rgb(255, 255, 255);</string>
     <property name="checked">
      <bool>true</bool>
     </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
   <zorder>backWallpaper</zorder>
@@ -1949,8 +2154,8 @@ color: rgb(255, 255, 255);</string>
   <zorder>icons</zorder>
  </widget>
  <resources>
-  <include location="Login-Register.qrc"/>
   <include location="Materials.qrc"/>
+  <include location="Login-Register.qrc"/>
  </resources>
  <connections>
   <connection>

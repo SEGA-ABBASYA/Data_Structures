@@ -98,6 +98,11 @@ private slots:
     void on_EditStudent_clicked();
 
 
+
+
+
+
+
 private:
     Ui::MainWindow *ui;
 };
