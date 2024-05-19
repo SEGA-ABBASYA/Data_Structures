@@ -20,7 +20,7 @@ public:
     static Admin admin;
     static map<string,Course> courses;
     static Timetable CurrentUserTT;
-    static User CurrentUser;
+    static string CurrentUser;
 
     Database();
     void read();

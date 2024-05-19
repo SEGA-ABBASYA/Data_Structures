@@ -45,31 +45,38 @@ int main(int argc, char *argv[])
     //     cout << i.first << ' ' << i.second.first << ' ' << i.second.second << endl;
     // }
 
-    vector<string>emptydctrs,emptyTAs;
+    // vector<string>emptydctrs,emptyTAs;
 
-    newtt.day = "Sunday";
-    newtt.hour = 8;
-    newtt.minutes = 0;
-    Schedule currsch;
-    Course currcrs("Artificial Intelligence","CS",1,0,emptydctrs,emptyTAs);
-    Database::CurrentUser.register_courses(currcrs.getCourseName());
-    currsch.setType("Lab");
-    currsch.setName("Robotics Lab");
-    currsch.setCourse("Artificial Intelligence");
-    Database::schedules[newtt].push_back(currsch);
+    // newtt.day = "Sunday";
+    // newtt.hour = 8;
+    // newtt.minutes = 0;
+    // Schedule currsch;
+    // Course currcrs("Artificial Intelligence","CS",1,0,emptydctrs,emptyTAs);
+    // Database::courses["Artificial Intelligence"] = currcrs;
+    // Database::users[Database::CurrentUser].register_courses(currcrs.getCourseName());
+    // currsch.setType("Lab");
+    // currsch.setName("Robotics Lab");
+    // currsch.setCourse("Artificial Intelligence");
+    // Database::schedules[newtt].push_back(currsch);
 
-    newtt.day = "Tuesday";
-    newtt.hour = 2;
-    newtt.minutes = 0;
-    Database::schedules[newtt].push_back(currsch);
-    newtt.hour = 12;
-    Course currcrs2("Operation Research","IS",0,1,emptydctrs,emptyTAs);
-    Database::CurrentUser.register_courses(currcrs2.getCourseName());
-    currsch.setName("Class 7");
-    currsch.setCourse("Operation Research");
-    currsch.setType("Tutorial");
-    Database::schedules[newtt].push_back(currsch);
+    // Location newLocation(1,0,"Robotics Lab",{32,19});
+    // Database::locations["Robotics Lab"] = newLocation;
 
+    // newtt.day = "Tuesday";
+    // newtt.hour = 2;
+    // newtt.minutes = 0;
+    // Database::schedules[newtt].push_back(currsch);
+    // newtt.hour = 12;
+    // Course currcrs2("Operation Research","IS",0,1,emptydctrs,emptyTAs);
+    // Database::courses["Operation Research"] = currcrs2;
+    // Database::users[Database::CurrentUser].register_courses(currcrs2.getCourseName());
+    // currsch.setName("Class 7");
+    // currsch.setCourse("Operation Research");
+    // currsch.setType("Tutorial");
+    // Database::schedules[newtt].push_back(currsch);
+
+    // Location newLocation2(3,0,"Class 4",{32,19});
+    // Database::locations["Class 4"] = newLocation2;
 
     QObject::connect(&a, &QCoreApplication::aboutToQuit, write);
     return a.exec();

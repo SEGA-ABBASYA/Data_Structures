@@ -954,7 +954,7 @@ QTableWidget::item:hover {
      </column>
      <item row="0" column="0">
       <property name="text">
-       <string>There is Content Here</string>
+       <string/>
       </property>
      </item>
     </widget>
@@ -2246,8 +2246,8 @@ color: rgb(255, 255, 255);</string>
   <zorder>icons</zorder>
  </widget>
  <resources>
-  <include location="Login-Register.qrc"/>
   <include location="Materials.qrc"/>
+  <include location="Login-Register.qrc"/>
  </resources>
  <connections>
   <connection>

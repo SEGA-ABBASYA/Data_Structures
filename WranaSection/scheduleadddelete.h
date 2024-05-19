@@ -15,6 +15,9 @@ public:
     explicit ScheduleAddDelete(QWidget *parent = nullptr);
     ~ScheduleAddDelete();
 
+private slots:
+    void on_AddButton_clicked();
+
 private:
     Ui::ScheduleAddDelete *ui;
 };

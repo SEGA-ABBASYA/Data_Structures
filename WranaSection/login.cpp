@@ -45,7 +45,6 @@ void Login::login()
         return;
     }
     auto user = Database::users.find(userName);
-    Database::CurrentUser = *user;
     if(user == Database::users.end())
     {
         QMessageBox::warning(this, "Error", "Wrong UserName");
@@ -57,6 +56,7 @@ void Login::login()
         // Home *home = new Home();
         // home->show();
         // this->close();
+        Database::CurrentUser = userName;
         userPage = new UserView();
         w_stack->addWidget(userPage);
         w_stack->setCurrentWidget(userPage);

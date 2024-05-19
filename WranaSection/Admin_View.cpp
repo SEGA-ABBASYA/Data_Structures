@@ -1,4 +1,5 @@
 #include "Admin_View.h"
+#include "scheduleadddelete.h"
 #include "ui_Admin_View.h"
 #include "course.h"
 #include "database.h"
@@ -14,7 +15,6 @@
 #include <QString>
 #include <QMessageBox>
 #include <regex>
-#include "cellcourseselection.h"
 
 Admin admin;
 Database dbase;
@@ -667,7 +667,7 @@ void AdminView::on_Schedule_2_cellDoubleClicked(int row, int column)
     //ui->Schedule->item(row,column)->background().setColor(color);
     //}
     //ui->Schedule->item(row,column)->text() = QString::fromStdString(Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse());
-    CellCourseSelection CCS;
+    ScheduleAddDelete CCS;
     CCS.setModal(true);
     CCS.exec();
     //RefreshTable();

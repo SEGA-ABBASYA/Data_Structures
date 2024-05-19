@@ -15,7 +15,7 @@ map<Timetable, vector<Schedule>> Database::schedules;
 QMap<string, User> Database::users;
 Admin Database::admin;
 Timetable Database::CurrentUserTT;
-User Database::CurrentUser;
+string Database::CurrentUser;
 
 
 

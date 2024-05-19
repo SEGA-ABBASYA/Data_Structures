@@ -13,13 +13,11 @@ UserView::UserView(QWidget *parent)
 {
     ui->setupUi(this);
     ui->full->hide();
-
-    //RefreshTable();
+    RefreshTable();
 }
 
 UserView::~UserView()
 {
-    Database::users[Database::CurrentUser.getUsername()] = Database::CurrentUser;
     delete ui;
 }
 
@@ -96,13 +94,12 @@ void UserView::on_logouticons_clicked()
 
 void UserView::on_logoutfull_clicked()
 {
-    Database::users[Database::CurrentUser.getUsername()] = Database::CurrentUser;
     Login::w_stack->setCurrentIndex(0);
 }
 
 void UserView::RefreshTable()
 {
-    for (int i = 0; i < 7;i++)
+    for (int i = 0; i < 6;i++)
     {
         for (int j = 0;j < 6;j++)
         {
@@ -121,11 +118,20 @@ void UserView::RefreshTable()
             temptt.hour = usablehour;
             temptt.minutes = 0;
 
-            ui->Schedule->item(i,j)->text() = QString::fromStdString( Database::CurrentUser.current_schedule[temptt].getName());
-            if(Database::CurrentUser.current_schedule[temptt].getName() != "None")
+
+            //cout << day << ' ' << usablehour << ": " << Database::users[Database::CurrentUser].current_schedule[temptt].getName() << endl;
+
+            if (Database::users[Database::CurrentUser].current_schedule[temptt].getName() != "None")
             {
+                ui->Schedule->setItem(i,j, new QTableWidgetItem(QString::fromStdString(Database::users[Database::CurrentUser].current_schedule[temptt].getCourse() + "\n" + Database::users[Database::CurrentUser].current_schedule[temptt].getType()  + "\n" + Database::users[Database::CurrentUser].current_schedule[temptt].getName())));
                 QColor color = QColor::fromRgb(229,112,30);
-                ui->Schedule->item(i,j)->background().setColor(color);
+                ui->Schedule->item(i, j)->setBackground(color);
+            }
+            else
+            {
+                ui->Schedule->setItem(i,j,new QTableWidgetItem(QString::fromStdString("")));
+                QColor color = QColor::fromRgb(28, 32, 33);
+                ui->Schedule->item(i, j)->setBackground(color);
             }
         }
     }
@@ -146,16 +152,11 @@ void UserView::on_Schedule_cellDoubleClicked(int row, int column)
     Database::CurrentUserTT.hour = usablehour;
     Database::CurrentUserTT.day = day;
     Database::CurrentUserTT.minutes = 0;
-    //if (Database::CurrentUser.current_schedule[Database::CurrentUserTT].getName() != "None")
-    //{
-        //QColor color = QColor::fromRgb(229,112,30);
-        //ui->Schedule->item(row,column)->background().setColor(color);
-    //}
-    //ui->Schedule->item(row,column)->text() = QString::fromStdString(Database::CurrentUser.current_schedule[Database::CurrentUserTT].getCourse());
+
     CellCourseSelection CCS;
     CCS.setModal(true);
     CCS.exec();
-    //RefreshTable();
+    RefreshTable();
 }
 
 void UserView::on_listWidget_itemPressed(QListWidgetItem *item)

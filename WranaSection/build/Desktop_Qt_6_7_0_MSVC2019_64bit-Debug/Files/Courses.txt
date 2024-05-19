@@ -4,6 +4,12 @@ no
 no
 ---
 ---
+Artificial Intelligence
+CS
+yes
+no
+---
+---
 Artificial Intelligence Lab
 
 no
@@ -23,6 +29,12 @@ None
 
 no
 no
+---
+---
+Operation Research
+IS
+no
+yes
 ---
 ---
 Physics
