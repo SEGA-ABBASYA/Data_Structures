@@ -1962,6 +1962,9 @@ border : none</string>
       <property name="checked">
        <bool>true</bool>
       </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QPushButton" name="studenticons">
       <property name="geometry">
@@ -1996,6 +1999,9 @@ border : none</string>
       <property name="checkable">
        <bool>true</bool>
       </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QPushButton" name="scheduleicons">
       <property name="geometry">
@@ -2028,6 +2034,9 @@ border : none</string>
        </size>
       </property>
       <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
        <bool>true</bool>
       </property>
      </widget>
@@ -2096,6 +2105,9 @@ border : none</string>
       <property name="checkable">
        <bool>true</bool>
       </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QPushButton" name="notificationicons">
       <property name="geometry">
@@ -2128,6 +2140,9 @@ border : none</string>
        </size>
       </property>
       <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
        <bool>true</bool>
       </property>
      </widget>
@@ -2166,6 +2181,9 @@ border : none</string>
       </property>
       <property name="checked">
        <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>

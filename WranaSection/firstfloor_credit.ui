@@ -383,7 +383,7 @@ border: none;</string>
          </font>
         </property>
         <property name="text">
-         <string>Undergrounds</string>
+         <string>Credit</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
