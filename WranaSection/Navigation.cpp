@@ -3,6 +3,7 @@
 #include "database.h"
 #include "User_View.h"
 #include <QColor>
+#include "floortransition.h"
 
 Navigation::Navigation(QWidget *parent)
     : QDialog(parent)
@@ -133,8 +134,14 @@ void Navigation::on_bysteps_clicked()
 
        if(moving.size() > 2)
        {
-           if(moving.front().first != top)
-               UserView::g_stack->setCurrentIndex(top + 1);
+                if(moving.front().first != top){
+                    UserView::g_stack->setCurrentIndex(top + 1);
+                    FloorTransition ft;
+                    ft.show();
+                    ft.startAnimation();
+                    ft.close();
+
+                }
            if (moving.front().first == 0 || moving.front().first == 1 || moving.front().first == 6)
            {
                if (moving.front().first == 0 || moving.front().first == 1)
