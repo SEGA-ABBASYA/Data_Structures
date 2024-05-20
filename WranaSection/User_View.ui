@@ -2450,8 +2450,8 @@ color: rgb(255, 255, 255);
   </widget>
  </widget>
  <resources>
-  <include location="Materials.qrc"/>
   <include location="Login-Register.qrc"/>
+  <include location="Materials.qrc"/>
  </resources>
  <connections/>
 </ui>
