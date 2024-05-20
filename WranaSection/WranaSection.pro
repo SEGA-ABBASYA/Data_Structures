@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     Buildingchoose.cpp \
+    ChatWindow.cpp \
     Graph.cpp \
     Groundfloor.cpp \
     Maingraph.cpp \
@@ -36,6 +37,7 @@ SOURCES += \
 
 HEADERS += \
     Buildingchoose.h \
+    ChatWindow.h \
     Graph.h \
     Groundfloor.h \
     Maingraph.h \
@@ -61,6 +63,7 @@ HEADERS += \
 
 FORMS += \
     Buildingchoose.ui \
+    ChatWindow.ui \
     Groundfloor.ui \
     Navigation.ui \
     Secondfloorother.ui \

@@ -16,6 +16,7 @@ class Login : public QMainWindow
 
 public:
     static QStackedWidget *w_stack;
+    static string USERNAME;
     NewUser *regPage;
     AdminView *admPage;
     UserView *userPage;
