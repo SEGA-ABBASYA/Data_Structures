@@ -3006,15 +3006,15 @@ color: rgb(255, 255, 255);
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="Login-Register.qrc"/>
   <include location="Materials.qrc"/>
+  <include location="Login-Register.qrc"/>
  </resources>
  <connections>
   <connection>
