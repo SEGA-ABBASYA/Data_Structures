@@ -47,12 +47,12 @@ public:
     void write();
 
 private:
-<<<<<<< HEAD
-    QFile usersFile, locationsFile, adminFile, CoursesFile, schedulesFile;
+
+    QFile usersFile, locationsFile, adminFile, CoursesFile, schedulesFile, chatFile, friendsFile;
     QFile UnderGroundFile,GroundFile,FirstGeneralFile,FirstCreditFile,SecondFile,SecondOtherFile,ThirdFile,SecondMFile,FirstMFile;
-=======
->>>>>>> origin/files_4
     void readUsers();
+    void readFriends();
+    void readChat();
     void readLocations();
     void writeUsers();
     void writeLocations();
@@ -62,6 +62,8 @@ private:
     void WriteAdmin();
     void ReadCourses();
     void WriteCourses();
+    void writeFriends();
+    void writeChat();
 
     void Read_UnderGroundFloor();
     void Read_GroundFloor();
