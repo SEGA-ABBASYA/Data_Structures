@@ -20,6 +20,7 @@ public:
     AdminView *admPage;
     UserView *userPage;
     Login(QWidget *parent = nullptr);
+
     ~Login();
 
 private:

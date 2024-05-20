@@ -6,6 +6,7 @@
 #include<QString>
 #include<vector>
 #include <iostream>
+#include<QMessageBox>
 using namespace std;
 
 namespace Ui {
@@ -32,6 +33,28 @@ public:
      void on_nextButton_2_clicked();
 
      void on_menuButton_3_toggled();
+
+
+
+
+     void on_class1_clicked();
+
+     void on_class2_1_clicked();
+
+
+
+     void on_class3_clicked();
+
+
+
+     void on_programs_office_clicked();
+
+
+     void on_WCgirls_clicked();
+
+     void on_ProgramDirector_clicked();
+
+     void on_MultiMedia_Bioinformatics_clicked();
 
  private:
     Ui::firstfloor_credit *ui;

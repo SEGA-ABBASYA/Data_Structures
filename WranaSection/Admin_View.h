@@ -107,6 +107,11 @@ private slots:
     void on_Edit_2_clicked();
     void on_Schedule_2_cellDoubleClicked(int row, int column);
 
+
+
+
+
+
 private:
     Ui::MainWindow *ui;
 };

@@ -85,5 +85,54 @@ void firstfloor_credit::on_nextButton_2_clicked()
 void firstfloor_credit::on_menuButton_3_toggled()
 {
     ui->widget->hide();
+
+
+
+
+void firstfloor_credit::on_class1_clicked()
+{
+    QMessageBox::information(this,"Room Name","Class 1                   ");
+}
+
+
+void firstfloor_credit::on_class2_1_clicked()
+{
+     QMessageBox::information(this,"Room Name","Class 2                  ");
+}
+
+
+
+
+void firstfloor_credit::on_class3_clicked()
+{
+     QMessageBox::information(this,"Room Name","Class 3                  ");
+}
+
+
+
+
+void firstfloor_credit::on_programs_office_clicked()
+{
+    QMessageBox::information(this,"Room Name","Programs Management Office");
+}
+
+
+
+
+void firstfloor_credit::on_WCgirls_clicked()
+{
+    QMessageBox::information(this,"Room Name","W.C For Women               ");
+}
+
+
+void firstfloor_credit::on_ProgramDirector_clicked()
+{
+     QMessageBox::information(this,"Room Name","Program Director : Dr sherine Rady");
+}
+
+
+void firstfloor_credit::on_MultiMedia_Bioinformatics_clicked()
+{
+     QMessageBox::information(this,"Room Name","AI coordinator,Multimedia coordinator,Bioinformatics coordinator : Dr Mariam Nabil ,Dr Dina el sayad ");
 }
 

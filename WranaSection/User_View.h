@@ -22,6 +22,9 @@ using namespace std;
 #include "undergroundfloor.h"
 #include <QStatusBar>
 #include <QVBoxLayout>
+#include<user.h>
+#include<database.h>
+#include<QRegularExpression>
 
 namespace Ui {
 class UserView;
@@ -47,6 +50,8 @@ public:
     firstfloor_credit *c;
     SecondFloorOther *o;
     ThirdFloor *th;
+
+
 
     explicit UserView(QWidget *parent = nullptr);
     void RefreshTable();
@@ -118,6 +123,15 @@ private slots:
 
     void on_second_end_clicked();
     void on_pushButton_4_clicked();
+   void on_add_button_clicked();
+
+    void on_delete_button_clicked();
+
+
+
+    void on_text_filter_textChanged(const QString &arg1);
+
+    void on_text_filter_2_textChanged(const QString &arg1);
 
 private:
     Ui::UserView *ui;

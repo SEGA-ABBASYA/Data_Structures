@@ -36,6 +36,20 @@ UserView::UserView(QWidget *parent)
     ui->centralStackedWidget->addWidget(o);//6 second other
     ui->centralStackedWidget->addWidget(t);//7 third
     ui->full->hide();
+    for(auto &course:Database::courses)
+    {
+        ui->ALL_courses_list->addItem(QString::fromStdString(course.first));
+
+    }
+
+    User &current_user=Database::users["hano4"];
+
+
+    for(auto &registered_course:current_user.registered_courses)
+    {
+        ui->Registerd_courses->addItem(QString::fromStdString(registered_course));
+
+    }
 
     genedyBuilding =
     {
@@ -97,6 +111,8 @@ void UserView::on_Swapicons_toggled()
 
 void UserView::on_courseicons_toggled(bool checked)
 {
+
+
     ui->stackedWidgetNew->setCurrentIndex(1);
 }
 
@@ -284,6 +300,82 @@ void UserView::on_start_list_widget_itemClicked(QListWidgetItem *item)
     {
         QMessageBox::warning(this, "Error", "You're in Genedy, Go to the Main Building.");
         startRoom = db.locations["Class 7"];
+
+void UserView::on_add_button_clicked()
+{
+    string course_name= ui->ALL_courses_list->currentItem()->text().toStdString();
+    ui->Registerd_courses->clear();
+
+    User &current_user=Database::users["hano4"];
+
+
+         current_user.registered_courses.insert(course_name);
+
+        for(auto &registered_course:current_user.registered_courses)
+        {
+                ui->Registerd_courses->addItem(QString::fromStdString(registered_course));
+
+        }
+
+        current_user.lecture[course_name]=false;
+        bool hasLab=Database::courses[course_name].getLab(),hasSection=Database::courses[course_name].getSection();
+        if(hasLab)
+        {
+            current_user.lab[course_name]=false;
+        }
+        if(hasSection)
+        {
+            current_user.tutorial[course_name]=false;
+        }
+
+
+
+
+}
+
+
+void UserView::on_delete_button_clicked()
+{
+   // qDebug()<<"Button clicked";
+    QListWidgetItem *currentItem = ui->Registerd_courses->currentItem();
+
+    if (currentItem)
+    {
+
+        string course_name=currentItem->text().toStdString();
+        User &current_user=Database::users["hano4"];
+
+        current_user.registered_courses.erase(course_name);
+        current_user.lecture.erase(course_name);
+
+        auto end_of_labs=current_user.lab.end(),end_of_tutorials=current_user.tutorial.end();
+
+        if(current_user.lab.find(course_name)!= end_of_labs)
+
+        {
+            current_user.lab.erase(course_name);
+        }
+        if(current_user.tutorial.find(course_name)!=end_of_tutorials)
+        {
+            current_user.tutorial.erase(course_name);
+        }
+
+        delete ui->Registerd_courses->takeItem(ui->Registerd_courses->row(currentItem));
+
+    }
+
+
+}
+
+
+
+
+void UserView::on_text_filter_textChanged(const QString &arg1)
+{
+
+    for (int i = 0; i < ui->ALL_courses_list->count(); ++i) {
+        QListWidgetItem *item = ui->ALL_courses_list->item(i);
+        item->setHidden(!item->text().contains(arg1, Qt::CaseInsensitive));
     }
 }
 
@@ -401,5 +493,13 @@ void UserView::on_pushButton_4_clicked()
 {
     Navigation *navigator = new Navigation(nullptr);
     navigator->show();
+}
+
+void UserView::on_text_filter_2_textChanged(const QString &arg1)
+{
+    for (int i = 0; i < ui->Registerd_courses->count(); ++i) {
+        QListWidgetItem *item = ui->Registerd_courses->item(i);
+        item->setHidden(!item->text().contains(arg1, Qt::CaseInsensitive));
+    }
 }
 

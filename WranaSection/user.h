@@ -21,6 +21,7 @@ struct userData {
     string password;
     string program; // Mainstream or AI or SoftwareEng etc...
     char gender; // M or F
+
 };
 
 

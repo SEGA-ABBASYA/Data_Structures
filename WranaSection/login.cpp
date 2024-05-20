@@ -2,6 +2,7 @@
 #include "ui_login.h"
 #include "database.h"
 #include "newuser.h"
+#include"User_View.h"
 #include <QMessageBox>
 QStackedWidget* Login::w_stack = nullptr;
 Login::Login(QWidget *parent)
@@ -35,7 +36,10 @@ Login::~Login()
 void Login::login()
 {
     string userName = ui->userNameLineEdit->text().toLower().toStdString();
+
     string password = ui->passwordLineEdit->text().toStdString();
+    auto user = Database::users.find(userName);
+
     if(userName == "admin" && password == "admin"){
         admPage = new AdminView();
         w_stack->addWidget(admPage);
@@ -68,6 +72,7 @@ void Login::login()
     else{
         QMessageBox::warning(this, "Error", "Wrong Password");
     }
+
 
 }
 
