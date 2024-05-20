@@ -23,6 +23,7 @@ SOURCES += \
     cellcourseselection.cpp \
     course.cpp \
     Admin.cpp \
+    floortransition.cpp \
     main.cpp \
     database.cpp \
     Admin_View.cpp \
@@ -53,6 +54,7 @@ HEADERS += \
     database.h \
     Admin_View.h \
     scheduleadddelete.h \
+    floortransition.h \
     undergroundfloor.h \
     secondfloor.h \
     user.h \
@@ -70,6 +72,7 @@ FORMS += \
     ThirdFloor.ui \
     User_View.ui \
     cellcourseselection.ui \
+    floortransition.ui \
     newuser.ui \
     login.ui \
     Admin_View.ui \
