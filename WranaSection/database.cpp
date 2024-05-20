@@ -685,7 +685,7 @@ void Database::mgIntialization(){
     Location firstCredit(2,0,"firstSaied",{4,31});
 
     Location secondMain  (3,0,"secondMain",{48,142});
-    Location secondBack  (3,0,"secondBack",{24,97});
+    Location secondBack  (3,0,"secondBack",{24,96});
     Location secondCredit(3,0,"secondSaied",{14,26});
 
     Location thirdMain  (4,0,"thirdMain",{18,54});
