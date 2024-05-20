@@ -78,11 +78,6 @@ private slots:
 
     void on_notificationicons_toggled(bool checked);
 
-    void on_pushButton_toggled(bool checked);
-
-    void on_pushButton_2_toggled(bool checked);
-
-
     void on_logouticons_clicked();
 
     void on_logoutfull_clicked();

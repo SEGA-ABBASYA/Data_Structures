@@ -169,18 +169,6 @@ void UserView::on_notificationicons_toggled(bool checked)
 }
 
 
-void UserView::on_pushButton_toggled(bool checked)
-{
-    ui->stackedWidgetFriends->setCurrentIndex(0);
-}
-
-
-void UserView::on_pushButton_2_toggled(bool checked)
-{
-    ui->stackedWidgetFriends->setCurrentIndex(1);
-    ui->stackedWidget_chat->setCurrentIndex(0);
-}
-
 void UserView::on_logouticons_clicked()
 {
     Login::w_stack->setCurrentIndex(0);

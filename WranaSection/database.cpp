@@ -577,8 +577,7 @@ void Database::Read_FirstCreditFloor()
            // cout<<line<<'\n';
 
         }
-
-
+        cout<<"First Credit \n";
     }
     else
         cout << "Error opening FirstCredit.txt for reading." << endl;
@@ -643,7 +642,7 @@ void Database::Read_SecondMFloor()
 
             SecondFloorMerged.push_back(line);
         }
-        cout << "SecondFile read successfully"<< endl;
+        cout << "SecondMergedFile read successfully"<< endl;
     }
     else
         cout << "Error opening Second.txt for reading." << endl;
@@ -686,7 +685,7 @@ void Database::mgIntialization(){
     Location firstCredit(2,0,"firstSaied",{4,31});
 
     Location secondMain  (3,0,"secondMain",{48,142});
-    Location secondBack  (3,0,"secondBack",{24,96});
+    Location secondBack  (3,0,"secondBack",{24,97});
     Location secondCredit(3,0,"secondSaied",{14,26});
 
     Location thirdMain  (4,0,"thirdMain",{18,54});
