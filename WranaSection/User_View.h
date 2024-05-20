@@ -59,6 +59,7 @@ public:
 
     explicit UserView(QWidget *parent = nullptr);
     void RefreshTable();
+    Timetable getrealtime();
     ~UserView();
 
 private slots:
@@ -148,6 +149,8 @@ private slots:
     void on_text_filter_textChanged(const QString &arg1);
 
     void on_text_filter_2_textChanged(const QString &arg1);
+
+    void on_friendsList_itemDoubleClicked(QListWidgetItem *item);
 
 private:
     Ui::UserView *ui;

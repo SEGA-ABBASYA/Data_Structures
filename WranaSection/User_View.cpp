@@ -1,5 +1,6 @@
 #include "User_View.h"
 #include <iostream>
+#include "qdatetime.h"
 #include "ui_User_View.h"
 #include "login.h"
 #include "cellcourseselection.h"
@@ -118,6 +119,28 @@ UserView::~UserView()
     delete ui;
 }
 
+
+Timetable UserView::getrealtime()
+{
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+
+    QString day = currentDateTime.toString("dddd");
+    int hour = currentDateTime.time().hour();
+
+    if (hour == 1)
+    {
+        hour = 12;
+    }
+    else if (hour % 2 != 0) {
+        hour--;
+    }
+
+    Timetable tt;
+    tt.day = day.toStdString();
+    tt.hour = hour;
+    tt.minutes = 0;
+    return tt;
+}
 
 ////////////////////////////////////////////////////Panells////////////////////////////////////////////
 void UserView::on_Swapfull_toggled()
@@ -696,4 +719,22 @@ void UserView::on_editUserButton_clicked()
     showData();
 }
 
+
+
+void UserView::on_friendsList_itemDoubleClicked(QListWidgetItem *item)
+{
+    Timetable realtt = getrealtime();
+    cout << realtt.day << ' ' << realtt.hour << endl;
+    Schedule temp = Database::users[item->text().toStdString()].current_schedule[realtt];
+    if (temp.getName() == "None")
+    {
+        string toDispString = item->text().toStdString() + " has nothing right now";
+        QMessageBox::information(this,"Your Friend Location",QString::fromStdString(toDispString));
+    }
+    else
+    {
+        string toDispString = item->text().toStdString() + " has " + temp.getCourse() + ' ' + temp.getType() + " in " + temp.getName();
+        QMessageBox::warning(this,"Your Friend Location",QString::fromStdString(toDispString));
+    }
+}
 
