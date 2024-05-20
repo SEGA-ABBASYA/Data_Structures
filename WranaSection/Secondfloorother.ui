@@ -22,8 +22,8 @@
   <widget class="QTableWidget" name="SecondF_widget_2">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>-330</y>
+     <x>0</x>
+     <y>0</y>
      <width>1280</width>
      <height>720</height>
     </rect>
@@ -554,8 +554,8 @@ border: none;</string>
   <zorder>verticalLayoutWidget</zorder>
  </widget>
  <resources>
-  <include location="secondFloor.qrc"/>
   <include location="Materials.qrc"/>
+  <include location="secondFloor.qrc"/>
  </resources>
  <connections/>
 </ui>

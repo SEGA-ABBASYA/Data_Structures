@@ -707,8 +707,8 @@ border: none;</string>
   <zorder>verticalLayoutWidget</zorder>
  </widget>
  <resources>
-  <include location="secondFloor.qrc"/>
   <include location="Materials.qrc"/>
+  <include location="secondFloor.qrc"/>
  </resources>
  <connections/>
 </ui>

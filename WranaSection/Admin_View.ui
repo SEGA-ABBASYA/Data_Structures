@@ -1255,6 +1255,9 @@ QListWidget::item:selected { /* Apply the same style for both hover and selected
         <property name="selectionBehavior">
          <enum>QAbstractItemView::SelectItems</enum>
         </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="edit_location_name">
@@ -1487,7 +1490,7 @@ QListWidget::item:selected { /* Apply the same style for both hover and selected
          <set>QAbstractItemView::NoEditTriggers</set>
         </property>
         <property name="sortingEnabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
        </widget>
       </widget>
@@ -3003,7 +3006,7 @@ color: rgb(255, 255, 255);
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

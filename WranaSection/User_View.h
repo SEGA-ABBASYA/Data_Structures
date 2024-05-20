@@ -88,11 +88,6 @@ private slots:
     void on_logoutfull_clicked();
 
     void on_Schedule_cellDoubleClicked(int row, int column);
-    void on_listWidget_itemPressed(QListWidgetItem *item);
-
-    void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
-
-    void on_DM_clicked();
     void search(const QString& text);
 
     void on_searchEdit_textChanged(const QString &arg1);

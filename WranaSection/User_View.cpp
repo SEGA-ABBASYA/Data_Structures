@@ -7,7 +7,6 @@
 using namespace std;
 #include "Buildingchoose.h"
 #include <QMessageBox>
-
 Location UserView::startRoom;
 Location UserView::endRoom;
 #include "database.h"
@@ -33,8 +32,12 @@ UserView::UserView(QWidget *parent)
     , ui(new Ui::UserView)
 {
     ui->setupUi(this);
+    //GUI Modifications
     ui->verticalLayout->addWidget(statusBar);
-    statusBar->showMessage("Ready for the Sugar Cane");
+    ui->full->hide();
+    //statusBar->showMessage("Welcome Back " +  QString::fromStdString(USERNAME));
+
+    //Graph UIs
     u = new UndergroundFloor();
     g = new GroundFloor();
     f = new Firstfloor_general();
@@ -44,20 +47,20 @@ UserView::UserView(QWidget *parent)
     t = new ThirdFloor();
     ui->centralStackedWidget->addWidget(u);//1 underground
     ui->centralStackedWidget->addWidget(g);//2 ground
-    ui->centralStackedWidget->addWidget(f);//3 first general
-    ui->centralStackedWidget->addWidget(c);//4 first credit
-    ui->centralStackedWidget->addWidget(s);//5 second
-    ui->centralStackedWidget->addWidget(o);//6 second other
+    ui->centralStackedWidget->addWidget(c);//3 first credit
+    ui->centralStackedWidget->addWidget(f);//4 first general
+    ui->centralStackedWidget->addWidget(o);//5 second other
+    ui->centralStackedWidget->addWidget(s);//6 second
     ui->centralStackedWidget->addWidget(t);//7 third
-    ui->full->hide();
+    g_stack = ui->centralStackedWidget;
+
+    //Courses lists
     for(auto &course:Database::courses)
     {
         ui->ALL_courses_list->addItem(QString::fromStdString(course.first));
 
     }
-
     User &current_user=Database::users[Database::CurrentUser];
-
 
     for(auto &registered_course:current_user.registered_courses)
     {
@@ -65,6 +68,8 @@ UserView::UserView(QWidget *parent)
 
     }
 
+
+    //Location Search
     genedyBuilding =
     {
         {"HP Lab", true},
@@ -88,14 +93,16 @@ UserView::UserView(QWidget *parent)
 
     ui->start_list_widget->addItems(roomsList);
     ui->end_list_widget->addItems(roomsList);
-
     ui->start_list_widget->hide();
     ui->end_list_widget->hide();
+
+    //For Schedule
     RefreshTable();
-    g_stack = ui->centralStackedWidget;
+
+    //For Notifications
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &UserView::refreshNotifications);
-    timer->start(10000);
+    timer->start(1000);
 }
 
 UserView::~UserView()
@@ -111,6 +118,8 @@ UserView::~UserView()
     delete ui;
 }
 
+
+////////////////////////////////////////////////////Panells////////////////////////////////////////////
 void UserView::on_Swapfull_toggled()
 {
     ui->icons->show();
@@ -118,13 +127,11 @@ void UserView::on_Swapfull_toggled()
 
 }
 
-
 void UserView::on_Swapicons_toggled()
 {
     ui->icons->hide();
     ui->full->show();
 }
-
 
 void UserView::on_courseicons_toggled(bool checked)
 {
@@ -133,12 +140,10 @@ void UserView::on_courseicons_toggled(bool checked)
     ui->stackedWidgetNew->setCurrentIndex(1);
 }
 
-
 void UserView::on_graphicons_toggled(bool checked)
 {
     ui->stackedWidgetNew->setCurrentIndex(0);
 }
-
 
 void UserView::on_studenticons_toggled(bool checked)
 {
@@ -152,13 +157,11 @@ void UserView::on_scheduleicons_toggled(bool checked)
     ui->stackedWidgetNew->setCurrentIndex(3);
 }
 
-
 void UserView::on_friendicons_toggled(bool checked)
 {
     updateFriendsList();
     ui->stackedWidgetNew->setCurrentIndex(4);
 }
-
 
 void UserView::on_notificationicons_toggled(bool checked)
 {
@@ -178,19 +181,18 @@ void UserView::on_pushButton_2_toggled(bool checked)
     ui->stackedWidget_chat->setCurrentIndex(0);
 }
 
-
-
 void UserView::on_logouticons_clicked()
 {
     Login::w_stack->setCurrentIndex(0);
 }
-
 
 void UserView::on_logoutfull_clicked()
 {
     Login::w_stack->setCurrentIndex(0);
 }
 
+
+////////////////////////////////////////////////Schedule//////////////////////////////////////////
 void UserView::RefreshTable()
 {
     for (int i = 0; i < 6;i++)
@@ -253,30 +255,8 @@ void UserView::on_Schedule_cellDoubleClicked(int row, int column)
     RefreshTable();
 }
 
-void UserView::on_listWidget_itemPressed(QListWidgetItem *item)
-{
-    user = item;
-}
 
-void UserView::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
-{
-    QMessageBox::information(this, "Your Friend ", item->text() + " Have section in IS");
-}
-
-
-void UserView::on_DM_clicked()
-{
-    if(user)
-    {
-        //ui->label_25->setText(user->text());
-        ui->stackedWidgetFriends->setCurrentIndex(1);
-        ui->stackedWidget_chat->setCurrentIndex(1);
-    }
-    else
-        QMessageBox::warning(this, "Error", "Please select a user");
-}
-
-////////////////////////////////// Graph Page //////////////////////////////////
+////////////////////////////////////////////// Graph Page //////////////////////////////////////////
 
 // to show rooms list
 void UserView::on_search_start_selectionChanged()
@@ -314,6 +294,7 @@ void UserView::on_start_list_widget_itemClicked(QListWidgetItem *item)
     if (db.locations.find(chosenRoom) != db.locations.end())
     {
         startRoom = db.locations[chosenRoom];
+        statusBar->showMessage("You Have Selected " + QString::fromStdString(chosenRoom) + " As Your Starting Point");
     }
     else if (genedyBuilding.find(chosenRoom) != genedyBuilding.end())
     {
@@ -321,6 +302,24 @@ void UserView::on_start_list_widget_itemClicked(QListWidgetItem *item)
         startRoom = db.locations["Class 7"];
     }
 }
+
+void UserView::on_end_list_widget_itemClicked(QListWidgetItem *item)
+{
+    string chosenRoom =item->data(Qt::DisplayRole).toString().toStdString();;
+
+    if (db.locations.find(chosenRoom) != db.locations.end())
+    {
+        endRoom = db.locations[chosenRoom];
+        statusBar->showMessage("You Have Selected " + QString::fromStdString(chosenRoom) + " As Your Destination");
+    }
+    else if (genedyBuilding.find(chosenRoom) != genedyBuilding.end())
+    {
+        QMessageBox::warning(this, "Error", "Your destination is in Genedy Building.");
+        endRoom = db.locations["Class 7"];
+    }
+}
+
+///////////////////////////////////////////Course//////////////////////////////////////////
 void UserView::on_add_button_clicked()
 {
     string course_name= ui->ALL_courses_list->currentItem()->text().toStdString();
@@ -347,16 +346,11 @@ void UserView::on_add_button_clicked()
         {
             current_user.tutorial[course_name]=false;
         }
-
-
-
-
 }
 
 
 void UserView::on_delete_button_clicked()
 {
-   // qDebug()<<"Button clicked";
     QListWidgetItem *currentItem = ui->Registerd_courses->currentItem();
 
     if (currentItem)
@@ -381,13 +375,8 @@ void UserView::on_delete_button_clicked()
         }
 
         delete ui->Registerd_courses->takeItem(ui->Registerd_courses->row(currentItem));
-
     }
-
-
 }
-
-
 
 
 void UserView::on_text_filter_textChanged(const QString &arg1)
@@ -400,44 +389,7 @@ void UserView::on_text_filter_textChanged(const QString &arg1)
 }
 
 
-void UserView::on_end_list_widget_itemClicked(QListWidgetItem *item)
-{
-    string chosenRoom =item->data(Qt::DisplayRole).toString().toStdString();;
-
-    if (db.locations.find(chosenRoom) != db.locations.end())
-    {
-        endRoom = db.locations[chosenRoom];
-    }
-    else if (genedyBuilding.find(chosenRoom) != genedyBuilding.end())
-    {
-        QMessageBox::warning(this, "Error", "Your destination is in Genedy Building.");
-        endRoom = db.locations["Class 7"];
-    }
-}
-
-// friends and chat things
-QMap<string,User>& usersMap = Database::users;
-
-void UserView::search(const QString& text)
-{
-    qDebug() << "Search text:" << text;
-    ui->resultsList->clear();
-    QString searchText = text.toLower();
-    for (auto it = Database::users.begin(); it !=Database::users.end(); ++it)
-    {
-        QString key = QString::fromStdString(it.key());
-        qDebug() << "Checking user:" << key;
-        if (key.contains(searchText, Qt::CaseInsensitive))
-        {
-            ui->resultsList->addItem(key);
-        }
-    }
-}
-
-
-
-
-
+///////////////////////////////////Navigation////////////////////////////////
 void UserView::on_underground_start_clicked()
 {
     ui->centralStackedWidget->setCurrentIndex(1);
@@ -456,9 +408,9 @@ void UserView::on_first_start_clicked()
     choice.setModal(true);
     choice.exec();
     if (BuildingChoose::right)
-        ui->centralStackedWidget->setCurrentIndex(3);
-    else if (BuildingChoose::left)
         ui->centralStackedWidget->setCurrentIndex(4);
+    else if (BuildingChoose::left)
+        ui->centralStackedWidget->setCurrentIndex(3);
     else
         QMessageBox::warning(this, "Error", "Please Select a half!");
 }
@@ -476,9 +428,9 @@ void UserView::on_second_start_clicked()
     choice.setModal(true);
     choice.exec();
     if (BuildingChoose::right)
-        ui->centralStackedWidget->setCurrentIndex(5);
-    else if (BuildingChoose::left)
         ui->centralStackedWidget->setCurrentIndex(6);
+    else if (BuildingChoose::left)
+        ui->centralStackedWidget->setCurrentIndex(5);
     else
         QMessageBox::warning(this, "Error", "Please Select a half!");
 }
@@ -544,6 +496,25 @@ void UserView::on_text_filter_2_textChanged(const QString &arg1)
 void UserView::on_searchEdit_textChanged(const QString &arg1)
 {
     search(arg1);
+}
+
+
+
+////////////////////// friends and chat things///////////////////////////////////
+QMap<string,User>& usersMap = Database::users;
+
+void UserView::search(const QString& text)
+{
+    ui->resultsList->clear();
+    QString searchText = text.toLower();
+    for (auto it = Database::users.begin(); it !=Database::users.end(); ++it)
+    {
+        QString key = QString::fromStdString(it.key());
+        if (key.contains(searchText, Qt::CaseInsensitive))
+        {
+            ui->resultsList->addItem(key);
+        }
+    }
 }
 
 void UserView::updateFriendsList(){
@@ -615,14 +586,8 @@ void UserView::openChat(){
 
 }
 
-
-void UserView::on_directMessageButton_clicked()
-{
-    openChat();
-}
-
-
-void UserView::updateNotifications(){
+//Notifications
+    void UserView::updateNotifications(){
     ui->notificationList->clear();
 
     auto it = Database::users.find(Login::USERNAME);
@@ -639,6 +604,40 @@ void UserView::refreshNotifications() {
     updateNotifications();
 }
 
+//Clear Notification
+void UserView::on_DM_3_clicked()
+{
+    auto it = Database::users.find(Login::USERNAME);
+    if (it != Database::users.end()) {
+        User& currentUser = it.value();
+        currentUser.clearNotifications();
+        updateNotifications();
+    }
+}
+
+
+//Remove Notification
+void UserView::on_DM_4_clicked()
+{
+    QListWidgetItem *item = ui->notificationList->currentItem();
+    if (item) {
+        QString notification = item->text();
+        auto it = Database::users.find(Login::USERNAME);
+        if (it != Database::users.end()) {
+            User& currentUser = it.value();
+            currentUser.removeNotification(notification);
+            updateNotifications();
+        }
+    }
+}
+
+void UserView::on_directMessageButton_clicked()
+{
+    openChat();
+}
+
+
+///////////////////////////////////Student Info//////////////////////////////////
 void UserView::showData(){
     ui->nameedit->setText(QString::fromStdString(Database::users[Login::USERNAME].getName()));
     ui->emailedit->setText(QString::fromStdString(Database::users[Login::USERNAME].getEmail()));
@@ -701,29 +700,4 @@ void UserView::on_editUserButton_clicked()
     showData();
 }
 
-
-void UserView::on_DM_3_clicked()
-{
-    auto it = Database::users.find(Login::USERNAME);
-    if (it != Database::users.end()) {
-        User& currentUser = it.value();
-        currentUser.clearNotifications();
-        updateNotifications();
-    }
-}
-
-
-void UserView::on_DM_4_clicked()
-{
-    QListWidgetItem *item = ui->notificationList->currentItem();
-    if (item) {
-        QString notification = item->text();
-        auto it = Database::users.find(Login::USERNAME);
-        if (it != Database::users.end()) {
-            User& currentUser = it.value();
-            currentUser.removeNotification(notification);
-            updateNotifications();
-        }
-    }
-}
 

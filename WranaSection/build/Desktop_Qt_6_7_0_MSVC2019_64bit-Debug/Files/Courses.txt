@@ -2,43 +2,21 @@ Physics
 Science
 no
 no
-Dr.Johnson
----
-TA Alice
----
 algorithms
 cs
 yes
 no
-ahmed saaid
----
-ali mohammed
-omar khaled
----
 french
 langs
 no
 yes
-soha ali
-ali omar
----
-ahmed hassan
-
----
 graphics
 cs
 yes
 no
-ali
----
-belal
----
 mathematics
 math1
 no
 yes
-Dr.Smith
 ---
-TA John
-TA Emma
 ---

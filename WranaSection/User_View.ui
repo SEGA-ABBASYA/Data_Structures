@@ -357,6 +357,9 @@ font-weight: 600;
 
 </string>
        </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
       </widget>
       <widget class="QListWidget" name="end_list_widget">
        <property name="geometry">
@@ -374,6 +377,9 @@ font-weight: 600;
 
 
 </string>
+       </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QWidget" name="widget" native="true">
@@ -498,6 +504,9 @@ border:none;</string>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(85, 170, 255);</string>
        </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
       </widget>
       <widget class="QPushButton" name="add_button">
        <property name="geometry">
@@ -558,6 +567,9 @@ border:none;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(85, 170, 255);</string>
+       </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QPushButton" name="delete_button">

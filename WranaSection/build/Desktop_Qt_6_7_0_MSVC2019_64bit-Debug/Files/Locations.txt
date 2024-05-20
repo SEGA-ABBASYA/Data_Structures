@@ -2,7 +2,7 @@
 1,1,Basic science department head,29,65
 2,1,Bioinformatics coordinator,21,30
 2,1,Buffet,9,9
-3,1,CIS Lab 2,35,16
+3,1,CIS Lab 2,28,16
 1,1,CIS Lab 6,9,29
 3,1,CS secretary,35,64
 3,1,Calculations of the credit hours,21,13
@@ -74,7 +74,7 @@
 1,1,Electric room,9,31
 0,1,Electronics lab,26,54
 0,1,Equipment maintenance department,19,54
-4,1,Fahmy Tolba hall,23,26
+4,1,Fahmy Tolba hall,23,28
 1,1,Female toilet 1,16,67
 2,1,Female toilet 2,20,36
 2,1,Female toilet 3,8,27
@@ -121,7 +121,7 @@
 3,1,SC Lab,35,57
 4,1,SWE Lab 1,25,46
 4,1,SWE Lab 2,25,57
-3,1,Saeed AbdElWahab hall,53,36
+3,1,Saeed AbdElWahab hall,53,40
 1,1,Scientific computation project management center,27,40
 1,1,Scientific computation training center,25,51
 2,1,Secratary of vice dean for graduate studies,24,20

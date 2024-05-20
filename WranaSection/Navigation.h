@@ -21,10 +21,13 @@ public:
     explicit Navigation(QWidget *parent = nullptr);
     void intializeVector();
     void navigate();
+    void traverse();
     ~Navigation();
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_bysteps_clicked();
 
 private:
     Ui::Navigation *ui;

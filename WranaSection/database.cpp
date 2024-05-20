@@ -9,12 +9,15 @@
 #include <QStringList>
 #include <QMap>
 
+//Classes
 map<string, Location> Database::locations;
 map<string,Course> Database::courses;
 map<Timetable, vector<Schedule>> Database::schedules;
 QMap<string, User> Database::users;
 Admin Database::admin;
 MainGraph Database::mg;
+
+//Floors Grids
 vector<string>Database::UnderGroundFloor;
 vector<string>Database::GroundFloor;
 vector<string>Database::FirstGeneralFloor;
@@ -22,11 +25,10 @@ vector<string>Database::FirstCreditFloor;
 vector<string>Database::SecondFloor;
 vector<string>Database::SecondOtherFloor;
 vector<string>Database::ThirdFloor;
-Timetable Database::CurrentUserTT;
-string Database::CurrentUser;
-
 vector<string>Database::FirstFloorMerged;
 vector<string>Database::SecondFloorMerged ;
+
+//Grids Pointers
 QTableWidget *Database::underGroundFloorTable = nullptr;
 QTableWidget *Database::groundFloorTable = nullptr;
 QTableWidget *Database::firstCreditTable = nullptr;
@@ -35,10 +37,13 @@ QTableWidget *Database::second1Table = nullptr;
 QTableWidget *Database::second2Table = nullptr;
 QTableWidget *Database::thirdFloorTable = nullptr;
 
+//Current User
+Timetable Database::CurrentUserTT;
+string Database::CurrentUser;
 
 
 Database::Database() {
-    adminFile.setFileName( "Files/Admin.txt");
+    adminFile.setFileName("Files/Admin.txt");
     CoursesFile.setFileName("Files/Courses.txt");
     usersFile.setFileName("Files/Users.txt");
     friendsFile.setFileName("Files/Friends.txt");
@@ -88,23 +93,8 @@ void Database::write()
     writeChat();
 }
 
-void Database::WriteAdmin() {
 
-    ofstream Writer(adminFile.fileName().toStdString());
-
-    if (Writer.is_open()) {
-
-        Writer << admin.getUsername() << " " << admin.getPassword();
-        Writer.close();
-    }
-
-    else {
-        cout << "Error opening Admin.txt for writing." << endl;
-    }
-}
-
-
-
+//////////////////////////////////////Read////////////////////////////////////
 void Database::ReadAdmin() {
 
     ifstream Reader(adminFile.fileName().toStdString());
@@ -113,48 +103,12 @@ void Database::ReadAdmin() {
 
         string username, password;
         Reader >> username >> password;
-        qDebug() << username << ' ' << password << '\n';
         admin.setUsername(username);
         admin.setPassword(password);
-
         Reader.close();
-
     }
     else {
         cout << "Error opening Admin.txt for reading." << endl;
-    }
-}
-
-void Database::WriteCourses() {
-
-
-    ofstream Writer(CoursesFile.fileName().toStdString());
-    if (Writer.is_open()) {
-        for (auto& course : courses) {
-
-            Writer << course.second.getCourseName() << "\n";
-            Writer << course.second.getDepartment() << "\n";
-            Writer << course.second.getLab_S()<< "\n";
-            Writer <<  course.second.getSection_S() << "\n";
-
-            // Write doctors
-            for (auto& doctor : course.second.getDoctors()) {
-                Writer << doctor <<'\n';
-            }
-
-            Writer << "---\n";
-
-            // Write TAs
-            for (auto& ta : course.second.getTAs()) {
-                Writer << ta << '\n';
-            }
-
-            Writer << "---\n";
-        }
-        Writer.close();
-        cout << "CoursesFile Written Successfully" <<endl;
-    } else {
-        cout << "Error opening Courses.txt for writing." << endl;
     }
 }
 
@@ -176,7 +130,7 @@ void Database::ReadCourses() {
 
             getline(Reader, department);
             getline(Reader, lab_string);
-             getline(Reader, section_string);
+            getline(Reader, section_string);
 
             while (getline(Reader, doctor) && doctor != "---") {
                 doctors.push_back(doctor);
@@ -193,7 +147,6 @@ void Database::ReadCourses() {
             else Lab=0;
           //  if(courseName=="") continue;
             Course course(courseName, department,Lab,section, doctors, teachingAssistants);
-            qDebug() << courseName << ' ' << department << '\n';
             courses[courseName]=course;
         }
         cout << "CoursesFile read successfully"<< endl;
@@ -201,6 +154,7 @@ void Database::ReadCourses() {
         cout << "Error opening Courses.txt for reading." << endl;
     }
 }
+
 
 void Database::readUsers()
 {
@@ -220,7 +174,6 @@ void Database::readUsers()
             string program = userData[++i].toStdString();
             char gender = userData[++i].toStdString()[0];
             User newUser(name, email, id, academic_year, section, user_name, password, program, gender);
-            qDebug() << newUser.getName() << ' ' << newUser.getPassword() << '\n';
             ////////////add courses
             while(userData[++i] != "0"){
                 string courseName = userData[i].toStdString();
@@ -228,13 +181,11 @@ void Database::readUsers()
                 newUser.lecture[courseName] = userData[++i].toInt();
                 newUser.lab[courseName] = userData[++i].toInt();
                 newUser.tutorial[courseName] = userData[++i].toInt();
-                qDebug() << userData[i] << '\n';
             }
             ////////////add schedule
             while(userData[++i] != "0"){
                 string sch_name = userData[i].toStdString();
                 Timetable date = {userData[++i].toInt(), userData[++i].toInt(), userData[++i].toStdString()};
-                qDebug() << sch_name << ' ' << date.day << '\n';
                 for(auto& sch : schedules[date]){
                     if(sch.getName() == sch_name){
                         newUser.add_Schedule(sch);
@@ -315,13 +266,62 @@ void Database::readLocations()
             string name = locData[++i].toStdString();
             pair<int, int> node = {locData[++i].toInt(), locData[++i].toInt()};
             Location newLoc(floor, hall, name, node);
-            qDebug() << newLoc.getName() << ' ' << newLoc.getNode().first << ' '<< newLoc.getNode().second << '\n';
             locations[name] = newLoc;
         }
         locationsFile.close();
         qDebug() << "LocationsFile read successfully.";
     } else {
         qDebug() << "Failed to open the locationsFile for reading.";
+    }
+}
+
+////////////////////////////Write//////////////////////////////////
+
+void Database::WriteAdmin() {
+
+    ofstream Writer(adminFile.fileName().toStdString());
+
+    if (Writer.is_open()) {
+
+        Writer << admin.getUsername() << " " << admin.getPassword();
+        Writer.close();
+    }
+
+    else {
+        cout << "Error opening Admin.txt for writing." << endl;
+    }
+}
+
+void Database::WriteCourses() {
+
+
+    ofstream Writer(CoursesFile.fileName().toStdString());
+    if (Writer.is_open()) {
+        for (auto& course : courses) {
+
+            Writer << course.second.getCourseName() << "\n";
+            Writer << course.second.getDepartment() << "\n";
+            Writer << course.second.getLab_S()<< "\n";
+            Writer <<  course.second.getSection_S() << "\n";
+
+            // Write doctors
+            for (auto& doctor : course.second.getDoctors()) {
+                Writer << doctor <<'\n';
+            }
+
+            Writer << "---\n";
+
+            // Write TAs
+            for (auto& ta : course.second.getTAs()) {
+                Writer << ta << '\n';
+            }
+
+            Writer << "---\n";
+        }
+        Writer.close();
+        cout << "CoursesFile Written Successfully" <<endl;
+    } else {
+        cout << "Error opening Courses.txt for writing." << endl;
     }
 }
 
@@ -475,7 +475,6 @@ void Database::readSchedule()
             string course = schData[++i].toStdString();
 
             Schedule newSch(name, type, section, group, date, course);
-            qDebug() << newSch.getName() << ' ' << newSch.getGroup() << '\n';
             //insert in map
             schedules[date].push_back(newSch);
         }
