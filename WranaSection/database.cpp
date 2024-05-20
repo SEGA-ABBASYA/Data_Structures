@@ -41,6 +41,8 @@ Database::Database() {
     adminFile.setFileName( "Files/Admin.txt");
     CoursesFile.setFileName("Files/Courses.txt");
     usersFile.setFileName("Files/Users.txt");
+    friendsFile.setFileName("Files/Friends.txt");
+    chatFile.setFileName("Files/Chat.txt");
     locationsFile.setFileName("Files/Locations.txt");
     schedulesFile.setFileName("Files/Schedules.txt");
     UnderGroundFile.setFileName("Files/UnderGroundfloor.txt");
@@ -61,6 +63,8 @@ void Database::read()
     readLocations();
     readSchedule();
     readUsers();
+    readFriends();
+    readChat();
     Read_UnderGroundFloor();
     Read_GroundFloor();
     Read_FirstGeneralFloor();
@@ -80,6 +84,8 @@ void Database::write()
     writeLocations();
     writeSchedule();
     writeUsers();
+    writeFriends();
+    writeChat();
 }
 
 void Database::WriteAdmin() {
@@ -236,6 +242,11 @@ void Database::readUsers()
                     }
                 }
             }
+            ////////////add notifications
+            while(userData[++i] != "0"){
+                QString noti = userData[i];
+                newUser.addNotification(noti);
+            }
             /////insert into map
             users.insert(user_name, newUser);
         }
@@ -243,6 +254,51 @@ void Database::readUsers()
         qDebug() << "userFile read successfully.";
     } else {
         qDebug() << "Failed to open the userFile for reading.";
+    }
+}
+
+void Database::readFriends()
+{
+    if (friendsFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream stream(&friendsFile);
+        while (!stream.atEnd()) {
+            QString line = stream.readLine();
+            QStringList userData = line.split(',');
+            int i = 0;
+            User *user = &users[userData[i].toStdString()];
+            ////////////add friends
+            while(userData[++i] != "0"){
+                string friendName = userData[i].toStdString();
+                user->add_friend(&users[friendName]);
+            }
+        }
+        friendsFile.close();
+        qDebug() << "friendsFile read successfully.";
+    } else {
+        qDebug() << "Failed to open the friendsFile for reading.";
+    }
+}
+
+void Database::readChat()
+{
+    if (chatFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream stream(&chatFile);
+        while (!stream.atEnd()) {
+            QString line = stream.readLine();
+            QStringList userData = line.split(',');
+            int i = 0;
+            User *fromUser = &users[userData[i].toStdString()];
+            string toUser = userData[++i].toStdString();
+            ////////////add messages
+            while(userData[++i] != "0"){
+                QString msg = userData[i];
+                fromUser->addMessage(toUser, msg);
+            }
+        }
+        chatFile.close();
+        qDebug() << "chatFile read successfully.";
+    } else {
+        qDebug() << "Failed to open the chatFile for reading.";
     }
 }
 
@@ -309,6 +365,13 @@ void Database::writeUsers()
             //schedule_finished
             content.append(",0");
 
+            //////////read notifications
+            for(auto& noti : user.notifications){
+                content.append(split + noti);
+            }
+            //notifications_finished
+            content.append(",0");
+
             //push_to_the_file
             stream << content << '\n';
         }
@@ -316,6 +379,58 @@ void Database::writeUsers()
         qDebug() << "userFile written successfully.";
     } else {
         qDebug() << "Failed to open the userFile for writing.";
+    }
+}
+
+void Database::writeFriends()
+{
+    if (friendsFile.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
+        QTextStream stream(&friendsFile);
+        char split = ',';
+        QString content;
+        for(auto& user : users){
+            content.clear();
+            content.append(user.getUsername());
+
+            for(auto& frien : user.friends){
+                content.append(split + frien.first);
+            }
+            //friends_finished
+            content.append(",0");
+
+            //push_to_the_file
+            stream << content << '\n';
+        }
+        friendsFile.close();
+        qDebug() << "friendsFile written successfully.";
+    } else {
+        qDebug() << "Failed to open the friendsFile for writing.";
+    }
+}
+
+void Database::writeChat()
+{
+    if (chatFile.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
+        QTextStream stream(&chatFile);
+        char split = ',';
+        QString content;
+        for(auto& user : users){
+            for(auto& chat : user.chatHistory){
+                content.clear();
+                content.append(user.getUsername() + split + chat.first);
+                for(auto msg : chat.second){
+                    content.append(split + msg);
+                }
+                //msgs_finished
+                content.append(",0");
+                //push_to_the_file
+                stream << content << '\n';
+            }
+        }
+        chatFile.close();
+        qDebug() << "chatFile written successfully.";
+    } else {
+        qDebug() << "Failed to open the chatFile for writing.";
     }
 }
 

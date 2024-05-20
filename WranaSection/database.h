@@ -47,8 +47,11 @@ public:
     void write();
 
 private:
+<<<<<<< HEAD
     QFile usersFile, locationsFile, adminFile, CoursesFile, schedulesFile;
     QFile UnderGroundFile,GroundFile,FirstGeneralFile,FirstCreditFile,SecondFile,SecondOtherFile,ThirdFile,SecondMFile,FirstMFile;
+=======
+>>>>>>> origin/files_4
     void readUsers();
     void readLocations();
     void writeUsers();
