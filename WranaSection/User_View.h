@@ -71,6 +71,10 @@ private slots:
 
     void on_editUserButton_clicked();
 
+    void on_DM_3_clicked();
+
+    void on_DM_4_clicked();
+
 private:
     Ui::UserView *ui;
 

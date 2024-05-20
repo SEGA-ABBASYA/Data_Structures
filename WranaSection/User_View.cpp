@@ -76,6 +76,7 @@ void UserView::on_scheduleicons_toggled(bool checked)
 
 void UserView::on_friendicons_toggled(bool checked)
 {
+    updateFriendsList();
     ui->stackedWidgetNew->setCurrentIndex(4);
 }
 
@@ -157,7 +158,6 @@ void UserView::search(const QString& text)
 
 
 
-
 void UserView::on_searchEdit_textChanged(const QString &arg1)
 {
     search(arg1);
@@ -176,14 +176,6 @@ void UserView::updateFriendsList(){
 
 
 void UserView::addFriend(QListWidgetItem *item){
-    // QString userName = item->text();
-    // auto it = Database::users.find(userName.toStdString());
-    // //auto it = Users.find(userName.toStdString());
-    // if (it != Database::users.end()) {
-    //     User &selectedUser = it.value();
-    //     Database::users[Login::USERNAME].add_friend(&selectedUser);
-    //     updateFriendsList();
-    // }
     QString userName = item->text();
     auto it = Database::users.find(userName.toStdString());
     if (it != Database::users.end()) {
@@ -203,20 +195,7 @@ void UserView::on_resultsList_itemClicked(QListWidgetItem *item)
 }
 
 void UserView::removeFriend() {
-    // QListWidgetItem *item = ui->friendsList->currentItem();
-    // if (item) {
-    //     QString friendName = item->text();
-    //     string friendNameStr = friendName.toStdString();
 
-    //     for (auto it = Database::users.begin(); it != Database::users.end(); ++it) {
-    //         User& cuser = it.value();
-    //         if (cuser.friends.find(friendNameStr) != cuser.friends.end()) {
-    //             cuser.remove_friend(friendNameStr);
-    //             updateFriendsList();
-    //             break;
-    //         }
-    //     }
-    // }
     QListWidgetItem *item = ui->friendsList->currentItem();
     if (item) {
         QString friendName = item->text();
@@ -317,9 +296,6 @@ void UserView::updateUserDetails(const std::string &oldUsername, const std::stri
     }
 }
 
-
-
-
 void UserView::on_editUserButton_clicked()
 {
     QString newName = ui->nameedit->text();
@@ -340,5 +316,31 @@ void UserView::on_editUserButton_clicked()
 
     QMessageBox::information(this, "Success", "User details updated successfully");
     showData();
+}
+
+
+void UserView::on_DM_3_clicked()
+{
+    auto it = Database::users.find(Login::USERNAME);
+    if (it != Database::users.end()) {
+        User& currentUser = it.value();
+        currentUser.clearNotifications();
+        updateNotifications();
+    }
+}
+
+
+void UserView::on_DM_4_clicked()
+{
+    QListWidgetItem *item = ui->notificationList->currentItem();
+    if (item) {
+        QString notification = item->text();
+        auto it = Database::users.find(Login::USERNAME);
+        if (it != Database::users.end()) {
+            User& currentUser = it.value();
+            currentUser.removeNotification(notification);
+            updateNotifications();
+        }
+    }
 }
 

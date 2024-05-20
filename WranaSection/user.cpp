@@ -196,6 +196,9 @@ QStringList User::getNotifications(){
 void User::clearNotifications() {
     notifications.clear();
 }
+void User::removeNotification(const QString &notification){
+    notifications.removeOne(notification);
+}
 
 void User::updateDetails(const string& name, const string& email, int id, int academic_year, int section, const string& username, const string& password, const string& program, char gender) {
     data.name = name;

@@ -110,6 +110,7 @@ public:
     void addNotification(QString notification);
     QStringList getNotifications();
     void clearNotifications();
+    void removeNotification(const QString &notification);
 };
 
 
