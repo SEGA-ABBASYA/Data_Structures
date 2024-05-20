@@ -412,6 +412,8 @@ void UserView::on_end_list_widget_itemClicked(QListWidgetItem *item)
     {
         QMessageBox::warning(this, "Error", "Your destination is in Genedy Building.");
         endRoom = db.locations["Class 7"];
+    }
+}
 
 // friends and chat things
 QMap<string,User>& usersMap = Database::users;
@@ -537,6 +539,8 @@ void UserView::on_text_filter_2_textChanged(const QString &arg1)
     for (int i = 0; i < ui->Registerd_courses->count(); ++i) {
         QListWidgetItem *item = ui->Registerd_courses->item(i);
         item->setHidden(!item->text().contains(arg1, Qt::CaseInsensitive));
+    }
+}
 void UserView::on_searchEdit_textChanged(const QString &arg1)
 {
     search(arg1);
