@@ -281,6 +281,7 @@ void UserView::on_start_list_widget_itemClicked(QListWidgetItem *item)
 
     if (db.locations.find(chosenRoom) != db.locations.end())
     {
+        start = true;
         startRoom = db.locations[chosenRoom];
         statusBar->showMessage("You Have Selected " + QString::fromStdString(chosenRoom) + " As Your Starting Point");
     }
@@ -297,6 +298,7 @@ void UserView::on_end_list_widget_itemClicked(QListWidgetItem *item)
 
     if (db.locations.find(chosenRoom) != db.locations.end())
     {
+        end = true;
         endRoom = db.locations[chosenRoom];
         statusBar->showMessage("You Have Selected " + QString::fromStdString(chosenRoom) + " As Your Destination");
     }
@@ -470,8 +472,14 @@ void UserView::on_second_end_clicked()
 
 void UserView::on_pushButton_4_clicked()
 {
+    if (start && end){
     Navigation *navigator = new Navigation(nullptr);
-    navigator->show();
+        navigator->show();
+    }
+    else if (!start)
+        QMessageBox::warning(this, "Error", "Please Select a start point!");
+    else
+        QMessageBox::warning(this, "Error", "Please Select the ending point!");
 }
 
 void UserView::on_text_filter_2_textChanged(const QString &arg1)

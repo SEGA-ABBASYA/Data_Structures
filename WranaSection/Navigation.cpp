@@ -47,8 +47,9 @@ void Navigation::navigate()
     //Floor, Occupied, Name, End Nodes
     //Location end(endF, false, "Navigation", {endX, endY});//end
     //Floor, Path X, Path Y                                        Floor, Start Nodes, End Location
-    vector<pair<int, pair<int, int>>> ans = Database::mg.SearchBig(UserView::startRoom.getFloor(), UserView::startRoom.getNode().first, UserView::startRoom.getNode().second, UserView::endRoom);//start
     //vector<pair<int, pair<int, int>>> ans = Database::mg.SearchBig(startF, startX, startY, end);
+    vector<pair<int, pair<int, int>>> ans = Database::mg.SearchBig(UserView::startRoom.getFloor(), UserView::startRoom.getNode().first, UserView::startRoom.getNode().second, UserView::endRoom);//start
+
     steps = ans.size();
     ui->steps->setText( QString::fromStdString(std::to_string(steps)));
     for (auto i : ans)
@@ -182,6 +183,8 @@ void Navigation::on_bysteps_clicked()
                }
            }
            top = moving.front().first;
+           steps -= 1;
+           ui->steps->setText( QString::fromStdString(std::to_string(steps)));
        }
     }
 }

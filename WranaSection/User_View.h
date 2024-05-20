@@ -54,7 +54,8 @@ public:
     SecondFloorOther *o;
     ThirdFloor *th;
 
-
+    bool start = false;
+    bool end = false;
 
     explicit UserView(QWidget *parent = nullptr);
     void RefreshTable();

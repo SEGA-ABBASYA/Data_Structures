@@ -93,7 +93,7 @@ border-radius: 11px; </string>
   <widget class="QPushButton" name="bysteps">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>30</x>
      <y>290</y>
      <width>131</width>
      <height>51</height>
@@ -113,39 +113,13 @@ border: none;
 border-radius: 11px; </string>
    </property>
    <property name="text">
-    <string>By Steps</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="floor">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>290</y>
-     <width>131</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Impact</family>
-     <pointsize>20</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(229, 112, 30);
-border-radius:50%;
-border: none;
-border-radius: 11px; </string>
-   </property>
-   <property name="text">
-    <string>By Floor</string>
+    <string>Traverse</string>
    </property>
   </widget>
   <widget class="QPushButton" name="clear">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>320</x>
      <y>290</y>
      <width>131</width>
      <height>51</height>
@@ -173,7 +147,6 @@ border-radius: 11px; </string>
   <zorder>label_2</zorder>
   <zorder>steps</zorder>
   <zorder>bysteps</zorder>
-  <zorder>floor</zorder>
   <zorder>clear</zorder>
  </widget>
  <resources/>
