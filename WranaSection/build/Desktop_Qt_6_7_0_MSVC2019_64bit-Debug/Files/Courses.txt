@@ -1,22 +1,17 @@
+Mathematics
+Math
+no
+yes
+Dr.Smith
+---
+TA John
+TA Emma
+---
 Physics
 Science
 no
 no
-algorithms
-cs
-yes
-no
-french
-langs
-no
-yes
-graphics
-cs
-yes
-no
-mathematics
-math1
-no
-yes
+Dr.Johnson
 ---
+TA Alice
 ---

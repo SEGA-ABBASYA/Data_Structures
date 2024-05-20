@@ -29,6 +29,8 @@ private slots:
 
     void on_bysteps_clicked();
 
+    void on_clear_clicked();
+
 private:
     Ui::Navigation *ui;
 };

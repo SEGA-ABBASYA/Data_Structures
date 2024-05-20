@@ -197,3 +197,71 @@ void Navigation::on_bysteps_clicked()
 }
 
 
+
+void Navigation::on_clear_clicked()
+{
+    vector<pair<int, pair<int, int>>> ans = Database::mg.SearchBig(UserView::startRoom.getFloor(), UserView::startRoom.getNode().first, UserView::startRoom.getNode().second, UserView::endRoom);//start
+
+    steps = 0;
+    ui->steps->setText( QString::fromStdString(std::to_string(steps)));
+    for (auto i : ans)
+    {
+        if (i.first == 0 || i.first == 1 || i.first == 4)
+        {
+            if (i.first == 0 || i.first == 1)
+            {
+                floorsTables[i.first]->setItem(i.second.first, i.second.second, new QTableWidgetItem);
+                floorsTables[i.first]->item(i.second.first, i.second.second)->setBackground(Qt::transparent);
+
+                //cout << moving.back().first << ' ' << moving.back().second.first << ' ' << moving.back().second.second << endl;
+            }
+            else
+            {
+                floorsTables[6]->setItem(i.second.first, i.second.second, new QTableWidgetItem);
+                floorsTables[6]->item(i.second.first, i.second.second)->setBackground(Qt::transparent);
+                //cout << i.first << ' ' << i.second.first << ' ' << i.second.second << endl;
+            }
+        }
+        else if (i.first == 2)
+        {
+            //first Floor
+            if (i.second.second >= 50)
+            {
+                floorsTables[3]->setItem(i.second.first, i.second.second - 42, new QTableWidgetItem);
+                floorsTables[3]->item(i.second.first, i.second.second - 42)->setBackground(Qt::transparent);
+                //cout << i.first << ' ' << i.second.first << ' ' << i.second.second << endl;
+            }
+            else
+            {
+                floorsTables[i.first]->setItem(i.second.first, i.second.second, new QTableWidgetItem);
+                floorsTables[i.first]->item(i.second.first, i.second.second)->setBackground(Qt::transparent);
+                //cout << i.first << ' ' << i.second.first << ' ' << i.second.second << endl;
+            }
+        }
+        else
+        {
+            //second Floor
+            if (i.second.second >= 84)
+            {
+                if (i.second.second >= 84 && i.second.second <= 88)
+                    continue;
+                floorsTables[5]->setItem(i.second.first - 20, i.second.second - 85, new QTableWidgetItem);
+                floorsTables[5]->item(i.second.first - 20, i.second.second - 85)->setBackground(Qt::transparent);
+                //cout << i.first << ' ' << i.second.first << ' ' << i.second.second << endl;
+
+            }
+            else
+            {
+                if(i.second.second >= 81)
+                    continue;
+                floorsTables[4]->setItem(i.second.first, i.second.second, new QTableWidgetItem);
+                floorsTables[4]->item(i.second.first, i.second.second)->setBackground(Qt::transparent);
+                //cout << i.first << ' ' << i.second.first << ' ' << i.second.second << endl;
+            }
+        }
+        if(!moving.empty())
+            moving.pop();
+    }
+    ans.clear();
+}
+
