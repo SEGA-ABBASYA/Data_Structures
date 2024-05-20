@@ -33,11 +33,16 @@ public:
     void write();
 
 private:
-    QFile usersFile, locationsFile, adminFile, CoursesFile, schedulesFile;
+    QFile usersFile,friendsFile, chatFile, locationsFile, adminFile, CoursesFile, schedulesFile;
     QFile UnderGroundFile,GroundFile,FirstGeneralFile,FirstCreditFile,SecondFile,SecondOtherFile,ThirdFile;
     void readUsers();
+    void readFriends();
+    void readChat();
     void readLocations();
+
     void writeUsers();
+    void writeFriends();
+    void writeChat();
     void writeLocations();
     void readSchedule();
     void writeSchedule();
