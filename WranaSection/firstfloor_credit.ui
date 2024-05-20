@@ -43,17 +43,9 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QTableWidget::item:selected {
-  background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                              stop:0 #a188d3, stop:1 #8bcdff);
-
-}
-QTableWidget
-{
-   background-color:transparent;
+     <string notr="true">gridline-color: transparent;
 border:none;
-gridline-color:transparent;
-}</string>
+background-color: transparent;</string>
     </property>
     <property name="verticalScrollBarPolicy">
      <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -188,16 +180,6 @@ gridline-color:transparent;
     <column/>
     <column/>
    </widget>
-   <widget class="QPushButton" name="menuButton">
-    <property name="geometry">
-     <rect>
-      <x>1210</x>
-      <y>0</y>
-      <width>61</width>
-      <height>35</height>
-      </rect>
-      </property>
-      </widget>
    <widget class="QPushButton" name="class1">
     <property name="geometry">
      <rect>
@@ -209,7 +191,7 @@ gridline-color:transparent;
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: transparent;
-border: none;</string>
+border:none;</string>
     </property>
     <property name="text">
      <string/>
@@ -341,8 +323,23 @@ border:none;
      <string/>
     </property>
    </widget>
-  </widget>
-  <property name="icon">
+   <widget class="QPushButton" name="menuButton">
+    <property name="geometry">
+     <rect>
+      <x>1190</x>
+      <y>10</y>
+      <width>61</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+border: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
      <iconset resource="Materials.qrc">
       <normaloff>:/assists/All_Materials/Tasks_right.png</normaloff>:/assists/All_Materials/Tasks_right.png</iconset>
     </property>
@@ -359,7 +356,7 @@ border:none;
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>1170</x>
+      <x>1169</x>
       <y>0</y>
       <width>91</width>
       <height>151</height>
@@ -371,10 +368,10 @@ border:none;
     <widget class="QWidget" name="verticalLayoutWidget">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>-9</y>
+       <x>-10</x>
+       <y>-10</y>
        <width>101</width>
-       <height>161</height>
+       <height>162</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -385,11 +382,8 @@ border:none;
           <pointsize>7</pointsize>
          </font>
         </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);</string>
-        </property>
         <property name="text">
-         <string>Credit</string>
+         <string>Undergrounds</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -486,13 +480,15 @@ border: none;</string>
       </item>
      </layout>
     </widget>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

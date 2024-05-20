@@ -225,6 +225,27 @@ border: none;</string>
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="previousButton_2">
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="Materials.qrc">
+         <normaloff>:/assists/All_Materials/Left_arrow.png</normaloff>:/assists/All_Materials/Left_arrow.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>25</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="nextButton_2">
        <property name="styleSheet">
         <string notr="true">background-color: transparent;
@@ -237,27 +258,6 @@ border: none;
        <property name="icon">
         <iconset resource="Materials.qrc">
          <normaloff>:/assists/All_Materials/Right arrow.png</normaloff>:/assists/All_Materials/Right arrow.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>50</width>
-         <height>25</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="previousButton_2">
-       <property name="styleSheet">
-        <string notr="true">background-color: transparent;
-border: none;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="Materials.qrc">
-         <normaloff>:/assists/All_Materials/Left_arrow.png</normaloff>:/assists/All_Materials/Left_arrow.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -299,7 +299,11 @@ border: none;</string>
       <height>35</height>
      </rect>
     </property>
-        <property name="icon">
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+border: none;</string>
+    </property>
+    <property name="icon">
      <iconset resource="Materials.qrc">
       <normaloff>:/assists/All_Materials/Tasks_right.png</normaloff>:/assists/All_Materials/Tasks_right.png</iconset>
     </property>
@@ -311,6 +315,7 @@ border: none;</string>
     </property>
     <property name="checkable">
      <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="ConferenceHall">
     <property name="geometry">
@@ -710,7 +715,7 @@ border:none;</string>
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

@@ -38,8 +38,6 @@ void Login::login()
     string userName = ui->userNameLineEdit->text().toLower().toStdString();
 
     string password = ui->passwordLineEdit->text().toStdString();
-    auto user = Database::users.find(userName);
-
     if(userName == "admin" && password == "admin"){
         admPage = new AdminView();
         w_stack->addWidget(admPage);

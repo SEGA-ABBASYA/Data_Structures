@@ -84,6 +84,7 @@ void Firstfloor_general::on_nextButton_2_clicked()
 void Firstfloor_general::on_previousButton_2_clicked()
 {
     UserView::g_stack->setCurrentIndex(UserView::g_stack->currentIndex() - 1);
+}
 void Firstfloor_general::on_ConferenceHall_clicked()
 {
      QMessageBox::information(this,"Room Name","Conference Hall                 ");

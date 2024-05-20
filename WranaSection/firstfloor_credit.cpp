@@ -86,7 +86,7 @@ void firstfloor_credit::on_menuButton_3_toggled()
 {
     ui->widget->hide();
 
-
+}
 
 
 void firstfloor_credit::on_class1_clicked()

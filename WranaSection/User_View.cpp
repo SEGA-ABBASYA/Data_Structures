@@ -42,7 +42,7 @@ UserView::UserView(QWidget *parent)
 
     }
 
-    User &current_user=Database::users["hano4"];
+    User &current_user=Database::users[Database::CurrentUser];
 
 
     for(auto &registered_course:current_user.registered_courses)
@@ -300,13 +300,14 @@ void UserView::on_start_list_widget_itemClicked(QListWidgetItem *item)
     {
         QMessageBox::warning(this, "Error", "You're in Genedy, Go to the Main Building.");
         startRoom = db.locations["Class 7"];
-
+    }
+}
 void UserView::on_add_button_clicked()
 {
     string course_name= ui->ALL_courses_list->currentItem()->text().toStdString();
     ui->Registerd_courses->clear();
 
-    User &current_user=Database::users["hano4"];
+    User &current_user=Database::users[Database::CurrentUser];
 
 
          current_user.registered_courses.insert(course_name);
@@ -343,7 +344,7 @@ void UserView::on_delete_button_clicked()
     {
 
         string course_name=currentItem->text().toStdString();
-        User &current_user=Database::users["hano4"];
+        User &current_user=Database::users[Database::CurrentUser];
 
         current_user.registered_courses.erase(course_name);
         current_user.lecture.erase(course_name);
