@@ -1,3 +1,19 @@
+archi
+CSYS
+yes
+no
+Dr Hanan
+---
+Dr Manar
+---
+artificial intellegence
+SC
+yes
+no
+Dr Dina
+---
+Dr Andrew
+---
 data structures
 CS
 yes
@@ -16,11 +32,13 @@ Dr Neveen
 ---
 Dr Nagwa
 ---
-physics
-Science
+operation research
+IS
 no
-no
-Dr.Johnson
+yes
+Dr Safaa
+Dr Doaa
 ---
-Dr Eman
+Dr Assem
+Dr Salsabil
 ---

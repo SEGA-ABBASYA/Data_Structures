@@ -36,7 +36,7 @@ UserView::UserView(QWidget *parent)
     //GUI Modifications
     ui->verticalLayout->addWidget(statusBar);
     ui->full->hide();
-    //statusBar->showMessage("Welcome Back " +  QString::fromStdString(USERNAME));
+    statusBar->showMessage("Welcome Back " +  QString::fromStdString(Login::USERNAME));
 
     //Graph UIs
     u = new UndergroundFloor();
