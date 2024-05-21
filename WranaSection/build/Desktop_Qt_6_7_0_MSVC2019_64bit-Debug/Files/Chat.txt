@@ -2,3 +2,7 @@ abod,mhmd7syn,mhmd7syn: a5oya,Me: حبيبى,0
 mhmd7syn,abod,Me: a5oya,abod: حبيبى,0
 mhmd7syn,minion,minion: I love u,0
 minion,mhmd7syn,Me: I love u,0
+rahmaa,youssefproof,youssefproof: hello,0
+sensii,youssefproof,youssefproof: hiiiiii I'm youssef,0
+youssefproof,rahmaa,Me: hello,0
+youssefproof,sensii,Me: hiiiiii I'm youssef,0

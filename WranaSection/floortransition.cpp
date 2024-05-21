@@ -20,7 +20,7 @@ FloorTransition::~FloorTransition()
 
 void FloorTransition::startAnimation()
 {
-    QMovie *GifAnimation = new QMovie("All_Materials/walking.gif");
+    QMovie *GifAnimation = new QMovie("E:/projects/Data_Structures/WranaSection/All_Materials/download.gif");
     ui->transitionLabel->setMovie(GifAnimation);
     ui->transitionLabel->raise();
     GifAnimation->start();

@@ -134,14 +134,13 @@ void Navigation::on_bysteps_clicked()
 
        if(moving.size() > 2)
        {
-                if(moving.front().first != top){
-                    UserView::g_stack->setCurrentIndex(top + 1);
-                    FloorTransition ft;
-                    ft.show();
-                    ft.startAnimation();
-                    ft.close();
-
-                }
+            if(moving.front().first != top){
+                UserView::g_stack->setCurrentIndex(top + 1);
+                FloorTransition ft;
+                ft.show();
+                ft.startAnimation();
+                ft.close();
+            }
            if (moving.front().first == 0 || moving.front().first == 1 || moving.front().first == 6)
            {
                if (moving.front().first == 0 || moving.front().first == 1)
@@ -176,10 +175,10 @@ void Navigation::on_bysteps_clicked()
                //second Floor
                if (moving.front().second.second >= 84)
                {
-                   if (moving.front().second.second <= 84 && moving.front().second.second >= 88){
+                   //if (moving.front().second.second <= 84 && moving.front().second.second >= 88){
                    floorsTables[5]->setItem(moving.front().second.first - 20, moving.front().second.second - 85, new QTableWidgetItem);
                    floorsTables[5]->item(moving.front().second.first - 20, moving.front().second.second - 85)->setBackground(Qt::black);
-                   }
+
                }
                else
                {
@@ -189,7 +188,7 @@ void Navigation::on_bysteps_clicked()
                    }
                }
            }
-           top = moving.front().first;
+           //top = moving.front().first;
            steps -= 1;
            ui->steps->setText( QString::fromStdString(std::to_string(steps)));
        }

@@ -1,17 +1,26 @@
-Mathematics
-Math
-no
+data structures
+CS
 yes
-Dr.Smith
+no
+Dr Hanan
+Dr Wedad
 ---
-TA John
-TA Emma
+Dr Eman
+
 ---
-Physics
+database
+IS
+yes
+no
+Dr Neveen
+---
+Dr Nagwa
+---
+physics
 Science
 no
 no
 Dr.Johnson
 ---
-TA Alice
+Dr Eman
 ---
