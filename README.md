@@ -40,6 +40,9 @@ The system models the university as a **graph**, implementing **Breadth-First Se
 | **Pathfinding Algorithm** | BFS |
 | **Data Structures**     | Graphs, Queues, Stacks, HashMaps, Sets, Vectors |
 
+## Project's Video
+ [LinkedIn](https://www.linkedin.com/posts/ziad-khaled11_3dnavigation-datastructures-c-activity-7293931579138056193-KSxc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEP7XmEBdv35rejSXUhow4K-Te_gnNBYEIc)
+
 ## Team Members
 | Name | LinkedIn Profile |
 |------|-----------------|
@@ -50,5 +53,4 @@ The system models the university as a **graph**, implementing **Breadth-First Se
 | Rahma Khattab | [LinkedIn](https://www.linkedin.com/in/rahma-khattab-4k280/) |
 | Youssef Ashraf | [LinkedIn](https://www.linkedin.com/in/youssef-ashraf-62aa64280/) |
 | Ziad Khaled | [LinkedIn](https://www.linkedin.com/in/ziad-khaled11/) |
-
 
